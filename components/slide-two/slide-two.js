@@ -6,7 +6,7 @@ export default class SlideTwo extends Component {
         setTimeout(function(){
             var animData = {
                 container: document.getElementById('lottie-four'),
-                path: '/animation-assets/bipoc-bands.json',
+                path: '/animation-assets/to-diversify.json',
                 renderer: 'svg',
                 loop: false,
                 autoplay: false,

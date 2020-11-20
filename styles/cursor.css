@@ -1,0 +1,186 @@
+html body { cursor: none!important; }
+
+.cursor {
+    opacity: 0;
+  }
+  .cursor.its__home .cursor__inner {
+    z-index: 9999999999;
+    pointer-events: none;
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    border-radius: 50%;
+    transition: height cubic-bezier(0.86, 0, 0.07, 1) 0.3s,
+      width cubic-bezier(0.86, 0, 0.07, 1) 0.3s,
+      background cubic-bezier(0.86, 0, 0.07, 1) 0.3s,
+      left cubic-bezier(0.86, 0, 0.07, 1) 0.3s,
+      top cubic-bezier(0.86, 0, 0.07, 1) 0.3s,
+      font cubic-bezier(0.86, 0, 0.07, 1) 0.3s,
+      color cubic-bezier(0.86, 0, 0.07, 1) 0.3s;
+  }
+  .cursor.its__home .cursor__inner--circle p {
+    transition: height cubic-bezier(0.86, 0, 0.07, 1) 0.3s,
+      width cubic-bezier(0.86, 0, 0.07, 1) 0.3s,
+      background cubic-bezier(0.86, 0, 0.07, 1) 0.3s,
+      left cubic-bezier(0.86, 0, 0.07, 1) 0.3s,
+      top cubic-bezier(0.86, 0, 0.07, 1) 0.3s,
+      font cubic-bezier(0.86, 0, 0.07, 1) 0.3s,
+      color cubic-bezier(0.86, 0, 0.07, 1) 0.3s;
+  }
+  .cursor .cursor__inner {
+    z-index: 9999999999;
+    pointer-events: none;
+    position: absolute;
+    border-radius: 50%;
+    transition: height cubic-bezier(0.86, 0, 0.07, 1) 0.3s,
+      width cubic-bezier(0.86, 0, 0.07, 1) 0.3s,
+      background cubic-bezier(0.86, 0, 0.07, 1) 0.3s,
+      left cubic-bezier(0.86, 0, 0.07, 1) 0.3s,
+      top cubic-bezier(0.86, 0, 0.07, 1) 0.3s,
+      font cubic-bezier(0.86, 0, 0.07, 1) 0.3s,
+      color cubic-bezier(0.86, 0, 0.07, 1) 0.3s;
+  }
+  .cursor.its__home .cursor__inner--dot {
+    left: 0px !important;
+    top: 0px !important;
+  }
+  .cursor.its__home .cursor__inner--dot p {
+    margin: auto;
+    padding: 0;
+  }
+  .cursor.its__home .cursor__inner--dot small {
+    color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 10px !important;
+  }
+  .cursor .cursor__inner--dot small,
+  .cursor.morphed--cursor .cursor__inner--dot small {
+    color: transparent;
+    font-size: 0px;
+    transition: color cubic-bezier(0.86, 0, 0.07, 1) 0.3s;
+  }
+  .cursor__inner--dot {
+    width: 12px;
+    height: 12px;
+    background: #FFC6C6;
+    display: block;
+    left: 0px !important;
+    top: 0px !important;
+    z-index: 9999;
+    border: #FFC6C6;
+  }
+  .cursor__inner--circle {
+    width: 40px;
+    height: 40px;
+    border: 1px solid #111111;
+    transition: height cubic-bezier(0.86, 0, 0.07, 1) 0.3s,
+      width cubic-bezier(0.86, 0, 0.07, 1) 0.3s,
+      background cubic-bezier(0.86, 0, 0.07, 1) 0.3s,
+      left cubic-bezier(0.86, 0, 0.07, 1) 0.3s,
+      top cubic-bezier(0.86, 0, 0.07, 1) 0.3s,
+      font cubic-bezier(0.86, 0, 0.07, 1) 0.3s,
+      color cubic-bezier(0.86, 0, 0.07, 1) 0.3s;
+    display: none;
+  }
+  
+  .cursor.hover-cursor .cursor__inner--dot {
+    width: 100px;
+    height: 100px;
+    border: 1px solid #ffffff;
+    transition: height cubic-bezier(0.86, 0, 0.07, 1) 0.3s,
+      width cubic-bezier(0.86, 0, 0.07, 1) 0.3s,
+      background cubic-bezier(0.86, 0, 0.07, 1) 0.3s,
+      left cubic-bezier(0.86, 0, 0.07, 1) 0.3s,
+      top cubic-bezier(0.86, 0, 0.07, 1) 0.3s,
+      font cubic-bezier(0.86, 0, 0.07, 1) 0.3s,
+      color cubic-bezier(0.86, 0, 0.07, 1) 0.3s;
+    background: white;
+    border: white;
+    mix-blend-mode: unset !important;
+  }
+  .cursor.cursor.hover-cursor .cursor__inner--dot {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .cursor.cursor.hover-cursor .cursor__inner--dot p {
+    margin: 0;
+    padding: 0;
+  }
+  .cursor.hover-cursor small {
+    font-size: 10px;
+    color: #111111;
+  }
+  .cursor.hover-cursor .cursor__inner--circle:before {
+    content: "View";
+    top: 50%;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    position: absolute;
+    margin-top: -5px;
+    font-size: 10px;
+    text-transform: uppercase;
+    font-family: MarkPro-Book;
+    font-weight: bold;
+    letter-spacing: 2px;
+    transition: height cubic-bezier(0.86, 0, 0.07, 1) 0.3s,
+      width cubic-bezier(0.86, 0, 0.07, 1) 0.3s,
+      background cubic-bezier(0.86, 0, 0.07, 1) 0.3s,
+      left cubic-bezier(0.86, 0, 0.07, 1) 0.3s,
+      top cubic-bezier(0.86, 0, 0.07, 1) 0.3s,
+      font cubic-bezier(0.86, 0, 0.07, 1) 0.3s,
+      color cubic-bezier(0.86, 0, 0.07, 1) 0.3s;
+  }
+  .cursor.cursor__def .cursor__inner {
+    z-index: 9999999999;
+    pointer-events: none;
+    position: absolute;
+    top: 0px !important;
+    left: 0px !important;
+    border-radius: 50%;
+    transition: height cubic-bezier(0.86, 0, 0.07, 1) 0.3s,
+      width cubic-bezier(0.86, 0, 0.07, 1) 0.3s,
+      background cubic-bezier(0.86, 0, 0.07, 1) 0.3s,
+      left cubic-bezier(0.86, 0, 0.07, 1) 0.3s,
+      top cubic-bezier(0.86, 0, 0.07, 1) 0.3s,
+      font cubic-bezier(0.86, 0, 0.07, 1) 0.3s,
+      color cubic-bezier(0.86, 0, 0.07, 1) 0.3s;
+  }
+  .cursor.cursor__def.hover-cursor .cursor__inner {
+    top: -40px !important;
+    left: -40px !important;
+    transition: height cubic-bezier(0.86, 0, 0.07, 1) 0.3s,
+      width cubic-bezier(0.86, 0, 0.07, 1) 0.3s,
+      background cubic-bezier(0.86, 0, 0.07, 1) 0.3s,
+      left cubic-bezier(0.86, 0, 0.07, 1) 0.3s,
+      top cubic-bezier(0.86, 0, 0.07, 1) 0.3s,
+      font cubic-bezier(0.86, 0, 0.07, 1) 0.3s,
+      color cubic-bezier(0.86, 0, 0.07, 1) 0.3s;
+  }
+  .cursor.morphed--cursor .cursor__inner--dot {
+    width: 40px;
+    height: 40px;
+    background: #FFC6C6;
+    top: -15px !important;
+    left: -15px !important;
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22) !important;
+  }
+  
+  .cursor.its__home.morphed--cursor small {
+    font-size: 0 !important;
+  }
+  .cursor.its__home.morphed--cursor .cursor__inner--dot {
+    border: none;
+    top: 30px !important;
+    left: 30px !important;
+  }
+  .cursor.morphed--cursor.nav__open__cursor .cursor__inner--dot {
+    top: 20px !important;
+    left: 20px !important;
+  }
+  

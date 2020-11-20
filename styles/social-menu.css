@@ -1,0 +1,74 @@
+.social__menu.lateral__menu{
+    position: fixed;
+    margin: 0 auto;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-align-items: center;
+    align-items: center;
+    text-align: center;
+    z-index: 11;
+    top: 0;
+    margin-top: 0%;
+    width: 7%;
+    bottom: 0;
+    right: 0;
+
+}
+.social__menu.lateral__menu ul{
+    margin: 0;
+    padding: 0;
+    right: 0;
+    position: absolute;
+}
+.social__menu.lateral__menu.open{
+    opacity: 1;
+}
+.social__menu svg{
+    height: 18px;
+}
+.social__menu.lateral__menu li {
+    margin: 25px 0;
+    right: -50px;
+    -webkit-backface-visibility: hidden;
+    -webkit-perspective: 1000;
+    transform: translateZ(0);
+    transition: right 0.8s cubic-bezier(0.37, 0, 0.63, 1), opacity 0.8s cubic-bezier(0.37, 0, 0.63, 1);
+    opacity: 0;
+    position: relative;
+}
+.social__menu.lateral__menu.black__menu li svg path{
+    transition: all 0.8s cubic-bezier(0.37, 0, 0.63, 1);
+}
+.social__menu.lateral__menu.black__menu li svg path{
+    fill: #22222D!important;
+}
+.social__menu.lateral__menu li:nth-child(1){
+    transition-delay: 0.2s;
+}
+.social__menu.lateral__menu li:nth-child(2){
+    transition-delay: 0.25s;
+}
+.social__menu.lateral__menu li:nth-child(3){
+    transition-delay: 0.3s;
+}
+.social__menu.lateral__menu li:nth-child(4){
+    transition-delay: 0.35s;
+}
+.social__menu.lateral__menu.open li {
+    right: 66px;
+    opacity: 1;
+    text-align: right;
+    position: relative;
+    width: 13px;
+
+}
+.social__menu ul{
+    list-style-type: none;
+}
+.social__menu__wrapper p{
+    position: asbolute;
+    opacity: 0;
+    pointer-events: none;
+}

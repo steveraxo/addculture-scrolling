@@ -40,7 +40,7 @@ export default class SlideTwo extends Component {
     render() {
         return (
             <section id={styles.wrapper}>
-                <div id="slide__one__wrapper">
+                <div id="open-their-doors-to">
                     <section className="lottie-env env-four">
                         <div id="lottie-four" className={"lottie__element"}/>
                     </section>

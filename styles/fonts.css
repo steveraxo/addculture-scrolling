@@ -1,0 +1,239 @@
+@font-face {
+    font-family: 'ITC Avant Garde Pro Bk';
+    src: url('../public/fonts/avant/ITCAvantGardePro-Bk.woff2') format('woff2'),
+        url('../public/fonts/avant/ITCAvantGardePro-Bk.woff') format('woff'),
+        url('../public/fonts/avant/ITCAvantGardePro-Bk.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'ITC Avant Garde Pro Bk';
+    src: url('../public/fonts/avant/ITCAvantGardePro-BkObl.woff2') format('woff2'),
+        url('../public/fonts/avant/ITCAvantGardePro-BkObl.woff') format('woff'),
+        url('../public/fonts/avant/ITCAvantGardePro-BkObl.ttf') format('truetype');
+    font-weight: 300;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'ITC Avant Garde Pro Md';
+    src: url('../public/fonts/avant/ITCAvantGardePro-Bold.woff2') format('woff2'),
+        url('../public/fonts/avant/ITCAvantGardePro-Bold.woff') format('woff'),
+        url('../public/fonts/avant/ITCAvantGardePro-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'ITC Avant Garde Pro Md';
+    src: url('../public/fonts/avant/ITCAvantGardePro-BoldObl.woff2') format('woff2'),
+        url('../public/fonts/avant/ITCAvantGardePro-BoldObl.woff') format('woff'),
+        url('../public/fonts/avant/ITCAvantGardePro-BoldObl.ttf') format('truetype');
+    font-weight: bold;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'ITC Avant Garde Pro Bk';
+    src: url('../public/fonts/avant/ITCAvantGardePro-Demi.woff2') format('woff2'),
+        url('../public/fonts/avant/ITCAvantGardePro-Demi.woff') format('woff'),
+        url('../public/fonts/avant/ITCAvantGardePro-Demi.ttf') format('truetype');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'ITC Avant Garde Pro Bk';
+    src: url('../public/fonts/avant/ITCAvantGardePro-DemiObl.woff2') format('woff2'),
+        url('../public/fonts/avant/ITCAvantGardePro-DemiObl.woff') format('woff'),
+        url('../public/fonts/avant/ITCAvantGardePro-DemiObl.ttf') format('truetype');
+    font-weight: 600;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'ITC Avant Garde Pro Md';
+    src: url('../public/fonts/avant/ITCAvantGardePro-Md.woff2') format('woff2'),
+        url('../public/fonts/avant/ITCAvantGardePro-Md.woff') format('woff'),
+        url('../public/fonts/avant/ITCAvantGardePro-Md.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'ITC Avant Garde Pro Md';
+    src: url('../public/fonts/avant/ITCAvantGardePro-MdObl.woff2') format('woff2'),
+        url('../public/fonts/avant/ITCAvantGardePro-MdObl.woff') format('woff'),
+        url('../public/fonts/avant/ITCAvantGardePro-MdObl.ttf') format('truetype');
+    font-weight: 500;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'ITC Avant Garde Pro XLt';
+    src: url('../public/fonts/avant/ITCAvantGardePro-XLt.woff2') format('woff2'),
+        url('../public/fonts/avant/ITCAvantGardePro-XLt.woff') format('woff'),
+        url('../public/fonts/avant/ITCAvantGardePro-XLt.ttf') format('truetype');
+    font-weight: 200;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'ITC Avant Garde Pro XLt';
+    src: url('../public/fonts/avant/ITCAvantGardePro-XLtObl.woff2') format('woff2'),
+        url('../public/fonts/avant/ITCAvantGardePro-XLtObl.woff') format('woff'),
+        url('../public/fonts/avant/ITCAvantGardePro-XLtObl.ttf') format('truetype');
+    font-weight: 200;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'ITC Avant Garde Std Md';
+    src: url('../public/fonts/avant/ITCAvantGardeStd-Bold.woff2') format('woff2'),
+        url('../public/fonts/avant/ITCAvantGardeStd-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'ITC Avant Garde Std Md';
+    src: url('../public/fonts/avant/ITCAvantGardeStd-Bold.woff2') format('woff2'),
+        url('../public/fonts/avant/ITCAvantGardeStd-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'ITC Avant Garde Std Md';
+    src: url('../public/fonts/avant/ITCAvantGardeStd-Bold.woff2') format('woff2'),
+        url('../public/fonts/avant/ITCAvantGardeStd-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+
+
+@font-face {
+    font-family: 'HelveticaNeue';
+    src: url('../public/fonts/helvetica/HelveticaNeueBold.woff2') format('woff2'),
+        url('../public/fonts/helvetica/HelveticaNeueBold.woff') format('woff'),
+        url('../public/fonts/helvetica/HelveticaNeueBold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'HelveticaNeue';
+    src: url('../public/fonts/helvetica/HelveticaNeueLight.woff2') format('woff2'),
+        url('../public/fonts/helvetica/HelveticaNeueLight.woff') format('woff'),
+        url('../public/fonts/helvetica/HelveticaNeueLight.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'HelveticaNeue';
+    src: url('../public/fonts/helvetica/HelveticaNeueBlackCond.woff2') format('woff2'),
+        url('../public/fonts/helvetica/HelveticaNeueBlackCond.woff') format('woff'),
+        url('../public/fonts/helvetica/HelveticaNeueBlackCond.ttf') format('truetype');
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'HelveticaNeue';
+    src: url('../public/fonts/helvetica/HelveticaNeueMedium.woff2') format('woff2'),
+        url('../public/fonts/helvetica/HelveticaNeueMedium.woff') format('woff'),
+        url('../public/fonts/helvetica/HelveticaNeueMedium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'HelveticaNeue';
+    src: url('../public/fonts/helvetica/HelveticaNeueThin.woff2') format('woff2'),
+        url('../public/fonts/helvetica/HelveticaNeueThin.woff') format('woff'),
+        url('../public/fonts/helvetica/HelveticaNeueThin.ttf') format('truetype');
+    font-weight: 100;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'HelveticaNeue';
+    src: url('../public/fonts/helvetica/HelveticaNeueRegular.woff2') format('woff2'),
+        url('../public/fonts/helvetica/HelveticaNeueRegular.woff') format('woff'),
+        url('../public/fonts/helvetica/HelveticaNeueRegular.ttf') format('truetype');
+    font-weight: 100;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'HelveticaNeue';
+    src: url('../public/fonts/helvetica/HelveticaNeueBold_1.woff2') format('woff2'),
+        url('../public/fonts/helvetica/HelveticaNeueBold_1.woff') format('woff'),
+        url('../public/fonts/helvetica/HelveticaNeueBold_1.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'HelveticaNeue';
+    src: url('../public/fonts/helvetica/HelveticaNeueHeavy.woff2') format('woff2'),
+        url('../public/fonts/helvetica/HelveticaNeueHeavy.woff') format('woff'),
+        url('../public/fonts/helvetica/HelveticaNeueHeavy.ttf') format('truetype');
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'HelveticaNeue';
+    src: url('../public/fonts/helvetica/HelveticaNeueLight_1.woff2') format('woff2'),
+        url('../public/fonts/helvetica/HelveticaNeueLight_1.woff') format('woff'),
+        url('../public/fonts/helvetica/HelveticaNeueLight_1.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'HelveticaNeue';
+    src: url('../public/fonts/helvetica/HelveticaNeueItalic.woff2') format('woff2'),
+        url('../public/fonts/helvetica/HelveticaNeueItalic.woff') format('woff'),
+        url('../public/fonts/helvetica/HelveticaNeueItalic.ttf') format('truetype');
+    font-weight: 100;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'HelveticaNeue';
+    src: url('../public/fonts/helvetica/HelveticaNeueMedium_1.woff2') format('woff2'),
+        url('../public/fonts/helvetica/HelveticaNeueMedium_1.woff') format('woff'),
+        url('../public/fonts/helvetica/HelveticaNeueMedium_1.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+

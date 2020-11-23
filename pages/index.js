@@ -11,7 +11,7 @@ export default function Home() {
   const [isMobile, SetIsMobile] = useState(false)
 
   function init(){
-    new SmoothScroll(document,50,20)
+    new SmoothScroll(document,20,20)
   }
 
   function SmoothScroll(target, speed, smooth) {

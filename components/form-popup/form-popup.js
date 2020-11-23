@@ -64,6 +64,8 @@ export default class FormPopup extends Component {
         }
     }
     handleSubmit(event){
+        var SharpSpringTracking = this.getCookie('__ss_tk')
+
         event.preventDefault();
 
         var name = false;
@@ -166,7 +168,7 @@ export default class FormPopup extends Component {
             
             xhr.open('POST', `<script type="text/javascript">
             var __ss_noform = __ss_noform || [];
-            __ss_noform.push(['baseURI', 'https://app-3QNMLPDA8K.marketingautomation.services/webforms/receivePostback/MzawMLEwMjQ0AgA/b3d3bb48-1c72-4f8d-8fa6-aafbb3f126ab/jsonp/?personName=${personName}&agencyName=${agencyName}&agencyRelation=${agencyRelation}&agencyRelationOther=${agencyRelationOther}&agencyWebsite=${agencyLink}&minorityGroup=${minorityGroupData}&additionalLink=${minorityGroupData}`);
+            __ss_noform.push(['baseURI', 'https://app-3QNMLPDA8K.marketingautomation.services/webforms/receivePostback/MzawMLEwMjQ0AgA/b3d3bb48-1c72-4f8d-8fa6-aafbb3f126ab/jsonp/?personName=${personName}&agencyName=${agencyName}&agencyRelation=${agencyRelation}&agencyRelationOther=${agencyRelationOther}&agencyWebsite=${agencyLink}&minorityGroup=${minorityGroupData}&additionalLink=${minorityGroupData}&trackingid__sb=${SharpSpringTracking}`);
             
             xhr.send()
 
@@ -200,9 +202,27 @@ export default class FormPopup extends Component {
             });
         }
     }
+
     closeForm(){
         document.getElementById("form__wrapper").classList.add("close__form__state");
     }
+
+    getCookie(cname) {
+        var name = cname + "=";
+        var decodedCookie = decodeURIComponent(document.cookie);
+        var ca = decodedCookie.split(';');
+        for(var i = 0; i <ca.length; i++) {
+            var c = ca[i];
+            while (c.charAt(0) == ' ') {
+                c = c.substring(1);
+            }
+            if (c.indexOf(name) == 0) {
+                return c.substring(name.length, c.length);
+            }
+        }
+        return "";
+    }
+
     render() {
         return (
             <div id="form__wrapper" className="close__form__state">

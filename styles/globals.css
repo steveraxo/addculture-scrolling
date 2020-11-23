@@ -21,9 +21,9 @@ a {
 .lottie__element{
   top: 0px!important;
 }
-.lottie__element svg {
+/* .lottie__element svg {
   transform: translate3d(0px, 0px, 0px) scale(1.05)!important;
-}
+} */
 #agencies-are-failing .lottie__element svg{
   top: 0;
 }

@@ -16,6 +16,14 @@ export default class SlideOne extends Component {
               
             var animScroll = bodymovin.loadAnimation(animData)
               
+            var customSettings = {}; 
+
+            if(window.innerWidth > 1900){
+                customSettings.offset = 500;
+            }else{
+                customSettings.offset = 350;
+            }
+
             animScroll.addEventListener('DOMLoaded', function () {
                 tl = new TimelineMax({repeat: 0})
                 tl.to({frame: 0}, 1, {
@@ -30,7 +38,7 @@ export default class SlideOne extends Component {
               
             var scene = new ScrollMagic.Scene({
                 triggerElement: ".env-full",
-                offset: 350,
+                offset: customSettings.offset,
                 duration: 3000 }).setTween(tl).setPin("#lottie-full").addTo(controller);
             })
 

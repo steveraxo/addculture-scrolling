@@ -90,8 +90,8 @@ a {
   align-items: center;
 }
 @media(max-width: 1024px){
-  body{
-    overflow: auto;
+  html, body{
+    overflow: initial;
   }
 }
 @import "fonts.css"; /* Font Files */

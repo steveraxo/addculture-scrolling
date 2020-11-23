@@ -1,6 +1,7 @@
 import React, { useState, useEffect, Suspense } from 'react';
 import SlideOne from '../components/slide-one/slide-one'
 import SlideTwo from '../components/slide-two/slide-two'
+import SlideThree from '../components/slide-three/slide-three'
 import CTASection from '../components/cta-section/cta-section'
 import MobileVersion from "../components/mobile-version/index"
 
@@ -9,7 +10,7 @@ export default function Home() {
   const [isMobile, SetIsMobile] = useState(false)
 
   function init(){
-    new SmoothScroll(document,60,15)
+    new SmoothScroll(document,20,50)
   }
 
   function SmoothScroll(target, speed, smooth) {
@@ -102,6 +103,7 @@ export default function Home() {
         <>
           <SlideOne />
           <SlideTwo />
+          <SlideThree />
           <CTASection />
         </>
         : 

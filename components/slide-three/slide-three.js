@@ -1,12 +1,12 @@
 import React, { Component } from 'react'
-import styles from '../../styles/slideOne.module.css'
+import styles from '../../styles/slideTwo.module.css'
 
-export default class SlideOne extends Component {
+export default class SlideTwo extends Component {
     componentDidMount(){
         setTimeout(function(){
             var animData = {
-                container: document.getElementById('lottie-three'),
-                path: '/animation-assets/new/01&02Large.json',
+                container: document.getElementById('lottie-five'),
+                path: '/animation-assets/new/v1_05_Large_Tws.json',
                 renderer: 'svg',
                 loop: false,
                 autoplay: false,
@@ -29,9 +29,9 @@ export default class SlideOne extends Component {
             var controller = new ScrollMagic.Controller();
               
             var scene = new ScrollMagic.Scene({
-                triggerElement: ".env-three",
+                triggerElement: ".env-five",
                 offset: 300,
-                duration: 3000 }).setTween(tl).setPin("#lottie-three").addTo(controller);
+                duration: 3000 }).setTween(tl).setPin("#lottie-five").addTo(controller);
             })
 
         }, 1000)
@@ -40,9 +40,9 @@ export default class SlideOne extends Component {
     render() {
         return (
             <section id={styles.wrapper}>
-                <div id="agencies-are-failing">
-                    <section className="lottie-env env-three">
-                        <div id="lottie-three" className={"lottie__element"}/>
+                <div id="let-them">
+                    <section className="lottie-env env-five">
+                        <div id="lottie-five" className={"lottie__element"}/>
                     </section>
                 </div>
             </section>

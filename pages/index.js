@@ -13,7 +13,7 @@ export default function Home() {
 
   function init(){
     if(window.innerWidth > 1900){
-      new SmoothScroll(document,10,40)
+      new SmoothScroll(document,30,120)
     }else{
       new SmoothScroll(document,20,20)
     }

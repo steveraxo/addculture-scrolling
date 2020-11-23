@@ -245,6 +245,7 @@ export default class FormPopup extends Component {
                             <div className="form__fields">
 
                                 <div className="form__input your-name">
+                                    <label className="label__hidden" htmlFor="your-name">YOUR NAME</label>
                                     <input type="text" name="your-name" placeholder="YOUR NAME *" id="your-name" onKeyPress={this.handleTextInput} />
                                 </div>
                                 <div className="form__input relation-with-agency">
@@ -257,18 +258,23 @@ export default class FormPopup extends Component {
                                     </select>
                                 </div>
                                 <div className="form__input relation-with-agency-other">
+                                    <label className="label__hidden" htmlFor="relation-with-agency-other">Type of relation</label>
                                     <input type="text" name="relation-with-agency-other" placeholder="Type of relation *" id="relation-with-agency-other" className={"hidden__input"} onKeyPress={this.handleTextInput} />
                                 </div>
                                 <div className="form__input name-of-agency">
+                                    <label className="label__hidden" htmlFor="name-of-agency">Name Of Agency </label>
                                     <input type="text" name="name-of-agency" placeholder="Name Of Agency *" id="name-of-agency" onKeyPress={this.handleTextInput} />
                                 </div>
                                 <div className="form__input link-to-website">
+                                    <label className="label__hidden" htmlFor="link-to-website">Link to Website</label>
                                     <input type="text" name="link-to-website" placeholder="Link to Website *" id="link-to-website" onKeyPress={this.handleTextInput} />
                                 </div>
                                 <div className="form__input minority-group">
+                                    <label className="label__hidden" htmlFor="minority-group">WHAT MINORITY GROUP DOES THE OWNER OF THE AGENCY BELONG TO OR IDENTIFY WITH</label>
                                     <input type="text" name="minority-group" placeholder="WHAT MINORITY GROUP DOES THE OWNER OF THE AGENCY BELONG TO OR IDENTIFY WITH *" id="minority-group" onKeyPress={this.handleTextInput} />
                                 </div>
                                 <div className="form__input additional-links">
+                                    <label className="label__hidden" htmlFor="additional-links">ADDITIONAL LINKS</label>
                                     <input type="text" name="additional-links" placeholder="ADDITIONAL LINKS (BEHANCE, LINKEDIN, ETC) *" id="additional-links" onKeyPress={this.handleTextInput} />
                                 </div>
                             </div>

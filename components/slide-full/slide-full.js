@@ -37,9 +37,9 @@ export default class SlideOne extends Component {
         var controller = new ScrollMagic.Controller();
           
         var scene = new ScrollMagic.Scene({
+            triggerHook: 0,
             triggerElement: ".env-full",
-            offset: customSettings.offset,
-            duration: 3000 }).setTween(tl).setPin("#lottie-full").addTo(controller);
+            duration: '5000%' }).setTween(tl).setPin("#lottie-full").addTo(controller);
         })
     }
     

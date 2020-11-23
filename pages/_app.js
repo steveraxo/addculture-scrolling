@@ -10,7 +10,7 @@ function MyApp({ Component, pageProps }) {
           <title>Add Culture + </title>
           <meta name="viewport" content="width=device-width"></meta>
           <meta charset="utf-8"></meta>
-          <meta http-equiv="Content-Language" content="en"></meta>
+          <meta httpEquiv="Content-Language" content="en"/>
           <meta name="description" content="We amplify the voices that set the tone: hire a minority-owned agency or explore our stories today."></meta>
           <meta name="robots" content="index, follow"></meta>
           <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1"></meta>

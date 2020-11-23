@@ -12,6 +12,22 @@ export default class MobileIndex extends Component {
         AOS.init();
     }
 
+    switchChart(event){
+        var chartId = event.target.id; 
+
+        Array.from(document.querySelectorAll(".chart__controller__element")).map((element, index) => {
+            element.classList.remove("active"); 
+        })
+
+        event.target.classList.add("active"); 
+
+        Array.from(document.querySelectorAll(".chart__wrapper")).map((element, index) => {
+            element.classList.remove("active"); 
+        })
+        console.log(chartId);
+        document.querySelectorAll(`.${chartId}__element`)[0].classList.add("active");
+        
+    }
     render() {
         const settings = {
             dots: true,
@@ -107,6 +123,38 @@ export default class MobileIndex extends Component {
                                 </h2>
                                 <img src="/images/firstData.svg" alt="93.8% of the people in executive positions in the top 50 agencies are white" data-aos="fade-up" data-aos-delay="300" data-aos-duration="1000"/>
                             </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="charts__one">
+                    <div className="container">
+                        <div className="row">
+                            <div className="chart__controller">
+                                <p id="chart__one" className="chart__controller__element avant uppercase active" onClick={this.switchChart}>Marketing & Advertising</p>
+                                <p id="chart__two" className="chart__controller__element avant uppercase" onClick={this.switchChart}>CMO</p>
+                            </div>
+                            <div className="chart__one__element chart__wrapper avant uppercase active">
+                                <h2>LACK OF</h2>
+                                <h2>DIVERSITY IN </h2>
+                                <h2>THE U.S.A</h2>
+                                <h2>MARKETING </h2>
+                                <h2>& ADVERTISING</h2>
+
+                                <img className="chart__image" src="/images/chart__one__graphic.svg" alt="Lack of diversity chart" />
+                                <img className="chart__image__legend" src="/images/chart__one__legend.svg" alt="Lack of diversity Legend"/>
+                            </div>
+
+                            <div className="chart__two__element chart__wrapper avant uppercase ">
+                                <h2>CMO  </h2>
+                                <h2>Diversitty</h2>
+                                <h2>in the U.S.A</h2>
+        
+
+                                <img className="chart__image" src="/images/chart__two__graphic.svg" alt="Lack of diversity chart" />
+                                <img className="chart__image__legend" src="/images/chart__two__legend.svg" alt="Lack of diversity Legend"/>
+                            </div>
+
                         </div>
                     </div>
                 </section>

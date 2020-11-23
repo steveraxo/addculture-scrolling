@@ -29,14 +29,15 @@
     height: 18px;
 }
 .social__menu.lateral__menu li {
-    margin: 25px 0;
-    right: -50px;
+    margin:40px 0;
+    right: 20px;
     -webkit-backface-visibility: hidden;
     -webkit-perspective: 1000;
     transform: translateZ(0);
     transition: right 0.8s cubic-bezier(0.37, 0, 0.63, 1), opacity 0.8s cubic-bezier(0.37, 0, 0.63, 1);
-    opacity: 0;
+    opacity: 1;
     position: relative;
+    mix-blend-mode: multiply;
 }
 .social__menu.lateral__menu.black__menu li svg path{
     transition: all 0.8s cubic-bezier(0.37, 0, 0.63, 1);

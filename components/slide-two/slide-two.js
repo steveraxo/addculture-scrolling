@@ -5,7 +5,7 @@ export default class SlideTwo extends Component {
     componentDidMount(){
         setTimeout(function(){
             var animData = {
-                container: document.getElementById('lottie-four'),
+                container: document.getElementById('lottie-two'),
                 path: '/animation-assets/new/v1_03_Large_WhenYourAgency.json',
                 renderer: 'svg',
                 loop: false,
@@ -29,20 +29,20 @@ export default class SlideTwo extends Component {
             var controller = new ScrollMagic.Controller();
               
             var scene = new ScrollMagic.Scene({
-                triggerElement: ".env-four",
+                triggerElement: ".env-two",
                 offset: 300,
-                duration: 3000 }).setTween(tl).setPin("#lottie-four").addTo(controller);
+                duration: 3000 }).setTween(tl).setPin("#lottie-two").addTo(controller);
             })
 
-        }, 1000)
+        }, 1500)
     }
     
     render() {
         return (
             <section id={styles.wrapper}>
                 <div id="open-their-doors-to">
-                    <section className="lottie-env env-four">
-                        <div id="lottie-four" className={"lottie__element"}/>
+                    <section className="lottie-env env-two">
+                        <div id="lottie-two" className={"lottie__element"}/>
                     </section>
                 </div>
             </section>

@@ -300,6 +300,55 @@
 
 
 @media(max-width: 1024px){
+    #charts__one{
+        background: #ADAEA5;
+        min-height: 100vh;
+    }
+    #charts__one .container{
+        padding: 50px 20px;
+    }
+    #charts__one .chart__controller{
+        display: flex;
+        font-weight: bold;
+        text-transform: uppercase;
+        margin-bottom: 80px;
+
+    }
+    #charts__one .chart__controller p:nth-child(1){
+        margin-right: 40px;
+    }
+    #charts__one .chart__controller p, #charts__one .chart__controller p.active{
+        position: relative;
+    }
+    #charts__one .chart__controller p:after{
+        content: "";
+        position: absolute;
+        bottom: -10px;
+        width: 100%;
+        height: 0px;
+        background: #222220;
+        left: 0;
+    }
+    .chart__wrapper{
+        display: none;
+    }
+    .chart__wrapper.active{
+        display: block;
+    }
+    #charts__one .chart__controller p.active:after{
+        height: 4px;
+    }
+    #charts__one h2{
+        margin: 0;
+        font-size: 50px;
+    }
+    #charts__one .chart__image{
+        width: 100%;
+        margin: 40px 0;
+    }
+    #charts__one .chart__image__legend{
+        margin-top: 40px;
+    }
     #carousel-info{
         background: #222220;
         min-height: 100vh;
@@ -353,6 +402,9 @@
     }
 }
 @media(max-width: 600px){
+    #charts__one h2 {
+        font-size: 30px;
+    }
     .carousel__info__slide{
         padding: 0 0px;
     }
@@ -404,7 +456,9 @@
         color: white!important;
     }
 }
-@media (max-width: 920px) and (orientation: landscape) {
+
+@media (max-width: 1024px) and (orientation: landscape) {
+
     #are-failing.mobile__slide h2 {
         font-size: 5vw;
         position: relative;

@@ -5,7 +5,7 @@ export default class SlideTwo extends Component {
     componentDidMount(){
         setTimeout(function(){
             var animData = {
-                container: document.getElementById('lottie-five'),
+                container: document.getElementById('lottie-three'),
                 path: '/animation-assets/new/v1_05_Large_Tws.json',
                 renderer: 'svg',
                 loop: false,
@@ -29,20 +29,20 @@ export default class SlideTwo extends Component {
             var controller = new ScrollMagic.Controller();
               
             var scene = new ScrollMagic.Scene({
-                triggerElement: ".env-five",
+                triggerElement: ".env-three",
                 offset: 300,
-                duration: 3000 }).setTween(tl).setPin("#lottie-five").addTo(controller);
+                duration: 3000 }).setTween(tl).setPin("#lottie-three").addTo(controller);
             })
 
-        }, 1000)
+        }, 2000)
     }
     
     render() {
         return (
             <section id={styles.wrapper}>
                 <div id="let-them">
-                    <section className="lottie-env env-five">
-                        <div id="lottie-five" className={"lottie__element"}/>
+                    <section className="lottie-env env-three">
+                        <div id="lottie-three" className={"lottie__element"}/>
                     </section>
                 </div>
             </section>

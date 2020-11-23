@@ -78,6 +78,17 @@ a {
 #add__loading .add__loading__logo  path{
   fill: #FFC6C6;
 }
+.scroll__indicator{
+  position: fixed;
+  left: 20px;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  z-index: 9;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 @import "fonts.css"; /* Font Files */
 @import "cursor.css"; /* Cursor Files */
 @import "navbar.css"; /* navbar files */

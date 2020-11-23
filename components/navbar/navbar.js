@@ -76,7 +76,7 @@ export default class footer extends Component {
                             transition={{ duration: 0.9, type: "spring", stiffness: 50 }}
                         >
                             <BackToArrow />
-                            <motion.a href="#" whileHover={{ color: "#FFC6C6"}}>
+                            <motion.a href="/" whileHover={{ color: "#FFC6C6"}}>
                                 <p> <strong> RESTART JOURNEY</strong></p>
                             </motion.a>
                         </motion.div>

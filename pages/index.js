@@ -1,5 +1,6 @@
 import React, { useState, useEffect, Suspense, lazy } from 'react';
 import LoadingScreen from '../components/loading-screen/loading-screen'
+import SlideFull from '../components/slide-full/slide-full'
 import SlideOne from '../components/slide-one/slide-one'
 import SlideTwo from '../components/slide-two/slide-two'
 import SlideThree from '../components/slide-three/slide-three'
@@ -135,9 +136,10 @@ export default function Home() {
             </svg>
 
             </div>
-            <SlideOne />
+            {/* <SlideOne />
             <SlideTwo />
-            <SlideThree />
+            <SlideThree /> */}
+            <SlideFull />
             <CTASection />
           </>
           : 

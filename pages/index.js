@@ -1,4 +1,5 @@
 import React, { useState, useEffect, Suspense } from 'react';
+import LoadingScreen from '../components/loading-screen/loading-screen'
 import SlideOne from '../components/slide-one/slide-one'
 import SlideTwo from '../components/slide-two/slide-two'
 import SlideThree from '../components/slide-three/slide-three'
@@ -10,7 +11,7 @@ export default function Home() {
   const [isMobile, SetIsMobile] = useState(false)
 
   function init(){
-    new SmoothScroll(document,20,50)
+    new SmoothScroll(document,50,200)
   }
 
   function SmoothScroll(target, speed, smooth) {
@@ -90,26 +91,28 @@ export default function Home() {
 
 
   return (
-    <div id="master__wrapper">
-      {/* Imported files */}
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.6.5/lottie.min.js"></script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.6/ScrollMagic.min.js"></script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.2/TweenMax.min.js"></script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/plugins/animation.gsap.js"></script>
-      
-      {
-        !isMobile
-        ?
-        <>
-          <SlideOne />
-          <SlideTwo />
-          <SlideThree />
-          <CTASection />
-        </>
-        : 
-        <MobileVersion />
-      }
-      
-    </div>
+    <>
+      <LoadingScreen />
+
+      <div id="master__wrapper">
+        {/* Imported files */}
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.6.5/lottie.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.6/ScrollMagic.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.2/TweenMax.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/plugins/animation.gsap.js"></script>
+        {
+          !isMobile
+          ?
+          <>
+            <SlideOne />
+            <SlideTwo />
+            <SlideThree />
+            <CTASection />
+          </>
+          : 
+          <MobileVersion />
+        }
+      </div>
+    </>
   )
 }

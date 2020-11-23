@@ -52,6 +52,32 @@ a {
 #selector {
   cursor: none;
 }
+#add__loading{
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #222220;
+  width: 100%;
+  height: 100%;
+  z-index: 999;
+}
+#add__loading img{
+  width: 300px;
+}
+#add__loading .add__loading__logo{
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  opacity: 0.1;
+  margin: auto;
+  transform: scale(2.5);
+}
+#add__loading .add__loading__logo  path{
+  fill: #FFC6C6;
+}
 @import "fonts.css"; /* Font Files */
 @import "cursor.css"; /* Cursor Files */
 @import "navbar.css"; /* navbar files */

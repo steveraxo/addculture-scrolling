@@ -6,7 +6,7 @@ export default class SlideOne extends Component {
         setTimeout(function(){
             var animData = {
                 container: document.getElementById('lottie-full'),
-                path: '/animation-assets/new/00_Todos unidos.json',
+                path: '/animation-assets/new/00_Todos_unidos.json',
                 renderer: 'svg',
                 loop: false,
                 autoplay: false,

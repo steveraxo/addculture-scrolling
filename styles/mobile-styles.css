@@ -194,6 +194,8 @@
 #create-culture.mobile__slide .floating__circle img{
     height: 100%;
     opacity: 1;
+    width: 100%;
+    object-fit: cover;
 }
 
 #we-appropiate.mobile__slide{
@@ -227,6 +229,8 @@
 #we-appropiate.mobile__slide .floating__circle img{
     height: 100%;
     opacity: 1;
+    width: 100%;
+    object-fit: cover;
 }
 #we-appropiate .second__line{
     position: relative;
@@ -317,6 +321,9 @@
     #charts__one .chart__controller p:nth-child(1){
         margin-right: 40px;
     }
+    #charts__one .chart__controller p:nth-child(2){
+        margin-right: 40px;
+    }
     #charts__one .chart__controller p, #charts__one .chart__controller p.active{
         position: relative;
     }
@@ -332,8 +339,13 @@
     .chart__wrapper{
         display: none;
     }
+    #charts__one.chart__ones__second .chart__image{
+        width: 70%;
+        margin: 80px auto;
+    }
     .chart__wrapper.active{
-        display: block;
+        display: flex;
+        flex-direction: column;
     }
     #charts__one .chart__controller p.active:after{
         height: 4px;
@@ -454,6 +466,12 @@
     .slick-dots li.slick-active button:before {
         opacity: 1!important;
         color: white!important;
+    }
+    #charts__one .chart__controller p, #charts__one .chart__controller p.active {
+        font-size: 10px;
+    }
+    #charts__one .chart__controller p:nth-child(1), #charts__one .chart__controller p:nth-child(2) {
+        margin-right: 25px;
     }
 }
 

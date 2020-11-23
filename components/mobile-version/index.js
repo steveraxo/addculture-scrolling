@@ -15,17 +15,33 @@ export default class MobileIndex extends Component {
     switchChart(event){
         var chartId = event.target.id; 
 
-        Array.from(document.querySelectorAll(".chart__controller__element")).map((element, index) => {
+        Array.from(document.querySelectorAll(".chart__ones__first .chart__controller__element")).map((element, index) => {
             element.classList.remove("active"); 
         })
 
         event.target.classList.add("active"); 
 
-        Array.from(document.querySelectorAll(".chart__wrapper")).map((element, index) => {
+        Array.from(document.querySelectorAll(".chart__ones__first .chart__wrapper")).map((element, index) => {
             element.classList.remove("active"); 
         })
         console.log(chartId);
-        document.querySelectorAll(`.${chartId}__element`)[0].classList.add("active");
+        document.querySelectorAll(`.chart__ones__first .${chartId}__element`)[0].classList.add("active");
+        
+    }
+    switchChartSecond(event){
+        var chartId = event.target.id; 
+
+        Array.from(document.querySelectorAll(".chart__ones__second .chart__controller__element")).map((element, index) => {
+            element.classList.remove("active"); 
+        })
+
+        event.target.classList.add("active"); 
+
+        Array.from(document.querySelectorAll(".chart__ones__second .chart__wrapper")).map((element, index) => {
+            element.classList.remove("active"); 
+        })
+
+        document.querySelectorAll(`.chart__ones__second .${chartId}__element`)[0].classList.add("active");
         
     }
     render() {
@@ -127,32 +143,32 @@ export default class MobileIndex extends Component {
                     </div>
                 </section>
 
-                <section id="charts__one">
+                <section id="charts__one" className="chart__ones__first">
                     <div className="container">
                         <div className="row">
                             <div className="chart__controller">
-                                <p id="chart__one" className="chart__controller__element avant uppercase active" onClick={this.switchChart}>Marketing & Advertising</p>
-                                <p id="chart__two" className="chart__controller__element avant uppercase" onClick={this.switchChart}>CMO</p>
+                                <p id="chart__one" className="chart__controller__element avant uppercase active" onClick={this.switchChart} data-aos="fade-up" data-aos-delay="100" data-aos-duration="1000">Marketing & Advertising</p>
+                                <p id="chart__two" className="chart__controller__element avant uppercase" onClick={this.switchChart} data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000">CMO</p>
                             </div>
-                            <div className="chart__one__element chart__wrapper avant uppercase active">
-                                <h2>LACK OF</h2>
-                                <h2>DIVERSITY IN </h2>
-                                <h2>THE U.S.A</h2>
-                                <h2>MARKETING </h2>
-                                <h2>& ADVERTISING</h2>
+                            <div className="chart__one__element chart__wrapper avant uppercase active" data-aos="fade-right" data-aos-delay="300" data-aos-duration="1000">
+                                <h2 data-aos="fade-right" data-aos-delay="100" data-aos-duration="1000">LACK OF</h2>
+                                <h2 data-aos="fade-right" data-aos-delay="150" data-aos-duration="1000">DIVERSITY IN </h2>
+                                <h2 data-aos="fade-right" data-aos-delay="200" data-aos-duration="1000">THE U.S.A</h2>
+                                <h2 data-aos="fade-right" data-aos-delay="250" data-aos-duration="1000">MARKETING </h2>
+                                <h2 data-aos="fade-right" data-aos-delay="300" data-aos-duration="1000">& ADVERTISING</h2>
 
-                                <img className="chart__image" src="/images/chart__one__graphic.svg" alt="Lack of diversity chart" />
-                                <img className="chart__image__legend" src="/images/chart__one__legend.svg" alt="Lack of diversity Legend"/>
+                                <img className="chart__image" data-aos="fade-up" data-aos-delay="400" data-aos-duration="1000" src="/images/chart__one__graphic.svg" alt="Lack of diversity chart" />
+                                <img className="chart__image__legend" data-aos="fade-up" data-aos-delay="500" data-aos-duration="1000" src="/images/chart__one__legend.svg" alt="Lack of diversity Legend"/>
                             </div>
 
-                            <div className="chart__two__element chart__wrapper avant uppercase ">
-                                <h2>CMO  </h2>
-                                <h2>Diversitty</h2>
-                                <h2>in the U.S.A</h2>
+                            <div className="chart__two__element chart__wrapper avant uppercase " data-aos="fade-up" data-aos-delay="100" data-aos-duration="1000">
+                                <h2 data-aos="fade-right" data-aos-delay="100" data-aos-duration="1000">CMO  </h2>
+                                <h2 data-aos="fade-right" data-aos-delay="150" data-aos-duration="1000">Diversitty</h2>
+                                <h2 data-aos="fade-right" data-aos-delay="200" data-aos-duration="1000">in the U.S.A</h2>
         
 
-                                <img className="chart__image" src="/images/chart__two__graphic.svg" alt="Lack of diversity chart" />
-                                <img className="chart__image__legend" src="/images/chart__two__legend.svg" alt="Lack of diversity Legend"/>
+                                <img className="chart__image" src="/images/chart__two__graphic.svg" data-aos="fade-up" data-aos-delay="100" data-aos-duration="1000" alt="Lack of diversity chart" />
+                                <img className="chart__image__legend" src="/images/chart__two__legend.svg" data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000" alt="Lack of diversity Legend"/>
                             </div>
 
                         </div>
@@ -213,6 +229,64 @@ export default class MobileIndex extends Component {
                                     <p className=" helvetica smaller__title ">03</p>
                                 </div>
                             </Slider>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="charts__one" className="chart__ones__second">
+                    <div className="container">
+                        <div className="row">
+                            <div className="chart__controller">
+                                <p id="chart__three" className="chart__controller__element avant uppercase active" onClick={this.switchChartSecond} data-aos="fade-up" data-aos-delay="100" data-aos-duration="1000">rESPONSABILITY</p>
+                                <p id="chart__four" className="chart__controller__element avant uppercase" onClick={this.switchChartSecond} data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000">oWNERSHIP</p>
+                                <p id="chart__five" className="chart__controller__element avant uppercase" onClick={this.switchChartSecond} data-aos="fade-up" data-aos-delay="300" data-aos-duration="1000">EXPECTATION</p>
+                            </div>
+                            <div className="chart__three__element chart__wrapper avant uppercase active">
+                                <h2 data-aos="fade-right" data-aos-delay="100" data-aos-duration="1000">American</h2>
+                                <h2 data-aos="fade-right" data-aos-delay="150" data-aos-duration="1000">consumers </h2>
+                                <h2 data-aos="fade-right" data-aos-delay="200" data-aos-duration="1000">overwhelmingly</h2>
+                                <h2 data-aos="fade-right" data-aos-delay="250" data-aos-duration="1000">support </h2>
+                                <h2 data-aos="fade-right" data-aos-delay="300" data-aos-duration="1000">correcting</h2>
+                                <h2 data-aos="fade-right" data-aos-delay="350" data-aos-duration="1000">the racial &</h2>
+                                <h2 data-aos="fade-right" data-aos-delay="400" data-aos-duration="1000">social inequities</h2>
+                                <h2 data-aos="fade-right" data-aos-delay="450" data-aos-duration="1000">in business</h2>
+                                <h2 data-aos="fade-right" data-aos-delay="500" data-aos-duration="1000">practices.</h2> 
+                                <img className="chart__image" src="/images/chart__three__graphic.svg" data-aos="fade-up" data-aos-delay="300" data-aos-duration="1000" alt="Lack of diversity chart" />
+                                <img className="chart__image__legend" src="/images/chart__three__legend.svg" data-aos="fade-up" data-aos-delay="400" data-aos-duration="1000" alt="Lack of diversity Legend"/>
+                            </div>
+
+                            <div className="chart__four__element chart__wrapper avant uppercase ">
+                                <h2>American</h2>
+                                <h2>consumers </h2>
+                                <h2>overwhelmingly</h2>
+                                <h2>support </h2>
+                                <h2>correcting</h2>
+                                <h2>the racial &</h2>
+                                <h2>social inequities</h2>
+                                <h2>in business</h2>
+                                <h2>practices.</h2> 
+        
+
+                                <img className="chart__image" src="/images/chart__four__graphic.svg" alt="Lack of diversity chart" />
+                                <img className="chart__image__legend" src="/images/chart__four__legend.svg" alt="Lack of diversity Legend"/>
+                            </div>
+
+                            <div className="chart__five__element chart__wrapper avant uppercase ">
+                                <h2>American</h2>
+                                <h2>consumers </h2>
+                                <h2>overwhelmingly</h2>
+                                <h2>support </h2>
+                                <h2>correcting</h2>
+                                <h2>the racial &</h2>
+                                <h2>social inequities</h2>
+                                <h2>in business</h2>
+                                <h2>practices.</h2> 
+        
+
+                                <img className="chart__image" src="/images/chart__five__graphic.svg" alt="Lack of diversity chart" />
+                                <img className="chart__image__legend" src="/images/chart__five__legend.svg" alt="Lack of diversity Legend"/>
+                            </div>
+
                         </div>
                     </div>
                 </section>

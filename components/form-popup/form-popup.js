@@ -161,14 +161,12 @@ export default class FormPopup extends Component {
             formData.set("relation-with-agency-other", agencyRelationOther);
 
 
-            console.log(formData, personName, agencyName, agencyLink, minorityGroupData, additionalLinkData, agencyRelation, agencyRelationOther);
+            console.log(formData, personName, agencyName, agencyLink, minorityGroupData, additionalLinkData, agencyRelation, agencyRelationOther, SharpSpringTracking);
 
             // Add Lead to SharpSpring
             var xhr = new XMLHttpRequest()
             
-            xhr.open('POST', `<script type="text/javascript">
-            var __ss_noform = __ss_noform || [];
-            __ss_noform.push(['baseURI', 'https://app-3QNMLPDA8K.marketingautomation.services/webforms/receivePostback/MzawMLEwMjQ0AgA/b3d3bb48-1c72-4f8d-8fa6-aafbb3f126ab/jsonp/?personName=${personName}&agencyName=${agencyName}&agencyRelation=${agencyRelation}&agencyRelationOther=${agencyRelationOther}&agencyWebsite=${agencyLink}&minorityGroup=${minorityGroupData}&additionalLink=${minorityGroupData}&trackingid__sb=${SharpSpringTracking}`);
+            xhr.open('POST', `https://app-3QNMLPDA8K.marketingautomation.services/webforms/receivePostback/MzawMLEwMjQ0AgA/b3d3bb48-1c72-4f8d-8fa6-aafbb3f126ab/jsonp/?personName=${personName}&agencyName=${agencyName}&agencyRelation=${agencyRelation}&agencyRelationOther=${agencyRelationOther}&agencyWebsite=${agencyLink}&minorityGroup=${minorityGroupData}&additionalLink=${minorityGroupData}&trackingid__sb=${SharpSpringTracking}`);
             
             xhr.send()
 
@@ -230,8 +228,8 @@ export default class FormPopup extends Component {
                 <div className="form__popup">
                     <div className="close__form" onClick={this.closeForm}>
                         <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M3 3L33 33" stroke="#FFC6C6" stroke-width="2"/>
-                            <path d="M33 3L3 33" stroke="#FFC6C6" stroke-width="2"/>
+                            <path d="M3 3L33 33" stroke="#FFC6C6" strokeWidth="2"/>
+                            <path d="M33 3L3 33" stroke="#FFC6C6" strokeWidth="2"/>
                         </svg>
                     </div>
                     <div className="form__information">

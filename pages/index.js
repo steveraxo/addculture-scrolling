@@ -1,4 +1,4 @@
-import React, { useState, useEffect, Suspense } from 'react';
+import React, { useState, useEffect, Suspense, lazy } from 'react';
 import LoadingScreen from '../components/loading-screen/loading-screen'
 import SlideOne from '../components/slide-one/slide-one'
 import SlideTwo from '../components/slide-two/slide-two'
@@ -11,7 +11,7 @@ export default function Home() {
   const [isMobile, SetIsMobile] = useState(false)
 
   function init(){
-    new SmoothScroll(document,50,200)
+    new SmoothScroll(document,50,20)
   }
 
   function SmoothScroll(target, speed, smooth) {

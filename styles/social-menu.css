@@ -68,7 +68,14 @@
     list-style-type: none;
 }
 .social__menu__wrapper p{
-    position: asbolute;
+    position: absolute;
     opacity: 0;
     pointer-events: none;
+}
+@media(max-width: 1024px){
+    .social__menu.lateral__menu li {
+        margin: 40px 0;
+        right: 10px;
+        opacity: 1;
+    }
 }

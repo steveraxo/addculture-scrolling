@@ -173,6 +173,9 @@
         margin: 0px 0 5px;
         height: 40px;
     }
+    .form__input.relation-with-agency br{
+        display: none;
+    }
     .form__input {
         width: 100%;
     }

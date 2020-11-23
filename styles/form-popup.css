@@ -18,7 +18,6 @@
     cursor: pointer;
 }
 .form__fields{
-    height: 300px;
     overflow-y: scroll;
 }
 #agency__form{
@@ -29,7 +28,7 @@
     border-bottom: solid 1px black;
     width: 100%;
     height: 50px;
-    margin: 5px 0 15px;
+    margin: 0px 0 15px;
     background: transparent;
     font-family: ITC Avant Garde Pro Md;
     color: #222220;
@@ -43,7 +42,7 @@
  1px solid;
 }
 .submit__form{
-    margin-top: 60px;
+    margin-top: 20px;
 }
 .form__input.error__input:after{
     content: "";
@@ -97,6 +96,7 @@
 #form__wrapper{
     opacity: 1;
     transition: opacity ease-in-out 0.4s;
+    background: #00000094;
 }
 #form__wrapper.close__form__state{
     opacity: 0;
@@ -104,7 +104,7 @@
 }
 .form__popup{
     background: #F4F4F4    ;
-    padding: 60px;
+    padding: 20px 60px;
     max-width: 700px;
     width: 100%;
     position: relative;
@@ -124,7 +124,7 @@
 }
 .form__input label{
     margin-top: 0px;
-    top: 9px;
+    top: 3px;
     position: relative;
     font-size: 10px;
 }
@@ -154,7 +154,6 @@
         width: 90%;
     }
     .form__fields {
-        height: 250px;
     }
     #form__wrapper .close__form {
         top: 10px;

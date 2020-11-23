@@ -3,23 +3,15 @@ import AddLogo from "../../public/images/logo/logo_add culture.svg"
 
 export default class LoadingScreen extends Component {
     componentDidMount(){
-        document.onreadystatechange = function() { 
-            if (document.readyState !== "complete") { 
-                document.querySelector( 
-                  "body").style.visibility = "hidden"; 
+        document.addEventListener("DOMContentLoaded", function(event) {
+            document.querySelector( 
+                "#add__loading").style.display = "none"; 
 
-                document.querySelector( 
-                  "#add__loading").style.visibility = "visible"; 
+            document.querySelector( 
+                "body").style.visibility = "visible"; 
 
-            } else { 
-
-                document.querySelector( 
-                  "#add__loading").style.display = "none"; 
-
-                document.querySelector( 
-                  "body").style.visibility = "visible"; 
-            } 
-        }; 
+        });
+        
     }
     render() {
         return (

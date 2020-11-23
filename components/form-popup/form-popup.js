@@ -144,6 +144,10 @@ export default class FormPopup extends Component {
             var agencyRelation = document.getElementById("relation-with-agency").value; 
             var agencyRelationOther = document.getElementById("relation-with-agency-other").value;
 
+            if(agencyRelationOther === ""){
+                agencyRelationOther = "No data available";
+            }
+
             let formData = new FormData()
 
             formData.set("your-name", personName);
@@ -159,7 +163,11 @@ export default class FormPopup extends Component {
 
             // Add Lead to SharpSpring
             var xhr = new XMLHttpRequest()
-            xhr.open('POST', `https://app-3QNNS064W6.marketingautomation.services/webforms/receivePostback/MzawMLEwMbSwBAA/004d44cf-2e67-44e8-b17a-e5e61fef4782/jsonp/?personName=${personName}&agencyName=${agencyName}&agencyRelation=${agencyRelation}&agencyRelationOther=${agencyRelationOther}&agencyWebsite=${agencyLink}&minorityGroup=${minorityGroupData}&additionalLink=${minorityGroupData}`);
+            
+            xhr.open('POST', `<script type="text/javascript">
+            var __ss_noform = __ss_noform || [];
+            __ss_noform.push(['baseURI', 'https://app-3QNMLPDA8K.marketingautomation.services/webforms/receivePostback/MzawMLEwMjQ0AgA/b3d3bb48-1c72-4f8d-8fa6-aafbb3f126ab/jsonp/?personName=${personName}&agencyName=${agencyName}&agencyRelation=${agencyRelation}&agencyRelationOther=${agencyRelationOther}&agencyWebsite=${agencyLink}&minorityGroup=${minorityGroupData}&additionalLink=${minorityGroupData}`);
+            
             xhr.send()
 
             // Add lead to wordpress

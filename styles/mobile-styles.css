@@ -244,7 +244,7 @@
 
 #how-its-done.mobile__slide{
     background: #222220;
-    height: 100vh;
+    height: 50vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -274,7 +274,7 @@
 
 #its-time.mobile__slide{
     background: #222220;
-    height: 100vh;
+    height: 50vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -414,19 +414,38 @@
     }
 }
 @media(max-width: 600px){
-    #charts__one h2 {
-        font-size: 30px;
+    #charts__one.chart__ones__second .chart__image {
+        width: 70%;
+        margin: 0px auto 20px;
     }
-    #charts__one .container{
-        padding: 50px 30px;
+    .chart__title h2 span{
+        color: #FFC6C6;
+    }
+    .chart__wrapper .chart__image{
+        order: 1;
+    }
+    .chart__title{
+        order: 3;
+        margin-top: 50px;
+    }
+    .chart__wrapper .chart__image__legend{
+        order: 2;
+        width: 80%;
+    }
+    
+    #charts__one h2 {
+        font-size: 25px;
+    }
+    #charts__one .container {
+        padding: 0px 30px;
     }
     .carousel__info__slide{
         padding: 0 0px;
     }
     #carousel-info{
         background: #222220;
-        min-height: 100vh;
-        padding: 50px 20px;
+        min-height: auto;
+        padding: 110px 20px;
     }
     #carousel-info .small__title{
         color: white;
@@ -476,17 +495,66 @@
     #charts__one .chart__controller p:nth-child(1), #charts__one .chart__controller p:nth-child(2) {
         margin-right: 25px;
     }
+    .chart__ones__first .chart__title{
+        order: 0;
+    }
+    #charts__one .chart__controller {
+        margin-bottom: 30px;
+    }
+    #charts__one {
+        min-height: auto;
+        padding: 70px 0px;
+    }
 }
 
 @media (max-width: 1024px) and (orientation: landscape) {
+    #charts__one.chart__ones__second .chart__image {
+        width: 200px;
+        margin: 20px auto 0px;
+    }
+
+    #charts__one .chart__image__legend {
+        width: 200px;
+    }
+    .chart__title h2 span{
+        color: #FFC6C6;
+    }
+    .failing__title {
+        display: flex;
+        flex-direction: wrap;
+    }
+    .failing__title h2{
+        margin-right: 10px!important;
+    }
+
+    .chart__wrapper .chart__image{
+        order: 1;
+    }
+    .chart__title {
+        order: 3;
+        margin-top: 50px;
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .chart__wrapper .chart__image__legend{
+        order: 2;
+        width: 80%;
+    }
     #charts__one h2 {
         margin: 0;
-        font-size: 30px;
+        font-size: 20px;
+        margin-right: 5px;
     }
     #are-failing.mobile__slide h2 {
         font-size: 5vw;
         position: relative;
         top: 15px;
+    }
+    .chart__title h2 span{
+        color: #FFC6C6;
+    }
+    #charts__one .chart__controller {
+        margin-bottom: 30px;
     }
     #to-diversify.mobile__slide h2{
         font-size: 5vw;
@@ -507,7 +575,10 @@
         padding: 100px 0;
     }
     #is-white.mobile__slide .col-lg-12 img , #is-male.mobile__slide .col-lg-12 img{
-        width: 50%;
+        width: 200px;
+    }
+    #is-white.mobile__slide h2 {
+        font-size: 20px;
     }
     #carousel-info .slide__three .white__text, #carousel-info .slide__three .gray__text {
         font-size: 15px;
@@ -525,6 +596,20 @@
     }
     #we-appropiate.mobile__slide h2 {
         font-size: 5vw;
+    }
+    .chart__ones__first .chart__title{
+        order: 0;
+        margin-top: 30px;
+    }
+    #charts__one.chart__ones__first .chart__controller {
+        margin-bottom: 0px;
+    }
+    #charts__one .chart__image {
+        width: 300px;
+        margin: 40px auto 0;
+    }
+    #how-its-done.mobile__slide, #its-time.mobile__slide{
+        height: 100vh;
     }
     #we-appropiate .second__line img{
         max-width: 300px;

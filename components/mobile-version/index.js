@@ -64,6 +64,7 @@ export default class MobileIndex extends Component {
                     <div className="container">
                         <div className="row">
                             <div className="col-lg-12">
+                                
                                 <h2 className="avant uppercase white__text" data-aos="fade-right" data-aos-delay="100" data-aos-duration="1000">
                                     ADVERTISING
                                 </h2>
@@ -133,12 +134,14 @@ export default class MobileIndex extends Component {
                     <div className="container">
                         <div className="row">
                             <div className="col-lg-12">
-                                <h2 className="avant uppercase white__text" data-aos="fade-right" data-aos-delay="100" data-aos-duration="1000">
-                                    Advertising
-                                </h2>
-                                <h2 className="avant uppercase white__text" data-aos="fade-right" data-aos-delay="200" data-aos-duration="1000">
-                                    Is White
-                                </h2>
+                                <div className="failing__title">
+                                    <h2 className="avant uppercase white__text" data-aos="fade-right" data-aos-delay="100" data-aos-duration="1000">
+                                        Advertising
+                                    </h2>
+                                    <h2 className="avant uppercase white__text" data-aos="fade-right" data-aos-delay="200" data-aos-duration="1000">
+                                        Is White
+                                    </h2>
+                                </div>
                                 <img src="/images/firstData.svg" alt="93.8% of the people in executive positions in the top 50 agencies are white" data-aos="fade-up" data-aos-delay="300" data-aos-duration="1000"/>
                             </div>
                         </div>
@@ -153,21 +156,23 @@ export default class MobileIndex extends Component {
                                 <p id="chart__two" className="chart__controller__element avant uppercase" onClick={this.switchChart} data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000">CMO</p>
                             </div>
                             <div className="chart__one__element chart__wrapper avant uppercase active" data-aos="fade-right" data-aos-delay="300" data-aos-duration="1000">
-                                <h2 data-aos="fade-right" data-aos-delay="100" data-aos-duration="1000">LACK OF</h2>
-                                <h2 data-aos="fade-right" data-aos-delay="150" data-aos-duration="1000">DIVERSITY IN </h2>
-                                <h2 data-aos="fade-right" data-aos-delay="200" data-aos-duration="1000">THE U.S.A</h2>
-                                <h2 data-aos="fade-right" data-aos-delay="250" data-aos-duration="1000">MARKETING </h2>
-                                <h2 data-aos="fade-right" data-aos-delay="300" data-aos-duration="1000">& ADVERTISING</h2>
-
+                                <div className="chart__title">
+                                    <h2 data-aos="fade-right" data-aos-delay="100" data-aos-duration="1000">LACK OF</h2>
+                                    <h2 data-aos="fade-right" data-aos-delay="150" data-aos-duration="1000">DIVERSITY IN </h2>
+                                    <h2 data-aos="fade-right" data-aos-delay="200" data-aos-duration="1000">THE U.S</h2>
+                                    <h2 data-aos="fade-right" data-aos-delay="250" data-aos-duration="1000">MARKETING </h2>
+                                    <h2 data-aos="fade-right" data-aos-delay="300" data-aos-duration="1000">& ADVERTISING</h2>
+                                </div>
                                 <img className="chart__image" data-aos="fade-up" data-aos-delay="400" data-aos-duration="1000" src="/images/chart__one__graphic.svg" alt="Lack of diversity chart" />
                                 <img className="chart__image__legend" data-aos="fade-up" data-aos-delay="500" data-aos-duration="1000" src="/images/chart__one__legend.svg" alt="Lack of diversity Legend"/>
                             </div>
 
                             <div className="chart__two__element chart__wrapper avant uppercase " data-aos="fade-up" data-aos-delay="100" data-aos-duration="1000">
-                                <h2 data-aos="fade-right" data-aos-delay="100" data-aos-duration="1000">CMO  </h2>
-                                <h2 data-aos="fade-right" data-aos-delay="150" data-aos-duration="1000">Diversitty</h2>
-                                <h2 data-aos="fade-right" data-aos-delay="200" data-aos-duration="1000">in the U.S.A</h2>
-        
+                                <div className="chart__title">
+                                    <h2 data-aos="fade-right" data-aos-delay="100" data-aos-duration="1000">CMO  </h2>
+                                    <h2 data-aos="fade-right" data-aos-delay="150" data-aos-duration="1000">Diversity</h2>
+                                    <h2 data-aos="fade-right" data-aos-delay="200" data-aos-duration="1000">in the U.S</h2>
+                                </div>
 
                                 <img className="chart__image" src="/images/chart__two__graphic.svg" data-aos="fade-up" data-aos-delay="100" data-aos-duration="1000" alt="Lack of diversity chart" />
                                 <img className="chart__image__legend" src="/images/chart__two__legend.svg" data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000" alt="Lack of diversity Legend"/>
@@ -181,12 +186,14 @@ export default class MobileIndex extends Component {
                     <div className="container">
                         <div className="row">
                             <div className="col-lg-12">
-                                <h2 className="avant uppercase white__text" data-aos="fade-right" data-aos-delay="100" data-aos-duration="1000">
-                                    Advertising
-                                </h2>
-                                <h2 className="avant uppercase white__text" data-aos="fade-right" data-aos-delay="200" data-aos-duration="1000">
-                                    Is male
-                                </h2>
+                                <div className="failing__title">
+                                    <h2 className="avant uppercase white__text" data-aos="fade-right" data-aos-delay="100" data-aos-duration="1000">
+                                        Advertising
+                                    </h2>
+                                    <h2 className="avant uppercase white__text" data-aos="fade-right" data-aos-delay="200" data-aos-duration="1000">
+                                        Is male
+                                    </h2>
+                                </div>
                                 <img src="/images/secondData.svg" alt="93.8% of the people in executive positions in the top 50 agencies are white" data-aos="fade-up" data-aos-delay="300" data-aos-duration="1000"/>
                             </div>
                         </div>
@@ -198,7 +205,7 @@ export default class MobileIndex extends Component {
                         <div className="row">
                             <Slider {...settings}>
                                 <div className="carousel__info__slide slide__one uppercase">
-                                    <p className=" avant small__title ">Agency</p>
+                                    {/* <p className=" avant small__title ">Agency</p> */}
                                     <h2 className="avant rose__text ">When your</h2>
                                     <h2 className="avant rose__text ">agency</h2>
                                     <h2 className="avant rose__text ">partner</h2>
@@ -208,9 +215,9 @@ export default class MobileIndex extends Component {
                                 </div>
 
                                 <div className="carousel__info__slide slide__two uppercase">
-                                    <p className="avant small__title ">Audience</p>
+                                    {/* <p className="avant small__title ">Audience</p> */}
                                     <h2 className="avant rose__text">How can</h2>
-                                    <h2 className="avant rose__text">your really</h2>
+                                    <h2 className="avant rose__text">you really</h2>
                                     <h2 className="avant rose__text">speak to</h2>
                                     <h2 className="avant white__text">a diverse</h2>
                                     <h2 className="avant white__text">audience?</h2>
@@ -218,7 +225,7 @@ export default class MobileIndex extends Component {
                                 </div>
 
                                 <div className="carousel__info__slide slide__three uppercase">
-                                    <p className="avant small__title ">Audience</p>
+                                    {/* <p className="avant small__title ">Audience</p> */}
                                     <h2 className="avant ">Di</h2>
                                     <h2 className="avant ">ver</h2>
                                     <h2 className="avant colored">si</h2>
@@ -239,34 +246,38 @@ export default class MobileIndex extends Component {
                     <div className="container">
                         <div className="row">
                             <div className="chart__controller">
-                                <p id="chart__three" className="chart__controller__element avant uppercase active" onClick={this.switchChartSecond} data-aos="fade-up" data-aos-delay="100" data-aos-duration="1000">rESPONSABILITY</p>
+                                <p id="chart__three" className="chart__controller__element avant uppercase active" onClick={this.switchChartSecond} data-aos="fade-up" data-aos-delay="100" data-aos-duration="1000">rESPONSiBILITY</p>
                                 <p id="chart__four" className="chart__controller__element avant uppercase" onClick={this.switchChartSecond} data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000">oWNERSHIP</p>
                                 <p id="chart__five" className="chart__controller__element avant uppercase" onClick={this.switchChartSecond} data-aos="fade-up" data-aos-delay="300" data-aos-duration="1000">EXPECTATION</p>
                             </div>
                             <div className="chart__three__element chart__wrapper avant uppercase active">
-                                <h2 data-aos="fade-right" data-aos-delay="100" data-aos-duration="1000">American</h2>
-                                <h2 data-aos="fade-right" data-aos-delay="150" data-aos-duration="1000">consumers </h2>
-                                <h2 data-aos="fade-right" data-aos-delay="200" data-aos-duration="1000">overwhelmingly</h2>
-                                <h2 data-aos="fade-right" data-aos-delay="250" data-aos-duration="1000">support </h2>
-                                <h2 data-aos="fade-right" data-aos-delay="300" data-aos-duration="1000">correcting</h2>
-                                <h2 data-aos="fade-right" data-aos-delay="350" data-aos-duration="1000">the racial &</h2>
-                                <h2 data-aos="fade-right" data-aos-delay="400" data-aos-duration="1000">social inequities</h2>
-                                <h2 data-aos="fade-right" data-aos-delay="450" data-aos-duration="1000">in business</h2>
-                                <h2 data-aos="fade-right" data-aos-delay="500" data-aos-duration="1000">practices.</h2> 
+                                <div className="chart__title">
+                                    <h2 data-aos="fade-right" data-aos-delay="100" data-aos-duration="1000">American</h2>
+                                    <h2 data-aos="fade-right" data-aos-delay="150" data-aos-duration="1000">consumers </h2>
+                                    <h2 data-aos="fade-right" data-aos-delay="200" data-aos-duration="1000"><span>overwhelmingly</span></h2>
+                                    <h2 data-aos="fade-right" data-aos-delay="250" data-aos-duration="1000">support </h2>
+                                    <h2 data-aos="fade-right" data-aos-delay="300" data-aos-duration="1000">correcting</h2>
+                                    <h2 data-aos="fade-right" data-aos-delay="350" data-aos-duration="1000">the <span>racial</span> &</h2>
+                                    <h2 data-aos="fade-right" data-aos-delay="400" data-aos-duration="1000"><span>social</span> inequities</h2>
+                                    <h2 data-aos="fade-right" data-aos-delay="450" data-aos-duration="1000">in business</h2>
+                                    <h2 data-aos="fade-right" data-aos-delay="500" data-aos-duration="1000">practices.</h2> 
+                                </div>
                                 <img className="chart__image" src="/images/chart__three__graphic.svg" data-aos="fade-up" data-aos-delay="300" data-aos-duration="1000" alt="Lack of diversity chart" />
                                 <img className="chart__image__legend" src="/images/chart__three__legend.svg" data-aos="fade-up" data-aos-delay="400" data-aos-duration="1000" alt="Lack of diversity Legend"/>
                             </div>
 
                             <div className="chart__four__element chart__wrapper avant uppercase ">
-                                <h2>American</h2>
-                                <h2>consumers </h2>
-                                <h2>overwhelmingly</h2>
-                                <h2>support </h2>
-                                <h2>correcting</h2>
-                                <h2>the racial &</h2>
-                                <h2>social inequities</h2>
-                                <h2>in business</h2>
-                                <h2>practices.</h2> 
+                                <div className="chart__title">
+                                    <h2>American</h2>
+                                    <h2>consumers </h2>
+                                    <h2><span>overwhelmingly</span></h2>
+                                    <h2>support </h2>
+                                    <h2>correcting</h2>
+                                    <h2>the <span>racial</span> &</h2>
+                                    <h2><span>social</span> inequities</h2>
+                                    <h2>in business</h2>
+                                    <h2>practices.</h2> 
+                                </div>
         
 
                                 <img className="chart__image" src="/images/chart__four__graphic.svg" alt="Lack of diversity chart" />
@@ -274,15 +285,17 @@ export default class MobileIndex extends Component {
                             </div>
 
                             <div className="chart__five__element chart__wrapper avant uppercase ">
-                                <h2>American</h2>
-                                <h2>consumers </h2>
-                                <h2>overwhelmingly</h2>
-                                <h2>support </h2>
-                                <h2>correcting</h2>
-                                <h2>the racial &</h2>
-                                <h2>social inequities</h2>
-                                <h2>in business</h2>
-                                <h2>practices.</h2> 
+                                <div className="chart__title">
+                                    <h2>American</h2>
+                                    <h2>consumers </h2>
+                                    <h2><span>overwhelmingly</span></h2>
+                                    <h2>support </h2>
+                                    <h2>correcting</h2>
+                                    <h2>the <span>racial</span> &</h2>
+                                    <h2><span>social</span> inequities</h2>
+                                    <h2>in business</h2>
+                                    <h2>practices.</h2> 
+                                </div>
         
 
                                 <img className="chart__image" src="/images/chart__five__graphic.svg" alt="Lack of diversity chart" />
@@ -328,7 +341,7 @@ export default class MobileIndex extends Component {
                                     We
                                 </h2>
                                 <h2 className="avant uppercase black__text second__line" data-aos="fade-right" data-aos-delay="200" data-aos-duration="1000">
-                                    appropiate
+                                    Appropriate
 
                                     <img src="/images/drawedLine.svg" alt=""/>
                                 </h2>

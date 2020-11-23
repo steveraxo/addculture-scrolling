@@ -42,7 +42,7 @@ export default class SlideOne extends Component {
                 duration: 3000 }).setTween(tl).setPin("#lottie-full").addTo(controller);
             })
 
-        }, 1000)
+        }, 10)
     }
     
     render() {

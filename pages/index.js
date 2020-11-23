@@ -12,7 +12,12 @@ export default function Home() {
   const [isMobile, SetIsMobile] = useState(false)
 
   function init(){
-    new SmoothScroll(document,20,20)
+    if(window.innerWidth > 1900){
+      new SmoothScroll(document,10,40)
+    }else{
+      new SmoothScroll(document,20,20)
+    }
+    
   }
 
   function SmoothScroll(target, speed, smooth) {

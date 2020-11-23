@@ -19,7 +19,7 @@ export default class SlideOne extends Component {
             var customSettings = {}; 
 
             if(window.innerWidth > 1900){
-                customSettings.offset = 500;
+                customSettings.offset = 600;
             }else{
                 customSettings.offset = 350;
             }

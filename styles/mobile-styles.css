@@ -309,7 +309,7 @@
         min-height: 100vh;
     }
     #charts__one .container{
-        padding: 50px 20px;
+        padding: 50px 60px;
     }
     #charts__one .chart__controller{
         display: flex;
@@ -417,6 +417,9 @@
     #charts__one h2 {
         font-size: 30px;
     }
+    #charts__one .container{
+        padding: 50px 30px;
+    }
     .carousel__info__slide{
         padding: 0 0px;
     }
@@ -476,7 +479,10 @@
 }
 
 @media (max-width: 1024px) and (orientation: landscape) {
-
+    #charts__one h2 {
+        margin: 0;
+        font-size: 30px;
+    }
     #are-failing.mobile__slide h2 {
         font-size: 5vw;
         position: relative;

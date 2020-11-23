@@ -9,7 +9,9 @@ import "slick-carousel/slick/slick-theme.css";
 export default class MobileIndex extends Component {
     
     componentDidMount(){
-        AOS.init();
+        AOS.init({
+            once: true,
+        });
     }
 
     switchChart(event){
@@ -24,7 +26,7 @@ export default class MobileIndex extends Component {
         Array.from(document.querySelectorAll(".chart__ones__first .chart__wrapper")).map((element, index) => {
             element.classList.remove("active"); 
         })
-        console.log(chartId);
+        
         document.querySelectorAll(`.chart__ones__first .${chartId}__element`)[0].classList.add("active");
         
     }

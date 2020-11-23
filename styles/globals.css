@@ -99,6 +99,11 @@ html {
   -ms-overflow-style: none;  /* IE and Edge */
   scrollbar-width: none;  /* Firefox */
 }
+@media(max-width: 1024px){
+  html, body{
+    overflow-x: hidden;
+  }
+}
 @import "fonts.css"; /* Font Files */
 @import "cursor.css"; /* Cursor Files */
 @import "navbar.css"; /* navbar files */

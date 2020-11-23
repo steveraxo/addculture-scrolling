@@ -86,6 +86,15 @@
     align-items: center;
     z-index: 99;
 }
+.form__response{
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+    font-size: 10px;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #FFC6C6;
+}
 #form__wrapper .close__form{
 
     position: absolute;
@@ -153,7 +162,22 @@
         padding: 25px;
         width: 90%;
     }
+    .form__response {
+        position: relative;
+
+        text-align: center;
+    }
     .form__fields {
+    }
+    .form__input input, .form__input select {
+        margin: 0px 0 5px;
+        height: 40px;
+    }
+    .form__input {
+        width: 100%;
+    }
+    .form__popup label{
+        display: none;
     }
     #form__wrapper .close__form {
         top: 10px;

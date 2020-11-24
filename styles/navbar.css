@@ -118,7 +118,7 @@
     box-sizing: border-box;
     border-radius: 40px;
     padding: 0px 5px;
-    width: 290px!important;
+    width: 200px!important;
     display: flex;
     justify-content: center;
     position: relative;
@@ -169,6 +169,7 @@
     font-weight: 300;
     text-transform: uppercase;
     margin-left: -5px;
+    font-size: 13px;
 }
 .helvetica{
     font-family: "HelveticaNeue";

@@ -89,6 +89,19 @@ export default function Home() {
       SetIsMobile(true);
     }
     
+    var scrollCounter = 0; 
+    document.addEventListener("scroll", function(event){
+      scrollCounter++; 
+
+      if(scrollCounter > 20){
+        event.preventDefault();
+
+        setTimeout(function(){
+          scrollCounter = 0;
+        }, 2000)
+      }
+    })
+
   });
 
 

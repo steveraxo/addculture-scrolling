@@ -13,16 +13,6 @@ export default class SlideOne extends Component {
         }, animScroll, tl;
           
         var animScroll = bodymovin.loadAnimation(animData)
-          
-        var customSettings = {}; 
-
-        if(window.innerWidth > 2500){
-            customSettings.offset = 1000;
-        }else if(window.innerWidth > 1900 & window.innerWidth < 2500){
-            customSettings.offset = 500;
-        }else{
-            customSettings.offset = 350;
-        }
 
         animScroll.addEventListener('DOMLoaded', function () {
             tl = new TimelineMax({repeat: 0})

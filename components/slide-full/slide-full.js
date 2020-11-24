@@ -39,7 +39,7 @@ export default class SlideOne extends Component {
         var scene = new ScrollMagic.Scene({
             triggerHook: 0,
             triggerElement: ".env-full",
-            duration: 20000 }).setTween(tl).setPin("#lottie-full").addTo(controller);
+            duration: 24000 }).setTween(tl).setPin("#lottie-full").addTo(controller);
         })
     }
     

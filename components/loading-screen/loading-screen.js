@@ -15,7 +15,7 @@ export default class LoadingScreen extends Component {
             } else { 
                 setTimeout(function(){
                     document.querySelector( 
-                      "#add__loading").style.display = "none"; 
+                      "#add__loading").classList.add("loading__out");
     
                     document.querySelector( 
                       "body").style.visibility = "visible"; 

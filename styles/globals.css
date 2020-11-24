@@ -5,7 +5,7 @@ body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-
+  background: #222220;
 }
 * {
   cursor: none;
@@ -61,6 +61,16 @@ a {
   width: 100%;
   height: 100%;
   z-index: 999;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  transition: all ease-in-out 0.5s;
+}
+#add__loading.loading__out{
+  height: 0%;
+  opacity: 0;
+  pointer-events: none;
 }
 #add__loading img{
   width: 300px;

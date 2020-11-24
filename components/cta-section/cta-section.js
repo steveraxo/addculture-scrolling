@@ -16,7 +16,9 @@ export default function SlideFifteen() {
     }
 
     useEffect(() => {
-        setIsLoaded(true);
+        setTimeout(function(){
+            setIsLoaded(true);
+        }, 1000)
 
         window.addEventListener("scroll", function(){
             var element =  document.getElementById('we-amplify-the-voices');

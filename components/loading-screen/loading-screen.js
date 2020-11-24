@@ -13,12 +13,13 @@ export default class LoadingScreen extends Component {
                   "#add__loading").style.visibility = "visible"; 
 
             } else { 
-                document.querySelector( 
-                    "#add__loading").classList.add("loading__out");
-
-                document.querySelector( 
-                    "body").style.visibility = "visible"; 
-         
+                setTimeout(function(){
+                    document.querySelector( 
+                      "#add__loading").classList.add("loading__out");
+    
+                    document.querySelector( 
+                      "body").style.visibility = "visible"; 
+                }, 1000)
             } 
         }; 
     }

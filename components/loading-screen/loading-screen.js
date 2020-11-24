@@ -27,8 +27,7 @@ export default class LoadingScreen extends Component {
     render() {
         return (
             <div id="add__loading">
-                {/* <AddLogo className="add__loading__logo" alt="Add Culture Logo" /> */}
-                <img src="/images/loading_spinner.gif" alt="Add culture loading spinner"/>
+                <img src="/images/loading_spinner.gif" alt="Add culture loading spinner" loading="lazy"/>
             </div>
         )
     }

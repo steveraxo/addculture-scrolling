@@ -10,7 +10,6 @@ export default function Home() {
 
   function init(){
     new SmoothScroll(document,10,30)
-    
   }
 
   function SmoothScroll(target, speed, smooth) {
@@ -28,7 +27,7 @@ export default function Home() {
                 : target // safari is the new IE
 
     target.addEventListener('mousewheel', scrolled, { passive: false })
-    target.addEventListener('DOMMouseScroll', scrolled, { passive: false })
+    //target.addEventListener('DOMMouseScroll', scrolled, { passive: false })
 
     function scrolled(e) {
       e.preventDefault(); // disable default scrolling
@@ -78,6 +77,7 @@ export default function Home() {
     }()
   }
   
+
   useEffect(() => {
     // if(window.screen.width > 1024){
     //   init();

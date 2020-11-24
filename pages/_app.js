@@ -5,7 +5,7 @@ import '../styles/globals.css'
 
 function MyApp({ Component, pageProps }) {
   return (
-      <>
+      <div id="scroll__container">
       <Head>
           <title>Add Culture + </title>
           <meta name="viewport" content="width=device-width"></meta>
@@ -38,7 +38,9 @@ function MyApp({ Component, pageProps }) {
 
       <Header />
       <Component {...pageProps} />
-      </>
+
+      </div>
+
   )
 }
 

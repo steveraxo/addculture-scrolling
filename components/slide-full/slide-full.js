@@ -16,7 +16,7 @@ export default class SlideOne extends Component {
 
         animScroll.addEventListener('DOMLoaded', function () {
             tl = new TimelineMax({repeat: 0})
-            tl.to({frame: 0}, 1, {
+            tl.to({frame: 0}, 2, {
               frame: animScroll.totalFrames-1,
               onUpdate: function() {
                 animScroll.goToAndStop(Math.round(this.target.frame), true)
@@ -29,7 +29,7 @@ export default class SlideOne extends Component {
         var scene = new ScrollMagic.Scene({
             triggerHook: 0,
             triggerElement: ".env-full",
-            duration: 80000 }).setTween(tl).setPin("#lottie-full").addTo(controller);
+            duration: 150000 }).setTween(tl).setPin("#lottie-full").addTo(controller);
         })
     }
     

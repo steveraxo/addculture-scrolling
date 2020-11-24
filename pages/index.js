@@ -9,7 +9,7 @@ export default function Home() {
   const [isMobile, SetIsMobile] = useState(false)
 
   function init(){
-    new SmoothScroll(document,10,50)
+    new SmoothScroll(document,10,30)
     
   }
 
@@ -79,9 +79,9 @@ export default function Home() {
   }
   
   useEffect(() => {
-    if(window.screen.width > 1024){
-      init();
-    }
+    // if(window.screen.width > 1024){
+    //   init();
+    // }
     if(window.innerWidth < 1200){
       SetIsMobile(true);
     }

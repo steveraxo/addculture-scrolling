@@ -1,6 +1,8 @@
 import React, { useState, useEffect, Suspense, lazy } from 'react';
 import LoadingScreen from '../components/loading-screen/loading-screen'
 import SlideFull from '../components/slide-full/slide-full'
+import SlideVideo from '../components/slide-video/slide-video'
+
 import CTASection from '../components/cta-section/cta-section'
 import MobileVersion from "../components/mobile-version/index"
 
@@ -151,7 +153,7 @@ export default function Home() {
             </svg>
 
             </div>
-            <SlideFull />
+            <SlideVideo />
             <CTASection />
           </>
           : 

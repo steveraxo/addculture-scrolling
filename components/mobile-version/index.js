@@ -87,75 +87,11 @@ export default class MobileIndex extends Component {
                 <script
                     src="https://code.jquery.com/jquery-3.5.1.min.js"
                     integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
-                    crossorigin="anonymous">
+                    crossOrigin="anonymous">
                 </script>
-                <script>
-                    {`
-                        // Smooth scroll
-                        if ($('#scroll-container').length > 0) {
-                            var html = document.documentElement;
-                            var body = document.body;
-                            var scroller = {
-                            target: document.querySelector("#scroll-container"),
-                            ease: 0.09, // <= scroll speed
-                            endY: 0,
-                            y: 0,
-                            resizeRequest: 1,
-                            scrollRequest: 0,
-                            };
-                            var requestId = null;
-                            TweenLite.set(scroller.target, {
-                            rotation: 0.01,
-                            force3D: true
-                            });
-                            window.addEventListener("load", onLoad);
-                            function onLoad() {
-                            updateScroller();
-                            window.focus();
-                            window.addEventListener("resize", onResize);
-                            document.addEventListener("scroll", onScroll);
-                            }
-                            function updateScroller() {
-                            var resized = scroller.resizeRequest > 0;
-                            if (resized) {
-                                var height = scroller.target.clientHeight;
-                                body.style.height = height + "px";
-                                scroller.resizeRequest = 0;
-                            }
-                            var scrollY = window.page__bookYOffset || html.scrollTop || body.scrollTop || 0;
-                            scroller.endY = scrollY;
-                            scroller.y += (scrollY - scroller.y) * scroller.ease;
-                            if (Math.abs(scrollY - scroller.y) < 0.05 || resized) {
-                                scroller.y = scrollY;
-                                scroller.scrollRequest = 0;
-                            }
-                            TweenLite.set(scroller.target, {
-                                y: -scroller.y
-                            });
-                            requestId = scroller.scrollRequest > 0 ? requestAnimationFrame(updateScroller) : null;
-                            if($('#trending_title')){
-                                if($(window).scrollTop() + $(window).height() == $(document).height()) {
-                                    var height = scroller.target.clientHeight;
-                                    body.style.height = height + "px";
-                                    scroller.resizeRequest = 0;
-                                }
-                            }
-                            }
-                            function onScroll() {
-                            scroller.scrollRequest++;
-                            if (!requestId) {
-                                requestId = requestAnimationFrame(updateScroller);
-                            }
-                            }
-                            function onResize() {
-                            scroller.resizeRequest++;
-                            if (!requestId) {
-                                requestId = requestAnimationFrame(updateScroller);
-                            }
-                            }
-                        }
-                    `}
-                </script>
+                <script src="/aosSnap.js"></script>
+                <script src="/smooth-scroll.js"></script>
+
                 <section id="are-failing" className="mobile__slide">
                     <div className="floating__circle">
                         <img src="/images/plus.svg" data-aos="fade-left" data-aos-delay="100" data-aos-duration="1000"  alt=""/>
@@ -164,13 +100,13 @@ export default class MobileIndex extends Component {
                         <div className="row">
                             <div className="col-lg-12">
                                 
-                                <h2 className="avant uppercase white__text" data-aos="fade-up" data-aos-delay="100" data-aos-duration="1000">
+                                <h2 className=" aos avant uppercase white__text" data-aos="fade-up" data-aos-delay="100" data-aos-duration="1000">
                                     ADVERTISING
                                 </h2>
-                                <h2 className="avant uppercase white__text" data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000">
+                                <h2 className=" aos avant uppercase white__text" data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000">
                                     AGENCIES 
                                 </h2>
-                                <h2 className="avant uppercase rose__text" data-aos="fade-up" data-aos-delay="300" data-aos-duration="1000">
+                                <h2 className="aos avant uppercase rose__text" data-aos="fade-up" data-aos-delay="300" data-aos-duration="1000">
                                     ARE Failing
                                 </h2>
                             </div>
@@ -180,21 +116,21 @@ export default class MobileIndex extends Component {
 
                 <section id="to-diversify" className="mobile__slide">
                     <div className="floating__circle">
-                        <img src="/images/Ellipse32.svg" data-aos="fade-left" data-aos-delay="100" data-aos-duration="1000"  alt=""/>
+                        <img src="/images/Ellipse32.svg" className="aos" data-aos="fade-left" data-aos-delay="100" data-aos-duration="1000"  alt=""/>
                     </div>
                     <div className="container">
                         <div className="row">
                             <div className="col-lg-12">
-                                <h2 className="avant uppercase white__text" data-aos="fade-left" data-aos-delay="100" data-aos-duration="1000">
+                                <h2 className="avant uppercase white__text aos" data-aos="fade-left" data-aos-delay="100" data-aos-duration="1000">
                                     To
                                 </h2>
-                                <h2 className="avant uppercase white__text" data-aos="fade-left" data-aos-delay="200" data-aos-duration="1000">
+                                <h2 className="avant uppercase white__text aos" data-aos="fade-left" data-aos-delay="200" data-aos-duration="1000">
                                     Diversify 
                                 </h2>
-                                <h2 className="avant uppercase gray__text" data-aos="fade-left" data-aos-delay="400" data-aos-duration="1000">
+                                <h2 className="avant uppercase gray__text aos" data-aos="fade-left" data-aos-delay="400" data-aos-duration="1000">
                                     Their
                                 </h2>
-                                <h2 className="avant uppercase gray__text" data-aos="fade-left" data-aos-delay="500" data-aos-duration="1000">
+                                <h2 className="avant uppercase gray__text aos" data-aos="fade-left" data-aos-delay="500" data-aos-duration="1000">
                                     Team
                                 </h2>
                             </div>
@@ -206,22 +142,22 @@ export default class MobileIndex extends Component {
                     <div className="container">
                         <div className="row">
                             <div className="col-lg-12">
-                                <h2 className="avant uppercase black__text" data-aos="fade-left" data-aos-delay="100" data-aos-duration="1000">
+                                <h2 className="avant uppercase black__text aos" data-aos="fade-left" data-aos-delay="100" data-aos-duration="1000">
                                     To Open
                                 </h2>
-                                <h2 className="avant uppercase black__text" data-aos="fade-left" data-aos-delay="200" data-aos-duration="1000">
+                                <h2 className="avant uppercase black__text aos" data-aos="fade-left" data-aos-delay="200" data-aos-duration="1000">
                                     Their 
                                 </h2>
-                                <h2 className="avant uppercase black__text" data-aos="fade-left" data-aos-delay="400" data-aos-duration="1000">
+                                <h2 className="avant uppercase black__text aos" data-aos="fade-left" data-aos-delay="400" data-aos-duration="1000">
                                     Doors to
                                 </h2>
-                                <h2 className="avant uppercase black__text" data-aos="fade-left" data-aos-delay="500" data-aos-duration="1000">
+                                <h2 className="avant uppercase black__text aos" data-aos="fade-left" data-aos-delay="500" data-aos-duration="1000">
                                     Bipoc +
                                 </h2>
-                                <h2 className="avant uppercase black__text" data-aos="fade-left" data-aos-delay="500" data-aos-duration="1000">
+                                <h2 className="avant uppercase black__text aos" data-aos="fade-left" data-aos-delay="500" data-aos-duration="1000">
                                     Diverse
                                 </h2>
-                                <h2 className="avant uppercase black__text" data-aos="fade-left" data-aos-delay="500" data-aos-duration="1000">
+                                <h2 className="avant uppercase black__text aos" data-aos="fade-left" data-aos-delay="500" data-aos-duration="1000">
                                     Creators
                                 </h2>
                             </div>
@@ -234,14 +170,14 @@ export default class MobileIndex extends Component {
                         <div className="row">
                             <div className="col-lg-12">
                                 <div className="failing__title">
-                                    <h2 className="avant uppercase white__text" data-aos="fade-left" data-aos-delay="100" data-aos-duration="1000">
+                                    <h2 className="avant uppercase white__text aos" data-aos="fade-left" data-aos-delay="100" data-aos-duration="1000">
                                         Advertising
                                     </h2>
-                                    <h2 className="avant uppercase white__text" data-aos="fade-left" data-aos-delay="200" data-aos-duration="1000">
+                                    <h2 className="avant uppercase white__text aos" data-aos="fade-left" data-aos-delay="200" data-aos-duration="1000">
                                         Is White
                                     </h2>
                                 </div>
-                                <img src="/images/firstData.svg" alt="93.8% of the people in executive positions in the top 50 agencies are white" data-aos="fade-up" data-aos-delay="300" data-aos-duration="1000"/>
+                                <img src="/images/firstData.svg" alt="93.8% of the people in executive positions in the top 50 agencies are white" className="aos" data-aos="fade-up" data-aos-delay="300" data-aos-duration="1000"/>
                             </div>
                         </div>
                     </div>
@@ -252,8 +188,8 @@ export default class MobileIndex extends Component {
                         <div className="row">
                             <div className="col-12">
                                 <div className="chart__controller">
-                                    <p id="chart__one" className="chart__controller__element avant uppercase active" onClick={this.switchChart} data-aos="fade-up" data-aos-delay="100" data-aos-duration="1000">Marketing & Advertising</p>
-                                    <p id="chart__two" className="chart__controller__element avant uppercase" onClick={this.switchChart} data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000">CMO</p>
+                                    <p id="chart__one" className="chart__controller__element avant uppercase active aos" onClick={this.switchChart} data-aos="fade-up" data-aos-delay="100" data-aos-duration="1000">Marketing & Advertising</p>
+                                    <p id="chart__two" className="chart__controller__element avant uppercase aos" onClick={this.switchChart} data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000">CMO</p>
                                 </div>
                             </div>
 
@@ -261,18 +197,18 @@ export default class MobileIndex extends Component {
                                 <div className="col-sm-12 col-lg-6">
                                     <div className="  avant uppercase " >
                                         <div className="chart__title">
-                                            <h2 data-aos="fade-left" data-aos-delay="100" data-aos-duration="1000">LACK OF</h2>
-                                            <h2 data-aos="fade-left" data-aos-delay="150" data-aos-duration="1000">DIVERSITY IN </h2>
-                                            <h2 data-aos="fade-left" data-aos-delay="200" data-aos-duration="1000">THE U.S</h2>
-                                            <h2 data-aos="fade-left" data-aos-delay="250" data-aos-duration="1000">MARKETING </h2>
-                                            <h2 data-aos="fade-left" data-aos-delay="300" data-aos-duration="1000">& ADVERTISING</h2>
+                                            <h2 data-aos="fade-left" className="aos" data-aos-delay="100" data-aos-duration="1000">LACK OF</h2>
+                                            <h2 data-aos="fade-left" className="aos" data-aos-delay="150" data-aos-duration="1000">DIVERSITY IN </h2>
+                                            <h2 data-aos="fade-left" className="aos" data-aos-delay="200" data-aos-duration="1000">THE U.S</h2>
+                                            <h2 data-aos="fade-left" className="aos" data-aos-delay="250" data-aos-duration="1000">MARKETING </h2>
+                                            <h2 data-aos="fade-left" className="aos" data-aos-delay="300" data-aos-duration="1000">& ADVERTISING</h2>
                                         </div>
                                         
-                                        <img className="chart__image__legend" data-aos="fade-up" data-aos-delay="500" data-aos-duration="1000" src="/images/chart__one__legend.svg" alt="Lack of diversity Legend"/>
+                                        <img className="chart__image__legend aos" data-aos="fade-up" data-aos-delay="500" data-aos-duration="1000" src="/images/chart__one__legend.svg" alt="Lack of diversity Legend"/>
                                     </div>
                                 </div>
                                 <div className="col-sm-12 col-lg-6">
-                                    <img className="chart__image" data-aos="fade-up" data-aos-delay="400" data-aos-duration="1000" src="/images/chart__one__graphic.svg" alt="Lack of diversity chart" />
+                                    <img className="chart__image aos" data-aos="fade-up" data-aos-delay="400" data-aos-duration="1000" src="/images/chart__one__graphic.svg" alt="Lack of diversity chart" />
                                 </div>
                             </div>
 
@@ -280,18 +216,18 @@ export default class MobileIndex extends Component {
                                 <div className="col-sm-12 col-lg-6">
                                     <div className="  avant uppercase " data-aos="fade-up" data-aos-delay="100" data-aos-duration="1000">
                                         <div className="chart__title">
-                                            <h2 data-aos="fade-left" data-aos-delay="100" data-aos-duration="1000">CMO  </h2>
-                                            <h2 data-aos="fade-left" data-aos-delay="150" data-aos-duration="1000">Diversity</h2>
-                                            <h2 data-aos="fade-left" data-aos-delay="200" data-aos-duration="1000">in the U.S</h2>
+                                            <h2 data-aos="fade-left" className="aos" data-aos-delay="100" data-aos-duration="1000">CMO  </h2>
+                                            <h2 data-aos="fade-left" className="aos" data-aos-delay="150" data-aos-duration="1000">Diversity</h2>
+                                            <h2 data-aos="fade-left" className="aos" data-aos-delay="200" data-aos-duration="1000">in the U.S</h2>
                                         </div>
 
                                         
-                                        <img className="chart__image__legend" src="/images/chart__two__legend.svg" data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000" alt="Lack of diversity Legend"/>
+                                        <img className="chart__image__legend aos" src="/images/chart__two__legend.svg" data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000" alt="Lack of diversity Legend"/>
                                     </div>
                                 </div>
 
                                 <div className="col-sm-12 col-lg-6">
-                                    <img className="chart__image" src="/images/chart__two__graphic.svg" data-aos="fade-up" data-aos-delay="100" data-aos-duration="1000" alt="Lack of diversity chart" />
+                                    <img className="chart__image aos" src="/images/chart__two__graphic.svg" data-aos="fade-up" data-aos-delay="100" data-aos-duration="1000" alt="Lack of diversity chart" />
                                 </div>
                             </div>
                         </div>
@@ -303,14 +239,14 @@ export default class MobileIndex extends Component {
                         <div className="row">
                             <div className="col-lg-12">
                                 <div className="failing__title">
-                                    <h2 className="avant uppercase white__text" data-aos="fade-left" data-aos-delay="100" data-aos-duration="1000">
+                                    <h2 className="avant uppercase white__text aos" data-aos="fade-left" data-aos-delay="100" data-aos-duration="1000">
                                         Advertising
                                     </h2>
-                                    <h2 className="avant uppercase white__text" data-aos="fade-left" data-aos-delay="200" data-aos-duration="1000">
+                                    <h2 className="avant uppercase white__text aos" data-aos="fade-left" data-aos-delay="200" data-aos-duration="1000">
                                         Is male
                                     </h2>
                                 </div>
-                                <img src="/images/secondData.svg" alt="93.8% of the people in executive positions in the top 50 agencies are white" data-aos="fade-up" data-aos-delay="300" data-aos-duration="1000"/>
+                                <img src="/images/secondData.svg" className="aos" alt="93.8% of the people in executive positions in the top 50 agencies are white" data-aos="fade-up" data-aos-delay="300" data-aos-duration="1000"/>
                             </div>
                         </div>
                     </div>
@@ -368,30 +304,30 @@ export default class MobileIndex extends Component {
                         <div className="row">
                             <div className="col-lg-12">
                                 <div className="chart__controller">
-                                    <p id="chart__three" className="chart__controller__element avant uppercase active" onClick={this.switchChartSecond} data-aos="fade-up" data-aos-delay="100" data-aos-duration="1000">rESPONSiBILITY</p>
-                                    <p id="chart__four" className="chart__controller__element avant uppercase" onClick={this.switchChartSecond} data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000">oWNERSHIP</p>
-                                    <p id="chart__five" className="chart__controller__element avant uppercase" onClick={this.switchChartSecond} data-aos="fade-up" data-aos-delay="300" data-aos-duration="1000">EXPECTATION</p>
+                                    <p id="chart__three" className="chart__controller__element avant uppercase active aos" onClick={this.switchChartSecond} data-aos="fade-up" data-aos-delay="100" data-aos-duration="1000">rESPONSiBILITY</p>
+                                    <p id="chart__four" className="chart__controller__element avant uppercase aos" onClick={this.switchChartSecond} data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000">oWNERSHIP</p>
+                                    <p id="chart__five" className="chart__controller__element avant uppercase aos" onClick={this.switchChartSecond} data-aos="fade-up" data-aos-delay="300" data-aos-duration="1000">EXPECTATION</p>
                                 </div>
                             </div>
                             <div className="chart__three__element chart__wrapper avant uppercase active col-lg-12">
                                 <div className="chart__title col-sm-12 col-lg-3">
-                                    <h2 data-aos="fade-left" data-aos-delay="100" data-aos-duration="1000">American</h2>
-                                    <h2 data-aos="fade-left" data-aos-delay="150" data-aos-duration="1000">consumers </h2>
-                                    <h2 data-aos="fade-left" data-aos-delay="200" data-aos-duration="1000"><span>overwhelmingly</span></h2>
-                                    <h2 data-aos="fade-left" data-aos-delay="250" data-aos-duration="1000">support </h2>
-                                    <h2 data-aos="fade-left" data-aos-delay="300" data-aos-duration="1000">correcting</h2>
-                                    <h2 data-aos="fade-left" data-aos-delay="350" data-aos-duration="1000">the <span>racial</span> &</h2>
-                                    <h2 data-aos="fade-left" data-aos-delay="400" data-aos-duration="1000"><span>social</span> inequities</h2>
-                                    <h2 data-aos="fade-left" data-aos-delay="450" data-aos-duration="1000">in business</h2>
-                                    <h2 data-aos="fade-left" data-aos-delay="500" data-aos-duration="1000">practices.</h2> 
+                                    <h2 data-aos="fade-left" className="aos" data-aos-delay="100" data-aos-duration="1000">American</h2>
+                                    <h2 data-aos="fade-left" className="aos" data-aos-delay="150" data-aos-duration="1000">consumers </h2>
+                                    <h2 data-aos="fade-left" className="aos" data-aos-delay="200" data-aos-duration="1000"><span>overwhelmingly</span></h2>
+                                    <h2 data-aos="fade-left" className="aos" data-aos-delay="250" data-aos-duration="1000">support </h2>
+                                    <h2 data-aos="fade-left" className="aos" data-aos-delay="300" data-aos-duration="1000">correcting</h2>
+                                    <h2 data-aos="fade-left" className="aos" data-aos-delay="350" data-aos-duration="1000">the <span>racial</span> &</h2>
+                                    <h2 data-aos="fade-left" className="aos" data-aos-delay="400" data-aos-duration="1000"><span>social</span> inequities</h2>
+                                    <h2 data-aos="fade-left" className="aos" data-aos-delay="450" data-aos-duration="1000">in business</h2>
+                                    <h2 data-aos="fade-left" className="aos" data-aos-delay="500" data-aos-duration="1000">practices.</h2> 
                                 </div>
 
                                 <div className="chart__title__image col-sm-12 col-lg-5">
-                                    <img className="chart__image" src="/images/chart__three__graphic.svg" data-aos="fade-up" data-aos-delay="300" data-aos-duration="1000" alt="Lack of diversity chart" />
+                                    <img className="chart__image aos" src="/images/chart__three__graphic.svg" data-aos="fade-up" data-aos-delay="300" data-aos-duration="1000" alt="Lack of diversity chart" />
                                 </div>
 
                                 <div className="chart__title__legend col-sm-12 col-lg-3">
-                                    <img className="chart__image__legend" src="/images/chart__three__legend.svg" data-aos="fade-left" data-aos-delay="400" data-aos-duration="1000" alt="Lack of diversity Legend"/>
+                                    <img className="chart__image__legend aos" src="/images/chart__three__legend.svg" data-aos="fade-left" data-aos-delay="400" data-aos-duration="1000" alt="Lack of diversity Legend"/>
                                 </div>
 
                             </div>
@@ -410,7 +346,7 @@ export default class MobileIndex extends Component {
                                 </div>
 
                                 <div className="chart__title__image col-sm-12 col-lg-5">
-                                    <img className="chart__image" src="/images/chart__four__graphic.svg" alt="Lack of diversity chart" />
+                                    <img className="chart__image aos" src="/images/chart__four__graphic.svg" alt="Lack of diversity chart" />
                                 </div>
 
                                 <div className="chart__title__legend col-sm-12 col-lg-3">
@@ -432,7 +368,7 @@ export default class MobileIndex extends Component {
                                 </div>
         
                                 <div className="chart__title__image col-sm-12 col-lg-5">
-                                    <img className="chart__image" src="/images/chart__five__graphic.svg" alt="Lack of diversity chart" />
+                                    <img className="chart__image aos" src="/images/chart__five__graphic.svg" alt="Lack of diversity chart" />
                                 </div>
 
                                 <div className="chart__title__legend col-sm-12 col-lg-3">
@@ -448,21 +384,21 @@ export default class MobileIndex extends Component {
 
                 <section id="create-culture" className="mobile__slide">
                     <div className="floating__circle">
-                        <img src="/images/shapesOne.svg" data-aos="fade-up" data-aos-delay="100" data-aos-duration="1000"  alt=""/>
+                        <img src="/images/shapesOne.svg" className="aos" data-aos="fade-up" data-aos-delay="100" data-aos-duration="1000"  alt=""/>
                     </div>
                     <div className="container">
                         <div className="row">
                             <div className="col-lg-12">
-                                <h2 className="avant uppercase black__text" data-aos="fade-right" data-aos-delay="100" data-aos-duration="1000">
+                                <h2 className="avant uppercase black__text aos" data-aos="fade-right" data-aos-delay="100" data-aos-duration="1000">
                                     Bipoc
                                 </h2>
-                                <h2 className="avant uppercase black__text" data-aos="fade-right" data-aos-delay="200" data-aos-duration="1000">
+                                <h2 className="avant uppercase black__text aos" data-aos="fade-right" data-aos-delay="200" data-aos-duration="1000">
                                     Create
                                 </h2>
-                                <h2 className="avant uppercase black__text" data-aos="fade-right" data-aos-delay="400" data-aos-duration="1000">
+                                <h2 className="avant uppercase black__text aos" data-aos="fade-right" data-aos-delay="400" data-aos-duration="1000">
                                     The
                                 </h2>
-                                <h2 className="avant uppercase black__text" data-aos="fade-right" data-aos-delay="500" data-aos-duration="1000">
+                                <h2 className="avant uppercase black__text aos" data-aos="fade-right" data-aos-delay="500" data-aos-duration="1000">
                                     Culture
                                 </h2>
                             </div>
@@ -477,18 +413,18 @@ export default class MobileIndex extends Component {
                     <div className="container">
                         <div className="row">
                             <div className="col-lg-12">
-                                <h2 className="avant uppercase black__text" data-aos="fade-right" data-aos-delay="100" data-aos-duration="1000">
+                                <h2 className="avant uppercase black__text aos" data-aos="fade-right" data-aos-delay="100" data-aos-duration="1000">
                                     We
                                 </h2>
-                                <h2 className="avant uppercase black__text second__line" data-aos="fade-right" data-aos-delay="200" data-aos-duration="1000">
+                                <h2 className="avant uppercase black__text second__line aos"  data-aos="fade-right" data-aos-delay="200" data-aos-duration="1000">
                                     Appropriate
 
                                     <img src="/images/drawedLine.svg" alt=""/>
                                 </h2>
-                                <h2 className="avant uppercase black__text" data-aos="fade-right" data-aos-delay="400" data-aos-duration="1000">
+                                <h2 className="avant uppercase black__text aos" data-aos="fade-right" data-aos-delay="400" data-aos-duration="1000">
                                     in our
                                 </h2>
-                                <h2 className="avant uppercase black__text" data-aos="fade-right" data-aos-delay="500" data-aos-duration="1000">
+                                <h2 className="avant uppercase black__text aos" data-aos="fade-right" data-aos-delay="500" data-aos-duration="1000">
                                     ads
                                 </h2>
                             </div>
@@ -500,16 +436,16 @@ export default class MobileIndex extends Component {
                     <div className="container">
                         <div className="row">
                             <div className="col-lg-12">
-                                <h2 className="avant uppercase white__text" data-aos="zoom-in" data-aos-delay="100" data-aos-duration="1000">
+                                <h2 className="avant uppercase white__text aos" data-aos="zoom-in" data-aos-delay="100" data-aos-duration="1000">
                                     Let them
                                 </h2>
-                                <h2 className="avant uppercase white__text" data-aos="zoom-in" data-aos-delay="200" data-aos-duration="1000">
+                                <h2 className="avant uppercase white__text aos" data-aos="zoom-in" data-aos-delay="200" data-aos-duration="1000">
                                     Dictate
                                 </h2>
-                                <h2 className="avant uppercase rose__text" data-aos="zoom-in" data-aos-delay="200" data-aos-duration="1000">
+                                <h2 className="avant uppercase rose__text aos" data-aos="zoom-in" data-aos-delay="200" data-aos-duration="1000">
                                     how
                                 </h2>
-                                <h2 className="avant uppercase rose__text" data-aos="zoom-in" data-aos-delay="200" data-aos-duration="1000">
+                                <h2 className="avant uppercase rose__text aos" data-aos="zoom-in" data-aos-delay="200" data-aos-duration="1000">
                                     it's done
                                 </h2>
                             </div>
@@ -521,16 +457,16 @@ export default class MobileIndex extends Component {
                     <div className="container">
                         <div className="row">
                             <div className="col-lg-12">
-                                <h2 className="avant uppercase white__text" data-aos="zoom-in" data-aos-delay="100" data-aos-duration="1000">
+                                <h2 className="avant uppercase white__text aos" data-aos="zoom-in" data-aos-delay="100" data-aos-duration="1000">
                                     It's
                                 </h2>
-                                <h2 className="avant uppercase white__text" data-aos="zoom-in" data-aos-delay="200" data-aos-duration="1000">
+                                <h2 className="avant uppercase white__text aos" data-aos="zoom-in" data-aos-delay="200" data-aos-duration="1000">
                                     Time to
                                 </h2>
-                                <h2 className="avant uppercase rose__text" data-aos="zoom-in" data-aos-delay="200" data-aos-duration="1000">
+                                <h2 className="avant uppercase rose__text aos" data-aos="zoom-in" data-aos-delay="200" data-aos-duration="1000">
                                     Ad+d
                                 </h2>
-                                <h2 className="avant uppercase rose__text" data-aos="zoom-in" data-aos-delay="200" data-aos-duration="1000">
+                                <h2 className="avant uppercase rose__text aos" data-aos="zoom-in" data-aos-delay="200" data-aos-duration="1000">
                                     Culture
                                 </h2>
                             </div>

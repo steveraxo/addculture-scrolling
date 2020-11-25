@@ -1,14 +1,14 @@
 @media(max-width: 10000px){
-    #scroll-container{
-        scroll-snap-type: mandatory;
-        scroll-snap-points-y: repeat(3rem);
+    #scroll__container{
+        overflow-y: scroll;
         scroll-snap-type: y mandatory;
         display: flex;
         flex-direction: column;
+        height: 100vh;
     }
       
-    #scroll-container section {
-        scroll-snap-align: start;
+    #scroll__container section {
+        scroll-snap-align: center;
     }
 
     #are-failing.mobile__slide .floating__circle img{

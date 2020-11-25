@@ -1,3 +1,215 @@
+@media(max-width: 10000px){
+    #are-failing.mobile__slide .floating__circle img{
+        height: 450px;
+    }
+    .chart__ones__first .chart__image__legend{
+        margin-top: 40px;
+    }
+    #how-its-done.mobile__slide{
+        background: #222220;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+    }
+    #its-time.mobile__slide{
+        background: #222220;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+    }
+    #how-its-done.mobile__slide .col-lg-12, #its-time.mobile__slide .col-lg-12{
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        display: grid;
+    }
+    .chart__title__image{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .slick-slide{
+        opacity: 0.2;
+        transition: opacity ease-in-out 0.5s;
+    }
+    .slick-slide.slick-current{
+        opacity: 1;
+    }
+    #how-its-done.mobile__slide h2{
+        font-size: 13vh;
+        margin: 0px 0;
+        line-height: 0.9em;
+    }
+    #its-time.mobile__slide h2{
+        font-size: 13vh;
+        margin: 0px 0;
+        line-height: 0.9em;
+    }
+    #are-failing.mobile__slide h2{
+        font-size: 13vh;
+        margin: 0px 0;
+        line-height: 0.9em;
+    }
+    #to-diversify.mobile__slide h2{
+        font-size: 13vh;
+        margin: 0px 0;
+        line-height: 0.9em;
+    }
+    #open-doors.mobile__slide h2{
+        font-size: 13vh;
+        margin: 0px 0;
+        line-height: 1em;
+    }
+    #is-white.mobile__slide .col-lg-12 img{
+        width: 500px;
+        margin-top: 40px;
+        max-width: 100%;
+    }
+    #is-white.mobile__slide h2{
+        font-size: 45px;
+        margin: 0px 0;
+        line-height: 0.9em;
+    }
+    #is-male.mobile__slide h2{
+        font-size: 45px;
+        margin: 0px 0;
+        line-height: 0.9em;
+    }
+    #is-male.mobile__slide .col-lg-12 img{
+        width: 500px;
+        margin-top: 40px;
+        max-width: 100%;
+    }
+    #charts__one{
+        background: #ADAEA5;
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    #charts__one .container{
+        padding: 50px 20px;
+    }
+    #charts__one .chart__controller{
+        display: flex;
+        font-weight: bold;
+        text-transform: uppercase;
+        margin-bottom: 80px;
+
+    }
+    #charts__one .chart__controller p:nth-child(1){
+        margin-right: 40px;
+    }
+    #charts__one .chart__controller p:nth-child(2){
+        margin-right: 40px;
+    }
+    #charts__one .chart__controller p, #charts__one .chart__controller p.active{
+        position: relative;
+    }
+    #charts__one .chart__controller p:after{
+        content: "";
+        position: absolute;
+        bottom: -10px;
+        width: 100%;
+        height: 0px;
+        background: #222220;
+        left: 0;
+    }
+    .chart__wrapper{
+        display: none;
+    }
+    #charts__one.chart__ones__second .chart__image{
+        width: 80%;
+        margin: 10px auto;
+    }
+    .chart__wrapper.active{
+        display: flex;
+        align-items: flex-start;
+    }
+    #charts__one .chart__controller p.active:after{
+        height: 4px;
+    }
+    #charts__one.chart__ones__first h2{
+        font-size: 50px;
+
+    }
+    #charts__one h2{
+        margin: 0;
+        font-size: 30px;
+    }
+    #charts__one .chart__image{
+        width: 100%;
+        margin: 40px 0;
+    }
+    #charts__one.chart__ones__second .chart__image__legend{
+        margin-top: 40px;
+        width: 90%;
+        
+    }
+    .chart__title__legend{
+        display: flex;
+        justify-content: flex-end;
+    }
+    #charts__one.ch .chart__image__legend{
+        margin-top: 40px;
+        
+    }
+    #carousel-info{
+        background: #222220;
+        min-height: 100vh;
+        padding: 50px 20px;
+    }
+    #carousel-info .small__title{
+        color: white;
+        font-size: 30px;
+        font-weight: bold;
+    }
+    #carousel-info .smaller__title{
+        color: white;
+        font-size: 15px;
+    }
+    #carousel-info h2{
+        font-size: 9vh;
+        font-weight: bold;
+        line-height: 0.9em;
+        margin: 10px 0;
+    }
+    #carousel-info .slide__three h2{
+        color: transparent;
+        -webkit-text-stroke: 1px #FFC6C6;
+        font-size: 12vh;
+    }
+    #carousel-info .slide__three h2.colored{
+        color: #FFC6C6;
+    }
+    #carousel-info .slide__three .percentage{
+        font-weight: bold;
+        color: #FFC6C6;
+    }
+    #carousel-info .slide__three .white__text, #carousel-info .slide__three .gray__text{
+        font-size: 16px;
+        max-width: 400px;
+    }
+    #carousel-info .slide__three small{
+        margin-top: 15px;
+    }
+    .slick-dots li button:before {
+        font-size: 13px!important;
+        opacity: .25!important;
+        color: white!important;
+    }
+    .slick-dots li.slick-active button:before {
+        opacity: 1!important;
+        color: white!important;
+    }
+    .carousel__info__slide{
+        padding: 0 50px;
+    }
+}
 @media(max-width: 1024px){
     .mobile__slide .container{
         width: 100%;
@@ -9,8 +221,6 @@
         padding: 0 25px;
     }
 }
-
-
 #are-failing.mobile__slide{
     background: #222220;
     height: 100vh;
@@ -47,8 +257,6 @@
         height: 350px;
     }
 }
-
-
 #to-diversify.mobile__slide{
     background: #222220;
     height: 100vh;
@@ -125,19 +333,31 @@
     align-items: center;
     position: relative;
 }
-#is-white.mobile__slide h2{
-    font-size: 30px;
-    margin: 0px 0;
-    line-height: 0.9em;
-}
+
 #is-white.mobile__slide .floating__circle{
     position: absolute;
     right: 0;
     top: 50px;
 }
-#is-white.mobile__slide .col-lg-12 img{
-    width: 100%;
-    margin-top: 40px;
+@media(max-width: 1024px){
+    #is-white.mobile__slide .col-lg-12 img{
+        width: 100%;
+        margin-top: 40px;
+    }
+    #is-white.mobile__slide h2{
+        font-size: 30px;
+        margin: 0px 0;
+        line-height: 0.9em;
+    }
+    #is-male.mobile__slide h2{
+        font-size: 30px;
+        margin: 0px 0;
+        line-height: 0.9em;
+    }
+    #is-male.mobile__slide .col-lg-12 img{
+        width: 100%;
+        margin-top: 40px;
+    }
 }
 
 #is-male.mobile__slide{
@@ -148,20 +368,13 @@
     align-items: center;
     position: relative;
 }
-#is-male.mobile__slide h2{
-    font-size: 30px;
-    margin: 0px 0;
-    line-height: 0.9em;
-}
+
 #is-male.mobile__slide .floating__circle{
     position: absolute;
     right: 0;
     top: 50px;
 }
-#is-male.mobile__slide .col-lg-12 img{
-    width: 100%;
-    margin-top: 40px;
-}
+
 
 #create-culture.mobile__slide{
     background: #ADAEA5;
@@ -242,15 +455,15 @@
     width: 100%;
 }
 
-#how-its-done.mobile__slide{
-    background: #222220;
-    height: 50vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-}
 @media(max-width: 1024px){
+    #how-its-done.mobile__slide{
+        background: #222220;
+        height: 50vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+    }
     #how-its-done.mobile__slide h2{
         font-size: 8vh;
         margin: 0px 0;
@@ -262,25 +475,25 @@
         font-size: 50px;
     }
 }
-#how-its-done.mobile__slide .floating__circle{
-    position: absolute;
-    right: 0;
-    top: 50px;
-}
-#how-its-done.mobile__slide .col-lg-12 img{
-    width: 100%;
-    margin-top: 40px;
-}
-
-#its-time.mobile__slide{
-    background: #222220;
-    height: 50vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-}
 @media(max-width: 1024px){
+    #how-its-done.mobile__slide .floating__circle{
+        position: absolute;
+        right: 0;
+        top: 50px;
+    }
+    #how-its-done.mobile__slide .col-lg-12 img{
+        width: 100%;
+        margin-top: 40px;
+    }
+    
+    #its-time.mobile__slide{
+        background: #222220;
+        height: 50vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+    }
     #its-time.mobile__slide h2{
         font-size: 8vh;
         margin: 0px 0;
@@ -304,63 +517,7 @@
 
 
 @media(max-width: 1024px){
-    #charts__one{
-        background: #ADAEA5;
-        min-height: 100vh;
-    }
-    #charts__one .container{
-        padding: 50px 60px;
-    }
-    #charts__one .chart__controller{
-        display: flex;
-        font-weight: bold;
-        text-transform: uppercase;
-        margin-bottom: 80px;
 
-    }
-    #charts__one .chart__controller p:nth-child(1){
-        margin-right: 40px;
-    }
-    #charts__one .chart__controller p:nth-child(2){
-        margin-right: 40px;
-    }
-    #charts__one .chart__controller p, #charts__one .chart__controller p.active{
-        position: relative;
-    }
-    #charts__one .chart__controller p:after{
-        content: "";
-        position: absolute;
-        bottom: -10px;
-        width: 100%;
-        height: 0px;
-        background: #222220;
-        left: 0;
-    }
-    .chart__wrapper{
-        display: none;
-    }
-    #charts__one.chart__ones__second .chart__image{
-        width: 70%;
-        margin: 80px auto;
-    }
-    .chart__wrapper.active{
-        display: flex;
-        flex-direction: column;
-    }
-    #charts__one .chart__controller p.active:after{
-        height: 4px;
-    }
-    #charts__one h2{
-        margin: 0;
-        font-size: 50px;
-    }
-    #charts__one .chart__image{
-        width: 100%;
-        margin: 40px 0;
-    }
-    #charts__one .chart__image__legend{
-        margin-top: 40px;
-    }
     #carousel-info{
         background: #222220;
         min-height: 100vh;
@@ -414,6 +571,9 @@
     }
 }
 @media(max-width: 600px){
+    .chart__wrapper.active{
+        align-items: center;
+    }
     #charts__one.chart__ones__second .chart__image {
         width: 70%;
         margin: 0px auto 20px;
@@ -432,7 +592,7 @@
         order: 2;
         width: 80%;
     }
-    
+
     #charts__one h2 {
         font-size: 25px;
     }

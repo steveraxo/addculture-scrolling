@@ -153,8 +153,9 @@ export default function Home() {
             </svg>
 
             </div>
-            <SlideFull />
-            <CTASection />
+            <MobileVersion />
+            {/* <SlideFull />
+            <CTASection /> */}
           </>
           : 
           <MobileVersion />

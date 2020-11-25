@@ -122,6 +122,9 @@ html {
 #set-height {
   display: block;
 }
+#time{
+  display: none;
+}
 #v0 {
   position: relative;
   top: 0;

@@ -55,25 +55,25 @@ export default class footer extends Component {
                             </motion.div>
                         </div>
                         <motion.div className="navbar__logo"
-                            initial={{ y: -100, opacity: 0 }}
-                            animate={{ y: 0, opacity: 1 }}
+                            initial={{ x: -100, opacity: 0 }}
+                            animate={{ x: 0, opacity: 1 }}
                             transition={{ duration: 0.9, type: "spring", stiffness: 50 }}
                         >
                             <AddLogo />
                         </motion.div>
                         <motion.div className="navbar__to__raxo hide__mobile"
-                            initial={{ x: 200, opacity: 0  }}
-                            animate={{ x: 0, opacity: 1 }}
-                            transition={{ duration: 0.9, type: "spring", stiffness: 50 }}
+                            initial={{ y: -100, opacity: 0  }}
+                            animate={{ y: 0, opacity: 1 }}
+                            transition={{ duration: 0.9, type: "spring", stiffness: 50, delay: 0.2 }}
                         >
                             <motion.a href="https://raxo.co/addculture" whileHover={{ color: "#FFC6C6"}}>
                                 <p>EXPLORE <strong> Stories</strong></p>
                             </motion.a>
                         </motion.div>
                         <motion.div className="navbar__to__raxo restart__journey hide__mobile"
-                            initial={{ x: 200, opacity: 0  }}
-                            animate={{ x: 0, opacity: 1 }}
-                            transition={{ duration: 0.9, type: "spring", stiffness: 50 }}
+                            initial={{ y: -100, opacity: 0  }}
+                            animate={{ y: 0, opacity: 1 }}
+                            transition={{ duration: 0.9, type: "spring", stiffness: 50, delay: 0.5 }}
                         >
                             <BackToArrow />
                             <motion.a href="/" whileHover={{ color: "#FFC6C6"}}>

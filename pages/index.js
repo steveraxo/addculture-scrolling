@@ -131,7 +131,7 @@ export default function Home() {
       </script>
       {
         !isMobile
-        ? <LoadingScreen />
+        ? ""
         : ""
       }
       
@@ -153,7 +153,7 @@ export default function Home() {
             </svg>
 
             </div>
-            <SlideVideo />
+            <SlideFull />
             <CTASection />
           </>
           : 

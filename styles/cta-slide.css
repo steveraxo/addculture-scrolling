@@ -10,6 +10,7 @@
     -webkit-flex-direction: column;
     flex-direction: column;
     min-height: 100vh;
+    position: relative;
 }
 #we-amplify-the-voices .container-fluid {
     padding: 0 10%!important;

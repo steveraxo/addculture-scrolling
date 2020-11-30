@@ -5,6 +5,7 @@ import SlideVideo from '../components/slide-video/slide-video'
 
 import CTASection from '../components/cta-section/cta-section'
 import MobileVersion from "../components/mobile-version/index"
+import DesktopVersion from "../components/desktop-version/index"
 
 export default function Home() {
 
@@ -130,9 +131,8 @@ export default function Home() {
             </svg>
 
             </div>
-            <MobileVersion />
-            {/* <SlideFull />
-            <CTASection /> */}
+            <DesktopVersion />
+           
           </>
           : 
           <MobileVersion />

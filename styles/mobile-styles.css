@@ -450,6 +450,9 @@
         margin: 0px 0;
         line-height: 0.9em;
     }
+    #are-you-sleeping-on{
+        display: none!important;
+    }
 }
 @media(max-width: 600px){
     #open-doors.mobile__slide h2{

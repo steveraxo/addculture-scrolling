@@ -15,79 +15,6 @@ export default class MobileIndex extends Component {
         this.state = {mobile: true};
     }
 
-    parallaxContainer() {
-        window.addEventListener("scroll",function() {
-            var element =  document.getElementById('create-culture');
-            var bodyRect = document.body.getBoundingClientRect(),
-                elemRect = element.getBoundingClientRect(),
-                offset   = elemRect.top - bodyRect.top;
-
-            var finalX = elemRect.top * -1;
-
-            var elementSecond =  document.getElementById('we-appropiate');
-            var bodyRectSecond = document.body.getBoundingClientRect(),
-                elemRectSecond = elementSecond.getBoundingClientRect(),
-                offset   = elemRectSecond.top - bodyRectSecond.top;
-
-            var finalXSecond = elemRectSecond.top ;
-
-            
-            // if (document.getElementById("shape__one") !== null) {
-            //     document.getElementById("shape__one").style.transform = `translateY(${(finalX / 2)}px)`
-            // }
-
-            // if (document.getElementById("shape__two") !== null) {
-            //     document.getElementById("shape__two").style.transform = `translateY(${(finalX / 2) + 10}px)`
-            // }
-
-            // if (document.getElementById("shape__three") !== null) {
-            //     document.getElementById("shape__three").style.transform = `translateY(${(finalX / 2) + 50 }px)`
-            // }
-
-            // if (document.getElementById("shape__four") !== null) {
-            //     document.getElementById("shape__four").style.transform = `translateY(${(finalX / 2) + 70}px)`
-            // }
-
-            // if (document.getElementById("shape__five") !== null) {
-            //     document.getElementById("shape__five").style.transform = `translateY(${(finalX / 2) - 15}px)`
-            // }
-
-            // if (document.getElementById("shape__six") !== null) {
-            //     document.getElementById("shape__six").style.transform = `translateY(${(finalX / 2) - 40}px)`
-            // }
-
-            // if (document.getElementById("shape__seven") !== null) {
-            //     document.getElementById("shape__seven").style.transform = `translateY(${(finalX / 2)}px)`
-            // }
-
-            // if (document.getElementById("shape__eigth") !== null) {
-            //     document.getElementById("shape__eigth").style.transform = `translateY(${(finalX / 2)}px)`
-            // }
-            
-            // if (document.getElementById("shape__one__one") !== null) {
-            //     document.getElementById("shape__one__one").style.transform = `translateY(${(finalXSecond / 2) + 70}px)`
-            // }
-
-            // if (document.getElementById("shape__one__two") !== null) {
-            //     document.getElementById("shape__one__two").style.transform = `translateY(${(finalXSecond / 2) - 15}px)`
-            // }
-
-            // if (document.getElementById("shape__one__three") !== null) {
-            //     document.getElementById("shape__one__three").style.transform = `translateY(${(finalXSecond / 2) + 3}px)`
-            // }
-
-            // if (document.getElementById("shape__one__four") !== null) {
-            //     document.getElementById("shape__one__four").style.transform = `translateY(${(finalXSecond / 2) + 100}px)`
-            // }
-
-            // if (document.getElementById("shape__one__five") !== null) {
-            //     document.getElementById("shape__one__five").style.transform = `translateY(${(finalXSecond / 2) - 27}px)`
-            // }
-        },
-        { passive: false }
-        )
-    }
-
     componentDidMount(){
         setTimeout(function(){
             var rellax = new Rellax('.rellax', {
@@ -335,47 +262,7 @@ export default class MobileIndex extends Component {
                     </div>
                 </section>
 
-                <section id="carousel-info">
-                        <div className="container">
-                                <div className="row">
-                                    <Slider {...settingsMobile}>
-                                        <div className="carousel__info__slide slide__one uppercase">
-                                            {/* <p className=" avant small__title ">Agency</p> */}
-                                            <h2 className="avant rose__text ">When your</h2>
-                                            <h2 className="avant rose__text ">agency</h2>
-                                            <h2 className="avant rose__text ">partner</h2>
-                                            <h2 className="avant white__text ">is not</h2>
-                                            <h2 className="avant white__text ">diverse</h2>
-                                            <p className=" helvetica smaller__title ">01</p>
-                                        </div>
-
-                                        <div className="carousel__info__slide slide__two uppercase">
-                                            {/* <p className="avant small__title ">Audience</p> */}
-                                            <h2 className="avant rose__text">How can</h2>
-                                            <h2 className="avant rose__text">you really</h2>
-                                            <h2 className="avant rose__text">speak to</h2>
-                                            <h2 className="avant white__text">a diverse</h2>
-                                            <h2 className="avant white__text">audience?</h2>
-                                            <p className=" helvetica smaller__title ">02</p>
-                                        </div>
-
-                                        <div className="carousel__info__slide slide__three uppercase">
-                                            {/* <p className="avant small__title ">Audience</p> */}
-                                            <h2 className="avant ">Di</h2>
-                                            <h2 className="avant ">ver</h2>
-                                            <h2 className="avant colored">si</h2>
-                                            <h2 className="avant colored">ty</h2>
-                                            <p><strong className="avant percentage ">35%</strong></p>
-                                            <p className="white__text helvetica">Diverse company culture is 35% more likely to perform better than those lacking variance.</p>
-                                            <p className="gray__text helvetica">
-                                                <span><small>*Source: Boston Consulting Group</small></span>
-                                            </p>
-                                            <p className=" helvetica smaller__title ">03</p>
-                                        </div>
-                                    </Slider>
-                                </div>
-                            </div>
-                      </section>
+                <SlideCarousel />
 
                 <section id="charts__one" className="chart__ones__second">
                     <div className="container">

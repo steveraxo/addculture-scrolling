@@ -7,7 +7,7 @@ function MyApp({ Component, pageProps }) {
   return (
       <div id="scroll__container">
       <Head>
-          <title>Add Culture + </title>
+          <title>Add Culture + | We amplify the voices that set the tone </title>
           <meta name="viewport" content="width=device-width"></meta>
           <meta charSet="utf-8"></meta>
           <meta httpEquiv="Content-Language" content="en"/>

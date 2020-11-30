@@ -9,6 +9,7 @@
     "export": "next export"
   },
   "dependencies": {
+    "@fullpage/react-fullpage": "^0.1.18",
     "aos": "^2.3.4",
     "axios": "^0.21.0",
     "framer-motion": "^2.9.4",

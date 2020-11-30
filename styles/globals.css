@@ -14,7 +14,18 @@ a {
   color: inherit;
   text-decoration: none;
 }
-
+#are-failing .fp-tableCell {
+  align-items: flex-end;
+}
+.fp-tableCell {
+  display: table-cell;
+  vertical-align: middle;
+  width: 100%;
+  height: 100%;
+  display: flex!important;
+  justify-content: center;
+  align-items: center;
+}
 * {
   box-sizing: border-box;
 }
@@ -125,13 +136,14 @@ html {
 #time{
   display: none;
 }
+#set-height {
+  display: block;
+}
 #v0 {
-  position: relative;
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  object-fit: cover;
-  height: 100%;
 }
 
 @import "fonts.css"; /* Font Files */

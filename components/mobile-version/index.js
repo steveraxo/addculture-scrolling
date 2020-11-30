@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import CtaSection from "../cta-section/cta-section"
 import Slider from "react-slick";
 import SliderTweets from "../slide-three/slide-three"
-import SlideCarousel from "../slide-carousel/slide-carousel"
 import AOS from 'aos';
 import Rellax from "rellax"
 import 'aos/dist/aos.css'; // You can also use <link> for styles

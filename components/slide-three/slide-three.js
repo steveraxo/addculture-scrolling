@@ -37,8 +37,8 @@ export default class SlideThree extends Component {
     
     render() {
         return (
-            <section >
-                <div id="are-you-sleeping-on">
+            <section id="are-you-sleeping-on">
+                <div >
                     <section className="lottie-env env-full">
                         <div id="lottie-full" className={"lottie__element"}/>
                     </section>

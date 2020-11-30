@@ -160,9 +160,6 @@ export default class FormPopup extends Component {
             formData.set("relation-with-agency-other", agencyRelation);
             formData.set("relation-with-agency-other", agencyRelationOther);
 
-
-            console.log(formData, personName, agencyName, agencyLink, minorityGroupData, additionalLinkData, agencyRelation, agencyRelationOther, SharpSpringTracking);
-
             // Add Lead to SharpSpring
             var xhr = new XMLHttpRequest()
             

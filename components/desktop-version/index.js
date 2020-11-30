@@ -156,6 +156,9 @@ export default class MobileIndex extends Component {
         }
         if(origin.index === 9){
             document.getElementById("slide__tweets").click();
+            setTimeout(function(){
+                fullpage_api.moveSectionDown();
+            }, 13500)
         }
         if(origin.index === 10){
             this.setState({tweetCounter: this.state.tweetCounter + 1})
@@ -173,7 +176,6 @@ export default class MobileIndex extends Component {
         if(destination.index === 10 && direction === "up" && this.state.tweetCounter > 0  && this.state.controller === true){
             fullpage_api.moveSectionUp();
         }
-        console.log(destination.index, direction, this.state.tweetCounter, this.state.controller)
     }
 
     render() {

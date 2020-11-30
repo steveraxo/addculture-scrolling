@@ -4592,7 +4592,7 @@ section{
         top: unset;
     }
     .navbar.container-fluid {
-        z-index: 22222;
+        z-index: 33;
     }
     #slide__six.slide__seven .statistic__title h3 {
         top: 150px;

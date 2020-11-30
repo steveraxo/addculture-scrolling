@@ -32,69 +32,69 @@ export default class MobileIndex extends Component {
             var finalXSecond = elemRectSecond.top ;
 
             
-            if (document.getElementById("shape__one") !== null) {
-                document.getElementById("shape__one").style.transform = `translateY(${(finalX / 2)}px)`
-            }
+            // if (document.getElementById("shape__one") !== null) {
+            //     document.getElementById("shape__one").style.transform = `translateY(${(finalX / 2)}px)`
+            // }
 
-            if (document.getElementById("shape__two") !== null) {
-                document.getElementById("shape__two").style.transform = `translateY(${(finalX / 2) + 10}px)`
-            }
+            // if (document.getElementById("shape__two") !== null) {
+            //     document.getElementById("shape__two").style.transform = `translateY(${(finalX / 2) + 10}px)`
+            // }
 
-            if (document.getElementById("shape__three") !== null) {
-                document.getElementById("shape__three").style.transform = `translateY(${(finalX / 2) + 50 }px)`
-            }
+            // if (document.getElementById("shape__three") !== null) {
+            //     document.getElementById("shape__three").style.transform = `translateY(${(finalX / 2) + 50 }px)`
+            // }
 
-            if (document.getElementById("shape__four") !== null) {
-                document.getElementById("shape__four").style.transform = `translateY(${(finalX / 2) + 70}px)`
-            }
+            // if (document.getElementById("shape__four") !== null) {
+            //     document.getElementById("shape__four").style.transform = `translateY(${(finalX / 2) + 70}px)`
+            // }
 
-            if (document.getElementById("shape__five") !== null) {
-                document.getElementById("shape__five").style.transform = `translateY(${(finalX / 2) - 15}px)`
-            }
+            // if (document.getElementById("shape__five") !== null) {
+            //     document.getElementById("shape__five").style.transform = `translateY(${(finalX / 2) - 15}px)`
+            // }
 
-            if (document.getElementById("shape__six") !== null) {
-                document.getElementById("shape__six").style.transform = `translateY(${(finalX / 2) - 40}px)`
-            }
+            // if (document.getElementById("shape__six") !== null) {
+            //     document.getElementById("shape__six").style.transform = `translateY(${(finalX / 2) - 40}px)`
+            // }
 
-            if (document.getElementById("shape__seven") !== null) {
-                document.getElementById("shape__seven").style.transform = `translateY(${(finalX / 2)}px)`
-            }
+            // if (document.getElementById("shape__seven") !== null) {
+            //     document.getElementById("shape__seven").style.transform = `translateY(${(finalX / 2)}px)`
+            // }
 
-            if (document.getElementById("shape__eigth") !== null) {
-                document.getElementById("shape__eigth").style.transform = `translateY(${(finalX / 2)}px)`
-            }
+            // if (document.getElementById("shape__eigth") !== null) {
+            //     document.getElementById("shape__eigth").style.transform = `translateY(${(finalX / 2)}px)`
+            // }
             
-            if (document.getElementById("shape__one__one") !== null) {
-                document.getElementById("shape__one__one").style.transform = `translateY(${(finalXSecond / 2) + 70}px)`
-            }
+            // if (document.getElementById("shape__one__one") !== null) {
+            //     document.getElementById("shape__one__one").style.transform = `translateY(${(finalXSecond / 2) + 70}px)`
+            // }
 
-            if (document.getElementById("shape__one__two") !== null) {
-                document.getElementById("shape__one__two").style.transform = `translateY(${(finalXSecond / 2) - 15}px)`
-            }
+            // if (document.getElementById("shape__one__two") !== null) {
+            //     document.getElementById("shape__one__two").style.transform = `translateY(${(finalXSecond / 2) - 15}px)`
+            // }
 
-            if (document.getElementById("shape__one__three") !== null) {
-                document.getElementById("shape__one__three").style.transform = `translateY(${(finalXSecond / 2) + 3}px)`
-            }
+            // if (document.getElementById("shape__one__three") !== null) {
+            //     document.getElementById("shape__one__three").style.transform = `translateY(${(finalXSecond / 2) + 3}px)`
+            // }
 
-            if (document.getElementById("shape__one__four") !== null) {
-                document.getElementById("shape__one__four").style.transform = `translateY(${(finalXSecond / 2) + 100}px)`
-            }
+            // if (document.getElementById("shape__one__four") !== null) {
+            //     document.getElementById("shape__one__four").style.transform = `translateY(${(finalXSecond / 2) + 100}px)`
+            // }
 
-            if (document.getElementById("shape__one__five") !== null) {
-                document.getElementById("shape__one__five").style.transform = `translateY(${(finalXSecond / 2) - 27}px)`
-            }
+            // if (document.getElementById("shape__one__five") !== null) {
+            //     document.getElementById("shape__one__five").style.transform = `translateY(${(finalXSecond / 2) - 27}px)`
+            // }
         },
         { passive: false }
         )
     }
 
     componentDidMount(){
-        // var rellax = new Rellax('.rellax', {
-        //     wrapper:'#create-culture'
-        //   });
+        setTimeout(function(){
+            var rellax = new Rellax('.rellax', {
+                wrapper:'#create-culture'
+            });
 
-
-        this.parallaxContainer();
+        }, 1000)
 
         if(window.innerWidth > 1024){
             AOS.init({

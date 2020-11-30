@@ -37,13 +37,14 @@
     transition: all ease-in-out 0.4s;
 }
 
-@media(max-width: 8000px){
+@media(max-width: 10000px){
     .slider__container__pagination{
         width: 100%;
     }
-    .lottieChartFourteen .lottie__element{
-        height: 500px;
-        left: -35px;
+
+    .lottieChartFourteen .lottie__element {
+        height: auto;
+        left: -175px;
         position: relative;
     }
     .circle__animated__end{
@@ -58,6 +59,12 @@
     .circle__animated__end{
         right: 90vh;
     }
+    .lottieChartFourteen .lottie__element {
+        height: auto;
+        left: -65px;
+        position: relative;
+    }
+
 }
 @media(max-width: 4000px){
     .circle__animated__end{
@@ -74,6 +81,13 @@
         right: -20vh;
         height: 55%;
     }
+
+    .lottieChartFourteen .lottie__element{
+        height: 500px;
+        left: -35px;
+        position: relative;
+    }
+
 }
 @media(max-width: 1440px){
     .circle__animated__end {
@@ -422,7 +436,7 @@
 #next__button.out p{
     transform: translateY(300px);
 }
-@media(max-width: 8000px){
+@media(max-width: 10000px){
 
     .slide__eleven__container.container-fluid {
         padding-left: 1.5%;
@@ -860,7 +874,7 @@
     background: #222220;
 }
 
-@media (max-width: 8000px){
+@media (max-width: 10000px){
     #fp-nav.fp-left {
         left: 41%;
     }
@@ -1032,14 +1046,15 @@
     .slider__ten__next {
         right: 46%;
     }
-    .slider__ten__arrows img{
-        width: 60px;
+
+    .slider__ten__arrows img {
+        width: 160px;
         pointer-events: none;
     }
 
     .slider__ten__prev{
         position: absolute;
-        left: 39.5%;
+        left: 5%;
         top: 46%;
         bottom: 0;
         margin: auto;
@@ -1050,9 +1065,10 @@
         left: -10%;
         opacity: 0;
     }
-    .pagination__words{
+
+    .pagination__words {
         display: flex;
-        justify-content: space-around;
+        justify-content: space-evenly;
         pointer-events: none;
     }
     .pagination__words p{
@@ -1060,7 +1076,7 @@
         color: white;
         opacity: 0.2;
         transition: all cubic-bezier(0.45, 0, 0.55, 1) 0.5s;
-        font-size: 15px;
+        font-size: 55px;
     }
     .pagination__words .active p{
         opacity: 1;
@@ -1107,23 +1123,25 @@
     .pagination__numeric .number{
         margin: 0 20px 0 0;
         color: white;
+        font-size: 70px;
     }
     #slide__ten{
         display: flex;
         flex-direction: column;
         overflow: hidden;
     }
-    .slide__ten__info h2{
+
+    .slide__ten__info h2 {
         text-transform: uppercase;
-        font-size: 40px;
+        font-size: 100px;
     }
     #slide__ten .slide__ten__slide{
         position: relative;
-        left: 11%;
+        left: 0%;
     }
-    #slide__ten .slide__ten__info{
+    #slide__ten .slide__ten__info {
         position: relative;
-        left: 5%;
+        left: 0;
         top: 50px;
     }
     #slide__ten .slick-slide h3 span{
@@ -1177,11 +1195,15 @@
         flex-direction: column;
         font-size: 100px;
         text-transform: uppercase;
-        line-height: 80px;
         font-weight: bold;
         position: relative;
         top: 70px;
         margin-top: 0;
+        
+    }
+    .slide__ten__slide h3{
+        line-height: 0.9em;
+        font-size: 12vh;
     }
     .sthree__wrapper{
         padding-top: 0px;
@@ -1197,14 +1219,13 @@
     .navbar__holder{
         display: flex;
         justify-content: center;
-        max-width: 1435px;
+        max-width: 100%;
         margin: auto;
         width: 100%;
+        padding: 0 4.5%;
     }
 
-    .navbar.container-fluid.black__menu{
-        background: #ADAEA5;
-    }
+
     #slide__one .container-fluid {
         align-items: center;
     }
@@ -1301,9 +1322,9 @@
         margin-left: 64px;
     }
     #slide__ten .container-fluid {
-        max-width: 1440px;
+        max-width: 100%;
         
-        padding: 0 0.5%;
+        padding: 0 9.5%!important;
     }
     #slide__one{
         height: 100vh;
@@ -1476,6 +1497,21 @@
     #slide__eleven__eight__two{
         right: 92%;
     }
+    .slider__container__pagination .row{
+        display: flex;
+        justify-content: flex-start;
+        align-items: flex-start;
+        text-align: left;
+        position: relative;
+    }
+    .slider__container__pagination .pagination__numeric{
+        position: absolute;
+        left: 0;
+    }
+    .slider__container__pagination .pagination__words{
+        position: absolute;
+        right: 0;
+    }
 }
 @media(max-width: 5000px){
     #fp-nav.fp-left {
@@ -1486,7 +1522,7 @@
     }
     .slider__ten__prev{
         position: absolute;
-        left: 37.5%;
+        left: 4%;
         top: 46%;
         bottom: 0;
         margin: auto;
@@ -1495,6 +1531,10 @@
         opacity: 1;
         transition: all cubic-bezier(0.45, 0, 0.55, 1) 0.4s;
     }   
+    .slide__ten__slide h3 {
+        line-height: 0.9em;
+        font-size: 6vh;
+    }
 }
 @media(max-width: 4000px){
     #fp-nav.fp-left {
@@ -1507,8 +1547,39 @@
     }
 }
 @media(max-width: 2500px){
+    .slider__ten__arrows img{
+        width: 60px;
+        pointer-events: none;
+    }
+    .pagination__words{
+        display: flex;
+        justify-content: space-around;
+        pointer-events: none;
+    }
+    .pagination__words p{
+        font-weight: bold;
+        color: white;
+        opacity: 0.2;
+        transition: all cubic-bezier(0.45, 0, 0.55, 1) 0.5s;
+        font-size: 15px;
+    }
     #fp-nav.fp-left {
         left: 17px;
+    }
+    .slide__ten__info h2{
+        text-transform: uppercase;
+        font-size: 40px;
+    }
+    .slide__ten__slide h3{
+        display: flex;
+        flex-direction: column;
+        font-size: 100px;
+        text-transform: uppercase;
+        line-height: 0.9em;
+        font-weight: bold;
+        position: relative;
+        top: 70px;
+        margin-top: 0;
     }
 }
 @media(max-width: 1920px){
@@ -1867,7 +1938,7 @@ section{
 .is__slide__five .floating__box h2.transformed__advertising{
     /* position: relative; */
 }
-@media(max-width: 8000px){
+@media(max-width: 10000px){
     .floating__header__second {
         font-size: 50px;
         color: white;
@@ -1904,7 +1975,7 @@ section{
 .is__slide__five .floating__box .transformed__advertising{
     text-align: left;
 }
-@media(max-width: 8000px){
+@media(max-width: 10000px){
     .is__slide__five .floating__box #transformed__advertising{
         font-size: 50px;
         transform: translateY(65px);
@@ -1997,7 +2068,7 @@ section{
     transition-delay: 0.4s;
 }
 
-@media(max-width: 8000px){
+@media(max-width: 10000px){
     .is__slide__five.control__left .floating__box{
         height: 20%;
     }  
@@ -2013,7 +2084,7 @@ section{
     font-size: 50px;
     animation: transformTextOne 1s linear ; 
 }
-@media(max-width: 8000px){
+@media(max-width: 10000px){
     @keyframes transformTextOne {
         0% {
             left: 35.8%;
@@ -2177,7 +2248,7 @@ section{
     transition-delay: 1.9s;
 }
 
-@media(max-width: 8000px){
+@media(max-width: 10000px){
     .is__slide__five .automate__typing {
         height: 100vh;
     }
@@ -2362,7 +2433,7 @@ section{
 #stwo__three{
     position: relative;
 }
-@media(max-width: 8000px){
+@media(max-width: 10000px){
     #stwo__three:after{
         position: absolute;
         content: attr(data-info);
@@ -2479,7 +2550,7 @@ section{
     margin-top: -22px;
     z-index: 8;
 }
-@media(max-width: 8000px){
+@media(max-width: 10000px){
     #slide__three .default__headers {
         margin-bottom: 200px;
     }
@@ -3063,7 +3134,7 @@ section{
 .slide__seven .chart__legend__item p:after, .slide__seven .chart__legend__item p:before{
     display: none;
 }
-@media(max-width: 8000px){
+@media(max-width: 10000px){
     .slide__seven .statistic__title h3 {
         top: 170px;
     }
@@ -3215,7 +3286,7 @@ section{
     line-height: 23px;
     font-size: 14px;
 }
-@media(max-width: 8000px){
+@media(max-width: 10000px){
     #slide__eight .shapes {
         bottom: 270px;
     }
@@ -3620,8 +3691,24 @@ section{
     right: 0;
 }
 @media(max-width: 2500px){
+    .navbar__holder {
+        padding: 0 0%;
+    }
     #slide__ten .container-fluid {
         padding: 0 0%;
+    }
+    #slide__ten .container-fluid {
+        max-width: 100%;
+        padding: 0 0%!important;
+    }
+    .slider__container__pagination .pagination__numeric {
+        position: relative;
+        left: 0;
+    }
+    .pagination__numeric .number {
+        margin: 0 20px 0 0;
+        color: white;
+        font-size: 16px; 
     }
     #slide__eight .title {
         left: 0%;
@@ -4925,9 +5012,7 @@ section{
         background: #222220;
         padding: 20px 0 20px;
     }
-    .navbar.container-fluid.black__menu {
-        background: #ADAEA5;
-    }
+
     .seight__container__left .subtitle {
         margin-top: 90px;
     }
@@ -5494,9 +5579,7 @@ section{
     .sthree__wrapper {
         padding-top: 50px;
     }
-    .navbar.container-fluid.black__menu{
-        background: #ADAEA5;
-    }
+
     #slide__ten:before, #slide__ten:after{
         display: none;
     }

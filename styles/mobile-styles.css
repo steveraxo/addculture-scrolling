@@ -1,6 +1,10 @@
 @media(max-width: 10000px){
+    #to-diversify .floating__circle img{
+        height: 20vh;
+    }
     .container {
-        width: 1500px;
+        width: 100%!important;
+        padding: 0 9.5%!important;
     }
     .chart__title{
         min-height: 300px;
@@ -91,12 +95,14 @@
         display: none;
     }
    
-
-    #are-failing.mobile__slide .floating__circle img{
-        height: 450px;
+    #are-failing.mobile__slide .floating__circle img {
+        height: 70vh;
     }
-    .chart__ones__first .chart__image__legend{
+
+    .chart__ones__first .chart__image__legend {
         margin-top: 40px;
+        max-width: 900px;
+        width: 100%;
     }
     #how-its-done.mobile__slide{
         background: #222220;
@@ -144,7 +150,7 @@
     }
     #are-failing.mobile__slide .col-lg-12{
         position: relative;
-        top: -100px;
+        top: -300px;
     }
     #are-failing.mobile__slide h2{
         font-size: 13vh;
@@ -192,6 +198,7 @@
         display: flex;
         justify-content: center;
         align-items: center;
+        z-index: 2;
     }
     #charts__one .container{
         padding: 50px 20px;
@@ -212,13 +219,16 @@
     #charts__one .chart__controller p, #charts__one .chart__controller p.active{
         position: relative;
     }
+    #charts__one .chart__controller p, #charts__one .chart__controller p {
+        font-size: 50px;
+    }
     #charts__one .chart__controller p:after{
         content: "";
         position: absolute;
         bottom: -10px;
         width: 100%;
         height: 0px;
-        background: #222220;
+        background: #FFC6C6;
         left: 0;
     }
     .chart__wrapper{
@@ -235,13 +245,14 @@
     #charts__one .chart__controller p.active:after{
         height: 4px;
     }
-    #charts__one.chart__ones__first h2{
-        font-size: 50px;
 
+    #charts__one.chart__ones__first h2 {
+        font-size: 250px;
     }
-    #charts__one h2{
+
+    #charts__one h2 {
         margin: 0;
-        font-size: 30px;
+        font-size: 130px;
     }
     #charts__one .chart__image{
         width: 100%;
@@ -312,7 +323,37 @@
         padding: 0 50px;
     }
 }
+@media(max-width: 5000px){
+    #charts__one.chart__ones__first h2 {
+        font-size: 190px;
+    }
+    #charts__one h2 {
+        margin: 0;
+        font-size: 70px;
+    }
+
+
+}
 @media(max-width: 2500px){
+    
+    #are-failing.mobile__slide .col-lg-12{
+        position: relative;
+        top: -50px;
+    }
+    #charts__one h2{
+        margin: 0;
+        font-size: 30px;
+    }
+    #charts__one.chart__ones__first h2{
+        font-size: 50px;
+
+    }
+    #charts__one .chart__controller p, #charts__one .chart__controller p {
+        font-size: 18px;
+    }
+    #are-failing.mobile__slide .floating__circle img{
+        height: 450px;
+    }
     #open-doors.mobile__slide h2{
         font-size: 15vh;
         margin: 0px 0;
@@ -337,6 +378,10 @@
         width: 500px;
         margin-top: 40px;
         max-width: 100%;
+    }
+    .chart__ones__first .chart__image__legend {
+        max-width: 400px;
+        width: 100%;
     }
 }
 @media(max-width: 1024px){
@@ -443,6 +488,7 @@
     justify-content: center;
     align-items: center;
     position: relative;
+    z-index: 2;
 }
 @media(max-width: 1024px){
     #open-doors.mobile__slide h2{
@@ -534,6 +580,7 @@
         font-size: 13vh;
         margin: 0px 0;
         line-height: 0.9em;
+        z-index: 4;
     }
 }
 @media(max-width: 1024px){
@@ -583,6 +630,17 @@
     }
     .second__line{
         position: relative;
+    }
+}
+@media(max-width: 5000px){
+#create-culture.mobile__slide h2, #we-appropiate.mobile__slide h2 {
+    font-size: 6vh;
+
+}
+}
+@media(max-width: 2500px){
+    #create-culture.mobile__slide h2, #we-appropiate.mobile__slide h2 {
+        font-size: 14vh;
     }
 }
 @media(max-width: 1024px){

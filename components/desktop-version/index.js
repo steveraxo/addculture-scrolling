@@ -17,13 +17,82 @@ export default class MobileIndex extends Component {
         this.state = {mobile: true, tweetCounter: 0, controller: false};
     }
 
-    componentDidMount(){
-        setTimeout(function(){
-            var rellax = new Rellax('.rellax', {
-                wrapper:'#create-culture'
-            });
+    parallaxContainer() {
+        window.addEventListener("scroll",function() {
+            var element =  document.getElementById('create-culture');
+            var bodyRect = document.body.getBoundingClientRect(),
+                elemRect = element.getBoundingClientRect(),
+                offset   = elemRect.top - bodyRect.top;
 
-        }, 1000)
+            var finalX = elemRect.top * -1;
+
+            var elementSecond =  document.getElementById('we-appropiate');
+            var bodyRectSecond = document.body.getBoundingClientRect(),
+                elemRectSecond = elementSecond.getBoundingClientRect(),
+                offset   = elemRectSecond.top - bodyRectSecond.top;
+
+            var finalXSecond = elemRectSecond.top ;
+
+            
+            if (document.getElementById("shape__one") !== null) {
+                document.getElementById("shape__one").style.transform = `translateY(${(finalX / 2)}px)`
+            }
+
+            if (document.getElementById("shape__two") !== null) {
+                document.getElementById("shape__two").style.transform = `translateY(${(finalX / 2) + 10}px)`
+            }
+
+            if (document.getElementById("shape__three") !== null) {
+                document.getElementById("shape__three").style.transform = `translateY(${(finalX / 2) + 50 }px)`
+            }
+
+            if (document.getElementById("shape__four") !== null) {
+                document.getElementById("shape__four").style.transform = `translateY(${(finalX / 2) + 70}px)`
+            }
+
+            if (document.getElementById("shape__five") !== null) {
+                document.getElementById("shape__five").style.transform = `translateY(${(finalX / 2) - 15}px)`
+            }
+
+            if (document.getElementById("shape__six") !== null) {
+                document.getElementById("shape__six").style.transform = `translateY(${(finalX / 2) - 40}px)`
+            }
+
+            if (document.getElementById("shape__seven") !== null) {
+                document.getElementById("shape__seven").style.transform = `translateY(${(finalX / 2)}px)`
+            }
+
+            if (document.getElementById("shape__eigth") !== null) {
+                document.getElementById("shape__eigth").style.transform = `translateY(${(finalX / 2)}px)`
+            }
+            
+            if (document.getElementById("shape__one__one") !== null) {
+                document.getElementById("shape__one__one").style.transform = `translateY(${(finalXSecond / 2) + 70}px)`
+            }
+
+            if (document.getElementById("shape__one__two") !== null) {
+                document.getElementById("shape__one__two").style.transform = `translateY(${(finalXSecond / 2) - 15}px)`
+            }
+
+            if (document.getElementById("shape__one__three") !== null) {
+                document.getElementById("shape__one__three").style.transform = `translateY(${(finalXSecond / 2) + 3}px)`
+            }
+
+            if (document.getElementById("shape__one__four") !== null) {
+                document.getElementById("shape__one__four").style.transform = `translateY(${(finalXSecond / 2) + 100}px)`
+            }
+
+            if (document.getElementById("shape__one__five") !== null) {
+                document.getElementById("shape__one__five").style.transform = `translateY(${(finalXSecond / 2) - 27}px)`
+            }
+        },
+        { passive: false }
+        )
+    }
+
+
+    componentDidMount(){
+        this.parallaxContainer();
 
         AOS.init({
             easing: 'ease', // default easing for AOS animations
@@ -66,6 +135,19 @@ export default class MobileIndex extends Component {
     }
     
     afterLoad(origin, destination, direction){
+        // change bar color 
+        if(destination.index === 2 || destination.index === 4 || destination.index === 7 || destination.index === 8 || destination.index === 9 || destination.index === 10){
+            document.querySelectorAll(".navbar")[0].classList.add("black__menu");
+            document.querySelectorAll(".social__menu")[0].classList.add("black__menu");
+            document.querySelectorAll(".navbar.container-fluid")[0].classList.add("black__menu");
+            document.getElementById("fp-nav").classList.add("black__menu");
+        }else{
+            document.querySelectorAll(".navbar")[0].classList.remove("black__menu");
+            document.querySelectorAll(".social__menu")[0].classList.remove("black__menu");
+            document.querySelectorAll(".navbar.container-fluid")[0].classList.remove("black__menu");
+            document.getElementById("fp-nav").classList.remove("black__menu");
+        }
+
         if(origin.index === 2){
             document.getElementById("bipocbands").click();
         }
@@ -77,19 +159,21 @@ export default class MobileIndex extends Component {
         }
         if(origin.index === 10){
             this.setState({tweetCounter: this.state.tweetCounter + 1})
+        }
+        if(origin.index === 10){
             this.setState({controller: true})
         }
-        if(destination.index === 9 && direction === "down" && this.state.tweetCounter > 0 && this.state.controller === false){
-            fullpage_api.moveSectionDown();
+        // if(destination.index === 10 && direction === "down" && this.state.tweetCounter > 0 && this.state.controller === true){
+        //     fullpage_api.moveSectionDown();
 
-            setTimeout(function(){
-                this.setState({controller: false})
-            }, 1000)
-        }
-        if(origin.index === 11 && direction === "up"){
+        //     setTimeout(function(){
+        //         this.setState({controller: false})
+        //     }.bind(this), 1000)
+        // }
+        if(destination.index === 10 && direction === "up" && this.state.tweetCounter > 0  && this.state.controller === true){
             fullpage_api.moveSectionUp();
         }
-        console.log(origin.index, direction, destination.index, this.state.tweetCounter)
+        console.log(destination.index, direction, this.state.tweetCounter, this.state.controller)
     }
 
     render() {
@@ -161,7 +245,7 @@ export default class MobileIndex extends Component {
                                                 Their
                                             </h2>
                                             <h2 className="avant uppercase gray__text aos" data-aos="fade-left" data-aos-delay="500" data-aos-duration="1000">
-                                                Team
+                                                Teams
                                             </h2>
                                         </div>
                                     </div>
@@ -232,7 +316,7 @@ export default class MobileIndex extends Component {
                                                     <div className="chart__title">
                                                         <h2 data-aos="fade-left" className="aos" data-aos-delay="100" data-aos-duration="1000">LACK OF</h2>
                                                         <h2 data-aos="fade-left" className="aos" data-aos-delay="150" data-aos-duration="1000">DIVERSITY IN </h2>
-                                                        <h2 data-aos="fade-left" className="aos" data-aos-delay="200" data-aos-duration="1000">THE U.S</h2>
+                                                        <h2 data-aos="fade-left" className="aos" data-aos-delay="200" data-aos-duration="1000">THE U.S. :</h2>
                                                         <h2 data-aos="fade-left" className="aos" data-aos-delay="250" data-aos-duration="1000">MARKETING </h2>
                                                         <h2 data-aos="fade-left" className="aos" data-aos-delay="300" data-aos-duration="1000">& ADVERTISING</h2>
                                                     </div>
@@ -251,7 +335,7 @@ export default class MobileIndex extends Component {
                                                     <div className="chart__title">
                                                         <h2 data-aos="fade-left" className="aos" data-aos-delay="100" data-aos-duration="1000">CMO  </h2>
                                                         <h2 data-aos="fade-left" className="aos" data-aos-delay="150" data-aos-duration="1000">Diversity</h2>
-                                                        <h2 data-aos="fade-left" className="aos" data-aos-delay="200" data-aos-duration="1000">in the U.S</h2>
+                                                        <h2 data-aos="fade-left" className="aos" data-aos-delay="200" data-aos-duration="1000">in the U.S.</h2>
                                                     </div>
             
                                                     

@@ -209,7 +209,7 @@ export default class MobileIndex extends Component {
                                     Their
                                 </h2>
                                 <h2 className="avant uppercase gray__text aos" data-aos="fade-left" data-aos-delay="500" data-aos-duration="1000">
-                                    Team
+                                    Teams
                                 </h2>
                             </div>
                         </div>
@@ -279,7 +279,7 @@ export default class MobileIndex extends Component {
                                         <div className="chart__title">
                                             <h2 data-aos="fade-left" className="aos" data-aos-delay="100" data-aos-duration="1000">LACK OF</h2>
                                             <h2 data-aos="fade-left" className="aos" data-aos-delay="150" data-aos-duration="1000">DIVERSITY IN </h2>
-                                            <h2 data-aos="fade-left" className="aos" data-aos-delay="200" data-aos-duration="1000">THE U.S</h2>
+                                            <h2 data-aos="fade-left" className="aos" data-aos-delay="200" data-aos-duration="1000">THE U.S. :</h2>
                                             <h2 data-aos="fade-left" className="aos" data-aos-delay="250" data-aos-duration="1000">MARKETING </h2>
                                             <h2 data-aos="fade-left" className="aos" data-aos-delay="300" data-aos-duration="1000">& ADVERTISING</h2>
                                         </div>
@@ -298,7 +298,7 @@ export default class MobileIndex extends Component {
                                         <div className="chart__title">
                                             <h2 data-aos="fade-left" className="aos" data-aos-delay="100" data-aos-duration="1000">CMO  </h2>
                                             <h2 data-aos="fade-left" className="aos" data-aos-delay="150" data-aos-duration="1000">Diversity</h2>
-                                            <h2 data-aos="fade-left" className="aos" data-aos-delay="200" data-aos-duration="1000">in the U.S</h2>
+                                            <h2 data-aos="fade-left" className="aos" data-aos-delay="200" data-aos-duration="1000">in the U.S.</h2>
                                         </div>
 
                                         

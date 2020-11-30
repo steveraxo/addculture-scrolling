@@ -5,7 +5,7 @@ import SliderTweets from "../slide-three/slide-three"
 import SlideCarousel from "../slide-carousel/slide-carousel"
 import AOS from 'aos';
 import Rellax from "rellax"
-// import 'aos/dist/aos.css'; // You can also use <link> for styles
+import 'aos/dist/aos.css'; // You can also use <link> for styles
 import "slick-carousel/slick/slick.css"; 
 import "slick-carousel/slick/slick-theme.css";
 
@@ -97,15 +97,15 @@ export default class MobileIndex extends Component {
         this.parallaxContainer();
 
         if(window.innerWidth > 1024){
-            // AOS.init({
-            //     easing: 'ease', // default easing for AOS animations
-            //     once: false, // whether animation should happen only once - while scrolling down
-            //     mirror: true, // whether elements should animate out while scrolling past them
-            // });
+            AOS.init({
+                easing: 'ease', // default easing for AOS animations
+                once: true, // whether animation should happen only once - while scrolling down
+                mirror: false, // whether elements should animate out while scrolling past them
+            });
         }else{
-            // AOS.init({
-            //     once: true,
-            // });
+            AOS.init({
+                once: true,
+            });
         }
         if(window.innerWidth > 1024){
             this.setState({

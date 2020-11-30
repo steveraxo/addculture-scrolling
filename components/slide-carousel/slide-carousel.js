@@ -89,7 +89,7 @@ export default class SlideTen extends Component {
             })
         }.bind(this), 100)
 
-        if(window.screen.width > 600){
+        if(window.screen.width > 1024){
             window.addEventListener("scroll", function(){
                 var element =  document.getElementById('slide__ten');
                 var bodyRect = document.body.getBoundingClientRect(),

@@ -1,12 +1,6 @@
 import React, { useState, useEffect, Suspense, lazy } from 'react';
-import LoadingScreen from '../components/loading-screen/loading-screen'
-import SlideFull from '../components/slide-full/slide-full'
-import SlideVideo from '../components/slide-video/slide-video'
-import SliderTweets from "../components/slide-three/slide-three"
-import CTASection from '../components/cta-section/cta-section'
 import MobileVersion from "../components/mobile-version/index"
 import DesktopVersionOne from "../components/desktop-version/index"
-import DesktopVersionTwo from "../components/desktop-version/partTwo"
 
 export default function Home() {
 

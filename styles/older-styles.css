@@ -3848,6 +3848,9 @@ section{
     }
 }
 @media(max-width: 1024px){
+    .slide__two {
+        height: auto;
+    }
     .slide__eleven__six {
         bottom: 140px;
     }

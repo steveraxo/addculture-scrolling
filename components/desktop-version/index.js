@@ -1,6 +1,9 @@
 import React, { Component } from 'react'
 import CtaSection from "../cta-section/cta-section"
 import ReactFullpage from '@fullpage/react-fullpage'; 
+import SlideBands from "../animated-slides/slide-bands/slide-bands"
+import SlideSecondData from "../animated-slides/slide-bands/slide-second-data"
+import SlideTweets from "../animated-slides/slide-bands/slide-tweets"
 import SlideCarousel from "../slide-carousel/slide-carousel"
 import AOS from 'aos';
 import Rellax from "rellax"
@@ -11,7 +14,7 @@ import "slick-carousel/slick/slick-theme.css";
 export default class MobileIndex extends Component {
     constructor(props) {
         super(props);
-        this.state = {mobile: true};
+        this.state = {mobile: true, tweetCounter: 0, controller: false};
     }
 
     componentDidMount(){
@@ -61,6 +64,34 @@ export default class MobileIndex extends Component {
         document.querySelectorAll(`.chart__ones__second .${chartId}__element`)[0].classList.add("active");
         
     }
+    
+    afterLoad(origin, destination, direction){
+        if(origin.index === 2){
+            document.getElementById("bipocbands").click();
+        }
+        if(origin.index === 4){
+            document.getElementById("bipocbandsSecond").click();
+        }
+        if(origin.index === 9){
+            document.getElementById("slide__tweets").click();
+        }
+        if(origin.index === 10){
+            this.setState({tweetCounter: this.state.tweetCounter + 1})
+            this.setState({controller: true})
+        }
+        if(destination.index === 9 && direction === "down" && this.state.tweetCounter > 0 && this.state.controller === false){
+            fullpage_api.moveSectionDown();
+
+            setTimeout(function(){
+                this.setState({controller: false})
+            }, 1000)
+        }
+        if(origin.index === 11 && direction === "up"){
+            fullpage_api.moveSectionUp();
+        }
+        console.log(origin.index, direction, destination.index, this.state.tweetCounter)
+    }
+
     render() {
 
         const settingsMobile = {
@@ -74,7 +105,6 @@ export default class MobileIndex extends Component {
 
         return (
             <div id="scroll-container">
-                <script src="https://cdnjs.cloudflare.com/ajax/libs/rellax/1.12.1/rellax.min.js" integrity="sha512-f5HTYZYTDZelxS7LEQYv8ppMHTZ6JJWglzeQmr0CVTS70vJgaJiIO15ALqI7bhsracojbXkezUIL+35UXwwGrQ==" crossorigin="anonymous"></script>
 
                 <ReactFullpage
                 //fullpage options
@@ -84,7 +114,7 @@ export default class MobileIndex extends Component {
                 navigationPosition = {"left"}
                 scrollBar = {true}
                 // onLeave={onLeave.bind(this)}
-                // afterLoad={afterLoad.bind(this)}
+                afterLoad={this.afterLoad.bind(this)}
                 responsiveSlides = {true}
                 render={({ state, fullpageApi }) => {
                 
@@ -165,7 +195,8 @@ export default class MobileIndex extends Component {
                                 </div>
                             </section>
             
-                            <section id="is-white" className="mobile__slide section">
+                            <SlideBands customClass="section section__full" />
+                            {/* <section id="is-white" className="mobile__slide section">
                                 <div className="container">
                                     <div className="row">
                                         <div className="col-lg-12">
@@ -183,7 +214,7 @@ export default class MobileIndex extends Component {
                                         </div>
                                     </div>
                                 </div>
-                            </section>
+                            </section> */}
             
                             <section id="charts__one" className="chart__ones__first section">
                                 <div className="container">
@@ -236,7 +267,8 @@ export default class MobileIndex extends Component {
                                 </div>
                             </section>
             
-                            <section id="is-male" className="mobile__slide section">
+                            <SlideSecondData customClass="section section__full" />
+                            {/* <section id="is-male" className="mobile__slide section">
                                 <div className="container">
                                     <div className="row">
                                         <div className="col-lg-12">
@@ -254,7 +286,7 @@ export default class MobileIndex extends Component {
                                         </div>
                                     </div>
                                 </div>
-                            </section>
+                            </section> */}
             
                             <section id="carousel" className="section">
                                 <SlideCarousel />
@@ -416,6 +448,8 @@ export default class MobileIndex extends Component {
                                 </div>
                             </section>
                             
+                            <SlideTweets customClass="section section__full slide__tweets" />
+
                             <section id="how-its-done" className="mobile__slide section">
                                 <div className="container">
                                     <div className="row">

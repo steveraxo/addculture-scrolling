@@ -38,6 +38,10 @@ a {
 #agencies-are-failing .lottie__element svg{
   top: 0;
 }
+.section__full{
+  height: 100vh;
+  width: 100%;
+}
 .avant {
   font-family: ITC Avant Garde Pro Md;
 }
@@ -124,9 +128,30 @@ html {
   -ms-overflow-style: none;  /* IE and Edge */
   scrollbar-width: none;  /* Firefox */
 }
+.slide__tweets svg{
+  transform: translate3d(0px, 0px, 0px) scale(1.1)!important;
+}
 @media(max-width: 1024px){
   html, body{
     overflow-x: hidden;
+  }
+  .create__shape__one{
+    display: none;
+  }
+  .bipoc__shape {
+    z-index: 2;
+    position: relative;
+    left: 7px;
+    margin-bottom: 30px;
+}
+}
+
+@media(max-width: 600px){
+  #are-failing.mobile__slide {
+    align-items: center;
+  }
+  #are-failing.mobile__slide .col-lg-12 {
+    top: 0px;
   }
 }
 

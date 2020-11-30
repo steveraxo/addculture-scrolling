@@ -1,9 +1,11 @@
 import React, { Component } from 'react'
 import CtaSection from "../cta-section/cta-section"
 import Slider from "react-slick";
+import SliderTweets from "../slide-three/slide-three"
 import SlideCarousel from "../slide-carousel/slide-carousel"
 import AOS from 'aos';
-import 'aos/dist/aos.css'; // You can also use <link> for styles
+import Rellax from "rellax"
+// import 'aos/dist/aos.css'; // You can also use <link> for styles
 import "slick-carousel/slick/slick.css"; 
 import "slick-carousel/slick/slick-theme.css";
 
@@ -13,19 +15,98 @@ export default class MobileIndex extends Component {
         this.state = {mobile: true};
     }
 
-    componentDidMount(){
-        if(window.innerWidth > 1024){
-            AOS.init({
-                easing: 'ease', // default easing for AOS animations
-                once: false, // whether animation should happen only once - while scrolling down
-                mirror: true, // whether elements should animate out while scrolling past them
-            });
-        }else{
-            AOS.init({
-                once: true,
-            });
-        }
+    parallaxContainer() {
+        window.addEventListener("scroll",function() {
+            var element =  document.getElementById('create-culture');
+            var bodyRect = document.body.getBoundingClientRect(),
+                elemRect = element.getBoundingClientRect(),
+                offset   = elemRect.top - bodyRect.top;
 
+            var finalX = elemRect.top * -1;
+
+            var elementSecond =  document.getElementById('we-appropiate');
+            var bodyRectSecond = document.body.getBoundingClientRect(),
+                elemRectSecond = elementSecond.getBoundingClientRect(),
+                offset   = elemRectSecond.top - bodyRectSecond.top;
+
+            var finalXSecond = elemRectSecond.top ;
+
+            
+            if (document.getElementById("shape__one") !== null) {
+                document.getElementById("shape__one").style.transform = `translateY(${(finalX / 2)}px)`
+            }
+
+            if (document.getElementById("shape__two") !== null) {
+                document.getElementById("shape__two").style.transform = `translateY(${(finalX / 2) + 10}px)`
+            }
+
+            if (document.getElementById("shape__three") !== null) {
+                document.getElementById("shape__three").style.transform = `translateY(${(finalX / 2) + 50 }px)`
+            }
+
+            if (document.getElementById("shape__four") !== null) {
+                document.getElementById("shape__four").style.transform = `translateY(${(finalX / 2) + 70}px)`
+            }
+
+            if (document.getElementById("shape__five") !== null) {
+                document.getElementById("shape__five").style.transform = `translateY(${(finalX / 2) - 15}px)`
+            }
+
+            if (document.getElementById("shape__six") !== null) {
+                document.getElementById("shape__six").style.transform = `translateY(${(finalX / 2) - 40}px)`
+            }
+
+            if (document.getElementById("shape__seven") !== null) {
+                document.getElementById("shape__seven").style.transform = `translateY(${(finalX / 2)}px)`
+            }
+
+            if (document.getElementById("shape__eigth") !== null) {
+                document.getElementById("shape__eigth").style.transform = `translateY(${(finalX / 2)}px)`
+            }
+            
+            if (document.getElementById("shape__one__one") !== null) {
+                document.getElementById("shape__one__one").style.transform = `translateY(${(finalXSecond / 2) + 70}px)`
+            }
+
+            if (document.getElementById("shape__one__two") !== null) {
+                document.getElementById("shape__one__two").style.transform = `translateY(${(finalXSecond / 2) - 15}px)`
+            }
+
+            if (document.getElementById("shape__one__three") !== null) {
+                document.getElementById("shape__one__three").style.transform = `translateY(${(finalXSecond / 2) + 3}px)`
+            }
+
+            if (document.getElementById("shape__one__four") !== null) {
+                document.getElementById("shape__one__four").style.transform = `translateY(${(finalXSecond / 2) + 100}px)`
+            }
+
+            if (document.getElementById("shape__one__five") !== null) {
+                document.getElementById("shape__one__five").style.transform = `translateY(${(finalXSecond / 2) - 27}px)`
+            }
+        },
+        { passive: false }
+        )
+    }
+
+    componentDidMount(){
+        // var rellax = new Rellax('.rellax', {
+        //     wrapper:'#create-culture'
+        //   });
+
+
+        this.parallaxContainer();
+
+        if(window.innerWidth > 1024){
+            // AOS.init({
+            //     easing: 'ease', // default easing for AOS animations
+            //     once: false, // whether animation should happen only once - while scrolling down
+            //     mirror: true, // whether elements should animate out while scrolling past them
+            // });
+        }else{
+            // AOS.init({
+            //     once: true,
+            // });
+        }
         if(window.innerWidth > 1024){
             this.setState({
                 mobile: false,
@@ -35,8 +116,6 @@ export default class MobileIndex extends Component {
                 mobile: true,
             });
         }
-
-        
     }
 
     switchChart(event){
@@ -81,7 +160,7 @@ export default class MobileIndex extends Component {
             slidesToShow: 1,
             arrows: false,
         };
-        
+
         return (
             <div id="scroll-container">
                 <script
@@ -177,6 +256,8 @@ export default class MobileIndex extends Component {
                                         Is White
                                     </h2>
                                 </div>
+                            </div>
+                            <div className="col-lg-12 is__white__data d-flex justify-content-center align-item-center">
                                 <img src="/images/firstData.svg" alt="93.8% of the people in executive positions in the top 50 agencies are white" className="aos" data-aos="fade-up" data-aos-delay="300" data-aos-duration="1000"/>
                             </div>
                         </div>
@@ -246,6 +327,8 @@ export default class MobileIndex extends Component {
                                         Is male
                                     </h2>
                                 </div>
+                            </div>
+                            <div className="col-lg-12 is__male__data">
                                 <img src="/images/secondData.svg" className="aos" alt="93.8% of the people in executive positions in the top 50 agencies are white" data-aos="fade-up" data-aos-delay="300" data-aos-duration="1000"/>
                             </div>
                         </div>
@@ -383,12 +466,24 @@ export default class MobileIndex extends Component {
                 </section>
 
                 <section id="create-culture" className="mobile__slide">
+                    
+                    <img src="/images/s2.svg" className="create__shape__one rellax two " id="shape__two" />
+                    
                     <div className="floating__circle">
-                        <img src="/images/shapesOne.svg" className="aos" data-aos="fade-up" data-aos-delay="100" data-aos-duration="1000"  alt=""/>
+                        <img src="/images/shapesOne.svg" className="aos hidden__desktop" data-aos="fade-up" data-aos-delay="100" data-aos-duration="1000"  alt=""/>
                     </div>
                     <div className="container">
                         <div className="row">
-                            <div className="col-lg-12">
+                            <div className="col-sm-12 col-lg-2">
+                                <img src="/images/s1.svg" className="create__shape__one rellax one " id="shape__one" />
+                                <img src="/images/s4.svg" className="create__shape__one rellax four " id="shape__four" />
+                                <img src="/images/bipocCreate.svg" className="bipoc__shape" alt=""/>
+                            </div>
+                            <div className="col-sm-12 col-lg-6">
+                                <img src="/images/s5.svg" className="create__shape__one rellax five " id="shape__five" />
+                                <img src="/images/s6.svg" className="create__shape__one rellax six " id="shape__six" />
+                                <img src="/images/s3.svg" className="create__shape__one rellax three " id="shape__three" />
+
                                 <h2 className="avant uppercase black__text aos" data-aos="fade-right" data-aos-delay="100" data-aos-duration="1000">
                                     Bipoc
                                 </h2>
@@ -402,17 +497,28 @@ export default class MobileIndex extends Component {
                                     Culture
                                 </h2>
                             </div>
+                            <div className="col-sm-12 col-lg-3"></div>
                         </div>
                     </div>
                 </section>
 
                 <section id="we-appropiate" className="mobile__slide">
                     <div className="floating__circle">
-                        <img src="/images/shapesTwo.svg" data-aos="fade-up" data-aos-delay="100" data-aos-duration="1000"  alt=""/>
+                        <img src="/images/shapesTwo.svg" className="aos hidden__desktop" data-aos="fade-up" data-aos-delay="100" data-aos-duration="1000"  alt=""/>
                     </div>
                     <div className="container">
                         <div className="row">
-                            <div className="col-lg-12">
+                            <div className="col-sm-12 col-lg-5">
+
+                                <img src="/images/s3.svg" className="create__shape__one rellax one " id="shape__one__one" />
+                                <img src="/images/s2.svg" className="create__shape__one rellax four " id="shape__one__two" />
+
+                            </div>
+                            <div className="col-sm-12 col-lg-7">
+                                <img src="/images/s5.svg" className="create__shape__one rellax five " id="shape__one__three" />
+                                <img src="/images/s6.svg" className="create__shape__one rellax six " id="shape__one__four" />
+                                <img src="/images/s7.svg" className="create__shape__one rellax three " id="shape__one__five" />
+                               
                                 <h2 className="avant uppercase black__text aos" data-aos="fade-right" data-aos-delay="100" data-aos-duration="1000">
                                     We
                                 </h2>
@@ -431,7 +537,11 @@ export default class MobileIndex extends Component {
                         </div>
                     </div>
                 </section>
-
+                {
+                    !this.state.mobile
+                    ? <SliderTweets />
+                    : ""
+                }
                 <section id="how-its-done" className="mobile__slide">
                     <div className="container">
                         <div className="row">

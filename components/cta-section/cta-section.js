@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import FormPopup from '../form-popup/form-popup'
-import AOS from 'aos';
-import 'aos/dist/aos.css'; // You can also use <link> for styles
+
 
 export default function SlideFifteen() {
     const [isLoaded, setIsLoaded] = useState(false);
@@ -17,17 +16,17 @@ export default function SlideFifteen() {
     }
 
     useEffect(() => {
-        if(window.innerWidth > 1024){
-            AOS.init({
-                easing: 'ease', // default easing for AOS animations
-                once: false, // whether animation should happen only once - while scrolling down
-                mirror: true, // whether elements should animate out while scrolling past them
-            });
-        }else{
-            AOS.init({
-                once: true,
-            });
-        }
+        // if(window.innerWidth > 1024){
+        //     AOS.init({
+        //         easing: 'ease', // default easing for AOS animations
+        //         once: false, // whether animation should happen only once - while scrolling down
+        //         mirror: true, // whether elements should animate out while scrolling past them
+        //     });
+        // }else{
+        //     AOS.init({
+        //         once: true,
+        //     });
+        // }
 
         setTimeout(function(){
             setIsLoaded(true);

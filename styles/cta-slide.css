@@ -12,9 +12,13 @@
     min-height: 100vh;
     position: relative;
 }
-#we-amplify-the-voices .container-fluid {
-    padding: 0 10%!important;
-    width: 100%;
+@media(max-width: 10000px){
+
+    #we-amplify-the-voices .container-fluid {
+        padding: 0 0%!important;
+        width: 100%;
+        max-width: 1370px;
+    }
 }
 #we-amplify-the-voices h2 {
     display: -webkit-flex;
@@ -135,6 +139,11 @@
 #we-amplify-the-voices .end__block__link {
     position: relative;
     z-index: 9;
+}
+@media(max-width: 1440px){
+    #we-amplify-the-voices .container-fluid {
+        padding: 0 5%!important;
+    }
 }
 @media(max-width: 1024px){
     #we-amplify-the-voices .row__second .col-lg-12 .end__block.active, #we-amplify-the-voices .row__second .col-lg-12 .end__block{

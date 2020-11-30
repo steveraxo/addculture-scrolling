@@ -36,6 +36,7 @@
     opacity: 0;
     transition: all ease-in-out 0.4s;
 }
+
 @media(max-width: 8000px){
     .slider__container__pagination{
         width: 100%;
@@ -858,6 +859,7 @@
 #slide__twelve.black__background{
     background: #222220;
 }
+
 @media (max-width: 8000px){
     #fp-nav.fp-left {
         left: 41%;
@@ -1037,11 +1039,10 @@
 
     .slider__ten__prev{
         position: absolute;
-        left: 43.5%;
+        left: 39.5%;
         top: 46%;
         bottom: 0;
         margin: auto;
-        opacity: 0;
         z-index: 3;
         transition: all cubic-bezier(0.45, 0, 0.55, 1) 0.4s;
     }

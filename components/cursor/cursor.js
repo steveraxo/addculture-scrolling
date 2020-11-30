@@ -21,9 +21,12 @@ export default class cursor extends Component {
     const InfoBlocks = [...document.querySelectorAll(".end__block")]
     const submitBuddon = [...document.querySelectorAll(".submit__form a")] 
     const closeSubmit = [...document.querySelectorAll(".close__form")]  
+    const chartController = [...document.querySelectorAll(".chart__controller__element")]  
 
+    
     const allElements = aLinks
       .concat(buttons)
+      .concat(chartController)
       .concat(closeSubmit)
       .concat(submitBuddon)
       .concat(InfoBlocks)

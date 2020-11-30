@@ -31,7 +31,7 @@ export default class SlideTwo extends Component {
             var scene = new ScrollMagic.Scene({
                 triggerElement: ".env-three",
                 offset: 300,
-                duration: 3000 }).setTween(tl).setPin("#lottie-three").addTo(controller);
+                duration: 15000 }).setTween(tl).setPin("#lottie-three").addTo(controller);
             })
 
         }, 2000)

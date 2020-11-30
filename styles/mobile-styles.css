@@ -2,12 +2,15 @@
     .container {
         width: 1500px;
     }
-    
+    .chart__title{
+        min-height: 300px;
+    }
     .is__white__data{
         display: flex;
         justify-content: center;
         align-items: center;
     }
+    
     .create__shape__one{
         position: absolute;
         z-index: 4;
@@ -17,6 +20,9 @@
     }
     .create__shape__one.one{
         top: 50px;
+    }
+    .create__shape__one.five#shape__one__three{
+        left: -100px;
     }
     .create__shape__one.two{
         top: 150px;

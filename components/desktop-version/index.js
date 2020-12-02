@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import CtaSection from "../cta-section/cta-section"
 import ReactFullpage from '@fullpage/react-fullpage'; 
+import SlideFailing from "../animated-slides/slide-bands/slide-failing"
+import SlideBipoc from "../animated-slides/slide-bands/slide-bipoc"
 import SlideBands from "../animated-slides/slide-bands/slide-bands"
 import SlideSecondData from "../animated-slides/slide-bands/slide-second-data"
 import SlideTweets from "../animated-slides/slide-bands/slide-tweets"
@@ -14,7 +16,7 @@ import "slick-carousel/slick/slick-theme.css";
 export default class MobileIndex extends Component {
     constructor(props) {
         super(props);
-        this.state = {mobile: true, tweetCounter: 0, controller: false};
+        this.state = {mobile: true, tweetCounter: 0, controller: false, bipocController: false,};
     }
 
     parallaxContainer() {
@@ -92,6 +94,8 @@ export default class MobileIndex extends Component {
 
 
     componentDidMount(){
+        fullpage_api.setAllowScrolling(false, "down, up");
+
         this.parallaxContainer();
 
         AOS.init({
@@ -99,6 +103,17 @@ export default class MobileIndex extends Component {
             once: true, // whether animation should happen only once - while scrolling down
             mirror: false, // whether elements should animate out while scrolling past them
         });
+
+        document.getElementById("failing__animation__scroller").addEventListener("click", function(){
+            fullpage_api.moveSectionDown();
+
+            fullpage_api.setAllowScrolling(true, "down, up");
+
+            setTimeout(function(){
+                document.querySelectorAll(".are__failing__content__container")[0].classList.add("active");
+                document.querySelectorAll(".failing__animation")[0].classList.remove("active");
+            }, 1500)
+        })
     }
 
     switchChart(event){
@@ -147,7 +162,25 @@ export default class MobileIndex extends Component {
             document.querySelectorAll(".navbar.container-fluid")[0].classList.remove("black__menu");
             document.getElementById("fp-nav").classList.remove("black__menu");
         }
+        
+        if(destination.index === 2 && !this.state.bipocController){
+            fullpage_api.setAllowScrolling(false, "down, up");
 
+            document.getElementById("bipoc__data").click();
+            
+            setTimeout(function(){
+                fullpage_api.moveSectionDown();
+            }, 3500)
+
+            setTimeout(function(){
+                document.querySelectorAll(".bipoc__data__container__outer")[0].classList.add("active");
+                document.querySelectorAll(".bipoc__data__container")[0].classList.remove("active");
+                fullpage_api.setAllowScrolling(true, "down, up");
+
+                this.setState({bipocController: true})
+
+            }.bind(this), 5000)
+        }
         if(origin.index === 2){
             document.getElementById("bipocbands").click();
         }
@@ -209,25 +242,28 @@ export default class MobileIndex extends Component {
                         <ReactFullpage.Wrapper>
                             
                             <section id="are-failing" className="mobile__slide section">
-                                <div className="floating__circle">
-                                    <img src="/images/plus.svg" data-aos="fade-left" data-aos-delay="100" data-aos-duration="1000"  alt=""/>
-                                </div>
-                                <div className="container">
-                                    <div className="row">
-                                        <div className="col-lg-12">
-                                            
-                                            <h2 className=" aos avant uppercase white__text" data-aos="fade-up" data-aos-delay="100" data-aos-duration="1000">
-                                                ADVERTISING
-                                            </h2>
-                                            <h2 className=" aos avant uppercase white__text" data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000">
-                                                AGENCIES 
-                                            </h2>
-                                            <h2 className="aos avant uppercase rose__text" data-aos="fade-up" data-aos-delay="300" data-aos-duration="1000">
-                                                ARE Failing
-                                            </h2>
+                                <div className="are__failing__content__container">
+                                    <div className="floating__circle">
+                                        <img src="/images/plus.svg" data-aos="fade-left" data-aos-delay="100" data-aos-duration="1000"  alt=""/>
+                                    </div>
+                                    <div className="container">
+                                        <div className="row">
+                                            <div className="col-lg-12">
+                                                
+                                                <h2 className=" aos avant uppercase white__text" data-aos="fade-up" data-aos-delay="100" data-aos-duration="1000">
+                                                    ADVERTISING
+                                                </h2>
+                                                <h2 className=" aos avant uppercase white__text" data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000">
+                                                    AGENCIES 
+                                                </h2>
+                                                <h2 className="aos avant uppercase rose__text" data-aos="fade-up" data-aos-delay="300" data-aos-duration="1000">
+                                                    ARE Failing
+                                                </h2>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
+                                <SlideFailing />
                             </section>
             
                             <section id="to-diversify" className="mobile__slide section">
@@ -255,30 +291,33 @@ export default class MobileIndex extends Component {
                             </section>
             
                             <section id="open-doors" className="mobile__slide section">
-                                <div className="container">
-                                    <div className="row">
-                                        <div className="col-lg-12">
-                                            <h2 className="avant uppercase black__text aos" data-aos="fade-left" data-aos-delay="100" data-aos-duration="1000">
-                                                To Open
-                                            </h2>
-                                            <h2 className="avant uppercase black__text aos" data-aos="fade-left" data-aos-delay="200" data-aos-duration="1000">
-                                                Their 
-                                            </h2>
-                                            <h2 className="avant uppercase black__text aos" data-aos="fade-left" data-aos-delay="400" data-aos-duration="1000">
-                                                Doors to
-                                            </h2>
-                                            <h2 className="avant uppercase black__text aos" data-aos="fade-left" data-aos-delay="500" data-aos-duration="1000">
-                                                Bipoc +
-                                            </h2>
-                                            <h2 className="avant uppercase black__text aos" data-aos="fade-left" data-aos-delay="500" data-aos-duration="1000">
-                                                Diverse
-                                            </h2>
-                                            <h2 className="avant uppercase black__text aos" data-aos="fade-left" data-aos-delay="500" data-aos-duration="1000">
-                                                Creators
-                                            </h2>
+                                <div className="bipoc__data__container__outer">
+                                    <div className="container">
+                                        <div className="row">
+                                            <div className="col-lg-12">
+                                                <h2 className="avant uppercase black__text aos" data-aos="fade-left" data-aos-delay="100" data-aos-duration="1000">
+                                                    To Open
+                                                </h2>
+                                                <h2 className="avant uppercase black__text aos" data-aos="fade-left" data-aos-delay="200" data-aos-duration="1000">
+                                                    Their 
+                                                </h2>
+                                                <h2 className="avant uppercase black__text aos" data-aos="fade-left" data-aos-delay="400" data-aos-duration="1000">
+                                                    Doors to
+                                                </h2>
+                                                <h2 className="avant uppercase black__text aos" data-aos="fade-left" data-aos-delay="500" data-aos-duration="1000">
+                                                    Bipoc +
+                                                </h2>
+                                                <h2 className="avant uppercase black__text aos" data-aos="fade-left" data-aos-delay="500" data-aos-duration="1000">
+                                                    Diverse
+                                                </h2>
+                                                <h2 className="avant uppercase black__text aos" data-aos="fade-left" data-aos-delay="500" data-aos-duration="1000">
+                                                    Creators
+                                                </h2>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
+                                <SlideBipoc />
                             </section>
             
                             <SlideBands customClass="section section__full" />

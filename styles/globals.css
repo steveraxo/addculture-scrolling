@@ -154,7 +154,36 @@ html {
     top: 0px;
   }
 }
+.are__failing__content__container{
+  display: none;
+  width: 100%;
+}
+.are__failing__content__container.active{
+  display: flex;
+}
+.failing__animation{
+  display: none;
+}
+.failing__animation.active{
+  display: flex;
+}
 
+.bipoc__data__container__outer{
+  display: none;
+  width: 100%;
+}
+.bipoc__data__container__outer.active{
+  display: flex;
+}
+.bipoc__data__container{
+  display: none;
+}
+.bipoc__data__container.active{
+  display: flex;
+}
+#open-doors.black{
+  background: #222220;
+}
 #set-height {
   display: block;
 }

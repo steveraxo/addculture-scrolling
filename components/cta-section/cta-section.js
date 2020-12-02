@@ -112,7 +112,7 @@ export default function SlideFifteen() {
                         </div>
                         <div className="row row__second">
                             <div className="col-lg-12">
-                                <a href="https://raxo.co/addculture" className="end__block active" id="sign__one__wrapper" target="_BLANK">
+                                <a href="https://addculture.com/stories" className="end__block active" id="sign__one__wrapper" target="_BLANK">
                                 <div 
                                     
                                 >

@@ -181,6 +181,35 @@ html {
 .bipoc__data__container.active{
   display: flex;
 }
+
+.its__time__content__container{
+  display: none;
+  width: 100%;
+}
+.its__time__content__container.active{
+  display: flex;
+}
+.its__time__container{
+  display: none;
+}
+.its__time__container.active{
+  display: flex;
+}
+
+.let__them__content__container{
+  display: none;
+  width: 100%;
+}
+.let__them__content__container.active{
+  display: flex;
+}
+.let__them__container{
+  display: none;
+}
+.let__them__container.active{
+  display: flex;
+}
+
 #open-doors.black{
   background: #222220;
 }

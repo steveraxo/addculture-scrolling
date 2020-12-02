@@ -4,11 +4,12 @@ import ReactFullpage from '@fullpage/react-fullpage';
 import SlideFailing from "../animated-slides/slide-bands/slide-failing"
 import SlideBipoc from "../animated-slides/slide-bands/slide-bipoc"
 import SlideBands from "../animated-slides/slide-bands/slide-bands"
+import SlideLet from "../animated-slides/slide-bands/slide-letThem"
+import SlideTime from "../animated-slides/slide-bands/slide-time"
 import SlideSecondData from "../animated-slides/slide-bands/slide-second-data"
 import SlideTweets from "../animated-slides/slide-bands/slide-tweets"
 import SlideCarousel from "../slide-carousel/slide-carousel"
 import AOS from 'aos';
-import Rellax from "rellax"
 import 'aos/dist/aos.css'; // You can also use <link> for styles
 import "slick-carousel/slick/slick.css"; 
 import "slick-carousel/slick/slick-theme.css";
@@ -16,7 +17,7 @@ import "slick-carousel/slick/slick-theme.css";
 export default class MobileIndex extends Component {
     constructor(props) {
         super(props);
-        this.state = {mobile: true, tweetCounter: 0, controller: false, bipocController: false,};
+        this.state = {mobile: true, tweetCounter: 0, controller: false, bipocController: false, letOne: false, letTwo: false,};
     }
 
     parallaxContainer() {
@@ -169,17 +170,23 @@ export default class MobileIndex extends Component {
             document.getElementById("bipoc__data").click();
             
             setTimeout(function(){
-                fullpage_api.moveSectionDown();
-            }, 3500)
+                document.getElementById("open-doors").classList.add("black");
+            }, 3000)
 
             setTimeout(function(){
+                fullpage_api.moveSectionDown();
+            }, 4000)
+
+            setTimeout(function(){
+                document.getElementById("open-doors").classList.remove("black");
+
                 document.querySelectorAll(".bipoc__data__container__outer")[0].classList.add("active");
                 document.querySelectorAll(".bipoc__data__container")[0].classList.remove("active");
                 fullpage_api.setAllowScrolling(true, "down, up");
 
                 this.setState({bipocController: true})
 
-            }.bind(this), 5000)
+            }.bind(this), 5500)
         }
         if(origin.index === 2){
             document.getElementById("bipocbands").click();
@@ -193,21 +200,42 @@ export default class MobileIndex extends Component {
                 fullpage_api.moveSectionDown();
             }, 13500)
         }
-        if(origin.index === 10){
-            this.setState({tweetCounter: this.state.tweetCounter + 1})
-        }
-        if(origin.index === 10){
-            this.setState({controller: true})
-        }
-        // if(destination.index === 10 && direction === "down" && this.state.tweetCounter > 0 && this.state.controller === true){
-        //     fullpage_api.moveSectionDown();
+        if(origin.index === 10 && !this.state.letOne){
 
-        //     setTimeout(function(){
-        //         this.setState({controller: false})
-        //     }.bind(this), 1000)
-        // }
-        if(destination.index === 10 && direction === "up" && this.state.tweetCounter > 0  && this.state.controller === true){
-            fullpage_api.moveSectionUp();
+            fullpage_api.setAllowScrolling(false, "down, up");
+
+            document.getElementById("let__them").click();
+            
+            setTimeout(function(){
+                fullpage_api.moveSectionDown();
+            }, 4500)
+
+            setTimeout(function(){
+                document.querySelectorAll(".let__them__content__container")[0].classList.add("active");
+                document.querySelectorAll(".let__them__container")[0].classList.remove("active");
+                fullpage_api.setAllowScrolling(true, "down, up");
+
+                this.setState({letOne: true})
+
+            }.bind(this), 5500)
+        }
+        if(origin.index === 11 && !this.state.letTwo){
+            fullpage_api.setAllowScrolling(false, "down, up");
+
+            document.getElementById("its__time").click();
+
+            setTimeout(function(){
+                fullpage_api.moveSectionDown();
+            }, 5500)
+
+            setTimeout(function(){
+                document.querySelectorAll(".its__time__content__container")[0].classList.add("active");
+                document.querySelectorAll(".its__time__container")[0].classList.remove("active");
+                fullpage_api.setAllowScrolling(true, "down, up");
+
+                this.setState({letOne: true})
+
+            }.bind(this), 7000)
         }
     }
 
@@ -321,25 +349,6 @@ export default class MobileIndex extends Component {
                             </section>
             
                             <SlideBands customClass="section section__full" />
-                            {/* <section id="is-white" className="mobile__slide section">
-                                <div className="container">
-                                    <div className="row">
-                                        <div className="col-lg-12">
-                                            <div className="failing__title">
-                                                <h2 className="avant uppercase white__text aos" data-aos="fade-left" data-aos-delay="100" data-aos-duration="1000">
-                                                    Advertising
-                                                </h2>
-                                                <h2 className="avant uppercase white__text aos" data-aos="fade-left" data-aos-delay="200" data-aos-duration="1000">
-                                                    Is White
-                                                </h2>
-                                            </div>
-                                        </div>
-                                        <div className="col-lg-12 is__white__data d-flex justify-content-center align-item-center">
-                                            <img src="/images/firstData.svg" alt="93.8% of the people in executive positions in the top 50 agencies are white" className="aos" data-aos="fade-up" data-aos-delay="300" data-aos-duration="1000"/>
-                                        </div>
-                                    </div>
-                                </div>
-                            </section> */}
             
                             <section id="charts__one" className="chart__ones__first section">
                                 <div className="container">
@@ -393,25 +402,6 @@ export default class MobileIndex extends Component {
                             </section>
             
                             <SlideSecondData customClass="section section__full" />
-                            {/* <section id="is-male" className="mobile__slide section">
-                                <div className="container">
-                                    <div className="row">
-                                        <div className="col-lg-12">
-                                            <div className="failing__title">
-                                                <h2 className="avant uppercase white__text aos" data-aos="fade-left" data-aos-delay="100" data-aos-duration="1000">
-                                                    Advertising
-                                                </h2>
-                                                <h2 className="avant uppercase white__text aos" data-aos="fade-left" data-aos-delay="200" data-aos-duration="1000">
-                                                    Is male
-                                                </h2>
-                                            </div>
-                                        </div>
-                                        <div className="col-lg-12 is__male__data">
-                                            <img src="/images/secondData.svg" className="aos" alt="93.8% of the people in executive positions in the top 50 agencies are white" data-aos="fade-up" data-aos-delay="300" data-aos-duration="1000"/>
-                                        </div>
-                                    </div>
-                                </div>
-                            </section> */}
             
                             <section id="carousel" className="section">
                                 <SlideCarousel />
@@ -576,45 +566,52 @@ export default class MobileIndex extends Component {
                             <SlideTweets customClass="section section__full slide__tweets" />
 
                             <section id="how-its-done" className="mobile__slide section">
-                                <div className="container">
-                                    <div className="row">
-                                        <div className="col-lg-12">
-                                            <h2 className="avant uppercase white__text aos" data-aos="zoom-in" data-aos-delay="100" data-aos-duration="1000">
-                                                Let them
-                                            </h2>
-                                            <h2 className="avant uppercase white__text aos" data-aos="zoom-in" data-aos-delay="200" data-aos-duration="1000">
-                                                Dictate
-                                            </h2>
-                                            <h2 className="avant uppercase rose__text aos" data-aos="zoom-in" data-aos-delay="200" data-aos-duration="1000">
-                                                how
-                                            </h2>
-                                            <h2 className="avant uppercase rose__text aos" data-aos="zoom-in" data-aos-delay="200" data-aos-duration="1000">
-                                                it's done
-                                            </h2>
+                                <div className="let__them__content__container">
+                                    <div className="container">
+                                        <div className="row">
+                                            <div className="col-lg-12">
+                                                <h2 className="avant uppercase white__text aos" data-aos="zoom-in" data-aos-delay="100" data-aos-duration="1000">
+                                                    Let them
+                                                </h2>
+                                                <h2 className="avant uppercase white__text aos" data-aos="zoom-in" data-aos-delay="200" data-aos-duration="1000">
+                                                    Dictate
+                                                </h2>
+                                                <h2 className="avant uppercase rose__text aos" data-aos="zoom-in" data-aos-delay="200" data-aos-duration="1000">
+                                                    how
+                                                </h2>
+                                                <h2 className="avant uppercase rose__text aos" data-aos="zoom-in" data-aos-delay="200" data-aos-duration="1000">
+                                                    it's done
+                                                </h2>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
+
+                                <SlideLet />
                             </section>
             
                             <section id="its-time" className="mobile__slide section">
-                                <div className="container">
-                                    <div className="row">
-                                        <div className="col-lg-12">
-                                            <h2 className="avant uppercase white__text aos" data-aos="zoom-in" data-aos-delay="100" data-aos-duration="1000">
-                                                It's
-                                            </h2>
-                                            <h2 className="avant uppercase white__text aos" data-aos="zoom-in" data-aos-delay="200" data-aos-duration="1000">
-                                                Time to
-                                            </h2>
-                                            <h2 className="avant uppercase rose__text aos" data-aos="zoom-in" data-aos-delay="200" data-aos-duration="1000">
-                                                Ad+d
-                                            </h2>
-                                            <h2 className="avant uppercase rose__text aos" data-aos="zoom-in" data-aos-delay="200" data-aos-duration="1000">
-                                                Culture
-                                            </h2>
+                                <div className="its__time__content__container">
+                                    <div className="container">
+                                        <div className="row">
+                                            <div className="col-lg-12">
+                                                <h2 className="avant uppercase white__text aos" data-aos="zoom-in" data-aos-delay="100" data-aos-duration="1000">
+                                                    It's
+                                                </h2>
+                                                <h2 className="avant uppercase white__text aos" data-aos="zoom-in" data-aos-delay="200" data-aos-duration="1000">
+                                                    Time to
+                                                </h2>
+                                                <h2 className="avant uppercase rose__text aos" data-aos="zoom-in" data-aos-delay="200" data-aos-duration="1000">
+                                                    Ad+d
+                                                </h2>
+                                                <h2 className="avant uppercase rose__text aos" data-aos="zoom-in" data-aos-delay="200" data-aos-duration="1000">
+                                                    Culture
+                                                </h2>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
+                                <SlideTime />
                             </section>
             
                             <section id="we-amplify" className="section">

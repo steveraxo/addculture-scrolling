@@ -210,6 +210,33 @@ html {
   display: flex;
 }
 
+.slide__tweets__container__wrapper{
+  background: #ADAEA5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.static__section__tweets{
+  display: none;
+  width: 100%;
+}
+.static__section__tweets.active{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.tweets__container{
+  display: none;
+}
+.tweets__container.active{
+  display: flex;
+}
+
+.static__section__tweets svg{
+  width: 100%;
+  max-width: 600px;
+}
+
 #open-doors.black{
   background: #222220;
 }

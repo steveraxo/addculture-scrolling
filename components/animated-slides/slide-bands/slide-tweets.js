@@ -41,7 +41,7 @@ class ControlledLottie71 extends Component {
   }
   render() {
     return (
-      <div className={`lottie__wrapper  ${this.props.customClass}`}>
+      <div className={`lottie__wrapper  ${this.props.customClass} active`}>
         <div id="slide__tweets"></div>
         <div className="lottie__element" style={{width: "100%", margin: '0 auto'}} ref={ ref => this.animBox = ref}></div>
       </div>

@@ -17,7 +17,7 @@ import "slick-carousel/slick/slick-theme.css";
 export default class MobileIndex extends Component {
     constructor(props) {
         super(props);
-        this.state = {mobile: true, tweetCounter: 0, controller: false, bipocController: false, letOne: false, letTwo: false,};
+        this.state = {mobile: true, tweetController : false, tweetCounter: 0, controller: false, bipocController: false, letOne: false, letTwo: false,};
     }
 
     parallaxContainer() {
@@ -194,11 +194,22 @@ export default class MobileIndex extends Component {
         if(origin.index === 4){
             document.getElementById("bipocbandsSecond").click();
         }
-        if(origin.index === 9){
+        if(origin.index === 9 && !this.state.tweetController){
+            fullpage_api.setAllowScrolling(false, "down, up");
+
             document.getElementById("slide__tweets").click();
             setTimeout(function(){
                 fullpage_api.moveSectionDown();
-            }, 13500)
+
+                this.setState({tweetController: true})
+            }.bind(this), 13500)
+
+            setTimeout(function(){
+                document.querySelectorAll(".static__section__tweets")[0].classList.add("active");
+                document.querySelectorAll(".tweets__container")[0].classList.remove("active");
+
+                fullpage_api.setAllowScrolling(true, "down, up");
+            }.bind(this), 15000)
         }
         if(origin.index === 10 && !this.state.letOne){
 
@@ -563,7 +574,19 @@ export default class MobileIndex extends Component {
                                 </div>
                             </section>
                             
-                            <SlideTweets customClass="section section__full slide__tweets" />
+                            <div className="section section__full slide__tweets slide__tweets__container__wrapper">
+                                <div className="static__section__tweets">
+                                    <svg width="456" height="114" viewBox="0 0 456 114" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M177.576 114L177.576 -2.2999e-06L230.191 0L230.191 114L177.576 114Z" fill="#222220"/>
+                                        <path d="M177.574 57.0001L113.997 114L113.997 -2.77904e-06L177.574 57.0001Z" fill="#222220"/>
+                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M281.675 -2.16406e-06C281.675 34.5267 309.665 62.5161 344.191 62.5161L344.191 114C281.231 114 230.191 62.9605 230.191 2.3368e-06L281.675 -2.16406e-06Z" fill="#222220"/>
+                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M62.5161 114C62.5161 79.4733 34.5267 51.4839 0 51.4839L0 0C62.9605 0 114 51.0395 114 114H62.5161Z" fill="#222220"/>
+                                        <path d="M455.999 57C455.999 88.4802 430.97 114 400.095 114C369.22 114 344.191 88.4802 344.191 57C344.191 25.5198 369.22 0 400.095 0C430.97 0 455.999 25.5198 455.999 57Z" fill="#222220"/>
+                                    </svg>
+                                </div>
+                                <SlideTweets customClass="tweets__container" />
+                            </div>
+                            
 
                             <section id="how-its-done" className="mobile__slide section">
                                 <div className="let__them__content__container">

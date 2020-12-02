@@ -66,7 +66,7 @@ export default class footer extends Component {
                             animate={{ y: 0, opacity: 1 }}
                             transition={{ duration: 0.9, type: "spring", stiffness: 50, delay: 0.2 }}
                         >
-                            <motion.a href="https://addculture.com/stories" whileHover={{ color: "#FFC6C6"}}>
+                            <motion.a href="https://stories.addculture.com" whileHover={{ color: "#FFC6C6"}}>
                                 <p>EXPLORE <strong> Stories</strong></p>
                             </motion.a>
                         </motion.div>

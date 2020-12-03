@@ -207,11 +207,16 @@ export default class MobileIndex extends Component {
             document.querySelectorAll(".social__menu")[0].classList.add("black__menu");
             document.querySelectorAll(".navbar.container-fluid")[0].classList.add("black__menu");
             document.getElementById("fp-nav").classList.add("black__menu");
+            document.querySelectorAll(".icon-scroll")[0].classList.add("black");
+
+            
         }else{
             document.querySelectorAll(".navbar")[0].classList.remove("black__menu");
             document.querySelectorAll(".social__menu")[0].classList.remove("black__menu");
             document.querySelectorAll(".navbar.container-fluid")[0].classList.remove("black__menu");
             document.getElementById("fp-nav").classList.remove("black__menu");
+            document.querySelectorAll(".icon-scroll")[0].classList.remove("black");
+
         }
         
         if(destination.index === 2 && !this.state.bipocController){
@@ -332,8 +337,9 @@ export default class MobileIndex extends Component {
         };
 
         return (
+            <>
+            <div class='icon-scroll'/><div/>
             <div id="scroll-container">
-
                 <ReactFullpage
                 //fullpage options
                 scrollingSpeed = {1000} /* Options here */
@@ -718,6 +724,7 @@ export default class MobileIndex extends Component {
 
                 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-grid-only@1.0.0/bootstrap.css"/>
             </div> 
+            </>
         )
     }
 }

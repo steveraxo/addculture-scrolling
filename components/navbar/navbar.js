@@ -64,7 +64,7 @@ export default class footer extends Component {
                             </a>
                             
                         </motion.div>
-                        <motion.div className="navbar__to__raxo hide__mobile"
+                        <motion.div className="navbar__to__raxo explore__cta hide__mobile"
                             initial={{ y: -100, opacity: 0  }}
                             animate={{ y: 0, opacity: 1 }}
                             transition={{ duration: 0.9, type: "spring", stiffness: 50, delay: 0.2 }}

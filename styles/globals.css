@@ -209,7 +209,9 @@ html {
 .let__them__container.active{
   display: flex;
 }
-
+.restart__journey * {
+  pointer-events: none;
+}
 .slide__tweets__container__wrapper{
   background: #ADAEA5;
   display: flex;

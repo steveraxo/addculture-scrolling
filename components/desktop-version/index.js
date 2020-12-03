@@ -126,7 +126,7 @@ export default class MobileIndex extends Component {
             document.querySelectorAll(".its__time__content__container")[0].classList.add("active");
         }
 
-        document.querySelectorAll(".restart__journey__cta")[0].addEventListener("click", function(event){
+        document.querySelectorAll(".restart__journey")[0].addEventListener("click", function(event){
             event.preventDefault();
 
             var element_to_scroll_to = document.getElementById('we-amplify-the-voices');

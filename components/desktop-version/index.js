@@ -17,7 +17,7 @@ import "slick-carousel/slick/slick-theme.css";
 export default class MobileIndex extends Component {
     constructor(props) {
         super(props);
-        this.state = {mobile: true, tweetController : false, tweetCounter: 0, controller: false, bipocController: false, letOne: false, letTwo: false,};
+        this.state = {mobile: true, letThree : false, tweetCounter: 0, controller: false, bipocController: false, letOne: false, letTwo: false,};
     }
 
     parallaxContainer() {
@@ -93,8 +93,8 @@ export default class MobileIndex extends Component {
         )
     }
 
-
     componentDidMount(){
+
         fullpage_api.setAllowScrolling(false, "down, up");
 
         this.parallaxContainer();
@@ -105,16 +105,54 @@ export default class MobileIndex extends Component {
             mirror: false, // whether elements should animate out while scrolling past them
         });
 
-        document.getElementById("failing__animation__scroller").addEventListener("click", function(){
-            fullpage_api.moveSectionDown();
-
+        if(document.getElementById("failing__animation__scroller")){
+            document.getElementById("failing__animation__scroller").addEventListener("click", function(){
+                fullpage_api.moveSectionDown();
+    
+                fullpage_api.setAllowScrolling(true, "down, up");
+    
+                setTimeout(function(){
+                    document.querySelectorAll(".are__failing__content__container")[0].classList.add("active");
+                    document.querySelectorAll(".failing__animation")[0].classList.remove("active");
+                }, 1500)
+            })
+        }else{
             fullpage_api.setAllowScrolling(true, "down, up");
 
-            setTimeout(function(){
-                document.querySelectorAll(".are__failing__content__container")[0].classList.add("active");
-                document.querySelectorAll(".failing__animation")[0].classList.remove("active");
-            }, 1500)
-        })
+            document.querySelectorAll(".are__failing__content__container")[0].classList.add("active");
+            document.querySelectorAll(".bipoc__data__container__outer")[0].classList.add("active");
+            document.querySelectorAll(".let__them__content__container")[0].classList.add("active");
+            document.querySelectorAll(".its__time__content__container")[0].classList.add("active");
+        }
+
+        document.querySelectorAll(".restart__journey__cta")[0].addEventListener("click", function(event){
+            event.preventDefault();
+
+            var element_to_scroll_to = document.getElementById('we-amplify-the-voices');
+            
+            element_to_scroll_to.scrollIntoView();
+
+            document.querySelectorAll(".bipoc__data__container__outer")[0].classList.add("active");
+            document.querySelectorAll(".bipoc__data__container")[0].classList.remove("active");
+            
+            document.querySelectorAll(".static__section__tweets")[0].classList.add("active");
+            document.querySelectorAll(".tweets__container")[0].classList.remove("active");
+        
+            document.querySelectorAll(".let__them__content__container")[0].classList.add("active");
+            document.querySelectorAll(".let__them__container")[0].classList.remove("active");
+            
+            document.querySelectorAll(".its__time__content__container")[0].classList.add("active");
+            document.querySelectorAll(".its__time__container")[0].classList.remove("active");
+            
+            document.getElementById("bipocbands").click();
+            document.getElementById("bipocbandsSecond").click();
+
+            this.setState({bipocController: true})
+            this.setState({letThree: true})
+            this.setState({letOne: true})
+            this.setState({letTwo: true})
+
+        }.bind(this))
     }
 
     switchChart(event){
@@ -152,6 +190,9 @@ export default class MobileIndex extends Component {
     
     afterLoad(origin, destination, direction){
         // change bar color 
+        console.log(destination.index);
+
+
         if(destination.index === 2 || destination.index === 4 || destination.index === 7 || destination.index === 8 || destination.index === 9 || destination.index === 10){
             document.querySelectorAll(".navbar")[0].classList.add("black__menu");
             document.querySelectorAll(".social__menu")[0].classList.add("black__menu");
@@ -165,88 +206,108 @@ export default class MobileIndex extends Component {
         }
         
         if(destination.index === 2 && !this.state.bipocController){
-            fullpage_api.setAllowScrolling(false, "down, up");
-
-            document.getElementById("bipoc__data").click();
-            
-            setTimeout(function(){
-                document.getElementById("open-doors").classList.add("black");
-            }, 3000)
-
-            setTimeout(function(){
-                fullpage_api.moveSectionDown();
-            }, 4000)
-
-            setTimeout(function(){
-                document.getElementById("open-doors").classList.remove("black");
-
-                document.querySelectorAll(".bipoc__data__container__outer")[0].classList.add("active");
-                document.querySelectorAll(".bipoc__data__container")[0].classList.remove("active");
-                fullpage_api.setAllowScrolling(true, "down, up");
-
-                this.setState({bipocController: true})
-
-            }.bind(this), 5500)
+            if(document.getElementById("bipoc__data")){
+                fullpage_api.setAllowScrolling(false, "down, up");
+                document.getElementById("bipoc__data").click();
+                
+                setTimeout(function(){
+                    document.getElementById("open-doors").classList.add("black");
+                }, 3000)
+    
+                setTimeout(function(){
+                    fullpage_api.moveSectionDown();
+                }, 4000)
+    
+                setTimeout(function(){
+                    document.getElementById("open-doors").classList.remove("black");
+    
+                    document.querySelectorAll(".bipoc__data__container__outer")[0].classList.add("active");
+                    document.querySelectorAll(".bipoc__data__container")[0].classList.remove("active");
+                    fullpage_api.setAllowScrolling(true, "down, up");
+    
+                    this.setState({bipocController: true})
+    
+                }.bind(this), 5500)
+            }
         }
+
         if(origin.index === 2){
             document.getElementById("bipocbands").click();
         }
         if(origin.index === 4){
             document.getElementById("bipocbandsSecond").click();
         }
-        if(origin.index === 9 && !this.state.tweetController){
-            fullpage_api.setAllowScrolling(false, "down, up");
+
+        if(destination.index === 10 ){
+
+            if(!this.state.letThree){
+                fullpage_api.setAllowScrolling(false, "down, up");
+    
+                setTimeout(function(){
+                    fullpage_api.moveSectionDown();
+                    
+                }, 13500)
+            }
 
             document.getElementById("slide__tweets").click();
-            setTimeout(function(){
-                fullpage_api.moveSectionDown();
-
-                this.setState({tweetController: true})
-            }.bind(this), 13500)
-
+            
             setTimeout(function(){
                 document.querySelectorAll(".static__section__tweets")[0].classList.add("active");
                 document.querySelectorAll(".tweets__container")[0].classList.remove("active");
 
                 fullpage_api.setAllowScrolling(true, "down, up");
+
+                this.setState({letThree: true})
             }.bind(this), 15000)
         }
-        if(origin.index === 10 && !this.state.letOne){
 
-            fullpage_api.setAllowScrolling(false, "down, up");
+        if(destination.index === 11 ){
 
-            document.getElementById("let__them").click();
-            
-            setTimeout(function(){
-                fullpage_api.moveSectionDown();
-            }, 4500)
-
-            setTimeout(function(){
-                document.querySelectorAll(".let__them__content__container")[0].classList.add("active");
-                document.querySelectorAll(".let__them__container")[0].classList.remove("active");
-                fullpage_api.setAllowScrolling(true, "down, up");
-
-                this.setState({letOne: true})
-
-            }.bind(this), 5500)
+            if(document.getElementById("let__them")){
+                if(!this.state.letOne){
+                    fullpage_api.setAllowScrolling(false, "down, up");
+        
+                    document.getElementById("let__them").click();
+                    
+                    setTimeout(function(){
+                        fullpage_api.moveSectionDown();
+                    }, 4500)
+                }
+    
+                setTimeout(function(){
+                    document.querySelectorAll(".let__them__content__container")[0].classList.add("active");
+                    document.querySelectorAll(".let__them__container")[0].classList.remove("active");
+                    fullpage_api.setAllowScrolling(true, "down, up");
+    
+                    this.setState({letOne: true})
+    
+                }.bind(this), 5500)
+            }
         }
-        if(origin.index === 11 && !this.state.letTwo){
-            fullpage_api.setAllowScrolling(false, "down, up");
-
-            document.getElementById("its__time").click();
-
-            setTimeout(function(){
-                fullpage_api.moveSectionDown();
-            }, 5500)
-
-            setTimeout(function(){
-                document.querySelectorAll(".its__time__content__container")[0].classList.add("active");
-                document.querySelectorAll(".its__time__container")[0].classList.remove("active");
-                fullpage_api.setAllowScrolling(true, "down, up");
-
-                this.setState({letOne: true})
-
-            }.bind(this), 7000)
+        if(destination.index === 12){
+            if(document.getElementById("its__time")){
+                if(!this.state.letTwo){
+                    console.log(this.state.letTwo);
+    
+                    fullpage_api.setAllowScrolling(false, "down, up");
+        
+                    document.getElementById("its__time").click();
+                    
+                    setTimeout(function(){
+                        fullpage_api.moveSectionDown();
+                    }, 5500)
+                }
+    
+    
+                setTimeout(function(){
+                    document.querySelectorAll(".its__time__content__container")[0].classList.add("active");
+                    document.querySelectorAll(".its__time__container")[0].classList.remove("active");
+                    fullpage_api.setAllowScrolling(true, "down, up");
+    
+                    this.setState({letOne: true})
+    
+                }.bind(this), 7000)
+            }
         }
     }
 
@@ -302,7 +363,7 @@ export default class MobileIndex extends Component {
                                         </div>
                                     </div>
                                 </div>
-                                <SlideFailing />
+                                {/* <SlideFailing /> */}
                             </section>
             
                             <section id="to-diversify" className="mobile__slide section">
@@ -356,7 +417,7 @@ export default class MobileIndex extends Component {
                                         </div>
                                     </div>
                                 </div>
-                                <SlideBipoc />
+                                {/* <SlideBipoc /> */}
                             </section>
             
                             <SlideBands customClass="section section__full" />
@@ -610,7 +671,7 @@ export default class MobileIndex extends Component {
                                     </div>
                                 </div>
 
-                                <SlideLet />
+                                {/* <SlideLet /> */}
                             </section>
             
                             <section id="its-time" className="mobile__slide section">
@@ -634,7 +695,7 @@ export default class MobileIndex extends Component {
                                         </div>
                                     </div>
                                 </div>
-                                <SlideTime />
+                                {/* <SlideTime /> */}
                             </section>
             
                             <section id="we-amplify" className="section">

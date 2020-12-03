@@ -59,7 +59,10 @@ export default class footer extends Component {
                             animate={{ x: 0, opacity: 1 }}
                             transition={{ duration: 0.9, type: "spring", stiffness: 50 }}
                         >
+                            <a href="/">
                             <AddLogo />
+                            </a>
+                            
                         </motion.div>
                         <motion.div className="navbar__to__raxo hide__mobile"
                             initial={{ y: -100, opacity: 0  }}
@@ -76,8 +79,8 @@ export default class footer extends Component {
                             transition={{ duration: 0.9, type: "spring", stiffness: 50, delay: 0.5 }}
                         >
                             <BackToArrow />
-                            <motion.a href="/" whileHover={{ color: "#FFC6C6"}}>
-                                <p> <strong> RESTART JOURNEY</strong></p>
+                            <motion.a href="#we-amplify-the-voices" className="restart__journey__cta" whileHover={{ color: "#FFC6C6"}}>
+                                <p> <strong> TAKE ACTION</strong></p>
                             </motion.a>
                         </motion.div>
                     </div>

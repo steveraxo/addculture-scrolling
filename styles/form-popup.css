@@ -18,7 +18,7 @@
     cursor: pointer;
 }
 .form__fields{
-    overflow-y: scroll;
+    overflow-y: unset;
 }
 #agency__form{
     position: relative;
@@ -42,15 +42,18 @@
  1px solid;
 }
 .submit__form{
-    margin-top: 20px;
+    margin-top: 40px;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: flex-end;
 }
 .form__input.error__input:after{
     content: "";
     position: absolute;
     font-size: 9px;
     color: #800000;
-    bottom: -4px;
-    left: 0;
+    bottom: 20px;
+    right: 0px;
 }
 .form__input.error__input.your-name:after{
     content: "Please complete this field"

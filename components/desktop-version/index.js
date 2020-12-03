@@ -121,6 +121,7 @@ export default class MobileIndex extends Component {
 
             document.querySelectorAll(".are__failing__content__container")[0].classList.add("active");
             document.querySelectorAll(".bipoc__data__container__outer")[0].classList.add("active");
+  
             document.querySelectorAll(".let__them__content__container")[0].classList.add("active");
             document.querySelectorAll(".its__time__content__container")[0].classList.add("active");
         }
@@ -133,16 +134,24 @@ export default class MobileIndex extends Component {
             element_to_scroll_to.scrollIntoView();
 
             document.querySelectorAll(".bipoc__data__container__outer")[0].classList.add("active");
-            document.querySelectorAll(".bipoc__data__container")[0].classList.remove("active");
+            
+            if(document.querySelectorAll(".bipoc__data__container")[0]){
+                document.querySelectorAll(".bipoc__data__container")[0].classList.remove("active");
+            }
             
             document.querySelectorAll(".static__section__tweets")[0].classList.add("active");
             document.querySelectorAll(".tweets__container")[0].classList.remove("active");
-        
+            
             document.querySelectorAll(".let__them__content__container")[0].classList.add("active");
-            document.querySelectorAll(".let__them__container")[0].classList.remove("active");
+            
+            if(document.querySelectorAll(".let__them__container")[0]){
+                document.querySelectorAll(".let__them__container")[0].classList.remove("active");
+            }
             
             document.querySelectorAll(".its__time__content__container")[0].classList.add("active");
-            document.querySelectorAll(".its__time__container")[0].classList.remove("active");
+            if(document.querySelectorAll(".its__time__container")[0]){
+                document.querySelectorAll(".its__time__container")[0].classList.remove("active");
+            }
             
             document.getElementById("bipocbands").click();
             document.getElementById("bipocbandsSecond").click();

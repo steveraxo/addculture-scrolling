@@ -32,7 +32,7 @@ function MyApp({ Component, pageProps }) {
           <meta name="twitter:image" content="https://rx.raxo.dev/wp-content/uploads/2020/11/addCulture.jpg"></meta>
           <meta name="twitter:creator" content="@raxostudio"></meta>
           <meta name="twitter:site" content="@raxostudio"></meta>
-          <link rel="icon" href="/favicon.svg" />
+          <link rel="shortcut icon" href="/favicon.png" />
       </Head>
       <Cursor />
 

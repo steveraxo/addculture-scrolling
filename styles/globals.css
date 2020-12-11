@@ -424,7 +424,7 @@ html {
     width: 65%;
   }
 }
-@media (max-height: 650px) and (orientation: landscape) {
+@media (max-height: 680px) and (orientation: landscape) {
   #charts__one.chart__ones__first h2 {
     font-size: 30px;
   }
@@ -438,18 +438,48 @@ html {
     top: 130px;
     z-index: 3;
   }
+  .form__popup {
+    transform: scale(0.7);
+  }
   .chart__ones__first .chart__wrapper.active .col-sm-12 .avant{
     position: relative;
     top: 90px;
+  }
+  .form__information h3 {
+    font-size: 15px;
   }
   .chart__ones__first .chart__image__legend {
     max-width: 330px;
   }
   .slide__ten__slide h3 {
-    font-size: 80px;
+    font-size: 60px;
+    line-height: 60px;
+  }
+  .lottieChartFourteen .lottie__element {
+    height: 380px;
+    left: -102px;
+    position: relative;
+    top: 10px!important;
   }
   .slide__ten__info h2 {
     font-size: 20px;
+  }
+  #we-amplify-the-voices .row__second .col-lg-12 h2 {
+    font-size: 12px;
+  }
+  #we-amplify-the-voices .row__second .col-lg-12 h3 {
+    font-size: 15px;
+  }
+  #we-amplify-the-voices .end__block__link svg{
+    width: 30px;
+    position: relative;
+    top: 10px;
+  }
+  #we-amplify-the-voices .row__second .col-lg-12 .end__block {
+    padding: 20px 20px;
+  }
+  #we-amplify-the-voices h2 {
+    font-size: 40px;
   }
 }
 @import "fonts.css"; /* Font Files */

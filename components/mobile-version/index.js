@@ -4,6 +4,8 @@ import Slider from "react-slick";
 import SliderTweets from "../slide-three/slide-three"
 import AOS from 'aos';
 import Rellax from "rellax"
+import SlideVideo from "../slide-video/slide-video"
+
 import 'aos/dist/aos.css'; // You can also use <link> for styles
 import "slick-carousel/slick/slick.css"; 
 import "slick-carousel/slick/slick-theme.css";
@@ -575,7 +577,9 @@ export default class MobileIndex extends Component {
                         </div>
                     </div>
                 </section>
-
+                <section id="add__culture__by__raxo" className="section">
+                                <SlideVideo />                
+                            </section>
                 <CtaSection />
 
                 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-grid-only@1.0.0/bootstrap.css"/>

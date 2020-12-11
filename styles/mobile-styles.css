@@ -1,4 +1,7 @@
 @media(max-width: 10000px){
+    .navbar__logo__mobile{
+        display: none;
+    }
     #to-diversify .floating__circle img{
         height: 20vh;
     }
@@ -420,7 +423,10 @@
 }
 @media(max-width: 600px){
     #are-failing.mobile__slide h2{
-        font-size: 50px;
+        font-size: 40px;
+    }
+    #to-diversify.mobile__slide .floating__circle{
+        display: none;
     }
 }
 
@@ -500,6 +506,9 @@
         font-size: 8vh;
         margin: 0px 0;
         line-height: 0.9em;
+    }
+    .animated__logo{
+        display: none;
     }
     #are-you-sleeping-on{
         display: none!important;
@@ -595,11 +604,7 @@
         line-height: 0.9em;
     }
 }
-@media(max-width: 600px){
-    #create-culture.mobile__slide h2{
-        font-size: 50px;
-    }
-}
+
 
 #create-culture.mobile__slide .floating__circle{
     position: absolute;
@@ -657,7 +662,7 @@
 }
 @media(max-width: 600px){
     #we-appropiate.mobile__slide h2{
-        font-size: 50px;
+        font-size: 40px;
     }
 }
 
@@ -688,6 +693,22 @@
 }
 
 @media(max-width: 1024px){
+    #add__culture__by__raxo, #video__slide__wrapper, #video__add, #video__add iframe, #video__element {
+        height: auto!important;
+    }
+    #video__slide__wrapper{
+        margin-bottom: 40px;
+
+    }
+    #to-diversify.mobile__slide .floating__circle{
+        display: none;
+    }
+    #charts__one.chart__ones__first h2 {
+        font-size: 40px;
+    }
+    .navbar__logo__mobile{
+        display: flex;
+    }
     #how-its-done.mobile__slide{
         background: #222220;
         height: 50vh;
@@ -803,15 +824,35 @@
     }
 }
 @media(max-width: 600px){
+    #create-culture.mobile__slide h2{
+        font-size: 40px;
+    }
+}
+@media(max-width: 600px){
     .chart__wrapper.active {
         align-items: self-start;
         display: flex;
         flex-direction: column;
     }
+
+    .PlayButton {
+        left: 0!important;
+        bottom: 0!important;
+        transform: scale(0.5)!important;
+        pointer-events: none!important;
+        top: 0!important;
+        right: 0!important;
+        justify-content: center!important;
+        align-items: center!important;
+        margin: auto!important;
+        max-width: 100px!important;
+        height: 100px!important;
+    }
     #charts__one.chart__ones__second .chart__image {
         width: 100%;
         margin: 20px auto 20px;
     }
+    
     .chart__title h2 span{
         color: #FFC6C6;
     }
@@ -821,9 +862,19 @@
     .chart__title{
         order: 3;
         margin-top: 50px;
+        width: 100%;
+    }
+    .chart__title {
+        justify-content: flex-start;
+        flex-wrap: wrap;
+        flex-direction: unset;
+        flex-wrap: wrap;
+    }
+    #charts__one h2 {
+        font-size: 20px;
     }
     #charts__one.chart__ones__first h2 {
-        font-size: 40px;
+        font-size: 36px;
     }
     .chart__ones__first .chart__image__legend {
         margin-top: 0px;
@@ -900,6 +951,8 @@
     }
     .chart__ones__first .chart__title{
         order: 0;
+        margin: 30px 0;
+        min-height: auto;
     }
     #charts__one .chart__controller {
         margin-bottom: 30px;

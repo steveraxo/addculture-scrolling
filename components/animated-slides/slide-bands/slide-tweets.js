@@ -26,7 +26,7 @@ class ControlledLottie71 extends Component {
     });
 
     animObj.stop();
-    animObj.setSpeed(0.5)
+    animObj.setSpeed(0.3)
 
     document.getElementById("slide__tweets").addEventListener("click", function(){
       animObj.play();

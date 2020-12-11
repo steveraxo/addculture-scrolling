@@ -405,7 +405,7 @@ export default class MobileIndex extends Component {
                                 </div>
                                 <SlideFailing />
                             </section>
-
+ 
                             <section id="to-diversify" className="mobile__slide section">
                                 {/* <div className="floating__circle">
                                     <img src="/images/Ellipse32.svg" className="aos" data-aos="fade-left" data-aos-delay="100" data-aos-duration="1000"  alt=""/>

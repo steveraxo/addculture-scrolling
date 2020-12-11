@@ -58,6 +58,7 @@ export default class footer extends Component {
                         </div>
                         <div className="navbar__logo">
                             <AnimatedLogo customClass="animated__logo" />
+                            <AddLogo className="navbar__logo__mobile" />
                         </div>
                         <motion.div className="navbar__to__raxo explore__cta hide__mobile"
                             initial={{ y: -100, opacity: 0  }}

@@ -8,6 +8,9 @@
     }
     .chart__title{
         min-height: 300px;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
     }
     .is__white__data{
         display: flex;

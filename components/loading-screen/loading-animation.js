@@ -36,7 +36,9 @@ class ControlledLottie71 extends Component {
            document.getElementById("add__loading").classList.add("hide__courtain");
 
            setTimeout(function(){
-            document.getElementById("failing__animation__container__play").click();
+             if(document.getElementById("failing__animation__container__play")){
+               document.getElementById("failing__animation__container__play").click();
+             }
            }, 700)
            
            document.getElementById("animated__logo__player").click();

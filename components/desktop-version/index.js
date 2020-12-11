@@ -10,6 +10,8 @@ import SlideSecondData from "../animated-slides/slide-bands/slide-second-data"
 import SlideTweets from "../animated-slides/slide-bands/slide-tweets"
 import SlideCarousel from "../slide-carousel/slide-carousel"
 import SlideVideo from "../slide-video/slide-video"
+import Chart70 from "../graphics/chart70"
+import Chart71 from "../graphics/chart71"
 
 import AOS from 'aos';
 import 'aos/dist/aos.css'; // You can also use <link> for styles
@@ -387,7 +389,7 @@ export default class MobileIndex extends Component {
                                         </div>
                                     </div>
                                 </div>
-                                <SlideFailing />
+                                {/* <SlideFailing /> */}
                             </section>
 
                             <section id="to-diversify" className="mobile__slide section">
@@ -441,7 +443,7 @@ export default class MobileIndex extends Component {
                                         </div>
                                     </div>
                                 </div>
-                                <SlideBipoc />
+                                {/* <SlideBipoc /> */}
                             </section>
             
                             <SlideBands customClass="section section__full" />
@@ -471,7 +473,8 @@ export default class MobileIndex extends Component {
                                                 </div>
                                             </div>
                                             <div className="col-sm-12 col-lg-6">
-                                                <img className="chart__image aos" data-aos="fade-up" data-aos-delay="400" data-aos-duration="1000" src="/images/chart__one__graphic.svg" alt="Lack of diversity chart" />
+                                                <Chart70 autoplayOption="true" customClass={"chart__image"} ></Chart70>
+                                                {/* <img className="chart__image aos" data-aos="fade-up" data-aos-delay="400" data-aos-duration="1000" src="/images/chart__one__graphic.svg" alt="Lack of diversity chart" /> */}
                                             </div>
                                         </div>
             
@@ -490,7 +493,8 @@ export default class MobileIndex extends Component {
                                             </div>
             
                                             <div className="col-sm-12 col-lg-6">
-                                                <img className="chart__image aos" src="/images/chart__two__graphic.svg" data-aos="fade-up" data-aos-delay="100" data-aos-duration="1000" alt="Lack of diversity chart" />
+                                                <Chart71 autoplayOption="true" customClass={"chart__image"} ></Chart71>
+                                                {/* <img className="chart__image aos" src="/images/chart__two__graphic.svg" data-aos="fade-up" data-aos-delay="100" data-aos-duration="1000" alt="Lack of diversity chart" /> */}
                                             </div>
                                         </div>
                                     </div>
@@ -695,7 +699,7 @@ export default class MobileIndex extends Component {
                                     </div>
                                 </div>
 
-                                <SlideLet />
+                                {/* <SlideLet /> */}
                             </section>
             
                             <section id="its-time" className="mobile__slide section">
@@ -719,7 +723,7 @@ export default class MobileIndex extends Component {
                                         </div>
                                     </div>
                                 </div>
-                                <SlideTime />
+                                {/* <SlideTime /> */}
                             </section>
 
                             <section id="add__culture__by__raxo" className="section">

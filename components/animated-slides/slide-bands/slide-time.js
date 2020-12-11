@@ -6,7 +6,7 @@ import animationDataBig from "./animation-assets/07_2_Its_Time_to_AD_D_with_Time
 let animObj = null;
 
 class ControlledLottie71 extends Component {
-  state = { shouldPlay: this.props.shouldPlay };
+  state = { shouldPlay: this.props.shouldPlay, animationState: false, };
   
   componentDidMount(){
     var finalFileAnimation = false; 
@@ -34,13 +34,18 @@ class ControlledLottie71 extends Component {
     
 
     animObj.onComplete = function() {
-      document.getElementById("triggerScrollDown").click();
+      if(!this.state.animationState){
+        document.getElementById("triggerScrollDown").click();
+      }
+
+      this.setState({animationState: true})
 
       setTimeout(function(){
+        
         document.querySelectorAll(".its__time__content__container")[0].classList.add("active");
         document.querySelectorAll(".its__time__container")[0].classList.remove("active");
       }, 2000)
-    }
+    }.bind(this)
   }
 
   render() {

@@ -265,26 +265,32 @@ export default class MobileIndex extends Component {
         }
 
         if(destination.index === 10 ){
-            fullpage_api.setAllowScrolling(false, "down, up");
+            if(!this.state.letThree){
+                fullpage_api.setAllowScrolling(false, "down, up");
+            }
 
             setTimeout(function(){
                 document.getElementById("slide__tweets").click();
             }, 200)
             
             setTimeout(function(){
+                this.setState({letThree: true})
                 fullpage_api.setAllowScrolling(true, "down, up");
             }.bind(this), 15000)
         }
 
         if(destination.index === 11 ){
             if(document.getElementById("let__them")){
-                fullpage_api.setAllowScrolling(false, "down, up");
+                if(!this.state.letOne){
+                    fullpage_api.setAllowScrolling(false, "down, up");
+                }
         
                 setTimeout(function(){
                     document.getElementById("let__them").click();
                 }, 200)
 
                 setTimeout(function(){
+                    this.setState({letOne: true})
                     fullpage_api.setAllowScrolling(true, "down, up");
                 }.bind(this), 5500)
             }
@@ -292,13 +298,16 @@ export default class MobileIndex extends Component {
 
         if(destination.index === 12){
             if(document.getElementById("its__time")){
-                fullpage_api.setAllowScrolling(false, "down, up");
+                if(!this.state.letTwo){
+                    fullpage_api.setAllowScrolling(false, "down, up");
+                }
     
                 setTimeout(function(){
                     document.getElementById("its__time").click();
                 }, 400)
 
                 setTimeout(function(){
+                    this.setState({letTwo: true})
                     fullpage_api.setAllowScrolling(true, "down, up");
                 }.bind(this), 7000)
             }
@@ -378,7 +387,7 @@ export default class MobileIndex extends Component {
                                         </div>
                                     </div>
                                 </div>
-                                {/* <SlideFailing /> */}
+                                <SlideFailing />
                             </section>
 
                             <section id="to-diversify" className="mobile__slide section">
@@ -432,7 +441,7 @@ export default class MobileIndex extends Component {
                                         </div>
                                     </div>
                                 </div>
-                                {/* <SlideBipoc /> */}
+                                <SlideBipoc />
                             </section>
             
                             <SlideBands customClass="section section__full" />
@@ -686,7 +695,7 @@ export default class MobileIndex extends Component {
                                     </div>
                                 </div>
 
-                                {/* <SlideLet /> */}
+                                <SlideLet />
                             </section>
             
                             <section id="its-time" className="mobile__slide section">
@@ -710,7 +719,7 @@ export default class MobileIndex extends Component {
                                         </div>
                                     </div>
                                 </div>
-                                {/* <SlideTime /> */}
+                                <SlideTime />
                             </section>
 
                             <section id="add__culture__by__raxo" className="section">

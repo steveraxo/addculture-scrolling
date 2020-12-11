@@ -6,7 +6,7 @@ import animationDataBig from "./animation-assets/07_1_Let_them_Text_with_Time_Re
 let animObj = null;
 
 class ControlledLottie71 extends Component {
-  state = { shouldPlay: this.props.shouldPlay };
+  state = { shouldPlay: this.props.shouldPlay, animationState: false,  };
   
   componentDidMount(){
     var finalFileAnimation = false; 
@@ -33,13 +33,17 @@ class ControlledLottie71 extends Component {
     })
 
     animObj.onComplete = function() {
-      document.getElementById("triggerScrollDown").click();
+      if(!this.state.animationState){
+        document.getElementById("triggerScrollDown").click();
+      }
+
+      this.setState({animationState: true})
 
       setTimeout(function(){
         document.querySelectorAll(".let__them__content__container")[0].classList.add("active");
         document.querySelectorAll(".let__them__container")[0].classList.remove("active");
-      }, 2000)
-    }
+      }.bind(this), 2000)
+    }.bind(this);
     
   }
 

@@ -6,7 +6,7 @@ import animationDataBig from "./animation-assets/v1_Twts_with_data.json";
 let animObj = null;
 
 class ControlledLottie71 extends Component {
-  state = { shouldPlay: this.props.shouldPlay };
+  state = { shouldPlay: this.props.shouldPlay, animationState: false, };
   
   componentDidMount(){
     var finalFileAnimation = false; 
@@ -33,13 +33,17 @@ class ControlledLottie71 extends Component {
     })
 
     animObj.onComplete = function() {
-      document.getElementById("triggerScrollDown").click();
+      if(!this.state.animationState){
+        document.getElementById("triggerScrollDown").click();
+      }
+
+      this.setState({animationState: true})
 
       setTimeout(function(){
         document.querySelectorAll(".static__section__tweets")[0].classList.add("active");
         document.querySelectorAll(".tweets__container")[0].classList.remove("active");
       }, 2000)
-    }
+    }.bind(this)
     
   }
   handleStop = () => {

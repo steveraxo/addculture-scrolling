@@ -68,7 +68,7 @@ export default class SlideVideo extends Component {
                     <img src="https://raxo.dev/addculture/playWhite.png" alt=""/>
                 </div>
 
-                <video id="video__element" onClick={this.playVideo}>
+                <video id="video__element" onClick={this.playVideo} poster="https://raxo.dev/addculture/poster.png">
                     <source src="https://raxo.dev/addculture/ADDC_Rx_mixed-resized.mp4" type="video/mp4" />
                 </video>
             </div>

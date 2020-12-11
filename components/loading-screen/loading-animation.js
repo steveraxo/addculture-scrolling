@@ -39,7 +39,7 @@ class ControlledLottie71 extends Component {
              if(document.getElementById("failing__animation__container__play")){
                document.getElementById("failing__animation__container__play").click();
              }
-           }, 700)
+           }, 1500)
            
            document.getElementById("animated__logo__player").click();
         }

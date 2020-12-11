@@ -207,7 +207,8 @@
         display: flex;
         font-weight: bold;
         text-transform: uppercase;
-        margin-bottom: 80px;
+        margin-bottom: 40px;
+        margin-top: 60px;
 
     }
     #charts__one .chart__controller p:nth-child(1){

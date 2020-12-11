@@ -84,12 +84,22 @@
     position: relative;
     overflow: hidden;
 }
+.navbar__logo{
+    pointer-events: none;
+}
 .navbar__logo path {
     fill: #FFC6C6;
+}
+.animated__logo{
+    max-width: 180px;
 }
 .navbar__to__raxo path {
     fill: #FFC6C6;
 }
+.black__menu .navbar__logo path {
+    fill: #22222d;
+}
+
 .navbar__to__raxo.restart__journey  svg path{
     transition: path ease-in-out 0.5s;
 
@@ -163,6 +173,7 @@
     justify-self: center;
     align-items: center;
     justify-content: center;
+    max-height: 50px;
 }
 .navbar .navbar__to__raxo p{
     font-family: "HelveticaNeue";

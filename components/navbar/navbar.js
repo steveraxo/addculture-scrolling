@@ -1,10 +1,12 @@
 import React, { Component } from 'react'
 import { motion } from "framer-motion"
 
-import AddLogo from "../../public/images/logo/logo_add culture.svg"
+import AddLogo from "../../public/images/logo/logenew.svg"
 import BackToArrow from "../../public/images/helpers/left-arrow.svg";
 
 import SocialMenu from "../social-menu/social-menu"
+
+import AnimatedLogo from "../navbar/animated-logo/animated-logo"
 
 export default class footer extends Component {
 
@@ -54,16 +56,9 @@ export default class footer extends Component {
                                 ></motion.div>                    
                             </motion.div>
                         </div>
-                        <motion.div className="navbar__logo"
-                            initial={{ x: -100, opacity: 0 }}
-                            animate={{ x: 0, opacity: 1 }}
-                            transition={{ duration: 0.9, type: "spring", stiffness: 50 }}
-                        >
-                            <a href="/">
-                            <AddLogo />
-                            </a>
-                            
-                        </motion.div>
+                        <div className="navbar__logo">
+                            <AnimatedLogo customClass="animated__logo" />
+                        </div>
                         <motion.div className="navbar__to__raxo explore__cta hide__mobile"
                             initial={{ y: -100, opacity: 0  }}
                             animate={{ y: 0, opacity: 1 }}

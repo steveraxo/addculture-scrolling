@@ -9,6 +9,8 @@ import SlideTime from "../animated-slides/slide-bands/slide-time"
 import SlideSecondData from "../animated-slides/slide-bands/slide-second-data"
 import SlideTweets from "../animated-slides/slide-bands/slide-tweets"
 import SlideCarousel from "../slide-carousel/slide-carousel"
+import SlideVideo from "../slide-video/slide-video"
+
 import AOS from 'aos';
 import 'aos/dist/aos.css'; // You can also use <link> for styles
 import "slick-carousel/slick/slick.css"; 
@@ -17,7 +19,7 @@ import "slick-carousel/slick/slick-theme.css";
 export default class MobileIndex extends Component {
     constructor(props) {
         super(props);
-        this.state = {mobile: true, letThree : false, tweetCounter: 0, controller: false, bipocController: false, letOne: false, letTwo: false,};
+        this.state = {mobile: true, letThree : false, tweetCounter: 0, controller: false, bipocController: false, letOne: false, letTwo: false, videoController: false};
     }
 
     parallaxContainer() {
@@ -105,6 +107,7 @@ export default class MobileIndex extends Component {
             mirror: false, // whether elements should animate out while scrolling past them
         });
 
+
         if(document.getElementById("failing__animation__scroller")){
             document.getElementById("failing__animation__scroller").addEventListener("click", function(){
                 fullpage_api.moveSectionDown();
@@ -162,6 +165,14 @@ export default class MobileIndex extends Component {
             this.setState({letTwo: true})
 
         }.bind(this))
+    
+        document.getElementById("triggerScrollDown").addEventListener("click", function(){
+            fullpage_api.moveSectionDown();
+        })
+
+        document.getElementById("triggerScrollUp").addEventListener("click", function(){
+            fullpage_api.moveSectionUp();
+        })
     }
 
     switchChart(event){
@@ -219,24 +230,25 @@ export default class MobileIndex extends Component {
 
         }
         
+
         if(destination.index === 2 && !this.state.bipocController){
             if(document.getElementById("bipoc__data")){
                 fullpage_api.setAllowScrolling(false, "down, up");
-                document.getElementById("bipoc__data").click();
+                
+                setTimeout(function(){
+                    document.getElementById("bipoc__data").click();
+                }, 100)
                 
                 setTimeout(function(){
                     document.getElementById("open-doors").classList.add("black");
                 }, 3000)
     
                 setTimeout(function(){
-                    fullpage_api.moveSectionDown();
-                }, 4000)
-    
-                setTimeout(function(){
                     document.getElementById("open-doors").classList.remove("black");
     
                     document.querySelectorAll(".bipoc__data__container__outer")[0].classList.add("active");
                     document.querySelectorAll(".bipoc__data__container")[0].classList.remove("active");
+                    
                     fullpage_api.setAllowScrolling(true, "down, up");
     
                     this.setState({bipocController: true})
@@ -253,76 +265,64 @@ export default class MobileIndex extends Component {
         }
 
         if(destination.index === 10 ){
+            fullpage_api.setAllowScrolling(false, "down, up");
 
-            if(!this.state.letThree){
-                fullpage_api.setAllowScrolling(false, "down, up");
-    
-                setTimeout(function(){
-                    fullpage_api.moveSectionDown();
-                    
-                }, 13500)
-            }
-
-            document.getElementById("slide__tweets").click();
+            setTimeout(function(){
+                document.getElementById("slide__tweets").click();
+            }, 200)
             
             setTimeout(function(){
-                document.querySelectorAll(".static__section__tweets")[0].classList.add("active");
-                document.querySelectorAll(".tweets__container")[0].classList.remove("active");
-
                 fullpage_api.setAllowScrolling(true, "down, up");
-
-                this.setState({letThree: true})
             }.bind(this), 15000)
         }
 
         if(destination.index === 11 ){
-
             if(document.getElementById("let__them")){
-                if(!this.state.letOne){
-                    fullpage_api.setAllowScrolling(false, "down, up");
+                fullpage_api.setAllowScrolling(false, "down, up");
         
-                    document.getElementById("let__them").click();
-                    
-                    setTimeout(function(){
-                        fullpage_api.moveSectionDown();
-                    }, 4500)
-                }
-    
                 setTimeout(function(){
-                    document.querySelectorAll(".let__them__content__container")[0].classList.add("active");
-                    document.querySelectorAll(".let__them__container")[0].classList.remove("active");
+                    document.getElementById("let__them").click();
+                }, 200)
+
+                setTimeout(function(){
                     fullpage_api.setAllowScrolling(true, "down, up");
-    
-                    this.setState({letOne: true})
-    
                 }.bind(this), 5500)
             }
         }
+
         if(destination.index === 12){
             if(document.getElementById("its__time")){
-                if(!this.state.letTwo){
-                    console.log(this.state.letTwo);
-    
-                    fullpage_api.setAllowScrolling(false, "down, up");
-        
-                    document.getElementById("its__time").click();
-                    
-                    setTimeout(function(){
-                        fullpage_api.moveSectionDown();
-                    }, 5500)
-                }
-    
+                fullpage_api.setAllowScrolling(false, "down, up");
     
                 setTimeout(function(){
-                    document.querySelectorAll(".its__time__content__container")[0].classList.add("active");
-                    document.querySelectorAll(".its__time__container")[0].classList.remove("active");
+                    document.getElementById("its__time").click();
+                }, 400)
+
+                setTimeout(function(){
                     fullpage_api.setAllowScrolling(true, "down, up");
-    
-                    this.setState({letOne: true})
-    
                 }.bind(this), 7000)
             }
         }
+
+        if(destination.index === 13 && !this.state.videoController){
+            // document.getElementById("video__element").play();
+            document.getElementById("video__element").volume = 0.2;
+            // document.getElementById("video__element").onended = function() {
+            //     // document.getElementById("triggerScrollDown").click();
+                
+            //     // fullpage_api.setAllowScrolling(true, "down, up");
+
+            //     // this.setState({videoController: true})
+            //     document.querySelectorAll(".PlayButton")[0].classList.remove("hidden");
+            // };
+        }
+
+        if(destination.index === 14){
+            document.querySelectorAll(".PlayButton")[0].classList.remove("hidden");
+
+            this.setState({videoController: true})
+        }
+
     }
 
     render() {
@@ -338,7 +338,7 @@ export default class MobileIndex extends Component {
 
         return (
             <>
-            <div class='icon-scroll'/><div/>
+            <div className='icon-scroll'/><div/>
             <div id="scroll-container">
                 <ReactFullpage
                 //fullpage options
@@ -380,7 +380,7 @@ export default class MobileIndex extends Component {
                                 </div>
                                 <SlideFailing />
                             </section>
-            
+
                             <section id="to-diversify" className="mobile__slide section">
                                 <div className="floating__circle">
                                     <img src="/images/Ellipse32.svg" className="aos" data-aos="fade-left" data-aos-delay="100" data-aos-duration="1000"  alt=""/>
@@ -653,10 +653,10 @@ export default class MobileIndex extends Component {
                             <div className="section section__full slide__tweets slide__tweets__container__wrapper">
                                 <div className="static__section__tweets">
                                     <svg width="456" height="114" viewBox="0 0 456 114" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M177.576 114L177.576 -2.2999e-06L230.191 0L230.191 114L177.576 114Z" fill="#222220"/>
+                                        <path fill-rule="evenodd" clipRule="evenodd" d="M177.576 114L177.576 -2.2999e-06L230.191 0L230.191 114L177.576 114Z" fill="#222220"/>
                                         <path d="M177.574 57.0001L113.997 114L113.997 -2.77904e-06L177.574 57.0001Z" fill="#222220"/>
-                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M281.675 -2.16406e-06C281.675 34.5267 309.665 62.5161 344.191 62.5161L344.191 114C281.231 114 230.191 62.9605 230.191 2.3368e-06L281.675 -2.16406e-06Z" fill="#222220"/>
-                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M62.5161 114C62.5161 79.4733 34.5267 51.4839 0 51.4839L0 0C62.9605 0 114 51.0395 114 114H62.5161Z" fill="#222220"/>
+                                        <path fill-rule="evenodd" clipRule="evenodd" d="M281.675 -2.16406e-06C281.675 34.5267 309.665 62.5161 344.191 62.5161L344.191 114C281.231 114 230.191 62.9605 230.191 2.3368e-06L281.675 -2.16406e-06Z" fill="#222220"/>
+                                        <path fill-rule="evenodd" clipRule="evenodd" d="M62.5161 114C62.5161 79.4733 34.5267 51.4839 0 51.4839L0 0C62.9605 0 114 51.0395 114 114H62.5161Z" fill="#222220"/>
                                         <path d="M455.999 57C455.999 88.4802 430.97 114 400.095 114C369.22 114 344.191 88.4802 344.191 57C344.191 25.5198 369.22 0 400.095 0C430.97 0 455.999 25.5198 455.999 57Z" fill="#222220"/>
                                     </svg>
                                 </div>
@@ -712,7 +712,11 @@ export default class MobileIndex extends Component {
                                 </div>
                                 <SlideTime />
                             </section>
-            
+
+                            <section id="add__culture__by__raxo" className="section">
+                                <SlideVideo />                
+                            </section>
+
                             <section id="we-amplify" className="section">
                                 <CtaSection />
                                 
@@ -721,7 +725,8 @@ export default class MobileIndex extends Component {
                         );
                     }}
                 />
-
+                <div id="triggerScrollDown"></div>
+                <div id="triggerScrollUp"></div>
                 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-grid-only@1.0.0/bootstrap.css"/>
             </div> 
             </>

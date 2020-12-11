@@ -29,7 +29,7 @@ export default class SlideTen extends Component {
         })
 
         document.querySelectorAll(".slider__ten__prev")[0].classList.remove("disabled");
-
+        console.log(this.state.count);
         if(this.state.count < 3){
             this.slider.slickNext();
             
@@ -37,11 +37,23 @@ export default class SlideTen extends Component {
             this.setState({
                 animationState: true,
             })
+
+            
+        }
+
+        if(this.state.count > 2){
+            this.setState({
+                count: 2,
+            })
+        }
+        if(this.state.count === 2){
+            document.querySelectorAll(".slider__ten__next")[0].classList.add("off");
         }
     }
     previous(){
         this.slider.slickPrev();     
-        
+        console.log(this.state.count);
+
         this.setState({
             count: this.state.count - 1,
         })
@@ -50,6 +62,16 @@ export default class SlideTen extends Component {
             this.setState({
                 count: 1,
             })
+        }
+
+        if(this.state.count === 3){
+            document.querySelectorAll(".slider__ten__next")[0].classList.remove("off");
+
+        }
+        if(this.state.count === 2){
+            document.querySelectorAll(".slider__ten__prev")[0].classList.add("disabled");
+
+
         }
     }
     slideByNumber(event){

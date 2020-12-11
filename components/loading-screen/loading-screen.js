@@ -1,32 +1,11 @@
 import React, { Component } from 'react'
-import AddLogo from "../../public/images/logo/logo_add culture.svg"
+import LoadingScreenAnimation from "./loading-animation";
 
 export default class LoadingScreen extends Component {
-    componentDidMount(){
-        document.onreadystatechange = function() { 
-            if (document.readyState !== "complete") { 
-                
-                document.querySelector( 
-                  "body").style.visibility = "hidden"; 
-
-                document.querySelector( 
-                  "#add__loading").style.visibility = "visible"; 
-
-            } else { 
-                setTimeout(function(){
-                    document.querySelector( 
-                      "#add__loading").classList.add("loading__out");
-    
-                    document.querySelector( 
-                      "body").style.visibility = "visible"; 
-                }, 1000)
-            } 
-        }; 
-    }
     render() {
         return (
             <div id="add__loading">
-                <img src="/images/loading_spinner.gif" alt="Add culture loading spinner" loading="lazy"/>
+                <LoadingScreenAnimation />
             </div>
         )
     }

@@ -32,6 +32,9 @@ class ControlledLottie71 extends Component {
       animObj.play();
     })
     
+    animObj.onComplete = function() {
+      document.getElementById("triggerScrollDown").click();
+   }
   }
 
   render() {

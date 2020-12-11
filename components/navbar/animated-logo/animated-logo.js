@@ -1,11 +1,11 @@
 import React, { Component } from "react";
 import lottie from 'lottie-web';
-import animationData from "./animation-assets/07_1_Let_them_Text_with_Time_Remap.json";
-import animationDataBig from "./animation-assets/07_1_Let_them_Text_with_Time_Remap.json";
+import animationData from "./pink_logo.json";
+import animationDataBig from "./pink_logo.json";
 
 let animObj = null;
 
-class ControlledLottie71 extends Component {
+class AnimatedLogoPlayer extends Component {
   state = { shouldPlay: this.props.shouldPlay };
   
   componentDidMount(){
@@ -26,31 +26,26 @@ class ControlledLottie71 extends Component {
     });
 
     animObj.stop();
-    animObj.setSpeed(0.4)
+    animObj.setSpeed(0.7)
 
-    document.getElementById("let__them").addEventListener("click", function(){
+    document.getElementById("animated__logo__player").addEventListener("click", function(){
       animObj.play();
-    })
-
-    animObj.onComplete = function() {
-      document.getElementById("triggerScrollDown").click();
 
       setTimeout(function(){
-        document.querySelectorAll(".let__them__content__container")[0].classList.add("active");
-        document.querySelectorAll(".let__them__container")[0].classList.remove("active");
-      }, 2000)
-    }
-    
+        animObj.pause();
+      }, 6000)
+    })
+
   }
 
   render() {
     return (
-      <div className={`lottie__wrapper  ${this.props.customClass} let__them__container active`}>
-        <div id="let__them"></div>
+      <div className={`lottie__wrapper  ${this.props.customClass}`}>
+        <div id="animated__logo__player"></div>
         <div className="lottie__element" style={{width: "100%", margin: '0 auto'}} ref={ ref => this.animBox = ref}></div>
       </div>
     );
   }
 }
 
-export default ControlledLottie71;
+export default AnimatedLogoPlayer;

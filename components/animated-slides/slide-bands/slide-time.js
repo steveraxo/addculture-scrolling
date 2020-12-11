@@ -26,12 +26,21 @@ class ControlledLottie71 extends Component {
     });
 
     animObj.stop();
-    animObj.setSpeed(0.2)
+    animObj.setSpeed(0.4)
 
     document.getElementById("its__time").addEventListener("click", function(){
       animObj.play();
     })
     
+
+    animObj.onComplete = function() {
+      document.getElementById("triggerScrollDown").click();
+
+      setTimeout(function(){
+        document.querySelectorAll(".its__time__content__container")[0].classList.add("active");
+        document.querySelectorAll(".its__time__container")[0].classList.remove("active");
+      }, 2000)
+    }
   }
 
   render() {

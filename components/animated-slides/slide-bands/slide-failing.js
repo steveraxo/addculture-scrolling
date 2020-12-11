@@ -28,13 +28,13 @@ class ControlledLottie71 extends Component {
     animObj.stop();
     animObj.setSpeed(0.4)
 
-    setTimeout(function(){
+    document.getElementById("failing__animation__container__play").addEventListener("click", function(){
       animObj.play();
-    }, 3000)
-
-    setTimeout(function(){
+    })
+    
+    animObj.onComplete = function() {
       document.getElementById("failing__animation__scroller").click();
-    }, 6000)
+    }
   }
   handleStop = () => {
     animObj.stop();
@@ -46,6 +46,7 @@ class ControlledLottie71 extends Component {
     return (
       <div className={`lottie__wrapper  ${this.props.customClass} failing__animation active`}>
         <div id="failing__animation__container"></div>
+        <div id="failing__animation__container__play"></div>
         <div id="failing__animation__scroller"></div>
         <div className="lottie__element" style={{width: "100%", margin: '0 auto'}} ref={ ref => this.animBox = ref}></div>
       </div>

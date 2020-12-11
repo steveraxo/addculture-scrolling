@@ -231,7 +231,7 @@ export default class FormPopup extends Component {
                     </div>
                     <div className="form__information">
                         <h3 className="avant uppercase">
-                            Ad+d Culture Minority-Owned <br/> Agency Feature
+                            Add Culture Minority-Owned <br/> Agency Feature
                         </h3>
                         <p className="helvetica">Thank you for submitting a minority-owned agency to be featured on Ad+d Culture. <br/> Together, we'll continue to amplify the voices that set the tone.</p>
                         <p className="helvetica second"><small>*REQUIRED</small></p>

@@ -102,7 +102,7 @@ export default function SlideFifteen() {
                                 <p className="avant aos"
                                     data-aos="fade-up" data-aos-delay="100" data-aos-duration="4000"
                                 >
-                                    <strong>Ad+d Culture is RAXO's challenge to the players in the ad world</strong>, both big & small, to represent the voices they're advertising to by allocating a portion of their marketing budgets to minority-owned agencies.
+                                    <strong>Add Culture is RAXO's challenge to the players in the ad world</strong>, both big & small, to represent the voices they're advertising to by allocating a portion of their marketing budgets to minority-owned agencies.
                                 </p>
 
                             </div>

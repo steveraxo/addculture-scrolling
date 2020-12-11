@@ -566,7 +566,7 @@ export default class MobileIndex extends Component {
                                     Time to
                                 </h2>
                                 <h2 className="avant uppercase rose__text aos" data-aos="zoom-in" data-aos-delay="200" data-aos-duration="1000">
-                                    Ad+d
+                                    Add
                                 </h2>
                                 <h2 className="avant uppercase rose__text aos" data-aos="zoom-in" data-aos-delay="200" data-aos-duration="1000">
                                     Culture

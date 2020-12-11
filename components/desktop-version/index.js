@@ -402,7 +402,7 @@ export default class MobileIndex extends Component {
                                         </div>
                                     </div>
                                 </div>
-                                <SlideFailing />
+                                {/* <SlideFailing /> */}
                             </section>
 
                             <section id="to-diversify" className="mobile__slide section">
@@ -456,7 +456,7 @@ export default class MobileIndex extends Component {
                                         </div>
                                     </div>
                                 </div>
-                                <SlideBipoc />
+                                {/* <SlideBipoc /> */}
                             </section>
             
                             <SlideBands customClass="section section__full" />
@@ -712,7 +712,7 @@ export default class MobileIndex extends Component {
                                     </div>
                                 </div>
 
-                                <SlideLet />
+                                {/* <SlideLet /> */}
                             </section>
             
                             <section id="its-time" className="mobile__slide section">
@@ -736,7 +736,7 @@ export default class MobileIndex extends Component {
                                         </div>
                                     </div>
                                 </div>
-                                <SlideTime />
+                                {/* <SlideTime /> */}
                             </section>
 
                             <section id="add__culture__by__raxo" className="section">

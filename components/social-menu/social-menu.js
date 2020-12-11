@@ -10,7 +10,7 @@ export default class socialMenu extends Component {
                         whileHover={{ scale: 1.2 }}
                         transition={{ type: "spring", bounce: 0.25 }}
                     >
-                        <a href="https://twitter.com/raxostudio?lang=en" target="_BLANK">
+                        <a href="https://twitter.com/AddCultureNow" target="_BLANK">
                         <p className="social__name">Raxo's Twitter</p>
                         <svg width="24" height="20" viewBox="0 0 24 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path fillRule="evenodd" clipRule="evenodd" d="M24 2.30865C23.1177 2.70062 22.1681 2.9646 21.1722 3.08379C22.1889 2.47423 22.9697 1.5095 23.3368 0.359974C22.3865 0.924736 21.3314 1.33351 20.2107 1.5551C19.3123 0.59836 18.0316 0 16.6165 0C13.8975 0 11.6928 2.20465 11.6928 4.92367C11.6928 5.30924 11.7368 5.68522 11.8208 6.046C7.72829 5.84121 4.10053 3.88054 1.67189 0.901539C1.24792 1.62869 1.00553 2.47424 1.00553 3.37658C1.00553 5.08447 1.87347 6.59157 3.19579 7.47471C2.38784 7.44911 1.62949 7.22752 0.964734 6.85875V6.92034C0.964734 9.30658 2.66302 11.296 4.91407 11.7496C4.5013 11.8616 4.06613 11.9224 3.61736 11.9224C3.29978 11.9224 2.991 11.8912 2.69022 11.8336C3.31658 13.7895 5.13566 15.2134 7.28991 15.2534C5.60523 16.5733 3.48217 17.3612 1.17512 17.3612C0.776747 17.3612 0.384774 17.338 0 17.2916C2.17905 18.6884 4.76688 19.5043 7.5475 19.5043C16.6037 19.5043 21.5562 12.0016 21.5562 5.49563C21.5562 5.28204 21.5522 5.06927 21.5418 4.85888C22.5049 4.16293 23.34 3.29578 24 2.30865Z" fill="#FFC6C6"/>
@@ -21,7 +21,7 @@ export default class socialMenu extends Component {
                         whileHover={{ scale: 1.2 }}
                         transition={{ type: "spring", bounce: 0.25 }}
                     >
-                        <a href="https://www.instagram.com/raxo/" target="_BLANK">
+                        <a href="https://www.instagram.com/addculturenow/" target="_BLANK">
                         <p className="social__name">Raxo's Instagram</p>
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <g clipPath="url(#clip0)">
@@ -41,14 +41,14 @@ export default class socialMenu extends Component {
                         whileHover={{ scale: 1.2 }}
                         transition={{ type: "spring", bounce: 0.25 }}
                     >
-                        <a href="https://www.facebook.com/raxo.studio/" target="_BLANK">
+                        <a href="https://www.facebook.com/addculturenow" target="_BLANK">
                         <p className="social__name">Raxo's Facebook</p>
                         <svg width="11" height="22" viewBox="0 0 11 22" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path fillRule="evenodd" clipRule="evenodd" d="M10.315 3.9578C9.6917 3.83314 8.84983 3.74 8.32037 3.74C6.8867 3.74 6.79358 4.36333 6.79358 5.36066V7.13607H10.3774L10.065 10.8137H6.79358V22H2.30632V10.8137H0L0 7.13607H2.30632V4.86127C2.30632 1.74533 3.77079 0 7.44771 0C8.72517 0 9.66017 0.187001 10.8753 0.436334L10.315 3.9578Z" fill="#FFC6C6"/>
                         </svg>
 
                     </a></motion.li>
-                    <motion.li
+                    {/* <motion.li
                         whileHover={{ scale: 1.2 }}
                         transition={{ type: "spring", bounce: 0.25 }}
                     >
@@ -58,7 +58,7 @@ export default class socialMenu extends Component {
                             <path fillRule="evenodd" clipRule="evenodd" d="M5.77475 4.28389C5.77475 5.52898 4.82671 6.5366 3.34415 6.5366C1.91935 6.5366 0.971323 5.52898 1.00066 4.28389C0.971323 2.97828 1.91933 2 3.37255 2C4.82669 2 5.74633 2.97828 5.77475 4.28389ZM1.11986 22.8191V8.31621H5.62712V22.8181H1.11986V22.8191Z" fill="#FFC6C6"/>
                             <path fillRule="evenodd" clipRule="evenodd" d="M9.23931 12.9441C9.23931 11.1352 9.17971 9.59301 9.12012 8.31767H13.0351L13.2432 10.3045H13.3322C13.9254 9.38489 15.4079 7.99219 17.8101 7.99219C20.7752 7.99219 22.9995 9.94968 22.9995 14.2186V22.8205H18.4922V14.7833C18.4922 12.9139 17.8404 11.6394 16.2093 11.6394C14.9633 11.6394 14.2224 12.4995 13.9263 13.3292C13.8071 13.6263 13.7484 14.0407 13.7484 14.4569V22.8205H9.24113V12.9441H9.23931Z" fill="#FFC6C6"/>
                         </svg>
-                    </a></motion.li>
+                    </a></motion.li> */}
                 </ul>
             </div>
         )

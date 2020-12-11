@@ -39,9 +39,11 @@
     -webkit-justify-content: center;
     justify-content: center;
     width: 3%;
+    height: 0;
 }
 .navbar .navbar__logo {
     width: 73%;
+    height: 50px;
 }
 .navbar .navbar__to__raxo {
     display: -webkit-flex;

@@ -98,6 +98,7 @@ export default class MobileIndex extends Component {
     }
 
     componentDidMount(){
+        fullpage_api.setKeyboardScrolling(false, 'down, up');
 
         fullpage_api.setAllowScrolling(false, "down, up");
 
@@ -402,13 +403,13 @@ export default class MobileIndex extends Component {
                                         </div>
                                     </div>
                                 </div>
-                                {/* <SlideFailing /> */}
+                                <SlideFailing />
                             </section>
 
                             <section id="to-diversify" className="mobile__slide section">
-                                <div className="floating__circle">
+                                {/* <div className="floating__circle">
                                     <img src="/images/Ellipse32.svg" className="aos" data-aos="fade-left" data-aos-delay="100" data-aos-duration="1000"  alt=""/>
-                                </div>
+                                </div> */}
                                 <div className="container">
                                     <div className="row">
                                         <div className="col-lg-12">
@@ -456,7 +457,7 @@ export default class MobileIndex extends Component {
                                         </div>
                                     </div>
                                 </div>
-                                {/* <SlideBipoc /> */}
+                                <SlideBipoc />
                             </section>
             
                             <SlideBands customClass="section section__full" />
@@ -482,7 +483,7 @@ export default class MobileIndex extends Component {
                                                         <h2 data-aos="fade-left" className="aos" data-aos-delay="300" data-aos-duration="1000">& ADVERTISING</h2>
                                                     </div>
                                                     
-                                                    <img className="chart__image__legend aos" data-aos="fade-up" data-aos-delay="500" data-aos-duration="1000" src="/images/chart__one__legend.svg" alt="Lack of diversity Legend"/>
+                                                    <img className="chart__image__legend aos" data-aos="fade-up" data-aos-delay="500" data-aos-duration="1000" src="/images/Group_716.svg" alt="Lack of diversity Legend"/>
                                                 </div>
                                             </div>
                                             <div className="col-sm-12 col-lg-6">
@@ -712,7 +713,7 @@ export default class MobileIndex extends Component {
                                     </div>
                                 </div>
 
-                                {/* <SlideLet /> */}
+                                <SlideLet />
                             </section>
             
                             <section id="its-time" className="mobile__slide section">
@@ -736,7 +737,7 @@ export default class MobileIndex extends Component {
                                         </div>
                                     </div>
                                 </div>
-                                {/* <SlideTime /> */}
+                                <SlideTime />
                             </section>
 
                             <section id="add__culture__by__raxo" className="section">

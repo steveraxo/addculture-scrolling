@@ -8,7 +8,7 @@
     z-index: 11;
     margin-top: 0%;
     width: 7%;
-    bottom: 3%;
+    bottom: 50%;
     right: 0;
 
 }
@@ -17,7 +17,6 @@
     padding: 0;
     right: 0;
     position: absolute;
-    display: flex;
 }
 .social__menu.lateral__menu.open{
     opacity: 1;
@@ -26,7 +25,7 @@
     height: 18px;
 }
 .social__menu.lateral__menu li {
-    margin:10px 20px;
+    margin:40px 10px;
     right: 20px;
     -webkit-backface-visibility: hidden;
     -webkit-perspective: 1000;

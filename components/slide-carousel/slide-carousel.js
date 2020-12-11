@@ -126,6 +126,7 @@ export default class SlideTen extends Component {
             }.bind(this))
         }
 
+
     }
     render() {
         const variations = {

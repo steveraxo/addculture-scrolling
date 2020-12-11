@@ -265,7 +265,19 @@ export default class MobileIndex extends Component {
         if(origin.index === 4){
             document.getElementById("bipocbandsSecond").click();
         }
-
+        if(destination.index === 6){
+            document.onkeydown = function(event) {
+                switch (event.keyCode) {
+                   case 37:
+                        document.querySelectorAll(".slider__ten__prev")[0].click();
+                      break;
+                   
+                   case 39:
+                        document.querySelectorAll(".slider__ten__next")[0].click();
+                      break;
+                }
+            };
+        }
         if(destination.index === 10 ){
             if(!this.state.letThree){
                 fullpage_api.setAllowScrolling(false, "down, up");
@@ -317,7 +329,8 @@ export default class MobileIndex extends Component {
 
         if(destination.index === 13 && !this.state.videoController){
             // document.getElementById("video__element").play();
-            document.getElementById("video__element").volume = 0.2;
+            // document.getElementById("video__element").volume = 0.2;
+
             // document.getElementById("video__element").onended = function() {
             //     // document.getElementById("triggerScrollDown").click();
                 
@@ -389,7 +402,7 @@ export default class MobileIndex extends Component {
                                         </div>
                                     </div>
                                 </div>
-                                {/* <SlideFailing /> */}
+                                <SlideFailing />
                             </section>
 
                             <section id="to-diversify" className="mobile__slide section">
@@ -443,7 +456,7 @@ export default class MobileIndex extends Component {
                                         </div>
                                     </div>
                                 </div>
-                                {/* <SlideBipoc /> */}
+                                <SlideBipoc />
                             </section>
             
                             <SlideBands customClass="section section__full" />
@@ -699,7 +712,7 @@ export default class MobileIndex extends Component {
                                     </div>
                                 </div>
 
-                                {/* <SlideLet /> */}
+                                <SlideLet />
                             </section>
             
                             <section id="its-time" className="mobile__slide section">
@@ -723,7 +736,7 @@ export default class MobileIndex extends Component {
                                         </div>
                                     </div>
                                 </div>
-                                {/* <SlideTime /> */}
+                                <SlideTime />
                             </section>
 
                             <section id="add__culture__by__raxo" className="section">

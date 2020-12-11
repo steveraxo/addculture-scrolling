@@ -343,6 +343,7 @@ html {
   background: #FFC6C6;
   border-radius: 100%;
   transform: scale(0.7);
+  pointer-events: none;
 }
 /* .PlayButton:before{
     content: "";

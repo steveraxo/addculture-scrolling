@@ -110,7 +110,7 @@ export default function Home() {
 
   return (
     <>
-      {/* <script async src="https://www.googletagmanager.com/gtag/js?id=G-VE21KYC672"></script>
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-VE21KYC672"></script>
       <script>
         {
           `
@@ -121,7 +121,7 @@ export default function Home() {
             gtag('config', 'G-VE21KYC672');
           `
         }
-      </script> */}
+      </script>
       <script src="/sharpSpringTrack.js"></script>
       {
         !isMobile

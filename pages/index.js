@@ -89,37 +89,11 @@ export default function Home() {
     if (navigator.appVersion.indexOf("Win") != -1){
       document.getElementById("fp-nav").classList.add("windows__os")
     }
-    
-    var scrollCounter = 0; 
-    document.addEventListener("scroll", function(event){
-      scrollCounter++; 
-
-      if(scrollCounter > 20){
-        event.preventDefault();
-
-        setTimeout(function(){
-          scrollCounter = 0;
-        }, 2000)
-      }
-    })
 
   });
-
-
   return (
     <>
-      <scrip async src="https://www.googletagmanager.com/gtag/js?id=G-VE21KYC672"></scrip>
-      <script
-          dangerouslySetInnerHTML={{
-              __html: `
-              window.dataLayer = window.dataLayer || [];
-              function gtag(){dataLayer.push(arguments);}
-              gtag('js', new Date());
-              
-              gtag('config', 'G-VE21KYC672');
-              `,
-          }}
-      />
+
       <script
           dangerouslySetInnerHTML={{
               __html: `
@@ -144,13 +118,11 @@ export default function Home() {
               `,
           }}
       />
-
       {
         isMobile
         ? ""
         : <LoadingScreen />
       }
-      
       <div id="master__wrapper">        
         {
           !isMobile

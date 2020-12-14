@@ -33,6 +33,7 @@ function MyApp({ Component, pageProps }) {
           <meta name="twitter:creator" content="@raxostudio"></meta>
           <meta name="twitter:site" content="@raxostudio"></meta>
           <link rel="shortcut icon" href="/favicon.png" />
+          
       </Head>
       <Cursor />
 

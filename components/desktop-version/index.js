@@ -670,7 +670,7 @@ export default class MobileIndex extends Component {
                                         <path d="M455.999 57C455.999 88.4802 430.97 114 400.095 114C369.22 114 344.191 88.4802 344.191 57C344.191 25.5198 369.22 0 400.095 0C430.97 0 455.999 25.5198 455.999 57Z" fill="#222220"/>
                                     </svg>
                                 </div>
-                                <SlideTweets customClass="tweets__container" />
+                                {/* <SlideTweets customClass="tweets__container" /> */}
                             </div>
                             
                             <section id="how-its-done" className="mobile__slide section">

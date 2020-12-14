@@ -2,23 +2,12 @@ import Head from 'next/head'
 import Cursor from '../components/cursor/cursor'
 import Header from '../components/navbar/navbar'
 import '../styles/globals.css'
-import Analytics from 'analytics'
-import googleTagManager from '@analytics/google-tag-manager'
+import Router from 'next/router'
+import * as gtag from '../pages/lib/gtag'
+
+Router.events.on('routeChangeComplete', (url) => gtag.pageview(url))
 
 function MyApp({ Component, pageProps }) {
-  const isBrowser = typeof window !== `undefined`;
-
-  if (isBrowser) {
-    const analytics = Analytics({
-      app: "Add Culture Microsite",
-      plugins: [
-        googleTagManager({
-          containerId: "G-VE21KYC672",
-        }),
-      ],
-    });
-    analytics.page();
-  }
 
   return (
       <div id="scroll__container">

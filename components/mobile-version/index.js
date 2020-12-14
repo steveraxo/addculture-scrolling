@@ -1,9 +1,7 @@
 import React, { Component } from 'react'
 import CtaSection from "../cta-section/cta-section"
 import Slider from "react-slick";
-import SliderTweets from "../slide-three/slide-three"
 import AOS from 'aos';
-import Rellax from "rellax"
 import SlideVideo from "../slide-video/slide-video"
 
 import 'aos/dist/aos.css'; // You can also use <link> for styles
@@ -16,86 +14,7 @@ export default class MobileIndex extends Component {
         this.state = {mobile: true};
     }
 
-    parallaxContainer() {
-        window.addEventListener("scroll",function() {
-            var element =  document.getElementById('create-culture');
-            var bodyRect = document.body.getBoundingClientRect(),
-                elemRect = element.getBoundingClientRect(),
-                offset   = elemRect.top - bodyRect.top;
-
-            var finalX = elemRect.top * -1;
-
-            var elementSecond =  document.getElementById('we-appropiate');
-            var bodyRectSecond = document.body.getBoundingClientRect(),
-                elemRectSecond = elementSecond.getBoundingClientRect(),
-                offset   = elemRectSecond.top - bodyRectSecond.top;
-
-            var finalXSecond = elemRectSecond.top ;
-
-            
-            // if (document.getElementById("shape__one") !== null) {
-            //     document.getElementById("shape__one").style.transform = `translateY(${(finalX / 2)}px)`
-            // }
-
-            // if (document.getElementById("shape__two") !== null) {
-            //     document.getElementById("shape__two").style.transform = `translateY(${(finalX / 2) + 10}px)`
-            // }
-
-            // if (document.getElementById("shape__three") !== null) {
-            //     document.getElementById("shape__three").style.transform = `translateY(${(finalX / 2) + 50 }px)`
-            // }
-
-            // if (document.getElementById("shape__four") !== null) {
-            //     document.getElementById("shape__four").style.transform = `translateY(${(finalX / 2) + 70}px)`
-            // }
-
-            // if (document.getElementById("shape__five") !== null) {
-            //     document.getElementById("shape__five").style.transform = `translateY(${(finalX / 2) - 15}px)`
-            // }
-
-            // if (document.getElementById("shape__six") !== null) {
-            //     document.getElementById("shape__six").style.transform = `translateY(${(finalX / 2) - 40}px)`
-            // }
-
-            // if (document.getElementById("shape__seven") !== null) {
-            //     document.getElementById("shape__seven").style.transform = `translateY(${(finalX / 2)}px)`
-            // }
-
-            // if (document.getElementById("shape__eigth") !== null) {
-            //     document.getElementById("shape__eigth").style.transform = `translateY(${(finalX / 2)}px)`
-            // }
-            
-            // if (document.getElementById("shape__one__one") !== null) {
-            //     document.getElementById("shape__one__one").style.transform = `translateY(${(finalXSecond / 2) + 70}px)`
-            // }
-
-            // if (document.getElementById("shape__one__two") !== null) {
-            //     document.getElementById("shape__one__two").style.transform = `translateY(${(finalXSecond / 2) - 15}px)`
-            // }
-
-            // if (document.getElementById("shape__one__three") !== null) {
-            //     document.getElementById("shape__one__three").style.transform = `translateY(${(finalXSecond / 2) + 3}px)`
-            // }
-
-            // if (document.getElementById("shape__one__four") !== null) {
-            //     document.getElementById("shape__one__four").style.transform = `translateY(${(finalXSecond / 2) + 100}px)`
-            // }
-
-            // if (document.getElementById("shape__one__five") !== null) {
-            //     document.getElementById("shape__one__five").style.transform = `translateY(${(finalXSecond / 2) - 27}px)`
-            // }
-        },
-        { passive: false }
-        )
-    }
-
     componentDidMount(){
-        setTimeout(function(){
-            var rellax = new Rellax('.rellax', {
-                wrapper:'#create-culture'
-            });
-
-        }, 1000)
 
         if(window.innerWidth > 1024){
             AOS.init({
@@ -164,14 +83,6 @@ export default class MobileIndex extends Component {
 
         return (
             <div id="scroll-container">
-                <script
-                    src="https://code.jquery.com/jquery-3.5.1.min.js"
-                    integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
-                    crossOrigin="anonymous">
-                </script>
-                <script src="/aosSnap.js"></script>
-                <script src="/smooth-scroll.js"></script>
-
                 <section id="are-failing" className="mobile__slide">
                     <div className="floating__circle">
                         <img loading="lazy" src="/images/plus.svg" data-aos="fade-left" data-aos-delay="100" data-aos-duration="1000"  alt=""/>
@@ -193,7 +104,6 @@ export default class MobileIndex extends Component {
                         </div>
                     </div>
                 </section>
-
                 <section id="to-diversify" className="mobile__slide">
                     <div className="floating__circle">
                         <img loading="lazy" src="/images/Ellipse32.svg" className="aos" data-aos="fade-left" data-aos-delay="100" data-aos-duration="1000"  alt=""/>
@@ -217,7 +127,6 @@ export default class MobileIndex extends Component {
                         </div>
                     </div>
                 </section>
-
                 <section id="open-doors" className="mobile__slide">
                     <div className="container">
                         <div className="row">
@@ -244,7 +153,6 @@ export default class MobileIndex extends Component {
                         </div>
                     </div>
                 </section>
-
                 <section id="is-white" className="mobile__slide">
                     <div className="container">
                         <div className="row">
@@ -264,7 +172,6 @@ export default class MobileIndex extends Component {
                         </div>
                     </div>
                 </section>
-
                 <section id="charts__one" className="chart__ones__first">
                     <div className="container">
                         <div className="row">
@@ -315,7 +222,6 @@ export default class MobileIndex extends Component {
                         </div>
                     </div>
                 </section>
-
                 <section id="is-male" className="mobile__slide">
                     <div className="container">
                         <div className="row">
@@ -335,7 +241,6 @@ export default class MobileIndex extends Component {
                         </div>
                     </div>
                 </section>
-
                 <section id="carousel-info">
                         <div className="container">
                                 <div className="row">
@@ -377,7 +282,6 @@ export default class MobileIndex extends Component {
                                 </div>
                             </div>
                       </section>
-
                 <section id="charts__one" className="chart__ones__second">
                     <div className="container">
                         <div className="row">
@@ -460,7 +364,6 @@ export default class MobileIndex extends Component {
                         </div>
                     </div>
                 </section>
-
                 <section id="create-culture" className="mobile__slide">
                     
                     <img loading="lazy" src="/images/s2.svg" className="create__shape__one rellax two " id="shape__two" />
@@ -497,7 +400,6 @@ export default class MobileIndex extends Component {
                         </div>
                     </div>
                 </section>
-
                 <section id="we-appropiate" className="mobile__slide">
                     <div className="floating__circle">
                         <img loading="lazy" src="/images/shapesTwo.svg" className="aos hidden__desktop" data-aos="fade-up" data-aos-delay="100" data-aos-duration="1000"  alt=""/>
@@ -532,10 +434,7 @@ export default class MobileIndex extends Component {
                             </div>
                         </div>
                     </div>
-                </section>
-                
-                <SliderTweets />
-
+                </section>                
                 <section id="how-its-done" className="mobile__slide">
                     <div className="container">
                         <div className="row">
@@ -556,7 +455,6 @@ export default class MobileIndex extends Component {
                         </div>
                     </div>
                 </section>
-
                 <section id="its-time" className="mobile__slide">
                     <div className="container">
                         <div className="row">
@@ -581,8 +479,12 @@ export default class MobileIndex extends Component {
                                 <SlideVideo />                
                             </section>
                 <CtaSection />
-
                 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-grid-only@1.0.0/bootstrap.css"/>
+                <script
+                    src="https://code.jquery.com/jquery-3.5.1.min.js"
+                    integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
+                    crossOrigin="anonymous">
+                </script>
             </div> 
         )
     }

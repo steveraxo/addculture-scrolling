@@ -36,15 +36,17 @@ class ControlledLottie71 extends Component {
         }
 
         animObj.onComplete = function() {
-           document.getElementById("add__loading").classList.add("hide__courtain");
-
-           setTimeout(function(){
-             if(document.getElementById("failing__animation__container__play")){
-               document.getElementById("failing__animation__container__play").click();
-             }
-           }, 1500)
-           
-           document.getElementById("animated__logo__player").click();
+          if(window.innerWidth > 1024){
+            document.getElementById("add__loading").classList.add("hide__courtain");
+ 
+            setTimeout(function(){
+              if(document.getElementById("failing__animation__container__play")){
+                document.getElementById("failing__animation__container__play").click();
+              }
+            }, 1500)
+            
+            document.getElementById("animated__logo__player").click();
+          }
         }
     }; 
 

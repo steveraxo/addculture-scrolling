@@ -352,6 +352,7 @@ export default class MobileIndex extends Component {
         }
 
         if(destination.index === 14){
+            document.getElementById("fp-nav").classList.add("showing");
             document.querySelectorAll(".PlayButton")[0].classList.remove("hidden");
 
             this.setState({videoController: true})

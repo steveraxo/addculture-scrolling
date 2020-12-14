@@ -15,32 +15,36 @@ export default class SlideVideo extends Component {
     }
 
 
-    playVideo(){
-        document.getElementById("video__element").volume = 0.2;
-        var mediaVideo = document.getElementById("video__element")
+    // playVideo(){
+    //     document.getElementById("video__element").volume = 0.2;
+    //     var mediaVideo = document.getElementById("video__element")
         
-        if (mediaVideo.paused) {
-            mediaVideo.play();
-            document.querySelectorAll(".PlayButton")[0].classList.add("hidden");
+    //     if (mediaVideo.paused) {
+    //         mediaVideo.play();
+    //         document.querySelectorAll(".PlayButton")[0].classList.add("hidden");
 
-        } else {
-            mediaVideo.pause();
-            document.querySelectorAll(".PlayButton")[0].classList.remove("hidden");
+    //     } else {
+    //         mediaVideo.pause();
+    //         document.querySelectorAll(".PlayButton")[0].classList.remove("hidden");
 
-        }
+    //     }
 
-    }
+    // }
 
     render() {
         return (
             <div id="video__slide__wrapper">
-                <div className="PlayButton">
+                {/* <div className="PlayButton">
                     <img src="https://raxo.dev/addculture/playWhite.png" alt=""/>
                 </div>
 
                 <video id="video__element"  onClick={this.playVideo}  poster="https://raxo.dev/addculture/poster.png">
                     <source src="https://raxo.dev/addculture/ADDC_Rx_mixed-resized.mp4" type="video/mp4" />
-                </video>
+                </video> */}
+                <Vimeo
+                    video="489563794"
+                    autoplay
+                />
             </div>
         )
     }

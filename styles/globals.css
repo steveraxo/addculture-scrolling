@@ -105,6 +105,9 @@ video.loading__screen__courtain{
   object-fit: cover;
 
 }
+.slick-dots{
+  display: none!important;
+}
 .loading__screen__courtain.hide__courtain{
   opacity: 0;
 }

@@ -1,6 +1,4 @@
 import React, { Component } from 'react'
-import Head from 'next/head'
-import { motion } from 'framer-motion'
 import Slider from "react-slick";
 import Chart14 from "./chart14"
 
@@ -174,17 +172,6 @@ export default class SlideTen extends Component {
 
         return (
             <>
-            <Head>
-                {
-                    this.state.isLoaded
-                    ?
-                    <>
-                        <link rel="stylesheet" type="text/css" charSet="UTF-8" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.css" /> 
-                        <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick-theme.min.css" />
-                    </>
-                    :""
-                }
-            </Head>
             <section id="slide__ten">
                 {
                     this.state.isLoaded
@@ -335,7 +322,11 @@ export default class SlideTen extends Component {
                     : ""
                 }
             </section>
+            
+            {/* <link rel="stylesheet" type="text/css" charSet="UTF-8" href="/lib/slick.min.css" /> 
+            <link rel="stylesheet" type="text/css" href="/lib/slick-theme.min.css" /> */}
             </>
+            
         )
     }
 }

@@ -17,8 +17,6 @@ const Chart71 = loadable(() => import('../graphics/chart71'))
 
 import AOS from 'aos';
 import 'aos/dist/aos.css'; // You can also use <link> for styles
-import "slick-carousel/slick/slick.css"; 
-import "slick-carousel/slick/slick-theme.css";
 
 export default class MobileIndex extends Component {
     constructor(props) {
@@ -664,10 +662,10 @@ export default class MobileIndex extends Component {
                             <div className="section section__full slide__tweets slide__tweets__container__wrapper">
                                 <div className="static__section__tweets">
                                     <svg width="456" height="114" viewBox="0 0 456 114" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path fill-rule="evenodd" clipRule="evenodd" d="M177.576 114L177.576 -2.2999e-06L230.191 0L230.191 114L177.576 114Z" fill="#222220"/>
+                                        <path fillRule="evenodd" clipRule="evenodd" d="M177.576 114L177.576 -2.2999e-06L230.191 0L230.191 114L177.576 114Z" fill="#222220"/>
                                         <path d="M177.574 57.0001L113.997 114L113.997 -2.77904e-06L177.574 57.0001Z" fill="#222220"/>
-                                        <path fill-rule="evenodd" clipRule="evenodd" d="M281.675 -2.16406e-06C281.675 34.5267 309.665 62.5161 344.191 62.5161L344.191 114C281.231 114 230.191 62.9605 230.191 2.3368e-06L281.675 -2.16406e-06Z" fill="#222220"/>
-                                        <path fill-rule="evenodd" clipRule="evenodd" d="M62.5161 114C62.5161 79.4733 34.5267 51.4839 0 51.4839L0 0C62.9605 0 114 51.0395 114 114H62.5161Z" fill="#222220"/>
+                                        <path fillRule="evenodd" clipRule="evenodd" d="M281.675 -2.16406e-06C281.675 34.5267 309.665 62.5161 344.191 62.5161L344.191 114C281.231 114 230.191 62.9605 230.191 2.3368e-06L281.675 -2.16406e-06Z" fill="#222220"/>
+                                        <path fillRule="evenodd" clipRule="evenodd" d="M62.5161 114C62.5161 79.4733 34.5267 51.4839 0 51.4839L0 0C62.9605 0 114 51.0395 114 114H62.5161Z" fill="#222220"/>
                                         <path d="M455.999 57C455.999 88.4802 430.97 114 400.095 114C369.22 114 344.191 88.4802 344.191 57C344.191 25.5198 369.22 0 400.095 0C430.97 0 455.999 25.5198 455.999 57Z" fill="#222220"/>
                                     </svg>
                                 </div>

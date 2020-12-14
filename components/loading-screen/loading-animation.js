@@ -29,20 +29,22 @@ class ControlledLottie71 extends Component {
 
     document.onreadystatechange = function() { 
         if (document.readyState === "complete") { 
-          var mediaVideo = document.getElementById("video__element__loader");
-          mediaVideo.play();
-
-          document.getElementById("video__element__loader").onended = function() {
-            if(window.innerWidth > 1024){
-              document.getElementById("add__loading").classList.add("hide__courtain");
-    
-              setTimeout(function(){
-                if(document.getElementById("failing__animation__container__play")){
-                  document.getElementById("failing__animation__container__play").click();
+          if(document.getElementById("video__element__loader")){
+            var mediaVideo = document.getElementById("video__element__loader");
+            mediaVideo.play();
+  
+            document.getElementById("video__element__loader").onended = function() {
+              if(window.innerWidth > 1024){
+                  document.getElementById("add__loading").classList.add("hide__courtain");
+        
+                  setTimeout(function(){
+                    if(document.getElementById("failing__animation__container__play")){
+                      document.getElementById("failing__animation__container__play").click();
+                    }
+                  }, 1500)
+                  
+                  document.getElementById("animated__logo__player").click();
                 }
-              }, 1500)
-              
-              document.getElementById("animated__logo__player").click();
             }
           }
           // animObj.play();

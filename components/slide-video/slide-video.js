@@ -34,17 +34,17 @@ export default class SlideVideo extends Component {
     render() {
         return (
             <div id="video__slide__wrapper">
-                <div className="PlayButton">
+                {/* <div className="PlayButton">
                     <img src="https://raxo.dev/addculture/playWhite.png" alt=""/>
                 </div>
 
                 <video id="video__element"  onClick={this.playVideo}  poster="https://raxo.dev/addculture/poster.png">
                     <source src="/video/ADDC_Rx_mixed-resized.mp4" type="video/mp4" />
-                </video>
-                {/* <Vimeo
+                </video> */}
+                <Vimeo
                     video="489563794"
                     autoplay
-                /> */}
+                />
             </div>
         )
     }

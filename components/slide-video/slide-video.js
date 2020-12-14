@@ -43,7 +43,6 @@ export default class SlideVideo extends Component {
                 </video> */}
                 <Vimeo
                     video="489563794"
-                    autoplay
                 />
             </div>
         )

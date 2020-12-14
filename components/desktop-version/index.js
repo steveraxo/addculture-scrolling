@@ -390,7 +390,6 @@ export default class MobileIndex extends Component {
 
                     return (
                         <ReactFullpage.Wrapper>
-                            
                             <section id="are-failing" className="mobile__slide section">
                                 <div className="are__failing__content__container">
                                     <div className="floating__circle">

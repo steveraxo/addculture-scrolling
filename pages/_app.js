@@ -3,7 +3,7 @@ import Cursor from '../components/cursor/cursor'
 import Header from '../components/navbar/navbar'
 import '../styles/globals.css'
 import Router from 'next/router'
-import * as gtag from '../pages/lib/gtag'
+import * as gtag from '../lib/gtag'
 
 Router.events.on('routeChangeComplete', (url) => gtag.pageview(url))
 

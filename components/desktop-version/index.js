@@ -364,7 +364,7 @@ export default class MobileIndex extends Component {
                     return (
                         <ReactFullpage.Wrapper>
                             <section id="are-failing" className="mobile__slide section">
-                                <div className="are__failing__content__container active">
+                                <div className="are__failing__content__container">
                                     <div className="floating__circle">
                                         <img loading="lazy"  src="/images/plus.svg" data-aos="fade-left" data-aos-delay="100" data-aos-duration="1000"  alt=""/>
                                     </div>
@@ -386,7 +386,7 @@ export default class MobileIndex extends Component {
                                     </div>
                                 </div>
                                 
-                                {/* <SlideFailing /> */}
+                                <SlideFailing />
                             </section>
  
                             <section id="to-diversify" className="mobile__slide section">

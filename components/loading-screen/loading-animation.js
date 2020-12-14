@@ -29,31 +29,52 @@ class ControlledLottie71 extends Component {
 
     document.onreadystatechange = function() { 
         if (document.readyState === "complete") { 
-          animObj.play();
+          var mediaVideo = document.getElementById("video__element__loader");
+          mediaVideo.play();
+
+          document.getElementById("video__element__loader").onended = function() {
+            if(window.innerWidth > 1024){
+              document.getElementById("add__loading").classList.add("hide__courtain");
+    
+              setTimeout(function(){
+                if(document.getElementById("failing__animation__container__play")){
+                  document.getElementById("failing__animation__container__play").click();
+                }
+              }, 1500)
+              
+              document.getElementById("animated__logo__player").click();
+            }
+          }
+          // animObj.play();
         }
 
-        animObj.onComplete = function() {
-          if(window.innerWidth > 1024){
-            document.getElementById("add__loading").classList.add("hide__courtain");
+        // animObj.onComplete = function() {
+        //   if(window.innerWidth > 1024){
+        //     document.getElementById("add__loading").classList.add("hide__courtain");
  
-            setTimeout(function(){
-              if(document.getElementById("failing__animation__container__play")){
-                document.getElementById("failing__animation__container__play").click();
-              }
-            }, 1500)
+        //     setTimeout(function(){
+        //       if(document.getElementById("failing__animation__container__play")){
+        //         document.getElementById("failing__animation__container__play").click();
+        //       }
+        //     }, 1500)
             
-            document.getElementById("animated__logo__player").click();
-          }
-        }
+        //     document.getElementById("animated__logo__player").click();
+        //   }
+        // }
     }; 
 
   }
   render() {
 
     return (
-      <div className={`lottie__wrapper loading__screen__courtain  ${this.props.customClass}`}>
+      <>
+      <video id="video__element__loader" className="loading__screen__courtain" muted >
+          <source src="/video/07_Loader_v1_resized.mp4" type="video/mp4" />
+      </video>
+      {/* <div className={`lottie__wrapper loading__screen__courtain  ${this.props.customClass}`}>
         <div className="lottie__element" style={{width: "100%", margin: '0 auto'}} ref={ ref => this.animBox = ref}></div>
-      </div>
+      </div> */}
+      </>
     );
   }
 }

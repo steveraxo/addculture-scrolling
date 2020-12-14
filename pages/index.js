@@ -110,18 +110,8 @@ export default function Home() {
 
   return (
     <>
-      <script async src="https://www.googletagmanager.com/gtag/js?id=G-VE21KYC672"></script>
-      <script>
-        {
-          `
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-
-            gtag('config', 'G-VE21KYC672');
-          `
-        }
-      </script>
+      <scrip async src="https://www.googletagmanager.com/gtag/js?id=G-VE21KYC672"></scrip>
+      <script src="/ga.js"></script>
       <script src="/sharpSpringTrack.js"></script>
       {
         !isMobile

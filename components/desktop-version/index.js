@@ -21,7 +21,7 @@ import "slick-carousel/slick/slick-theme.css";
 export default class MobileIndex extends Component {
     constructor(props) {
         super(props);
-        this.state = {mobile: true, letThree : false, tweetCounter: 0, controller: false, bipocController: false, letOne: false, letTwo: false, videoController: false};
+        this.state = {mobile: true, letThree : false, tweetCounter: 0, controller: false, bipocController: false, letOne: false, letTwo: false, videoController: false, isLoad : false,};
     }
 
     parallaxContainer() {
@@ -104,12 +104,7 @@ export default class MobileIndex extends Component {
 
         this.parallaxContainer();
 
-        AOS.init({
-            easing: 'ease', // default easing for AOS animations
-            once: true, // whether animation should happen only once - while scrolling down
-            mirror: false, // whether elements should animate out while scrolling past them
-        });
-
+        AOS.init({easing: 'ease',once: true,mirror: false,});
 
         if(document.getElementById("failing__animation__scroller")){
             document.getElementById("failing__animation__scroller").addEventListener("click", function(){
@@ -210,31 +205,23 @@ export default class MobileIndex extends Component {
 
         document.querySelectorAll(`.chart__ones__second .${chartId}__element`)[0].classList.add("active");
         
-    }
-    
+    } 
     afterLoad(origin, destination, direction){
         // change bar color 
-        console.log(destination.index);
-
-
         if(destination.index === 2 || destination.index === 4 || destination.index === 7 || destination.index === 8 || destination.index === 9 || destination.index === 10){
             document.querySelectorAll(".navbar")[0].classList.add("black__menu");
             document.querySelectorAll(".social__menu")[0].classList.add("black__menu");
             document.querySelectorAll(".navbar.container-fluid")[0].classList.add("black__menu");
             document.getElementById("fp-nav").classList.add("black__menu");
             document.querySelectorAll(".icon-scroll")[0].classList.add("black");
-
-            
         }else{
             document.querySelectorAll(".navbar")[0].classList.remove("black__menu");
             document.querySelectorAll(".social__menu")[0].classList.remove("black__menu");
             document.querySelectorAll(".navbar.container-fluid")[0].classList.remove("black__menu");
             document.getElementById("fp-nav").classList.remove("black__menu");
             document.querySelectorAll(".icon-scroll")[0].classList.remove("black");
-
         }
         
-
         if(destination.index === 2 && !this.state.bipocController){
             if(document.getElementById("bipoc__data")){
                 fullpage_api.setAllowScrolling(false, "down, up");
@@ -359,18 +346,7 @@ export default class MobileIndex extends Component {
         }
 
     }
-
     render() {
-
-        const settingsMobile = {
-            dots: true,
-            infinite: false,
-            speed: 500,
-            slidesToScroll: 1,
-            slidesToShow: 1,
-            arrows: false,
-        };
-
         return (
             <>
             <div className='icon-scroll'/><div/>
@@ -386,8 +362,6 @@ export default class MobileIndex extends Component {
                 afterLoad={this.afterLoad.bind(this)}
                 responsiveSlides = {true}
                 render={({ state, fullpageApi }) => {
-                
-
                     return (
                         <ReactFullpage.Wrapper>
                             <section id="are-failing" className="mobile__slide section">
@@ -412,13 +386,11 @@ export default class MobileIndex extends Component {
                                         </div>
                                     </div>
                                 </div>
+                                
                                 <SlideFailing />
                             </section>
  
                             <section id="to-diversify" className="mobile__slide section">
-                                {/* <div className="floating__circle">
-                                    <img loading="lazy"  src="/images/Ellipse32.svg" className="aos" data-aos="fade-left" data-aos-delay="100" data-aos-duration="1000"  alt=""/>
-                                </div> */}
                                 <div className="container">
                                     <div className="row">
                                         <div className="col-lg-12">
@@ -467,6 +439,7 @@ export default class MobileIndex extends Component {
                                     </div>
                                 </div>
                                 <SlideBipoc />
+                                
                             </section>
             
                             <SlideBands customClass="section section__full" />
@@ -699,7 +672,6 @@ export default class MobileIndex extends Component {
                                 <SlideTweets customClass="tweets__container" />
                             </div>
                             
-
                             <section id="how-its-done" className="mobile__slide section">
                                 <div className="let__them__content__container">
                                     <div className="container">
@@ -754,8 +726,7 @@ export default class MobileIndex extends Component {
                             </section>
 
                             <section id="we-amplify" className="section">
-                                <CtaSection />
-                                
+                                <CtaSection />                                
                             </section>                
                         </ReactFullpage.Wrapper>
                         );

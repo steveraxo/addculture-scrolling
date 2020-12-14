@@ -10,7 +10,7 @@ const SlideLet = loadable(() => import('../animated-slides/slide-bands/slide-let
 const SlideTime = loadable(() => import('../animated-slides/slide-bands/slide-time'))
 const SlideSecondData = loadable(() => import('../animated-slides/slide-bands/slide-second-data'))
 const SlideTweets = loadable(() => import('../animated-slides/slide-bands/slide-tweets'))
-const SlideCarousel = loadable(() => import('../slide-carousel/slide-carousel'))
+import SlideCarousel from "../slide-carousel/slide-carousel"
 const SlideVideo = loadable(() => import('../slide-video/slide-video'))
 const Chart70 = loadable(() => import('../graphics/chart70'))
 const Chart71 = loadable(() => import('../graphics/chart71'))
@@ -108,27 +108,18 @@ export default class MobileIndex extends Component {
 
         AOS.init({easing: 'ease',once: true,mirror: false,});
 
-        if(document.getElementById("failing__animation__scroller")){
-            document.getElementById("failing__animation__scroller").addEventListener("click", function(){
-                fullpage_api.moveSectionDown();
-    
-                fullpage_api.setAllowScrolling(true, "down, up");
-                fullpage_api.setKeyboardScrolling(true, 'down, up');
-                setTimeout(function(){
-                    document.querySelectorAll(".are__failing__content__container")[0].classList.add("active");
-                    document.querySelectorAll(".failing__animation")[0].classList.remove("active");
-                }, 1500)
-            })
-        }else{
+        
+        document.getElementById("failing__animation__scroller__fallback").addEventListener("click", function(){
+            fullpage_api.moveSectionDown();
+
             fullpage_api.setAllowScrolling(true, "down, up");
             fullpage_api.setKeyboardScrolling(true, 'down, up');
-
-            document.querySelectorAll(".are__failing__content__container")[0].classList.add("active");
-            document.querySelectorAll(".bipoc__data__container__outer")[0].classList.add("active");
-  
-            document.querySelectorAll(".let__them__content__container")[0].classList.add("active");
-            document.querySelectorAll(".its__time__content__container")[0].classList.add("active");
-        }
+            setTimeout(function(){
+                document.querySelectorAll(".are__failing__content__container")[0].classList.add("active");
+                document.querySelectorAll(".failing__animation")[0].classList.remove("active");
+            }, 1500)
+        })
+        
 
         document.querySelectorAll(".restart__journey")[0].addEventListener("click", function(event){
             event.preventDefault();
@@ -157,8 +148,8 @@ export default class MobileIndex extends Component {
                 document.querySelectorAll(".its__time__container")[0].classList.remove("active");
             }
             
-            document.getElementById("bipocbands").click();
-            document.getElementById("bipocbandsSecond").click();
+            document.getElementById("bipocbands__fallback").click();
+            document.getElementById("bipocbandsSecond__fallback").click();
 
             this.setState({bipocController: true})
             this.setState({letThree: true})
@@ -253,10 +244,10 @@ export default class MobileIndex extends Component {
         }
 
         if(origin.index === 2){
-            document.getElementById("bipocbands").click();
+            document.getElementById("bipocbands__fallback").click();
         }
         if(origin.index === 4){
-            document.getElementById("bipocbandsSecond").click();
+            document.getElementById("bipocbandsSecond__fallback").click();
         }
         if(destination.index === 6){
             document.onkeydown = function(event) {
@@ -278,7 +269,7 @@ export default class MobileIndex extends Component {
             }
 
             setTimeout(function(){
-                document.getElementById("slide__tweets").click();
+                document.getElementById("slide__tweets__fallback").click();
             }, 200)
             
             setTimeout(function(){
@@ -296,7 +287,7 @@ export default class MobileIndex extends Component {
                 }
         
                 setTimeout(function(){
-                    document.getElementById("let__them").click();
+                    document.getElementById("let__them__fallback").click();
                 }, 200)
 
                 setTimeout(function(){
@@ -315,7 +306,7 @@ export default class MobileIndex extends Component {
                 }
     
                 setTimeout(function(){
-                    document.getElementById("its__time").click();
+                    document.getElementById("its__time__fallback").click();
                 }, 400)
 
                 setTimeout(function(){
@@ -352,6 +343,13 @@ export default class MobileIndex extends Component {
         return (
             <>
             <div className='icon-scroll'/><div/>
+            <div id="failing__animation__scroller__fallback"></div>
+            <div id="bipocbands__fallback"></div>
+            <div id="bipocbandsSecond__fallback"></div>
+            <div id="let__them__fallback"> </div>    
+            <div id="its__time__fallback"></div>
+            <div id="slide__tweets__fallback"></div>
+
             <div id="scroll-container">
                 <ReactFullpage
                 //fullpage options
@@ -444,7 +442,9 @@ export default class MobileIndex extends Component {
                                 
                             </section>
             
-                            <SlideBands customClass="section section__full" />
+                            <section id="is__white__wrapper" className="section">
+                                <SlideBands customClass=" section__full" />
+                            </section>
             
                             <section id="charts__one" className="chart__ones__first section">
                                 <div className="container">
@@ -499,8 +499,10 @@ export default class MobileIndex extends Component {
                                 </div>
                             </section>
             
-                            <SlideSecondData customClass="section section__full" />
-            
+                            <section id="is__male__wrapper" className="section">
+                                <SlideSecondData customClass=" section__full" />
+                            </section>
+
                             <section id="carousel" className="section">
                                 <SlideCarousel />
                             </section>
@@ -736,7 +738,6 @@ export default class MobileIndex extends Component {
                 />
                 <div id="triggerScrollDown"></div>
                 <div id="triggerScrollUp"></div>
-                <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-grid-only@1.0.0/bootstrap.css"/>
             </div> 
             </>
         )

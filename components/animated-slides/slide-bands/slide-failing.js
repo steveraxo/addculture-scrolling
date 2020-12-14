@@ -33,7 +33,7 @@ class ControlledLottie71 extends Component {
     })
     
     animObj.onComplete = function() {
-      document.getElementById("failing__animation__scroller").click();
+      document.getElementById("failing__animation__scroller__fallback").click();
     }
   }
   handleStop = () => {

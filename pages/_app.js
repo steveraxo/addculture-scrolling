@@ -33,7 +33,7 @@ function MyApp({ Component, pageProps }) {
           <meta name="twitter:creator" content="@raxostudio"></meta>
           <meta name="twitter:site" content="@raxostudio"></meta>
           <link rel="shortcut icon" href="/favicon.png" />
-          
+          <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-grid-only@1.0.0/bootstrap.css"/>
       </Head>
 
       <Cursor />

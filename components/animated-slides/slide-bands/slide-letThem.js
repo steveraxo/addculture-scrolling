@@ -28,7 +28,7 @@ class ControlledLottie71 extends Component {
     animObj.stop();
     animObj.setSpeed(0.4)
 
-    document.getElementById("let__them").addEventListener("click", function(){
+    document.getElementById("let__them__fallback").addEventListener("click", function(){
       animObj.play();
     })
 
@@ -49,7 +49,7 @@ class ControlledLottie71 extends Component {
 
   render() {
     return (
-      <div className={`lottie__wrapper  ${this.props.customClass} let__them__container active`}>
+      <div className={`lottie__wrapper  ${this.props.customClass} full__animation let__them__container active`}>
         <div id="let__them"></div>
         <div className="lottie__element" style={{width: "100%", margin: '0 auto'}} ref={ ref => this.animBox = ref}></div>
       </div>

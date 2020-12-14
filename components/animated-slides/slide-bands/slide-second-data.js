@@ -28,7 +28,7 @@ class ControlledLottie71 extends Component {
     animObj.stop();
     animObj.setSpeed(0.4)
 
-    document.getElementById("bipocbandsSecond").addEventListener("click", function(){
+    document.getElementById("bipocbandsSecond__fallback").addEventListener("click", function(){
       animObj.play();
     })
     
@@ -41,7 +41,7 @@ class ControlledLottie71 extends Component {
   }
   render() {
     return (
-      <div className={`lottie__wrapper  ${this.props.customClass}`}>
+      <div className={`lottie__wrapper bipoc__bands__element  ${this.props.customClass}`}>
         <div id="bipocbandsSecond"></div>
         <div className="lottie__element" style={{width: "100%", margin: '0 auto'}} ref={ ref => this.animBox = ref}></div>
       </div>

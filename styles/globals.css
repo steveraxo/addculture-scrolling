@@ -45,6 +45,20 @@ a {
   height: 100vh;
   width: 100%;
 }
+.failing__animation, .bipoc__data__container, .bipoc__bands__element, .bipocbandsSecond__fallback, .full__animation{
+  position: absolute;
+  width: 100%;
+  z-index: 1;
+  top: 0;
+  left: 0;
+}
+#video__slide__wrapper{
+  position: absolute!important;
+  width: 100%;
+  z-index: 1;
+  top: 0;
+  left: 0;
+}
 .avant {
   font-family: ITC Avant Garde Pro Md;
 }

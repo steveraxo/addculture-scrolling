@@ -1,8 +1,12 @@
 import React, { Component } from 'react'
-import CtaSection from "../cta-section/cta-section"
+import loadable from '@loadable/component'
+
 import Slider from "react-slick";
 import AOS from 'aos';
-import SlideVideo from "../slide-video/slide-video"
+
+const CtaSection = loadable(() => import('../cta-section/cta-section'))
+const SlideVideo = loadable(() => import('../slide-video/slide-video'))
+
 
 import 'aos/dist/aos.css'; // You can also use <link> for styles
 import "slick-carousel/slick/slick.css"; 
@@ -479,7 +483,6 @@ export default class MobileIndex extends Component {
                                 <SlideVideo />                
                             </section>
                 <CtaSection />
-                <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-grid-only@1.0.0/bootstrap.css"/>
                 <script
                     src="https://code.jquery.com/jquery-3.5.1.min.js"
                     integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="

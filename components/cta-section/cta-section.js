@@ -89,18 +89,18 @@ export default function SlideFifteen() {
                                 
 
                                     <span 
-                                    data-aos="fade-left" data-aos-delay="100" data-aos-duration="1000"
-                                    className="white__text aos">WE AMPLIFY </span>
+                                    
+                                    className="white__text ">WE AMPLIFY </span>
                                     
                                     <span 
-                                    data-aos="fade-left" data-aos-delay="100" data-aos-duration="2000"
-                                    className="white__text aos">THE VOICES THAT </span>
+                                    
+                                    className="white__text ">THE VOICES THAT </span>
                                     <span 
-                                   data-aos="fade-left" data-aos-delay="100" data-aos-duration="3000"
-                                    className="rose__text aos">SET THE TONE</span>
+                                   
+                                    className="rose__text ">SET THE TONE</span>
                                 </h2>
-                                <p className="avant aos"
-                                    data-aos="fade-up" data-aos-delay="100" data-aos-duration="4000"
+                                <p className="avant "
+                                    
                                 >
                                     <strong>Add Culture is RAXO's challenge to the players in the ad world</strong>, both big & small, to represent the voices they are advertising to by allocating a portion of their marketing budgets to minority-owned agencies.
                                 </p>

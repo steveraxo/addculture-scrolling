@@ -6,20 +6,7 @@ import Analytics from 'analytics'
 import googleTagManager from '@analytics/google-tag-manager'
 
 export default function Home() {
-  const isBrowser = typeof window !== `undefined`;
   const [isMobile, SetIsMobile] = useState(false)
-
-  if (isBrowser) {
-    const analytics = Analytics({
-      app: "humanified-next",
-      plugins: [
-        googleTagManager({
-          containerId: "G-VE21KYC672",
-        }),
-      ],
-    });
-    analytics.page();
-  }
 
   // START SMOOTH SCROLLING //
   function init() {
@@ -146,8 +133,7 @@ export default function Home() {
           : 
           <MobileVersion />
         }
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.6.5/lottie.min.js" async></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.6/ScrollMagic.min.js" async></script>
+
       </div>
     </>
   )

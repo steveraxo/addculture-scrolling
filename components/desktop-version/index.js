@@ -1,17 +1,19 @@
 import React, { Component } from 'react'
+import loadable from '@loadable/component'
 import CtaSection from "../cta-section/cta-section"
 import ReactFullpage from '@fullpage/react-fullpage'; 
-import SlideFailing from "../animated-slides/slide-bands/slide-failing"
-import SlideBipoc from "../animated-slides/slide-bands/slide-bipoc"
-import SlideBands from "../animated-slides/slide-bands/slide-bands"
-import SlideLet from "../animated-slides/slide-bands/slide-letThem"
-import SlideTime from "../animated-slides/slide-bands/slide-time"
-import SlideSecondData from "../animated-slides/slide-bands/slide-second-data"
-import SlideTweets from "../animated-slides/slide-bands/slide-tweets"
-import SlideCarousel from "../slide-carousel/slide-carousel"
-import SlideVideo from "../slide-video/slide-video"
-import Chart70 from "../graphics/chart70"
-import Chart71 from "../graphics/chart71"
+
+const SlideFailing = loadable(() => import('../animated-slides/slide-bands/slide-failing'))
+const SlideBipoc = loadable(() => import('../animated-slides/slide-bands/slide-bipoc'))
+const SlideBands = loadable(() => import('../animated-slides/slide-bands/slide-bands'))
+const SlideLet = loadable(() => import('../animated-slides/slide-bands/slide-letThem'))
+const SlideTime = loadable(() => import('../animated-slides/slide-bands/slide-time'))
+const SlideSecondData = loadable(() => import('../animated-slides/slide-bands/slide-second-data'))
+const SlideTweets = loadable(() => import('../animated-slides/slide-bands/slide-tweets'))
+const SlideCarousel = loadable(() => import('../slide-carousel/slide-carousel'))
+const SlideVideo = loadable(() => import('../slide-video/slide-video'))
+const Chart70 = loadable(() => import('../graphics/chart70'))
+const Chart71 = loadable(() => import('../graphics/chart71'))
 
 import AOS from 'aos';
 import 'aos/dist/aos.css'; // You can also use <link> for styles
@@ -98,11 +100,6 @@ export default class MobileIndex extends Component {
     }
 
     componentDidMount(){
-
-        setTimeout(function(){
-            this.setState({isLoad: true})
-        }.bind(this));
-
         fullpage_api.setKeyboardScrolling(false, 'down, up');
 
         fullpage_api.setAllowScrolling(false, "down, up");
@@ -443,12 +440,7 @@ export default class MobileIndex extends Component {
                                         </div>
                                     </div>
                                 </div>
-                                {
-                                    this.state.isLoad
-                                    ? <SlideBipoc />
-                                    : ""
-                                }
-                                
+                                <SlideBipoc />
                                 
                             </section>
             

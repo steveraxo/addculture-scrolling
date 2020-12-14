@@ -750,9 +750,9 @@ export default class MobileIndex extends Component {
                                 <SlideTime />
                             </section>
 
-                            <section id="add__culture__by__raxo" className="section">
+                            {/* <section id="add__culture__by__raxo" className="section">
                                 <SlideVideo />                
-                            </section>
+                            </section> */}
 
                             <section id="we-amplify" className="section">
                                 <CtaSection />

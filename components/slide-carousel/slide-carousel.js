@@ -204,14 +204,14 @@ export default class SlideTen extends Component {
                             <div className="slider__ten">
                                 <div className="slider__ten__arrows">
                                     <div className="slider__ten__prev slider__arrows disabled" onClick={this.previous}>
-                                        <img src="/images/helpers/prevArrow.svg"  alt=""
+                                        <img loading="lazy" src="/images/helpers/prevArrow.svg"  alt=""
                                         animate={this.state.visible ? "open" : "closed"}
                                         variants={variations}
                                         transition={{ duration: 0.9, type: "spring", stiffness: 50,  delay: 0.2 }}
                                         />
                                     </div>
                                     <div className="slider__ten__next slider__arrows" onClick={this.next}>
-                                        <img src="/images/helpers/nextArrow.svg" alt=""
+                                        <img loading="lazy" src="/images/helpers/nextArrow.svg" alt=""
                                         animate={this.state.visible ? "open" : "closed"}
                                         variants={variations}
                                         transition={{ duration: 0.9, type: "spring", stiffness: 50,  delay: 0.2 }}

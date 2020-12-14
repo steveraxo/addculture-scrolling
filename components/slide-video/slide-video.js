@@ -35,7 +35,7 @@ export default class SlideVideo extends Component {
         return (
             <div id="video__slide__wrapper">
                 {/* <div className="PlayButton">
-                    <img src="https://raxo.dev/addculture/playWhite.png" alt=""/>
+                    <img loading="lazy" src="https://raxo.dev/addculture/playWhite.png" alt=""/>
                 </div>
 
                 <video id="video__element"  onClick={this.playVideo}  poster="https://raxo.dev/addculture/poster.png">

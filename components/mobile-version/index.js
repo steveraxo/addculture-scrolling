@@ -174,7 +174,7 @@ export default class MobileIndex extends Component {
 
                 <section id="are-failing" className="mobile__slide">
                     <div className="floating__circle">
-                        <img src="/images/plus.svg" data-aos="fade-left" data-aos-delay="100" data-aos-duration="1000"  alt=""/>
+                        <img loading="lazy" src="/images/plus.svg" data-aos="fade-left" data-aos-delay="100" data-aos-duration="1000"  alt=""/>
                     </div>
                     <div className="container">
                         <div className="row">
@@ -196,7 +196,7 @@ export default class MobileIndex extends Component {
 
                 <section id="to-diversify" className="mobile__slide">
                     <div className="floating__circle">
-                        <img src="/images/Ellipse32.svg" className="aos" data-aos="fade-left" data-aos-delay="100" data-aos-duration="1000"  alt=""/>
+                        <img loading="lazy" src="/images/Ellipse32.svg" className="aos" data-aos="fade-left" data-aos-delay="100" data-aos-duration="1000"  alt=""/>
                     </div>
                     <div className="container">
                         <div className="row">
@@ -259,7 +259,7 @@ export default class MobileIndex extends Component {
                                 </div>
                             </div>
                             <div className="col-lg-12 is__white__data d-flex justify-content-center align-item-center">
-                                <img src="/images/firstData.svg" alt="93.8% of the people in executive positions in the top 50 agencies are white" className="aos" data-aos="fade-up" data-aos-delay="300" data-aos-duration="1000"/>
+                                <img loading="lazy" src="/images/firstData.svg" alt="93.8% of the people in executive positions in the top 50 agencies are white" className="aos" data-aos="fade-up" data-aos-delay="300" data-aos-duration="1000"/>
                             </div>
                         </div>
                     </div>
@@ -286,11 +286,11 @@ export default class MobileIndex extends Component {
                                             <h2 data-aos="fade-left" className="aos" data-aos-delay="300" data-aos-duration="1000">& ADVERTISING</h2>
                                         </div>
                                         
-                                        <img className="chart__image__legend aos" data-aos="fade-up" data-aos-delay="500" data-aos-duration="1000" src="/images/chart__one__legend.svg" alt="Lack of diversity Legend"/>
+                                        <img loading="lazy" className="chart__image__legend aos" data-aos="fade-up" data-aos-delay="500" data-aos-duration="1000" src="/images/chart__one__legend.svg" alt="Lack of diversity Legend"/>
                                     </div>
                                 </div>
                                 <div className="col-sm-12 col-lg-6">
-                                    <img className="chart__image aos" data-aos="fade-up" data-aos-delay="400" data-aos-duration="1000" src="/images/chart__one__graphic.svg" alt="Lack of diversity chart" />
+                                    <img loading="lazy" className="chart__image aos" data-aos="fade-up" data-aos-delay="400" data-aos-duration="1000" src="/images/chart__one__graphic.svg" alt="Lack of diversity chart" />
                                 </div>
                             </div>
 
@@ -304,12 +304,12 @@ export default class MobileIndex extends Component {
                                         </div>
 
                                         
-                                        <img className="chart__image__legend aos" src="/images/chart__two__legend.svg" data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000" alt="Lack of diversity Legend"/>
+                                        <img loading="lazy" className="chart__image__legend aos" src="/images/chart__two__legend.svg" data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000" alt="Lack of diversity Legend"/>
                                     </div>
                                 </div>
 
                                 <div className="col-sm-12 col-lg-6">
-                                    <img className="chart__image aos" src="/images/chart__two__graphic.svg" data-aos="fade-up" data-aos-delay="100" data-aos-duration="1000" alt="Lack of diversity chart" />
+                                    <img loading="lazy" className="chart__image aos" src="/images/chart__two__graphic.svg" data-aos="fade-up" data-aos-delay="100" data-aos-duration="1000" alt="Lack of diversity chart" />
                                 </div>
                             </div>
                         </div>
@@ -330,7 +330,7 @@ export default class MobileIndex extends Component {
                                 </div>
                             </div>
                             <div className="col-lg-12 is__male__data">
-                                <img src="/images/secondData.svg" className="aos" alt="93.8% of the people in executive positions in the top 50 agencies are white" data-aos="fade-up" data-aos-delay="300" data-aos-duration="1000"/>
+                                <img loading="lazy" src="/images/secondData.svg" className="aos" alt="93.8% of the people in executive positions in the top 50 agencies are white" data-aos="fade-up" data-aos-delay="300" data-aos-duration="1000"/>
                             </div>
                         </div>
                     </div>
@@ -402,11 +402,11 @@ export default class MobileIndex extends Component {
                                 </div>
 
                                 <div className="chart__title__image col-sm-12 col-lg-5">
-                                    <img className="chart__image aos" src="/images/chart__three__graphic.svg" data-aos="fade-up" data-aos-delay="300" data-aos-duration="1000" alt="Lack of diversity chart" />
+                                    <img loading="lazy" className="chart__image aos" src="/images/chart__three__graphic.svg" data-aos="fade-up" data-aos-delay="300" data-aos-duration="1000" alt="Lack of diversity chart" />
                                 </div>
 
                                 <div className="chart__title__legend col-sm-12 col-lg-3">
-                                    <img className="chart__image__legend aos" src="/images/chart__three__legend.svg" data-aos="fade-left" data-aos-delay="400" data-aos-duration="1000" alt="Lack of diversity Legend"/>
+                                    <img loading="lazy" className="chart__image__legend aos" src="/images/chart__three__legend.svg" data-aos="fade-left" data-aos-delay="400" data-aos-duration="1000" alt="Lack of diversity Legend"/>
                                 </div>
 
                             </div>
@@ -425,11 +425,11 @@ export default class MobileIndex extends Component {
                                 </div>
 
                                 <div className="chart__title__image col-sm-12 col-lg-5">
-                                    <img className="chart__image aos" src="/images/chart__four__graphic.svg" alt="Lack of diversity chart" />
+                                    <img loading="lazy" className="chart__image aos" src="/images/chart__four__graphic.svg" alt="Lack of diversity chart" />
                                 </div>
 
                                 <div className="chart__title__legend col-sm-12 col-lg-3">
-                                    <img className="chart__image__legend" src="/images/chart__four__legend.svg" alt="Lack of diversity Legend"/>
+                                    <img loading="lazy" className="chart__image__legend" src="/images/chart__four__legend.svg" alt="Lack of diversity Legend"/>
                                 </div>
                             </div>
 
@@ -447,11 +447,11 @@ export default class MobileIndex extends Component {
                                 </div>
         
                                 <div className="chart__title__image col-sm-12 col-lg-5">
-                                    <img className="chart__image aos" src="/images/chart__five__graphic.svg" alt="Lack of diversity chart" />
+                                    <img loading="lazy" className="chart__image aos" src="/images/chart__five__graphic.svg" alt="Lack of diversity chart" />
                                 </div>
 
                                 <div className="chart__title__legend col-sm-12 col-lg-3">
-                                    <img className="chart__image__legend" src="/images/chart__five__legend.svg" alt="Lack of diversity Legend"/>
+                                    <img loading="lazy" className="chart__image__legend" src="/images/chart__five__legend.svg" alt="Lack of diversity Legend"/>
                                 </div>
                                 
                                 
@@ -463,22 +463,22 @@ export default class MobileIndex extends Component {
 
                 <section id="create-culture" className="mobile__slide">
                     
-                    <img src="/images/s2.svg" className="create__shape__one rellax two " id="shape__two" />
+                    <img loading="lazy" src="/images/s2.svg" className="create__shape__one rellax two " id="shape__two" />
                     
                     <div className="floating__circle">
-                        <img src="/images/shapesOne.svg" className="aos hidden__desktop" data-aos="fade-up" data-aos-delay="100" data-aos-duration="1000"  alt=""/>
+                        <img loading="lazy" src="/images/shapesOne.svg" className="aos hidden__desktop" data-aos="fade-up" data-aos-delay="100" data-aos-duration="1000"  alt=""/>
                     </div>
                     <div className="container">
                         <div className="row">
                             <div className="col-sm-12 col-lg-2">
-                                <img src="/images/s1.svg" className="create__shape__one rellax one " id="shape__one" />
-                                <img src="/images/s4.svg" className="create__shape__one rellax four " id="shape__four" />
-                                <img src="/images/bipocCreate.svg" className="bipoc__shape" alt=""/>
+                                <img loading="lazy" src="/images/s1.svg" className="create__shape__one rellax one " id="shape__one" />
+                                <img loading="lazy" src="/images/s4.svg" className="create__shape__one rellax four " id="shape__four" />
+                                <img loading="lazy" src="/images/bipocCreate.svg" className="bipoc__shape" alt=""/>
                             </div>
                             <div className="col-sm-12 col-lg-6">
-                                <img src="/images/s5.svg" className="create__shape__one rellax five " id="shape__five" />
-                                <img src="/images/s6.svg" className="create__shape__one rellax six " id="shape__six" />
-                                <img src="/images/s3.svg" className="create__shape__one rellax three " id="shape__three" />
+                                <img loading="lazy" src="/images/s5.svg" className="create__shape__one rellax five " id="shape__five" />
+                                <img loading="lazy" src="/images/s6.svg" className="create__shape__one rellax six " id="shape__six" />
+                                <img loading="lazy" src="/images/s3.svg" className="create__shape__one rellax three " id="shape__three" />
 
                                 <h2 className="avant uppercase black__text aos" data-aos="fade-right" data-aos-delay="100" data-aos-duration="1000">
                                     Bipoc
@@ -500,20 +500,20 @@ export default class MobileIndex extends Component {
 
                 <section id="we-appropiate" className="mobile__slide">
                     <div className="floating__circle">
-                        <img src="/images/shapesTwo.svg" className="aos hidden__desktop" data-aos="fade-up" data-aos-delay="100" data-aos-duration="1000"  alt=""/>
+                        <img loading="lazy" src="/images/shapesTwo.svg" className="aos hidden__desktop" data-aos="fade-up" data-aos-delay="100" data-aos-duration="1000"  alt=""/>
                     </div>
                     <div className="container">
                         <div className="row">
                             <div className="col-sm-12 col-lg-5">
 
-                                <img src="/images/s3.svg" className="create__shape__one rellax one " id="shape__one__one" />
-                                <img src="/images/s2.svg" className="create__shape__one rellax four " id="shape__one__two" />
+                                <img loading="lazy" src="/images/s3.svg" className="create__shape__one rellax one " id="shape__one__one" />
+                                <img loading="lazy" src="/images/s2.svg" className="create__shape__one rellax four " id="shape__one__two" />
 
                             </div>
                             <div className="col-sm-12 col-lg-7">
-                                <img src="/images/s5.svg" className="create__shape__one rellax five " id="shape__one__three" />
-                                <img src="/images/s6.svg" className="create__shape__one rellax six " id="shape__one__four" />
-                                <img src="/images/s7.svg" className="create__shape__one rellax three " id="shape__one__five" />
+                                <img loading="lazy" src="/images/s5.svg" className="create__shape__one rellax five " id="shape__one__three" />
+                                <img loading="lazy" src="/images/s6.svg" className="create__shape__one rellax six " id="shape__one__four" />
+                                <img loading="lazy" src="/images/s7.svg" className="create__shape__one rellax three " id="shape__one__five" />
                                
                                 <h2 className="avant uppercase black__text aos" data-aos="fade-right" data-aos-delay="100" data-aos-duration="1000">
                                     We
@@ -521,7 +521,7 @@ export default class MobileIndex extends Component {
                                 <h2 className="avant uppercase black__text second__line aos"  data-aos="fade-right" data-aos-delay="200" data-aos-duration="1000">
                                     Appropriate
 
-                                    <img src="/images/drawedLine.svg" alt=""/>
+                                    <img loading="lazy" src="/images/drawedLine.svg" alt=""/>
                                 </h2>
                                 <h2 className="avant uppercase black__text aos" data-aos="fade-right" data-aos-delay="400" data-aos-duration="1000">
                                     in our

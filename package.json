@@ -12,6 +12,7 @@
     "@fullpage/react-fullpage": "^0.1.18",
     "@loadable/component": "^5.14.1",
     "@u-wave/react-vimeo": "^0.9.1",
+    "analytics": "^0.6.2",
     "aos": "^2.3.4",
     "axios": "^0.21.0",
     "framer-motion": "^2.9.4",

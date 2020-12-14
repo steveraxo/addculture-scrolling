@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { Component , lazy, Suspense} from 'react'
 import loadable from '@loadable/component'
 import CtaSection from "../cta-section/cta-section"
 import ReactFullpage from '@fullpage/react-fullpage'; 
@@ -441,9 +441,10 @@ export default class MobileIndex extends Component {
                                 <SlideBipoc />
                                 
                             </section>
-            
                             <section id="is__white__wrapper" className="section">
-                                <SlideBands customClass=" section__full" />
+                                <Suspense fallback={<h1>Still Loading…</h1>}>
+                                    <SlideBands customClass=" section__full" />
+                                </Suspense>
                             </section>
             
                             <section id="charts__one" className="chart__ones__first section">

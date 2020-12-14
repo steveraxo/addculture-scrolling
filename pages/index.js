@@ -4,8 +4,20 @@ import DesktopVersionOne from "../components/desktop-version/index"
 import LoadingScreen from "../components/loading-screen/loading-screen"
 
 export default function Home() {
-
+  const isBrowser = typeof window !== `undefined`;
   const [isMobile, SetIsMobile] = useState(false)
+
+  if (isBrowser) {
+    const analytics = Analytics({
+      app: "humanified-next",
+      plugins: [
+        googleTagManager({
+          containerId: "G-VE21KYC672",
+        }),
+      ],
+    });
+    analytics.page();
+  }
 
   // START SMOOTH SCROLLING //
   function init() {
@@ -93,18 +105,6 @@ export default function Home() {
   });
   return (
     <>
-      <scrip async src="https://www.googletagmanager.com/gtag/js?id=G-VE21KYC672"></scrip>
-      <script
-          dangerouslySetInnerHTML={{
-              __html: `
-              window.dataLayer = window.dataLayer || [];
-              function gtag(){dataLayer.push(arguments);}
-              gtag('js', new Date());
-              
-              gtag('config', 'G-VE21KYC672');
-              `,
-          }}
-      />
       <script
           dangerouslySetInnerHTML={{
               __html: `

@@ -421,6 +421,14 @@ html {
 .explore__cta:hover p:after{
   transform: translateY(-0.5px);
 }
+@media(max-width: 1024px){
+  #video__slide__wrapper {
+    position: relative!important;
+  }
+  body, html{
+    overflow-x: hidden;
+  }
+}
 @media (max-height: 735px) and (orientation: landscape) {
   #we-amplify-the-voices h2 {
     font-size: 55px;

@@ -93,7 +93,18 @@ export default function Home() {
   });
   return (
     <>
-
+      <scrip async src="https://www.googletagmanager.com/gtag/js?id=G-VE21KYC672"></scrip>
+      <script
+          dangerouslySetInnerHTML={{
+              __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              
+              gtag('config', 'G-VE21KYC672');
+              `,
+          }}
+      />
       <script
           dangerouslySetInnerHTML={{
               __html: `

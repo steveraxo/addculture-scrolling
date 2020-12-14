@@ -98,6 +98,11 @@ export default class MobileIndex extends Component {
     }
 
     componentDidMount(){
+
+        setTimeout(function(){
+            this.setState({isLoad: true})
+        }.bind(this));
+
         fullpage_api.setKeyboardScrolling(false, 'down, up');
 
         fullpage_api.setAllowScrolling(false, "down, up");
@@ -438,7 +443,12 @@ export default class MobileIndex extends Component {
                                         </div>
                                     </div>
                                 </div>
-                                <SlideBipoc />
+                                {
+                                    this.state.isLoad
+                                    ? <SlideBipoc />
+                                    : ""
+                                }
+                                
                                 
                             </section>
             

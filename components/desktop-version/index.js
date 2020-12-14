@@ -1,4 +1,4 @@
-import React, { Component , lazy, Suspense} from 'react'
+import React, { Component } from 'react'
 import loadable from '@loadable/component'
 import CtaSection from "../cta-section/cta-section"
 import ReactFullpage from '@fullpage/react-fullpage'; 
@@ -100,14 +100,13 @@ export default class MobileIndex extends Component {
     }
 
     componentDidMount(){
-        fullpage_api.setKeyboardScrolling(false, 'down, up');
+        // fullpage_api.setKeyboardScrolling(false, 'down, up');
 
-        fullpage_api.setAllowScrolling(false, "down, up");
+        // fullpage_api.setAllowScrolling(false, "down, up");
 
         this.parallaxContainer();
 
         AOS.init({easing: 'ease',once: true,mirror: false,});
-
         
         document.getElementById("failing__animation__scroller__fallback").addEventListener("click", function(){
             fullpage_api.moveSectionDown();
@@ -365,7 +364,7 @@ export default class MobileIndex extends Component {
                     return (
                         <ReactFullpage.Wrapper>
                             <section id="are-failing" className="mobile__slide section">
-                                <div className="are__failing__content__container">
+                                <div className="are__failing__content__container active">
                                     <div className="floating__circle">
                                         <img loading="lazy"  src="/images/plus.svg" data-aos="fade-left" data-aos-delay="100" data-aos-duration="1000"  alt=""/>
                                     </div>
@@ -387,7 +386,7 @@ export default class MobileIndex extends Component {
                                     </div>
                                 </div>
                                 
-                                <SlideFailing />
+                                {/* <SlideFailing /> */}
                             </section>
  
                             <section id="to-diversify" className="mobile__slide section">
@@ -442,9 +441,7 @@ export default class MobileIndex extends Component {
                                 
                             </section>
                             <section id="is__white__wrapper" className="section">
-                                <Suspense fallback={<h1>Still Loading…</h1>}>
-                                    <SlideBands customClass=" section__full" />
-                                </Suspense>
+                                <SlideBands customClass=" section__full" />
                             </section>
             
                             <section id="charts__one" className="chart__ones__first section">

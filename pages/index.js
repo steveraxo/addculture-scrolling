@@ -2,6 +2,8 @@ import React, { useState, useEffect, Suspense, lazy } from 'react';
 import MobileVersion from "../components/mobile-version/index"
 import DesktopVersionOne from "../components/desktop-version/index"
 import LoadingScreen from "../components/loading-screen/loading-screen"
+import Analytics from 'analytics'
+import googleTagManager from '@analytics/google-tag-manager'
 
 export default function Home() {
   const isBrowser = typeof window !== `undefined`;

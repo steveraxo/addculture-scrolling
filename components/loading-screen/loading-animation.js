@@ -29,10 +29,7 @@ class ControlledLottie71 extends Component {
 
     document.onreadystatechange = function() { 
         if (document.readyState === "complete") { 
-          setTimeout(function(){
-            animObj.play();
-
-          }, 300)
+          animObj.play();
         }
 
         animObj.onComplete = function() {

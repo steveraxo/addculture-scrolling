@@ -36,6 +36,7 @@ export default class footer extends Component {
                 {/* Main navbar menu */}
                 <div className="navbar container-fluid">
                     <div className="navbar__holder">
+                        <a href="/" className="hidden__button__reload">Home Link</a>
                         <div className="navbar__menu__burguer">
                             <motion.div className="menu__burguer__wrapper"
                                 onClick={this.OpenBanners}
@@ -57,6 +58,7 @@ export default class footer extends Component {
                             </motion.div>
                         </div>
                         <div className="navbar__logo">
+                            
                             <AnimatedLogo customClass="animated__logo" />
                             <AddLogo className="navbar__logo__mobile" />
                         </div>

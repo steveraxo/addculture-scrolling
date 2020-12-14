@@ -116,7 +116,7 @@ export default class MobileIndex extends Component {
                 fullpage_api.moveSectionDown();
     
                 fullpage_api.setAllowScrolling(true, "down, up");
-    
+                fullpage_api.setKeyboardScrolling(true, 'down, up');
                 setTimeout(function(){
                     document.querySelectorAll(".are__failing__content__container")[0].classList.add("active");
                     document.querySelectorAll(".failing__animation")[0].classList.remove("active");
@@ -124,6 +124,7 @@ export default class MobileIndex extends Component {
             })
         }else{
             fullpage_api.setAllowScrolling(true, "down, up");
+            fullpage_api.setKeyboardScrolling(true, 'down, up');
 
             document.querySelectorAll(".are__failing__content__container")[0].classList.add("active");
             document.querySelectorAll(".bipoc__data__container__outer")[0].classList.add("active");
@@ -237,7 +238,8 @@ export default class MobileIndex extends Component {
         if(destination.index === 2 && !this.state.bipocController){
             if(document.getElementById("bipoc__data")){
                 fullpage_api.setAllowScrolling(false, "down, up");
-                
+                fullpage_api.setKeyboardScrolling(false, 'down, up');
+
                 setTimeout(function(){
                     document.getElementById("bipoc__data").click();
                 }, 100)
@@ -253,7 +255,8 @@ export default class MobileIndex extends Component {
                     document.querySelectorAll(".bipoc__data__container")[0].classList.remove("active");
                     
                     fullpage_api.setAllowScrolling(true, "down, up");
-    
+                    fullpage_api.setKeyboardScrolling(true, 'down, up');
+
                     this.setState({bipocController: true})
     
                 }.bind(this), 5500)
@@ -282,6 +285,7 @@ export default class MobileIndex extends Component {
         if(destination.index === 10 ){
             if(!this.state.letThree){
                 fullpage_api.setAllowScrolling(false, "down, up");
+                fullpage_api.setKeyboardScrolling(false, 'down, up');
             }
 
             setTimeout(function(){
@@ -291,6 +295,7 @@ export default class MobileIndex extends Component {
             setTimeout(function(){
                 this.setState({letThree: true})
                 fullpage_api.setAllowScrolling(true, "down, up");
+                fullpage_api.setKeyboardScrolling(true, 'down, up');
             }.bind(this), 15000)
         }
 
@@ -298,6 +303,7 @@ export default class MobileIndex extends Component {
             if(document.getElementById("let__them")){
                 if(!this.state.letOne){
                     fullpage_api.setAllowScrolling(false, "down, up");
+                    fullpage_api.setKeyboardScrolling(false, 'down, up');
                 }
         
                 setTimeout(function(){
@@ -307,6 +313,7 @@ export default class MobileIndex extends Component {
                 setTimeout(function(){
                     this.setState({letOne: true})
                     fullpage_api.setAllowScrolling(true, "down, up");
+                    fullpage_api.setKeyboardScrolling(true, 'down, up');
                 }.bind(this), 5500)
             }
         }
@@ -315,6 +322,7 @@ export default class MobileIndex extends Component {
             if(document.getElementById("its__time")){
                 if(!this.state.letTwo){
                     fullpage_api.setAllowScrolling(false, "down, up");
+                    fullpage_api.setKeyboardScrolling(false, 'down, up');
                 }
     
                 setTimeout(function(){
@@ -324,6 +332,7 @@ export default class MobileIndex extends Component {
                 setTimeout(function(){
                     this.setState({letTwo: true})
                     fullpage_api.setAllowScrolling(true, "down, up");
+                    fullpage_api.setKeyboardScrolling(true, 'down, up');
                 }.bind(this), 7000)
             }
         }

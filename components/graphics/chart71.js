@@ -31,12 +31,7 @@ class ControlledLottie71 extends Component {
     })
 
   }
-  handleStop = () => {
-    animObj.stop();
-  }
-  handlePlay() {
-    animObj.play();
-  }
+
   render() {
     const defaultOptions = {
       loop: false,

@@ -36,12 +36,7 @@ class ControlledLottie71 extends Component {
       document.getElementById("failing__animation__scroller__fallback").click();
     }
   }
-  handleStop = () => {
-    animObj.stop();
-  }
-  handlePlay() {
-    animObj.play();
-  }
+
   render() {
     return (
       <div className={`lottie__wrapper  ${this.props.customClass} failing__animation active`}>

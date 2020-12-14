@@ -22,7 +22,11 @@ class ControlledLottie71 extends Component {
       renderer: 'svg',
       loop: false,
       autoplay: true,
-      animationData: finalFileAnimation // the path to the animation json
+      animationData: finalFileAnimation,
+rendererSettings: {
+        setQuality: "medium",
+      },
+      
     });
 
     animObj.stop();
@@ -33,12 +37,7 @@ class ControlledLottie71 extends Component {
     })
     
   }
-  handleStop = () => {
-    animObj.stop();
-  }
-  handlePlay() {
-    animObj.play();
-  }
+
   render() {
     return (
       <div className={`lottie__wrapper bipoc__bands__element  ${this.props.customClass}`}>

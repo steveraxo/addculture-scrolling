@@ -117,7 +117,6 @@ export default class MobileIndex extends Component {
             }, 1500)
         })
         
-
         document.querySelectorAll(".restart__journey")[0].addEventListener("click", function(event){
             event.preventDefault();
 
@@ -162,6 +161,8 @@ export default class MobileIndex extends Component {
         document.getElementById("triggerScrollUp").addEventListener("click", function(){
             fullpage_api.moveSectionUp();
         })
+
+        this.setState({isLoad: true})
     }
 
     switchChart(event){
@@ -436,8 +437,8 @@ export default class MobileIndex extends Component {
                                     </div>
                                 </div>
                                 <SlideBipoc />
-                                
                             </section>
+                            
                             <section id="is__white__wrapper" className="section">
                                 <SlideBands customClass=" section__full" />
                             </section>
@@ -693,8 +694,7 @@ export default class MobileIndex extends Component {
                                         </div>
                                     </div>
                                 </div>
-
-                                <SlideLet />
+                                    <SlideLet />
                             </section>
             
                             <section id="its-time" className="mobile__slide section">
@@ -722,7 +722,8 @@ export default class MobileIndex extends Component {
                             </section>
 
                             <section id="add__culture__by__raxo" className="section">
-                                <SlideVideo />                
+                                <SlideVideo />    
+                                          
                             </section>
 
                             <section id="we-amplify" className="section">

@@ -33,12 +33,7 @@ class ControlledLottie71 extends Component {
     })
     
   }
-  handleStop = () => {
-    animObj.stop();
-  }
-  handlePlay() {
-    animObj.play();
-  }
+
   render() {
     return (
       <div className={`lottie__wrapper bipoc__bands__element  ${this.props.customClass}`}>

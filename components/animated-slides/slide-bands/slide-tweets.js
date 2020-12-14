@@ -46,12 +46,7 @@ class ControlledLottie71 extends Component {
     }.bind(this)
     
   }
-  handleStop = () => {
-    animObj.stop();
-  }
-  handlePlay() {
-    animObj.play();
-  }
+
   render() {
     return (
       <div className={`lottie__wrapper full__animation  ${this.props.customClass} active`}>

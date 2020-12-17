@@ -196,6 +196,9 @@ html {
 }
 
 @media(max-width: 600px){
+  .bipoc__shape{
+    display: none;
+  }
   .slick-dots{
     display: block!important;
   }

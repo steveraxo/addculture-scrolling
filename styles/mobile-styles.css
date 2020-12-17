@@ -861,14 +861,13 @@
     }
     .chart__title{
         order: 3;
-        margin-top: 50px;
+        margin-top: 70px;
         width: 100%;
     }
     .chart__title {
         justify-content: flex-start;
         flex-wrap: wrap;
-        flex-direction: unset;
-        flex-wrap: wrap;
+        flex-direction: column;
     }
     #charts__one h2 {
         font-size: 20px;
@@ -956,6 +955,7 @@
     }
     #charts__one .chart__controller {
         margin-bottom: 30px;
+        justify-content: space-between;
     }
     #charts__one {
         min-height: auto;

@@ -196,6 +196,9 @@ html {
 }
 
 @media(max-width: 600px){
+  .slick-dots{
+    display: block!important;
+  }
   #are-failing.mobile__slide {
     align-items: center;
   }

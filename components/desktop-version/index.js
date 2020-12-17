@@ -363,7 +363,7 @@ export default class MobileIndex extends Component {
                     return (
                         <ReactFullpage.Wrapper>
                             <section id="are-failing" className="mobile__slide section">
-                                <div className="are__failing__content__container active">
+                                <div className="are__failing__content__container">
                                     <div className="floating__circle">
                                         <img loading="lazy"  src="/images/plus.svg" data-aos="fade-left" data-aos-delay="100" data-aos-duration="1000"  alt=""/>
                                     </div>
@@ -385,7 +385,7 @@ export default class MobileIndex extends Component {
                                     </div>
                                 </div>
                                 
-                                {/* <SlideFailing /> */}
+                                <SlideFailing />
                             </section>
  
                             <section id="to-diversify" className="mobile__slide section">
@@ -410,7 +410,7 @@ export default class MobileIndex extends Component {
                             </section>
             
                             <section id="open-doors" className="mobile__slide section">
-                                <div className="bipoc__data__container__outer active">
+                                <div className="bipoc__data__container__outer">
                                     <div className="container">
                                         <div className="row">
                                             <div className="col-lg-12">
@@ -436,14 +436,14 @@ export default class MobileIndex extends Component {
                                         </div>
                                     </div>
                                 </div>
-                                {/* <SlideBipoc /> */}
+                                <SlideBipoc />
                             </section>
                             
                             <section id="is__white__wrapper" className="section">
                                 <SlideBands customClass=" section__full" />
                             </section>
             
-                            <section id="charts__one" className="chart__ones__first section active">
+                            <section id="charts__one" className="chart__ones__first section">
                                 <div className="container">
                                     <div className="row">
                                         <div className="col-12">
@@ -670,11 +670,11 @@ export default class MobileIndex extends Component {
                                         <path d="M455.999 57C455.999 88.4802 430.97 114 400.095 114C369.22 114 344.191 88.4802 344.191 57C344.191 25.5198 369.22 0 400.095 0C430.97 0 455.999 25.5198 455.999 57Z" fill="#222220"/>
                                     </svg>
                                 </div>
-                                {/* <SlideTweets customClass="tweets__container" /> */}
+                                <SlideTweets customClass="tweets__container" />
                             </div>
                             
                             <section id="how-its-done" className="mobile__slide section">
-                                <div className="let__them__content__container active">
+                                <div className="let__them__content__container">
                                     <div className="container">
                                         <div className="row">
                                             <div className="col-lg-12">
@@ -694,11 +694,11 @@ export default class MobileIndex extends Component {
                                         </div>
                                     </div>
                                 </div>
-                                    {/* <SlideLet /> */}
+                                    <SlideLet />
                             </section>
             
                             <section id="its-time" className="mobile__slide section">
-                                <div className="its__time__content__container active">
+                                <div className="its__time__content__container">
                                     <div className="container">
                                         <div className="row">
                                             <div className="col-lg-12">
@@ -718,7 +718,7 @@ export default class MobileIndex extends Component {
                                         </div>
                                     </div>
                                 </div>
-                                {/* <SlideTime /> */}
+                                <SlideTime />
                             </section>
 
                             <section id="add__culture__by__raxo" className="section">

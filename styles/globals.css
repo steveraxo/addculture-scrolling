@@ -7,7 +7,7 @@ body {
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
   background: #222220;
 }
-html body {
+html , body {
   overflow-x: hidden!important;
 }
 * {

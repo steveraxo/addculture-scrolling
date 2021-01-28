@@ -203,7 +203,7 @@ export default function SlideFifteen() {
                         </div>
                     
                         <div className="row row__third">
-                            <p>HELLO, <a href="https://stories.addculture.com/#join-our-newsletter" target="_BLANK" id="join__newsletter">JOIN OUR NEWSLETTER</a> TO STAY UP DATE</p>
+                            <p>HELLO, <a href="https://stories.addculture.com/#join-our-newsletter" target="_BLANK" id="join__newsletter">JOIN OUR NEWSLETTER</a> TO STAY UP TO DATE</p>
                         </div>
                     </div>
                 </>

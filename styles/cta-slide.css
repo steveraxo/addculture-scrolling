@@ -13,6 +13,15 @@
     position: relative;
     width: 100%;
 }
+.row__third p{
+    FONT-WEIGHT: BOLD;
+    font-family: ITC Avant Garde Pro Md;
+}
+.row__third p a{
+    FONT-WEIGHT: BOLD;
+    font-family: ITC Avant Garde Pro Md;
+    color: #FFC6C6;
+}
 @media(max-width: 10000px){
 
 
@@ -57,12 +66,10 @@
         max-width: 1370px;
     }
     #we-amplify-the-voices h2 {
-        display: -webkit-flex;
         display: flex;
-        -webkit-flex-direction: column;
         flex-direction: column;
-        font-size: 75px;
-        margin-bottom: 20px!important;
+        font-size: 60px;
+        margin-bottom: 0px!important;
         margin: 20px 0 0;
         line-height: 0.9em;
     }
@@ -149,6 +156,7 @@
 #we-amplify-the-voices .row__second .col-lg-12 .end__block.active h2 {
     color: #FFC6C6;
     opacity: 1;
+    margin-bottom: 15px!important;
 }
 #we-amplify-the-voices .row__second .col-lg-12 h2 {
     font-size: 16px;
@@ -181,6 +189,7 @@
 @media(max-width: 1440px){
     #we-amplify-the-voices .container-fluid {
         padding: 0 5%!important;
+        margin-top: 20px;
     }
 }
 @media(max-width: 1024px){

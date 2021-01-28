@@ -7,6 +7,7 @@ export default class FormPopup extends Component {
         this.state = {
             formResponse: false,
             nameField: "",
+            emailField: "",
             relationAgencyField: "",
             relationAgencyFieldOther: "",
             agencyNameField: "",
@@ -29,6 +30,9 @@ export default class FormPopup extends Component {
 
             if(targetId === "your-name"){
                 this.setState({ nameField: targetValue })
+            }
+            if(targetId === "your-email"){
+                this.setState({ emailField: targetValue })
             }
             if(targetId === "relation-with-agency-other"){
                 if(document.getElementById("relation-with-agency").value === "Other"){
@@ -63,12 +67,17 @@ export default class FormPopup extends Component {
             document.getElementById("relation-with-agency-other").classList.add("hidden__input");
         }
     }
+    validEmail(e) {
+        var filter = /^\s*[\w\-\+_]+(\.[\w\-\+_]+)*\@[\w\-\+_]+\.[\w\-\+_]+(\.[\w\-\+_]+)*\s*$/;
+        return String(e).search (filter) != -1;
+    }
     handleSubmit(event){
         var SharpSpringTracking = this.getCookie('__ss_tk')
 
         event.preventDefault();
 
         var name = false;
+        var email = false;
         var nameAgency = false;
         var linkWebsite = false;
         var minorityGroup = false;
@@ -83,6 +92,19 @@ export default class FormPopup extends Component {
             document.querySelectorAll(".your-name")[0].classList.add("error__input");
         }
 
+        if(document.getElementById("your-email").value.trim().length > 2){
+            if(this.validEmail(document.getElementById("your-email").value)){
+                document.querySelectorAll(".your-email")[0].classList.remove("error__input");
+                this.setState({ emailField: document.getElementById("your-email").value })
+    
+                email = true;
+            }else{
+                document.querySelectorAll(".your-email")[0].classList.add("error__input");
+            }
+        }else{
+            document.querySelectorAll(".your-email")[0].classList.add("error__input");
+        }
+
         if(document.getElementById("relation-with-agency").value === "Other"){
             if(document.getElementById("relation-with-agency-other").value.trim().length > 2){
                 document.querySelectorAll(".relation-with-agency-other")[0].classList.remove("error__input");
@@ -91,7 +113,7 @@ export default class FormPopup extends Component {
             }else{
                 document.querySelectorAll(".relation-with-agency-other")[0].classList.add("error__input");
             }
-
+ 
             this.setState({ relationAgencyField: document.getElementById("relation-with-agency").value })
         }else{
             this.setState({ relationAgencyField: document.getElementById("relation-with-agency").value })
@@ -137,8 +159,9 @@ export default class FormPopup extends Component {
             document.querySelectorAll(".additional-links")[0].classList.add("error__input");
         }
 
-        if(name && nameAgency && linkWebsite && minorityGroup && additionalLink){
+        if(name && email && nameAgency && linkWebsite && minorityGroup && additionalLink){
             var personName = document.getElementById("your-name").value; 
+            var personEmail = document.getElementById("your-email").value; 
             var agencyName = document.getElementById("name-of-agency").value; 
             var agencyLink = document.getElementById("link-to-website").value;
             var minorityGroupData = document.getElementById("minority-group").value;  
@@ -153,6 +176,7 @@ export default class FormPopup extends Component {
             let formData = new FormData()
 
             formData.set("your-name", personName);
+            formData.set("your-email", personEmail);
             formData.set("name-of-agency", agencyName);
             formData.set("link-to-website", agencyLink);
             formData.set("minority-group", minorityGroupData);
@@ -163,7 +187,7 @@ export default class FormPopup extends Component {
             // Add Lead to SharpSpring
             var xhr = new XMLHttpRequest()
             
-            xhr.open('POST', `https://app-3QNMLPDA8K.marketingautomation.services/webforms/receivePostback/MzawMLEwMjQ0AgA/b3d3bb48-1c72-4f8d-8fa6-aafbb3f126ab/jsonp/?personName=${personName}&agencyName=${agencyName}&agencyRelation=${agencyRelation}&agencyRelationOther=${agencyRelationOther}&agencyWebsite=${agencyLink}&minorityGroup=${minorityGroupData}&additionalLink=${minorityGroupData}&trackingid__sb=${SharpSpringTracking}`);
+            xhr.open('POST', `https://app-3QNO4RVBUC.marketingautomation.services/webforms/receivePostback/MzawMAFCQzMA/342e759b-e56f-4007-92ba-f5fc1bd6fa79/jsonp/?personName=${personName}&email=${personEmail}&agencyName=${agencyName}&agencyRelation=${agencyRelation}&agencyRelationOther=${agencyRelationOther}&agencyWebsite=${agencyLink}&minorityGroup=${minorityGroupData}&additionalLink=${minorityGroupData}&trackingid__sb=${SharpSpringTracking}`);
             
             xhr.send()
 
@@ -244,6 +268,10 @@ export default class FormPopup extends Component {
                                 <div className="form__input your-name">
                                     <label className="label__hidden" id="name__label" htmlFor="your-name">YOUR NAME</label>
                                     <input aria-labelledby="name__label" type="text" name="your-name" placeholder="YOUR NAME *" id="your-name" onKeyPress={this.handleTextInput} />
+                                </div>
+                                <div className="form__input your-email">
+                                    <label className="label__hidden" id="name__label" htmlFor="your-email">YOUR NAME</label>
+                                    <input aria-labelledby="name__label" type="email" name="your-email" placeholder="YOUR EMAIL ADDRESS *" id="your-email" onKeyPress={this.handleTextInput} />
                                 </div>
                                 <div className="form__input relation-with-agency">
                                     <label htmlFor="relation-with-agency" id="rel__agency">RELATIONSHIP TO AGENCY *</label><br/>

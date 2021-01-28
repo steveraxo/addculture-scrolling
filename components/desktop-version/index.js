@@ -117,6 +117,10 @@ export default class MobileIndex extends Component {
             }, 1500)
         })
         
+        if (window.location.href.indexOf("agency-submit")) {
+
+        }
+
         document.querySelectorAll(".restart__journey")[0].addEventListener("click", function(event){
             event.preventDefault();
 

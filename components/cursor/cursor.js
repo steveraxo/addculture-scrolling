@@ -22,7 +22,9 @@ export default class cursor extends Component {
     const submitBuddon = [...document.querySelectorAll(".submit__form a")] 
     const closeSubmit = [...document.querySelectorAll(".close__form")]  
     const chartController = [...document.querySelectorAll(".chart__controller__element")]  
+    const joinNewsletter = [...document.querySelectorAll("#join__newsletter")]  
 
+    
     
     const allElements = aLinks
       .concat(buttons)
@@ -43,6 +45,7 @@ export default class cursor extends Component {
       .concat(menuElements)
       .concat(socialMenuElements)
       .concat(RaxoEndShape)
+      .concat(joinNewsletter)
       
     allElements.forEach(function(element) {
       element.addEventListener("mouseenter", function() {

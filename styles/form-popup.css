@@ -58,6 +58,9 @@
 .form__input.error__input.your-name:after{
     content: "Please complete this field"
 }
+.form__input.error__input.your-email:after{
+    content: "Please complete this field"
+}
 .form__input.error__input.relation-with-agency:after{
     content: "Please complete this field"
 }
@@ -120,7 +123,7 @@
     max-width: 700px;
     width: 100%;
     position: relative;
-    transform: translateY(0%);
+    transform: translateY(0%) scale(0.9);
     transition: transform ease-in-out 0.4s;
 }
 #form__wrapper.close__form__state .form__popup{

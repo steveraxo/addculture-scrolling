@@ -27,6 +27,15 @@ export default function SlideFifteen() {
         //         once: true,
         //     });
         // }
+        // setTimeout(function(){
+        //     if(window.location.href.includes("agency-submit")){
+        //         console.log("window.location.href");
+        //     }
+        //     if (window.location.href.includes("agency-submit") && document.getElementById("sign__two__wrapper")) {
+        //         document.getElementById("sign__two__wrapper").click();
+        //     }
+        // }, 1000)
+
 
         setTimeout(function(){
             setIsLoaded(true);
@@ -191,6 +200,10 @@ export default function SlideFifteen() {
                                 </div>
                                 </a>
                             </div>
+                        </div>
+                    
+                        <div className="row row__third">
+                            <p>HELLO, <a href="https://stories.addculture.com/#join-our-newsletter" target="_BLANK" id="join__newsletter">JOIN OUR NEWSLETTER</a> TO STAY UP DATE</p>
                         </div>
                     </div>
                 </>

@@ -16,11 +16,7 @@ const Layout = ({ children }) => {
     });
     analytics.page();
   }
-  return (
-    <>
-
-    </>
-  );
+  return <>{children}</>;
 };
 
 Layout.propTypes = {

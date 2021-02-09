@@ -1,68 +1,70 @@
-import React, { useState, useEffect, Suspense, lazy } from 'react';
-import MobileVersion from "../components/mobile-version/index"
-import DesktopVersionOne from "../components/desktop-version/index"
-import LoadingScreen from "../components/loading-screen/loading-screen"
-import Analytics from 'analytics'
-import googleTagManager from '@analytics/google-tag-manager'
+import React, { useState, useEffect, Suspense, lazy } from "react";
+import MobileVersion from "../components/mobile-version/index";
+import DesktopVersionOne from "../components/desktop-version/index";
+import LoadingScreen from "../components/loading-screen/loading-screen";
+import Header from "../components/navbar/navbar";
 
 export default function Home() {
-  const [isMobile, SetIsMobile] = useState(false)
+  const [isMobile, SetIsMobile] = useState(false);
 
   // START SMOOTH SCROLLING //
   function init() {
-    new SmoothScroll(document, 30, 25)
+    new SmoothScroll(document, 30, 25);
   }
-  
+
   function SmoothScroll(target, speed, smooth) {
     if (target === document)
       target =
         document.scrollingElement ||
         document.documentElement ||
         document.body.parentNode ||
-        document.body // cross browser support for document scrolling
+        document.body; // cross browser support for document scrolling
 
-    var moving = false
-    var pos = target.scrollTop
+    var moving = false;
+    var pos = target.scrollTop;
     var frame =
       target === document.body && document.documentElement
         ? document.documentElement
-        : target // safari is the new IE
+        : target; // safari is the new IE
 
-    target.addEventListener("mousewheel", scrolled, { passive: false })
-    target.addEventListener("DOMMouseScroll", scrolled, { passive: false })
+    target.addEventListener("mousewheel", scrolled, { passive: false });
+    target.addEventListener("DOMMouseScroll", scrolled, { passive: false });
 
     function scrolled(e) {
-      e.preventDefault() // disable default scrolling
+      e.preventDefault(); // disable default scrolling
 
-      var delta = normalizeWheelDelta(e)
+      var delta = normalizeWheelDelta(e);
 
-      pos += -delta * speed
-      pos = Math.max(0, Math.min(pos, target.scrollHeight - frame.clientHeight)) // limit scrolling
+      pos += -delta * speed;
+      pos = Math.max(
+        0,
+        Math.min(pos, target.scrollHeight - frame.clientHeight)
+      ); // limit scrolling
 
-      if (!moving) update()
+      if (!moving) update();
     }
 
     function normalizeWheelDelta(e) {
       if (e.detail) {
         if (e.wheelDelta)
-          return (e.wheelDelta / e.detail / 40) * (e.detail > 0 ? 1 : -1)
+          return (e.wheelDelta / e.detail / 40) * (e.detail > 0 ? 1 : -1);
         // Opera
-        else return -e.detail / 3 // Firefox
-      } else return e.wheelDelta / 120 // IE,Safari,Chrome
+        else return -e.detail / 3; // Firefox
+      } else return e.wheelDelta / 120; // IE,Safari,Chrome
     }
 
     function update() {
-      moving = true
+      moving = true;
 
-      var delta = (pos - target.scrollTop) / smooth
+      var delta = (pos - target.scrollTop) / smooth;
 
-      target.scrollTop += delta
+      target.scrollTop += delta;
 
-      if (Math.abs(delta) > 0.5) requestFrame(update)
-      else moving = false
+      if (Math.abs(delta) > 0.5) requestFrame(update);
+      else moving = false;
     }
 
-    var requestFrame = (function() {
+    var requestFrame = (function () {
       // requestAnimationFrame cross browser
       return (
         window.requestAnimationFrame ||
@@ -70,33 +72,32 @@ export default function Home() {
         window.mozRequestAnimationFrame ||
         window.oRequestAnimationFrame ||
         window.msRequestAnimationFrame ||
-        function(func) {
-          window.setTimeout(func, 1000 / 50)
+        function (func) {
+          window.setTimeout(func, 1000 / 50);
         }
-      )
-    })()
+      );
+    })();
   }
   // ENDS SMOOTH SCROLLING //
 
   useEffect(() => {
-    if(window.innerWidth < 1024){
+    if (window.innerWidth < 1024) {
       SetIsMobile(true);
     }
 
     window.onbeforeunload = function () {
-      if(window.scrollTo) window.scrollTo(0,0);
+      if (window.scrollTo) window.scrollTo(0, 0);
     };
 
-    if (navigator.appVersion.indexOf("Win") != -1){
-      document.getElementById("fp-nav").classList.add("windows__os")
+    if (navigator.appVersion.indexOf("Win") != -1) {
+      document.getElementById("fp-nav").classList.add("windows__os");
     }
-
   });
   return (
     <>
       <script
-          dangerouslySetInnerHTML={{
-              __html: `
+        dangerouslySetInnerHTML={{
+          __html: `
               var _ss = _ss || [];
               _ss.push(['_setDomain', 'https://koi-3QNMLPDA8K.marketingautomation.services/net']);
               _ss.push(['_setAccount', 'KOI-4CBA46MU6G']);
@@ -116,25 +117,19 @@ export default function Home() {
               };
               _ss.push(['_setResponseCallback', callThisOnReturn]); 
               `,
-          }}
+        }}
       />
-      {
-        isMobile
-        ? ""
-        : <LoadingScreen />
-      }
-      <div id="master__wrapper">        
-        {
-          !isMobile
-          ?
+      <Header />
+      {isMobile ? "" : <LoadingScreen />}
+      <div id="master__wrapper">
+        {!isMobile ? (
           <>
             <DesktopVersionOne />
           </>
-          : 
+        ) : (
           <MobileVersion />
-        }
-
+        )}
       </div>
     </>
-  )
+  );
 }

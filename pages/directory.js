@@ -164,6 +164,40 @@ export default class Directory extends Component {
               margin-top: auto;
               align-self: flex-start;
             }
+
+            @media (max-width: 4000px) {
+              #agencies .agencies-container {
+                max-width: 2800px;
+              }
+              #agencies .agency-card {
+                flex: 0 0 28em;
+              }
+
+              #agencies .agency-card .agency-image {
+                max-width: 450px;
+              }
+            }
+
+            @media (max-width: 3000px) {
+              #agencies .agencies-container {
+                max-width: 2500px;
+              }
+              #agencies .agency-card {
+                flex: 0 0 15em;
+              }
+            }
+
+            @media (max-width: 2000px) {
+              #agencies .agencies-container {
+                max-width: 1800px;
+              }
+              #agencies .agency-card {
+                width: 315px;
+              }
+              #agencies .agency-card .agency-image {
+                max-width: 280px;
+              }
+            }
           `}
         </style>
       </DirectoryLayout>

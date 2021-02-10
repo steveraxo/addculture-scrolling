@@ -73,7 +73,7 @@ export default class Directory extends Component {
                     alt={agency.acf.agency_name}
                   />
                   <h2 className="agency-name">{agency.acf.agency_name}</h2>
-                  <p className="agency-region">
+                  <p className="agency-region avant">
                     {agency.regions[0].name}, {agency.regions[1].name}
                   </p>
                 </div>
@@ -91,7 +91,12 @@ export default class Directory extends Component {
                     Industry <span>{agency.industries[0].name}</span>
                   </p>
 
-                  <a href={agency.acf.agency_website}>Visit website</a>
+                  <a
+                    className=" agency-link avant"
+                    href={agency.acf.agency_website}
+                  >
+                    Visit website
+                  </a>
                 </div>
               </div>
             ))}
@@ -134,15 +139,18 @@ export default class Directory extends Component {
             #filter .filter-container .layout-selector-container div {
               margin-right: 5%;
             }
+
             #agencies .agencies-container {
-              margin: 5% auto;
               display: flex;
               flex-wrap: wrap;
+              justify-content: center;
+              margin: 5% auto;
+              padding: 0 5% !important;
             }
             #agencies .agency-card {
               flex: 0 0 20em;
               border: 1px solid #222220;
-              padding: 2%;
+              padding: 1%;
               margin: 20px;
               box-sizing: border-box;
               display: flex;
@@ -154,15 +162,37 @@ export default class Directory extends Component {
               max-width: 280px;
             }
 
+            #agencies .agency-card .agency-region {
+              color: #222220;
+              opacity: 0.7;
+              font-weight: bold;
+            }
+
             #agencies .agency-card .agency-card-body {
               display: flex;
               flex-direction: column;
               justify-content: space-between;
             }
 
+            #agencies .agency-card .agency-card-body .agency-description {
+              font-family: "Helvetica Neue", sans-serif;
+              font-size: 16px;
+              line-height: 19.09px;
+              font-weight: 400;
+              font-style: normal;
+              color: #222220;
+              opacity: 0.8;
+            }
+
             #agencies .agency-card .agency-info {
               margin-top: auto;
               align-self: flex-start;
+            }
+
+            #agencies .agency-card .agency-info .agency-link {
+              text-transform: uppercase;
+              color: #cd4275;
+              font-weight: bold;
             }
 
             @media (max-width: 4000px) {
@@ -196,6 +226,40 @@ export default class Directory extends Component {
               }
               #agencies .agency-card .agency-image {
                 max-width: 280px;
+              }
+            }
+
+            @media (max-width: 1700px) {
+              #agencies .agencies-container {
+                max-width: 1500px;
+              }
+
+              #agencies .agency-card {
+                width: 250px;
+              }
+              #agencies .agency-card .agency-image {
+                max-width: 230px;
+              }
+            }
+            @media (max-width: 1400px) {
+              #agencies .agencies-container {
+                max-width: 1400px;
+              }
+              #agencies .agency-card {
+                width: 150px;
+              }
+              #agencies .agency-card .agency-image {
+                max-width: 200px;
+              }
+            }
+
+            @media (max-width: 1300px) {
+              #agencies .agencies-container {
+                max-width: 1300px;
+              }
+
+              #agencies .agency-card {
+                width: 100px;
               }
             }
           `}

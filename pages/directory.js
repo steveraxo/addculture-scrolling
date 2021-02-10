@@ -64,8 +64,8 @@ export default class Directory extends Component {
 
         <div id="agencies">
           <div className="container agencies-container">
-            {this.state.agencies.map((agency) => (
-              <div className="agency-card">
+            {this.state.agencies.map((agency, key) => (
+              <div key={key} className="agency-card">
                 <div className="agency-card-head">
                   <img
                     className="agency-image"
@@ -171,7 +171,7 @@ export default class Directory extends Component {
   }
 }
 
-export async function getInitialProps() {
+export async function getStaticProps() {
   const res = await fetch(
     "https://addculture.raxo.dev/wp-json/wp/v2/agencies_post"
   );

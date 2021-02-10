@@ -8,6 +8,16 @@ import GridSelector from "../public/images/directory/grid-selector.svg";
 import ListSelector from "../public/images/directory/list-selector.svg";
 
 export default class Directory extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      agencies: this.props.agencies,
+    };
+  }
+
+  componentDidMount() {
+    console.log(this.state.agencies);
+  }
   render() {
     return (
       <DirectoryLayout>
@@ -52,6 +62,41 @@ export default class Directory extends Component {
           </div>
         </div>
 
+        <div id="agencies">
+          <div className="container agencies-container">
+            {this.state.agencies.map((agency) => (
+              <div className="agency-card">
+                <div className="agency-card-head">
+                  <img
+                    className="agency-image"
+                    src={agency.acf.agency_image.url}
+                    alt={agency.acf.agency_name}
+                  />
+                  <h2 className="agency-name">{agency.acf.agency_name}</h2>
+                  <p className="agency-region">
+                    {agency.regions[0].name}, {agency.regions[1].name}
+                  </p>
+                </div>
+                <div className="agency-card-body">
+                  <p className="agency-description">
+                    {agency.acf.agency_description}
+                  </p>
+                </div>
+
+                <div className="agency-info">
+                  <p>
+                    Clients <span>{agency.acf.clients}</span>
+                  </p>
+                  <p>
+                    Industry <span>{agency.industries[0].name}</span>
+                  </p>
+
+                  <a href={agency.acf.agency_website}>Visit website</a>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
         <style jsx>
           {`
             #filter {
@@ -77,7 +122,9 @@ export default class Directory extends Component {
               align-items: center;
               width: 100%;
             }
-
+            #filter .filter-container .filter-options-container p {
+              font-weight: 300;
+            }
             #filter .filter-container .layout-selector-container {
               width: 100%;
               display: flex;
@@ -87,9 +134,52 @@ export default class Directory extends Component {
             #filter .filter-container .layout-selector-container div {
               margin-right: 5%;
             }
+            #agencies .agencies-container {
+              margin: 5% auto;
+              display: flex;
+              flex-wrap: wrap;
+            }
+            #agencies .agency-card {
+              flex: 0 0 20em;
+              border: 1px solid #222220;
+              padding: 2%;
+              margin: 20px;
+              box-sizing: border-box;
+              display: flex;
+              flex-direction: column;
+              align-items: center;
+            }
+
+            #agencies .agency-card .agency-image {
+              max-width: 280px;
+            }
+
+            #agencies .agency-card .agency-card-body {
+              display: flex;
+              flex-direction: column;
+              justify-content: space-between;
+            }
+
+            #agencies .agency-card .agency-info {
+              margin-top: auto;
+              align-self: flex-start;
+            }
           `}
         </style>
       </DirectoryLayout>
     );
   }
+}
+
+export async function getServerSideProps() {
+  const res = await fetch(
+    "https://addculture.raxo.dev/wp-json/wp/v2/agencies_post"
+  );
+  const data = await res.json();
+
+  return {
+    props: {
+      agencies: data,
+    },
+  };
 }

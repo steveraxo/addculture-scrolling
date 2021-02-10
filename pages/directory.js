@@ -171,7 +171,7 @@ export default class Directory extends Component {
   }
 }
 
-export async function getServerSideProps() {
+export async function getInitialProps() {
   const res = await fetch(
     "https://addculture.raxo.dev/wp-json/wp/v2/agencies_post"
   );

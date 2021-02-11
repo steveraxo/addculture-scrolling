@@ -182,6 +182,10 @@ export default class Directory extends Component {
               font-style: normal;
               color: #222220;
               opacity: 0.8;
+              display: -webkit-box;
+              -webkit-line-clamp: 4;
+              -webkit-box-orient: vertical;
+              overflow: hidden;
             }
 
             #agencies .agency-card .agency-info {

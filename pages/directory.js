@@ -6,6 +6,7 @@ import Search from "../public/images/directory/search.svg";
 import ChevronDown from "../public/images/directory/chevron-down.svg";
 import GridSelector from "../public/images/directory/grid-selector.svg";
 import ListSelector from "../public/images/directory/list-selector.svg";
+import WebsiteIcon from "../public/images/directory/website-icon.svg";
 
 export default class Directory extends Component {
   constructor(props) {
@@ -90,12 +91,14 @@ export default class Directory extends Component {
                   <p>
                     Industry <span>{agency.industries[0].name}</span>
                   </p>
-
                   <a
                     className=" agency-link avant"
                     href={agency.acf.agency_website}
                   >
-                    Visit website
+                    Visit website{" "}
+                    <span>
+                      <WebsiteIcon />
+                    </span>
                   </a>
                 </div>
               </div>
@@ -191,12 +194,29 @@ export default class Directory extends Component {
             #agencies .agency-card .agency-info {
               margin-top: auto;
               align-self: flex-start;
+              width: 100%;
+            }
+
+            #agencies .agency-card .agency-info p {
+              font-family: "HelveticaNeue", sans-serif;
+              font-weight: bold;
+              color: #222220;
+              font-style: normal;
+              font-size: 16px;
+              line-height: 22px;
+              opacity: 0.8;
+            }
+
+            #agencies .agency-card .agency-info p > span {
+              font-weight: 400;
+              margin-left: 15%;
             }
 
             #agencies .agency-card .agency-info .agency-link {
               text-transform: uppercase;
               color: #cd4275;
               font-weight: bold;
+              text-decoration: underline;
             }
 
             @media (max-width: 4000px) {

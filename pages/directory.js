@@ -163,6 +163,8 @@ export default class Directory extends Component {
 
             #agencies .agency-card .agency-image {
               max-width: 280px;
+              position: relative;
+              width: 100vw;
             }
 
             #agencies .agency-card .agency-region {

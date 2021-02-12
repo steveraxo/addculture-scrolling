@@ -42,7 +42,7 @@ export default function Hero() {
 
         .heroContainer .drawed-line {
           position: absolute;
-          top: 0;
+          top: -5vh;
           right: 0;
         }
       `}</style>

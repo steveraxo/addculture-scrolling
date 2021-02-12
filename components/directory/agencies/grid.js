@@ -2,18 +2,12 @@ import React, { Component } from "react";
 import WebsiteIcon from "../../../public/images/directory/website-icon.svg";
 
 export default class Grid extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      agencies: this.props.agencies,
-    };
-  }
-
   render() {
+    const agencies = this.props.agencies;
     return (
       <>
         <div className="container agencies-container">
-          {this.state.agencies.map((agency, key) => (
+          {agencies.map((agency, key) => (
             <div key={key} className="agency-card">
               <div className="agency-card-head">
                 <img

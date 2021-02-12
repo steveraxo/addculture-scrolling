@@ -1,12 +1,17 @@
 import React, { Component } from "react";
+
 import Head from "next/head";
+import Link from "next/link";
+
 import DirectoryLayout from "../components/directory/layout";
 import Hero from "../components/directory/hero";
+import Grid from "../components/directory/agencies/grid";
+import List from "../components/directory/agencies/list";
+
 import Search from "../public/images/directory/search.svg";
 import ChevronDown from "../public/images/directory/chevron-down.svg";
 import GridSelector from "../public/images/directory/grid-selector.svg";
 import ListSelector from "../public/images/directory/list-selector.svg";
-import WebsiteIcon from "../public/images/directory/website-icon.svg";
 
 export default class Directory extends Component {
   constructor(props) {
@@ -14,7 +19,21 @@ export default class Directory extends Component {
     this.state = {
       agencies: this.props.agencies,
     };
+
+    this.removeActiveClass = this.removeActiveClass.bind(this);
   }
+
+  removeActiveClass(e) {
+    let link = document.querySelector(".layout__active");
+    if (link) {
+      link.classList.remove("layout__active");
+      e.target.classList.add("layout__active");
+    } else {
+      return;
+    }
+  }
+
+  layoutModifier() {}
 
   componentDidMount() {
     console.log(this.state.agencies);
@@ -53,57 +72,22 @@ export default class Directory extends Component {
               </div>
             </div>
             <div className="layout-selector-container">
-              <div>
-                <GridSelector />
+              <div
+                onClick={this.removeActiveClass}
+                className="grid layout__active"
+              >
+                <GridSelector style={{ pointerEvents: "none" }} />
               </div>
-              <div>
-                <ListSelector />
+              <div className="grid" onClick={this.removeActiveClass}>
+                <ListSelector style={{ pointerEvents: "none" }} />
               </div>
             </div>
           </div>
         </div>
 
         <div id="agencies">
-          <div className="container agencies-container">
-            {this.state.agencies.map((agency, key) => (
-              <div key={key} className="agency-card">
-                <div className="agency-card-head">
-                  <img
-                    className="agency-image"
-                    src={agency.acf.agency_image.url}
-                    alt={agency.acf.agency_name}
-                  />
-                  <h2 className="agency-name">{agency.acf.agency_name}</h2>
-                  <p className="agency-region avant">
-                    {agency.regions[0].name}, {agency.regions[1].name}
-                  </p>
-                </div>
-                <div className="agency-card-body">
-                  <p className="agency-description">
-                    {agency.acf.agency_description}
-                  </p>
-                </div>
-
-                <div className="agency-info">
-                  <p>
-                    Clients <span>{agency.acf.clients}</span>
-                  </p>
-                  <p>
-                    Industry <span>{agency.industries[0].name}</span>
-                  </p>
-                  <a
-                    className=" agency-link avant"
-                    href={agency.acf.agency_website}
-                  >
-                    Visit website{" "}
-                    <span>
-                      <WebsiteIcon />
-                    </span>
-                  </a>
-                </div>
-              </div>
-            ))}
-          </div>
+          {/* <Grid agencies={this.state.agencies} /> */}
+          <List agencies={this.state.agencies} />
         </div>
         <style jsx>
           {`
@@ -143,150 +127,8 @@ export default class Directory extends Component {
               margin-right: 5%;
             }
 
-            #agencies .agencies-container {
-              display: flex;
-              flex-wrap: wrap;
-              justify-content: center;
-              margin: 5% auto;
-              padding: 0 5% !important;
-            }
-            #agencies .agency-card {
-              flex: 0 0 20em;
-              border: 1px solid #222220;
-              padding: 1%;
-              margin: 20px;
-              box-sizing: border-box;
-              display: flex;
-              flex-direction: column;
-              align-items: center;
-            }
-
-            #agencies .agency-card .agency-image {
-              max-width: 280px;
-              position: relative;
-              width: 100vw;
-            }
-
-            #agencies .agency-card .agency-region {
-              color: #222220;
-              opacity: 0.7;
-              font-weight: bold;
-            }
-
-            #agencies .agency-card .agency-card-body {
-              display: flex;
-              flex-direction: column;
-              justify-content: space-between;
-            }
-
-            #agencies .agency-card .agency-card-body .agency-description {
-              font-family: "Helvetica Neue", sans-serif;
-              font-size: 16px;
-              line-height: 19.09px;
-              font-weight: 400;
-              font-style: normal;
-              color: #222220;
-              opacity: 0.8;
-              display: -webkit-box;
-              -webkit-line-clamp: 4;
-              -webkit-box-orient: vertical;
-              overflow: hidden;
-            }
-
-            #agencies .agency-card .agency-info {
-              margin-top: auto;
-              align-self: flex-start;
-              width: 100%;
-            }
-
-            #agencies .agency-card .agency-info p {
-              font-family: "HelveticaNeue", sans-serif;
-              font-weight: bold;
-              color: #222220;
-              font-style: normal;
-              font-size: 16px;
-              line-height: 22px;
-              opacity: 0.8;
-            }
-
-            #agencies .agency-card .agency-info p > span {
-              font-weight: 400;
-              margin-left: 15%;
-            }
-
-            #agencies .agency-card .agency-info .agency-link {
-              text-transform: uppercase;
-              color: #cd4275;
-              font-weight: bold;
-              text-decoration: underline;
-            }
-
-            @media (max-width: 4000px) {
-              #agencies .agencies-container {
-                max-width: 2800px;
-              }
-              #agencies .agency-card {
-                flex: 0 0 28em;
-              }
-
-              #agencies .agency-card .agency-image {
-                max-width: 450px;
-              }
-            }
-
-            @media (max-width: 3000px) {
-              #agencies .agencies-container {
-                max-width: 2500px;
-              }
-              #agencies .agency-card {
-                flex: 0 0 15em;
-              }
-            }
-
-            @media (max-width: 2000px) {
-              #agencies .agencies-container {
-                max-width: 1800px;
-              }
-              #agencies .agency-card {
-                width: 315px;
-              }
-              #agencies .agency-card .agency-image {
-                max-width: 280px;
-              }
-            }
-
-            @media (max-width: 1700px) {
-              #agencies .agencies-container {
-                max-width: 1500px;
-              }
-
-              #agencies .agency-card {
-                width: 250px;
-              }
-              #agencies .agency-card .agency-image {
-                max-width: 230px;
-              }
-            }
-            @media (max-width: 1400px) {
-              #agencies .agencies-container {
-                max-width: 1400px;
-              }
-              #agencies .agency-card {
-                width: 150px;
-              }
-              #agencies .agency-card .agency-image {
-                max-width: 200px;
-              }
-            }
-
-            @media (max-width: 1300px) {
-              #agencies .agencies-container {
-                max-width: 1300px;
-              }
-
-              #agencies .agency-card {
-                width: 100px;
-              }
+            .layout__active svg path {
+              stroke: #000;
             }
           `}
         </style>

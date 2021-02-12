@@ -559,3 +559,11 @@ html {
   display: flex !important;
   max-height: 100% !important;
 }
+
+.grid-selector svg path {
+  stroke: #cd2475 !important;
+}
+
+.layout__active svg path {
+  stroke: black !important;
+}

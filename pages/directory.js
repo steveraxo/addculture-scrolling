@@ -133,10 +133,6 @@ export default class Directory extends Component {
             #filter .filter-container .layout-selector-container div {
               margin-right: 5%;
             }
-
-            .layout__active svg path {
-              stroke: #000;
-            }
           `}
         </style>
       </DirectoryLayout>

@@ -18,6 +18,7 @@ export default class Directory extends Component {
     super(props);
     this.state = {
       agencies: this.props.agencies,
+      layout: <Grid agencies={this.props.agencies} />,
     };
 
     this.removeActiveClass = this.removeActiveClass.bind(this);
@@ -28,16 +29,25 @@ export default class Directory extends Component {
     if (link) {
       link.classList.remove("layout__active");
       e.target.classList.add("layout__active");
+      this.layoutModifier();
     } else {
       return;
     }
   }
 
-  layoutModifier() {}
-
-  componentDidMount() {
-    console.log(this.state.agencies);
+  layoutModifier() {
+    let link = document.querySelectorAll(".grid-selector");
+    if (link[0].classList.contains("layout__active")) {
+      this.setState({
+        layout: <Grid agencies={this.state.agencies} />,
+      });
+    } else {
+      this.setState({
+        layout: <List agencies={this.state.agencies} />,
+      });
+    }
   }
+
   render() {
     return (
       <DirectoryLayout>
@@ -74,21 +84,18 @@ export default class Directory extends Component {
             <div className="layout-selector-container">
               <div
                 onClick={this.removeActiveClass}
-                className="grid layout__active"
+                className="grid-selector layout__active"
               >
                 <GridSelector style={{ pointerEvents: "none" }} />
               </div>
-              <div className="grid" onClick={this.removeActiveClass}>
+              <div className="grid-selector" onClick={this.removeActiveClass}>
                 <ListSelector style={{ pointerEvents: "none" }} />
               </div>
             </div>
           </div>
         </div>
 
-        <div id="agencies">
-          {/* <Grid agencies={this.state.agencies} /> */}
-          <List agencies={this.state.agencies} />
-        </div>
+        <div id="agencies">{this.state.layout}</div>
         <style jsx>
           {`
             #filter {

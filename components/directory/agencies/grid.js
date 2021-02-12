@@ -9,9 +9,6 @@ export default class Grid extends Component {
     };
   }
 
-  componentDidMount() {
-    console.log(this.state.agencies);
-  }
   render() {
     return (
       <>

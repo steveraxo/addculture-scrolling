@@ -179,7 +179,7 @@ export default class Grid extends Component {
               width: 150px;
             }
             .agency-card .agency-image {
-              max-width: 200px;
+              max-width: 220px;
             }
           }
 

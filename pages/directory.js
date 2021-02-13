@@ -1,12 +1,13 @@
 import React, { Component } from "react";
 
 import Head from "next/head";
-import Link from "next/link";
 
 import DirectoryLayout from "../components/directory/layout";
 import Hero from "../components/directory/hero";
 import Grid from "../components/directory/agencies/grid";
 import List from "../components/directory/agencies/list";
+import Industries from "../components/directory/filters/industries";
+import Regions from "../components/directory/filters/regions";
 
 import Search from "../public/images/directory/search.svg";
 import ChevronDown from "../public/images/directory/chevron-down.svg";
@@ -19,9 +20,11 @@ export default class Directory extends Component {
     this.state = {
       agencies: this.props.agencies,
       layout: <Grid agencies={this.props.agencies} />,
+      filter: <Industries industries={this.props.industries} />,
     };
 
     this.removeActiveClass = this.removeActiveClass.bind(this);
+    this.filterModifier = this.filterModifier.bind(this);
   }
 
   removeActiveClass(e) {
@@ -48,6 +51,28 @@ export default class Directory extends Component {
     }
   }
 
+  filterModifier(e) {
+    const industry = document
+      .getElementById("industry-filter")
+      .getAttribute("id");
+    const region = document.getElementById("region-filter").getAttribute("id");
+    const agency = document.getElementById("agency-filter").getAttribute("id");
+    const click = e.target.getAttribute("id");
+    if (click === industry) {
+      this.setState({
+        filter: <Industries industries={this.props.industries} />,
+      });
+    } else if (click === region) {
+      this.setState({
+        filter: <Regions regions={this.props.regions} />,
+      });
+    }
+  }
+
+  componentDidMount() {
+    console.log(this.props.industries);
+  }
+
   render() {
     return (
       <DirectoryLayout>
@@ -61,19 +86,19 @@ export default class Directory extends Component {
             <div className="filter-options">
               <div className="filter-options-container avant">
                 <Search />
-                <p>
+                <p id="industry-filter" onClick={this.filterModifier}>
                   INDUSTRY{" "}
                   <span>
                     <ChevronDown />
                   </span>
                 </p>
-                <p>
+                <p id="agency-filter" onClick={this.filterModifier}>
                   AGENCY SIZE{" "}
                   <span>
                     <ChevronDown />
                   </span>
                 </p>
-                <p>
+                <p id="region-filter" onClick={this.filterModifier}>
                   REGION{" "}
                   <span>
                     <ChevronDown />
@@ -94,14 +119,21 @@ export default class Directory extends Component {
             </div>
           </div>
         </div>
+        <div id="filter-terms">
+          <div className="container">{this.state.filter}</div>
+
+          <div className="container">
+            <button className="done">DONE</button>
+          </div>
+        </div>
 
         <div id="agencies">{this.state.layout}</div>
         <style jsx>
           {`
             #filter {
-              border-top: 2px solid #222220;
-              border-bottom: 2px solid #222220;
-              padding: 1.5% 0;
+              border-top: 1px solid #222220;
+              border-bottom: 1px solid #222220;
+              padding: 0.5% 0;
               width: 100%;
             }
             #filter .filter-container {
@@ -133,6 +165,25 @@ export default class Directory extends Component {
             #filter .filter-container .layout-selector-container div {
               margin-right: 5%;
             }
+
+            #filter-terms {
+              position: absolute;
+              width: 100%;
+              z-index: 10;
+              background-color: #f4f4f4;
+              padding: 30px 25px;
+              display: flex;
+              flex-direction: column;
+              justify-content: space-between;
+            }
+
+            #filter-terms .done {
+              padding: 15px 80px;
+              background: #cd4275;
+              border: none;
+              outline: none;
+              color: white;
+            }
           `}
         </style>
       </DirectoryLayout>
@@ -141,14 +192,26 @@ export default class Directory extends Component {
 }
 
 export async function getStaticProps() {
-  const res = await fetch(
+  const agencies = await fetch(
     "https://addculture.raxo.dev/wp-json/wp/v2/agencies_post"
   );
-  const data = await res.json();
+  const data = await agencies.json();
+
+  const industries = await fetch(
+    "https://addculture.raxo.dev/wp-json/wp/v2/industries"
+  );
+  const dataTwo = await industries.json();
+
+  const regions = await fetch(
+    "https://addculture.raxo.dev/wp-json/wp/v2/regions"
+  );
+  const dataThree = await regions.json();
 
   return {
     props: {
       agencies: data,
+      industries: dataTwo,
+      regions: dataThree,
     },
   };
 }

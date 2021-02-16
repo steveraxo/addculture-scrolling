@@ -24,7 +24,14 @@ export default class Directory extends Component {
     };
 
     this.removeActiveClass = this.removeActiveClass.bind(this);
-    this.filterModifier = this.filterModifier.bind(this);
+    // this.filterModifier = this.filterModifier.bind(this);
+    this.filterActiveClass = this.filterActiveClass.bind(this);
+  }
+
+  filterActiveClass(e) {
+    const filter = document.getElementById("filter-terms");
+    filter.classList.toggle("filter-active");
+    this.filterModifier(e);
   }
 
   removeActiveClass(e) {
@@ -86,19 +93,31 @@ export default class Directory extends Component {
             <div className="filter-options">
               <div className="filter-options-container avant">
                 <Search />
-                <p id="industry-filter" onClick={this.filterModifier}>
+                <p
+                  id="industry-filter"
+                  className="filter"
+                  onClick={this.filterActiveClass}
+                >
                   INDUSTRY{" "}
                   <span>
                     <ChevronDown />
                   </span>
                 </p>
-                <p id="agency-filter" onClick={this.filterModifier}>
+                <p
+                  id="agency-filter"
+                  className="filter"
+                  onClick={this.filterActiveClass}
+                >
                   AGENCY SIZE{" "}
                   <span>
                     <ChevronDown />
                   </span>
                 </p>
-                <p id="region-filter" onClick={this.filterModifier}>
+                <p
+                  id="region-filter"
+                  className="filter"
+                  onClick={this.filterActiveClass}
+                >
                   REGION{" "}
                   <span>
                     <ChevronDown />
@@ -172,7 +191,7 @@ export default class Directory extends Component {
               z-index: 10;
               background-color: #f4f4f4;
               padding: 30px 25px;
-              display: flex;
+              display: none;
               flex-direction: column;
               justify-content: space-between;
             }

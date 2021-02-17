@@ -24,7 +24,6 @@ export default class Directory extends Component {
     };
 
     this.removeActiveClass = this.removeActiveClass.bind(this);
-    // this.filterModifier = this.filterModifier.bind(this);
     this.filterActiveClass = this.filterActiveClass.bind(this);
   }
 
@@ -67,11 +66,21 @@ export default class Directory extends Component {
     const click = e.target.getAttribute("id");
     if (click === industry) {
       this.setState({
-        filter: <Industries industries={this.props.industries} />,
+        filter: (
+          <Industries
+            agencies={this.props.agencies}
+            industries={this.props.industries}
+          />
+        ),
       });
     } else if (click === region) {
       this.setState({
-        filter: <Regions regions={this.props.regions} />,
+        filter: (
+          <Regions
+            agencies={this.props.agencies}
+            regions={this.props.regions}
+          />
+        ),
       });
     }
   }

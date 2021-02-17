@@ -7,6 +7,8 @@ export default class Regions extends Component {
       parents: [],
       children: [],
     };
+
+    this.filterAgencies = this.filterAgencies.bind(this);
   }
   filterRegions() {
     const regions = this.props.regions;
@@ -26,10 +28,24 @@ export default class Regions extends Component {
     });
   }
 
+  filterAgencies(e) {
+    const originalArray = this.props.agencies;
+    const term = e.target.getAttribute("id");
+    const newArray = [];
+
+    originalArray.forEach((agency) => {
+      agency.regions.filter((region) => {
+        if (region.slug === term) {
+          newArray.push(agency);
+        }
+      });
+    });
+
+    console.log(newArray);
+  }
+
   componentDidMount() {
     this.filterRegions();
-    console.log(this.state.parents);
-    console.log(this.state.children);
   }
   render() {
     const { parents, children } = this.state;
@@ -73,7 +89,12 @@ export default class Regions extends Component {
               <div className="children">
                 {children.map((child) =>
                   child.parent === parent.id ? (
-                    <p key={child.id} id={child.slug} className="child">
+                    <p
+                      onClick={this.filterAgencies}
+                      key={child.id}
+                      id={child.slug}
+                      className="child"
+                    >
                       {child.name} <span>({child.count})</span>
                     </p>
                   ) : (

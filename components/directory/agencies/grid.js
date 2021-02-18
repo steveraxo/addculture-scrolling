@@ -3,7 +3,7 @@ import WebsiteIcon from "../../../public/images/directory/website-icon.svg";
 
 export default class Grid extends Component {
   render() {
-    const agencies = this.props.agencies;
+    const { agencies } = this.props;
     return (
       <>
         <div className="container agencies-container">

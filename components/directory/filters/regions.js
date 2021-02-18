@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import axios from "axios";
 
 export default class Regions extends Component {
   constructor(props) {
@@ -29,20 +30,23 @@ export default class Regions extends Component {
   }
 
   filterAgencies(e) {
-    const originalArray = this.props.agencies;
     const term = e.target.getAttribute("id");
-    const newArray = [];
 
-    originalArray.forEach((agency) => {
-      agency.regions.filter((region) => {
-        if (region.slug === term) {
-          newArray.push(agency);
-        }
+    axios
+      .get(
+        `https://addculture.raxo.dev/wp-json/wp/v2/agencies_post?regions=${term}`
+      )
+      .then(({ data }) => {
+        this.sendData(data);
+      })
+      .catch((err) => {
+        console.log(err);
       });
-    });
-
-    console.log(newArray);
   }
+
+  sendData = (props) => {
+    this.props.parentCallback(props);
+  };
 
   componentDidMount() {
     this.filterRegions();
@@ -81,9 +85,9 @@ export default class Regions extends Component {
           <p>Z</p>
         </div>
         <div className="regions-wrapper">
-          {parents.map((parent, key) => (
+          {parents.map((parent) => (
             <div className="region-container">
-              <h4 key={key} id={parent.slug} className="parent">
+              <h4 key={parent.id} id={parent.slug} className="parent">
                 {parent.name}
               </h4>
               <div className="children">
@@ -92,7 +96,7 @@ export default class Regions extends Component {
                     <p
                       onClick={this.filterAgencies}
                       key={child.id}
-                      id={child.slug}
+                      id={child.id}
                       className="child"
                     >
                       {child.name} <span>({child.count})</span>

@@ -1,19 +1,31 @@
 import React, { Component } from "react";
+import axios from "axios";
 
 export default class Industries extends Component {
   constructor(props) {
     super(props);
     this.filterAgencies = this.filterAgencies.bind(this);
   }
+
   filterAgencies(e) {
-    const originalArray = this.props.agencies;
     const term = e.target.getAttribute("id");
-    console.log(term);
-    const result = originalArray.filter(
-      (agency) => agency.industries[0].slug === term
-    );
-    console.log(result);
+
+    axios
+      .get(
+        `https://addculture.raxo.dev/wp-json/wp/v2/agencies_post?industries=${term}`
+      )
+      .then(({ data }) => {
+        this.sendData(data);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
   }
+
+  sendData = (props) => {
+    this.props.parentCallback(props);
+  };
+
   render() {
     const { industries } = this.props;
     return (
@@ -24,7 +36,7 @@ export default class Industries extends Component {
             <p
               onClick={this.filterAgencies}
               key={key}
-              id={industry.slug}
+              id={industry.id}
               className="industry"
             >
               {industry.name} <span>({industry.count})</span>

@@ -19,12 +19,20 @@ export default class Directory extends Component {
     super(props);
     this.state = {
       agencies: this.props.agencies,
+      filteredAgencies: this.props.agencies,
       layout: <Grid agencies={this.props.agencies} />,
-      filter: <Industries industries={this.props.industries} />,
+      filter: (
+        <Industries
+          parentCallback={this.callbackFunction}
+          industries={this.props.industries}
+        />
+      ),
+      childData: [],
     };
 
     this.removeActiveClass = this.removeActiveClass.bind(this);
     this.filterActiveClass = this.filterActiveClass.bind(this);
+    this.resetFilters = this.resetFilters.bind(this);
   }
 
   filterActiveClass(e) {
@@ -68,6 +76,7 @@ export default class Directory extends Component {
       this.setState({
         filter: (
           <Industries
+            parentCallback={this.callbackFunction}
             agencies={this.props.agencies}
             industries={this.props.industries}
           />
@@ -77,6 +86,7 @@ export default class Directory extends Component {
       this.setState({
         filter: (
           <Regions
+            parentCallback={this.callbackFunction}
             agencies={this.props.agencies}
             regions={this.props.regions}
           />
@@ -85,9 +95,22 @@ export default class Directory extends Component {
     }
   }
 
-  componentDidMount() {
-    console.log(this.props.industries);
+  resetFilters(e) {
+    e.preventDefault();
+
+    this.setState({
+      layout: <Grid agencies={this.props.agencies} />,
+    });
   }
+
+  callbackFunction = (childData) => {
+    let link = document.querySelectorAll(".grid-selector");
+    if (link[0].classList.contains("layout__active")) {
+      this.setState({ layout: <Grid agencies={childData} /> });
+    } else if (link[1].classList.contains("layout__active")) {
+      this.setState({ layout: <List agencies={childData} /> });
+    }
+  };
 
   render() {
     return (
@@ -101,7 +124,11 @@ export default class Directory extends Component {
           <div className="filter-container container">
             <div className="filter-options">
               <div className="filter-options-container avant">
-                <Search />
+                <div className="search">
+                  <input type="text" name="search" id="" />
+                  <Search />
+                </div>
+
                 <p
                   id="industry-filter"
                   className="filter"
@@ -132,6 +159,10 @@ export default class Directory extends Component {
                     <ChevronDown />
                   </span>
                 </p>
+
+                <button onClick={this.resetFilters} type="reset">
+                  Reset
+                </button>
               </div>
             </div>
             <div className="layout-selector-container">

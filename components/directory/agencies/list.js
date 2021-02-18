@@ -19,7 +19,7 @@ export default class List extends Component {
     });
   }
   render() {
-    const agencies = this.props.agencies;
+    const { agencies } = this.props;
 
     return (
       <>

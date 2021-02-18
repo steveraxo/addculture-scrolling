@@ -20,6 +20,7 @@ export default class Directory extends Component {
     this.state = {
       agencies: this.props.agencies,
       filteredAgencies: this.props.agencies,
+      layoutState: "grid",
       layout: <Grid agencies={this.props.agencies} />,
       filter: (
         <Industries
@@ -56,11 +57,11 @@ export default class Directory extends Component {
     let link = document.querySelectorAll(".grid-selector");
     if (link[0].classList.contains("layout__active")) {
       this.setState({
-        layout: <Grid agencies={this.state.agencies} />,
+        layoutState: "grid",
       });
     } else {
       this.setState({
-        layout: <List agencies={this.state.agencies} />,
+        layoutState: "list",
       });
     }
   }
@@ -104,12 +105,9 @@ export default class Directory extends Component {
   }
 
   callbackFunction = (childData) => {
-    let link = document.querySelectorAll(".grid-selector");
-    if (link[0].classList.contains("layout__active")) {
-      this.setState({ layout: <Grid agencies={childData} /> });
-    } else if (link[1].classList.contains("layout__active")) {
-      this.setState({ layout: <List agencies={childData} /> });
-    }
+    this.setState({ agencies: childData }, () => {
+      console.log(this.state.agencies);
+    });
   };
 
   render() {
@@ -186,7 +184,13 @@ export default class Directory extends Component {
           </div>
         </div>
 
-        <div id="agencies">{this.state.layout}</div>
+        <div id="agencies">
+          {this.state.layoutState === "grid" ? (
+            <Grid agencies={this.state.agencies} />
+          ) : (
+            <List agencies={this.state.agencies} />
+          )}
+        </div>
         <style jsx>
           {`
             #filter {

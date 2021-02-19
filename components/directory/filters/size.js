@@ -21,6 +21,11 @@ export default class Size extends Component {
         console.log(err);
       });
   }
+
+  sendData = (props) => {
+    this.props.parentCallback(props);
+  };
+
   render() {
     const { agencySize } = this.props;
     return (

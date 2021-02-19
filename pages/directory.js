@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-
 import Head from "next/head";
 
 import DirectoryLayout from "../components/directory/layout";
@@ -8,11 +7,11 @@ import Hero from "../components/directory/hero";
 import Grid from "../components/directory/agencies/grid";
 import List from "../components/directory/agencies/list";
 
+import Search from "../components/directory/search/search";
 import Industries from "../components/directory/filters/industries";
 import Size from "../components/directory/filters/size";
 import Regions from "../components/directory/filters/regions";
 
-import Search from "../public/images/directory/search.svg";
 import ChevronDown from "../public/images/directory/chevron-down.svg";
 import GridSelector from "../public/images/directory/grid-selector.svg";
 import ListSelector from "../public/images/directory/list-selector.svg";
@@ -129,10 +128,7 @@ export default class Directory extends Component {
           <div className="filter-container container">
             <div className="filter-options">
               <div className="filter-options-container avant">
-                <div className="search">
-                  <input type="text" name="search" id="" />
-                  <Search />
-                </div>
+                <Search parentCallback={this.callbackFunction} />
 
                 <p
                   id="industry-filter"
@@ -203,7 +199,7 @@ export default class Directory extends Component {
             #filter {
               border-top: 1px solid #222220;
               border-bottom: 1px solid #222220;
-              padding: 0.5% 0;
+
               width: 100%;
             }
             #filter .filter-container {
@@ -277,9 +273,10 @@ export async function getStaticProps() {
   );
   const dataThree = await regions.json();
 
-  const size = await fetch("https://addculture.raxo.dev/wp-json/wp/v2/regions");
+  const size = await fetch(
+    "https://addculture.raxo.dev/wp-json/wp/v2/agency_size"
+  );
   const dataFour = await size.json();
-
   return {
     props: {
       agencies: data,

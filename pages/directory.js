@@ -4,9 +4,12 @@ import Head from "next/head";
 
 import DirectoryLayout from "../components/directory/layout";
 import Hero from "../components/directory/hero";
+
 import Grid from "../components/directory/agencies/grid";
 import List from "../components/directory/agencies/list";
+
 import Industries from "../components/directory/filters/industries";
+import Size from "../components/directory/filters/size";
 import Regions from "../components/directory/filters/regions";
 
 import Search from "../public/images/directory/search.svg";
@@ -19,16 +22,13 @@ export default class Directory extends Component {
     super(props);
     this.state = {
       agencies: this.props.agencies,
-      filteredAgencies: this.props.agencies,
       layoutState: "grid",
-      layout: <Grid agencies={this.props.agencies} />,
       filter: (
         <Industries
           parentCallback={this.callbackFunction}
           industries={this.props.industries}
         />
       ),
-      childData: [],
     };
 
     this.removeActiveClass = this.removeActiveClass.bind(this);
@@ -78,8 +78,16 @@ export default class Directory extends Component {
         filter: (
           <Industries
             parentCallback={this.callbackFunction}
-            agencies={this.props.agencies}
             industries={this.props.industries}
+          />
+        ),
+      });
+    } else if (click === agency) {
+      this.setState({
+        filter: (
+          <Size
+            parentCallback={this.callbackFunction}
+            agencySize={this.props.size}
           />
         ),
       });
@@ -88,7 +96,6 @@ export default class Directory extends Component {
         filter: (
           <Regions
             parentCallback={this.callbackFunction}
-            agencies={this.props.agencies}
             regions={this.props.regions}
           />
         ),
@@ -270,11 +277,15 @@ export async function getStaticProps() {
   );
   const dataThree = await regions.json();
 
+  const size = await fetch("https://addculture.raxo.dev/wp-json/wp/v2/regions");
+  const dataFour = await size.json();
+
   return {
     props: {
       agencies: data,
       industries: dataTwo,
       regions: dataThree,
+      size: dataFour,
     },
   };
 }

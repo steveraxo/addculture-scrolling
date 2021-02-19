@@ -561,11 +561,11 @@ html {
 }
 
 .grid-selector svg path {
-  stroke: #cd2475 !important;
+  stroke: black !important;
 }
 
 .layout__active svg path {
-  stroke: black !important;
+  stroke: #cd4275 !important;
 }
 
 .filter-active {

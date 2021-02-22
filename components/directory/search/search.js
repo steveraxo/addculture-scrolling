@@ -50,15 +50,15 @@ export default class Search extends Component {
           <path
             d="M11 19C15.4183 19 19 15.4183 19 11C19 6.58172 15.4183 3 11 3C6.58172 3 3 6.58172 3 11C3 15.4183 6.58172 19 11 19Z"
             stroke="#222220"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
+            strokeWidth="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
           />
           <path
             d="M20.9999 20.9999L16.6499 16.6499"
             stroke="#222220"
-            stroke-width="2"
-            stroke-linejoin="round"
+            strokeWidth="2"
+            strokeLinejoin="round"
           />
         </svg>
 
@@ -104,7 +104,7 @@ export default class Search extends Component {
 
           .searchInput.active-search {
             background: #f4f4f4;
-            width: 100%;
+            width: 100% !important;
           }
         `}</style>
       </>

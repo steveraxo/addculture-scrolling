@@ -224,15 +224,16 @@ export default class Directory extends Component {
             #filter .filter-container .filter-options-container #filters {
               display: flex;
               flex-direction: row;
-              justify-content: space-between;
+              justify-content: flex-start;
               align-items: center;
               width: 100%;
             }
             #filter .filter-container .filter-options-container #filters p {
               font-weight: 300;
+              margin: 0 15px;
             }
             #filter .filter-container .layout-selector-container {
-              width: 100%;
+              width: 20%;
               display: flex;
               justify-content: flex-end;
               align-items: center;

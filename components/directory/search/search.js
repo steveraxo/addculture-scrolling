@@ -81,7 +81,8 @@ export default class Search extends Component {
             display: flex;
             box-sizing: border-box;
             width: 0;
-            padding: 5%;
+            height: 100px;
+            padding: 2%;
             transition: all 0.6s cubic-bezier(0.85, 0, 0.15, 1);
           }
 

@@ -129,41 +129,42 @@ export default class Directory extends Component {
             <div className="filter-options">
               <div className="filter-options-container avant">
                 <Search parentCallback={this.callbackFunction} />
+                <div id="filters">
+                  <p
+                    id="industry-filter"
+                    className="filter"
+                    onClick={this.filterActiveClass}
+                  >
+                    INDUSTRY{" "}
+                    <span>
+                      <ChevronDown />
+                    </span>
+                  </p>
+                  <p
+                    id="agency-filter"
+                    className="filter"
+                    onClick={this.filterActiveClass}
+                  >
+                    AGENCY SIZE{" "}
+                    <span>
+                      <ChevronDown />
+                    </span>
+                  </p>
+                  <p
+                    id="region-filter"
+                    className="filter"
+                    onClick={this.filterActiveClass}
+                  >
+                    REGION{" "}
+                    <span>
+                      <ChevronDown />
+                    </span>
+                  </p>
 
-                <p
-                  id="industry-filter"
-                  className="filter"
-                  onClick={this.filterActiveClass}
-                >
-                  INDUSTRY{" "}
-                  <span>
-                    <ChevronDown />
-                  </span>
-                </p>
-                <p
-                  id="agency-filter"
-                  className="filter"
-                  onClick={this.filterActiveClass}
-                >
-                  AGENCY SIZE{" "}
-                  <span>
-                    <ChevronDown />
-                  </span>
-                </p>
-                <p
-                  id="region-filter"
-                  className="filter"
-                  onClick={this.filterActiveClass}
-                >
-                  REGION{" "}
-                  <span>
-                    <ChevronDown />
-                  </span>
-                </p>
-
-                <button onClick={this.resetFilters} type="reset">
-                  Reset
-                </button>
+                  <button onClick={this.resetFilters} type="reset">
+                    Reset
+                  </button>
+                </div>
               </div>
             </div>
             <div className="layout-selector-container">
@@ -219,7 +220,15 @@ export default class Directory extends Component {
               align-items: center;
               width: 100%;
             }
-            #filter .filter-container .filter-options-container p {
+
+            #filter .filter-container .filter-options-container #filters {
+              display: flex;
+              flex-direction: row;
+              justify-content: space-between;
+              align-items: center;
+              width: 100%;
+            }
+            #filter .filter-container .filter-options-container #filters p {
               font-weight: 300;
             }
             #filter .filter-container .layout-selector-container {

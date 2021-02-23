@@ -88,7 +88,7 @@ const Newsletter = (props) => {
               <div className="email__wrapper">
                 <input
                   type="email"
-                  className="inputText"
+                  className="inputText avant"
                   name="email"
                   placeholder="Enter your email"
                   onChange={handleEmailChange}

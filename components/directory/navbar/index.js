@@ -35,16 +35,17 @@ export default class Navbar extends Component {
   }
 
   toggleMenu(event) {
-    if (event.target.classList.contains("show")) {
-      document.querySelector(".categoriesNavMenu").style.display = "none";
-      document.getElementById("categoriesMenu").classList.remove("show");
-      document.getElementById("toggleClose").classList.remove("show");
-    } else {
-      document.querySelector(".categoriesNavMenu").style.display = "flex";
-      document.getElementById("categoriesMenu").classList.add("show");
-      document.querySelector(".categoriesNavMenu").classList.add("show");
-      document.getElementById("toggleClose").classList.add("show");
-    }
+    document.querySelector(".categoriesNavMenu").style.display = "flex";
+    document.getElementById("categoriesMenu").classList.add("showBg");
+    document.querySelector(".categoriesNavMenu").classList.add("showMenu");
+    document.getElementById("toggleClose").classList.add("show");
+  }
+
+  closeMenu(event) {
+    document.getElementById("toggleClose").classList.remove("show");
+    document.querySelector(".categoriesNavMenu").style.display = "none";
+    document.querySelector(".categoriesMenu").classList.remove("showBg");
+    document.querySelector(".categoriesNavMenu").classList.remove("showMenu");
   }
   render() {
     return (
@@ -75,7 +76,7 @@ export default class Navbar extends Component {
 
         <div className="col-lg-12 categoriesMenu" id="categoriesMenu">
           <svg
-            onClick={this.toggleMenu}
+            onClick={this.closeMenu}
             id="toggleClose"
             width="56"
             height="56"
@@ -270,11 +271,11 @@ export default class Navbar extends Component {
           /* mobile menu */
 
           #toggleClose {
-            display: none;
+            display: none !important;
           }
 
           #toggleClose.show {
-            display: initial;
+            display: initial !important;
             margin-top: 15px;
           }
           .categoriesMenu {
@@ -296,8 +297,12 @@ export default class Navbar extends Component {
             padding: 10% 5%;
             font-family: "ITC Avant Garde Pro Md", sans-serif;
           }
-          .show {
+          .showBg {
             clip-path: circle(100%);
+          }
+
+          .showMenu {
+            display: flex !important;
           }
           .categoriesNavMenu .categorySelector {
             margin-left: 7%;

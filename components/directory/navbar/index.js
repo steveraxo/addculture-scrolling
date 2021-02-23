@@ -1,5 +1,6 @@
 import React, { Component } from "react";
-import MouseTooltip from "react-sticky-mouse-tooltip";
+import loadable from "@loadable/component";
+const MouseTooltip = loadable(() => import("react-sticky-mouse-tooltip"));
 import Link from "next/link";
 import LogoSvg from "../../../public/images/logo/logo.svg";
 
@@ -50,7 +51,7 @@ export default class Navbar extends Component {
       <>
         <nav className="navbar">
           <div className="navContent container-fluid">
-            <div className="navbarMenuBurger">
+            <div className="navbarMenuBurger" onClick={this.toggleMenu}>
               <div className="menuBurger">
                 <div
                   data-aos="fade-right"
@@ -89,8 +90,8 @@ export default class Navbar extends Component {
             <div className="row">
               <div className="col-lg-12 col-sm-12 ml-auto">
                 <div className="categoriesNavMenu">
-                  <Link
-                    to="/minority-owned-agencies"
+                  <a
+                    href="https://stories.addculture.com/minority-owned-agencies"
                     onMouseEnter={this.showTooltipMenu}
                     onMouseLeave={this.hideTooltipMenu}
                     className="categorySelector"
@@ -100,7 +101,7 @@ export default class Navbar extends Component {
                     <h2 className="categoryName">
                       MINORITY <br /> OWNED <br /> AGENCIES
                     </h2>
-                  </Link>
+                  </a>
                   <MouseTooltip
                     visible={this.state.isMenuMouseTooltipVisible}
                     offsetX={-200}
@@ -111,8 +112,8 @@ export default class Navbar extends Component {
                       id="categoryOne-menu-container"
                     ></div>
                   </MouseTooltip>
-                  <Link
-                    to="/why-add-culture"
+                  <a
+                    href="https://stories.addculture.com/why-add-culture"
                     onMouseEnter={this.showTooltipMenu}
                     onMouseLeave={this.hideTooltipMenu}
                     className="categorySelector"
@@ -122,7 +123,7 @@ export default class Navbar extends Component {
                     <h2 className="categoryName">
                       WHY <br /> AD+D <br /> CULTURE
                     </h2>
-                  </Link>
+                  </a>
                   <MouseTooltip
                     visible={this.state.isMenuMouseTooltipVisible}
                     offsetX={-200}
@@ -133,8 +134,8 @@ export default class Navbar extends Component {
                       id="categoryThree-menu-container"
                     ></div>
                   </MouseTooltip>
-                  <Link
-                    to="/add-culture-stories"
+                  <a
+                    href="https://stories.addculture.com/add-culture-stories"
                     onMouseEnter={this.showTooltipMenu}
                     onMouseLeave={this.hideTooltipMenu}
                     className="categorySelector"
@@ -144,7 +145,7 @@ export default class Navbar extends Component {
                     <h2 className="categoryName">
                       AD+D <br /> CULTURE <br /> STORIES
                     </h2>
-                  </Link>
+                  </a>
                   <MouseTooltip
                     visible={this.state.isMenuMouseTooltipVisible}
                     offsetX={-200}
@@ -155,8 +156,8 @@ export default class Navbar extends Component {
                       id="categoryFour-menu-container"
                     ></div>
                   </MouseTooltip>
-                  <Link
-                    to="/representation-done-right"
+                  <a
+                    href="https://stories.addculture.com/representation-done-right"
                     onMouseEnter={this.showTooltipMenu}
                     onMouseLeave={this.hideTooltipMenu}
                     className="categorySelector"
@@ -166,7 +167,7 @@ export default class Navbar extends Component {
                     <h2 className="categoryName">
                       REP. <br /> DONE RIGHT
                     </h2>
-                  </Link>
+                  </a>
                   <MouseTooltip
                     visible={this.state.isMenuMouseTooltipVisible}
                     offsetX={-200}
@@ -286,10 +287,6 @@ export default class Navbar extends Component {
           .categoriesNavMenu .categorySelector h2 {
             padding-top: 10%;
           }
-
-          /* .categoriesNavMenu:nth-last-child() h2 {
-  padding-top: 5%;
-} */
 
           .explore {
             font-family: "HelveticaNeue", sans-serif;

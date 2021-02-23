@@ -3,6 +3,7 @@ import Head from "next/head";
 
 import DirectoryLayout from "../components/directory/layout";
 import Hero from "../components/directory/hero";
+import AddCultureFooter from "../components/directory/footer";
 
 import Grid from "../components/directory/agencies/grid";
 import List from "../components/directory/agencies/list";
@@ -173,23 +174,23 @@ export default class Directory extends Component {
                       <path
                         d="M1.99854 4.72705V10.1812H7.45272"
                         stroke="#CD4275"
-                        stroke-width="1.81831"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
+                        strokeWidth="1.81831"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
                       />
                       <path
                         d="M21.9991 19.273V13.8188H16.5449"
                         stroke="#CD4275"
-                        stroke-width="1.81831"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
+                        strokeWidth="1.81831"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
                       />
                       <path
                         d="M19.718 9.27311C19.2569 7.97009 18.4733 6.80511 17.4402 5.88688C16.407 4.96864 15.1582 4.32708 13.81 4.02205C12.4619 3.71702 11.0585 3.75847 9.73075 4.14253C8.40298 4.52658 7.19414 5.24073 6.21703 6.21834L1.99854 10.1823M22 13.8189L17.7815 17.7828C16.8044 18.7604 15.5956 19.4746 14.2678 19.8586C12.94 20.2427 11.5366 20.2841 10.1885 19.9791C8.84037 19.6741 7.59149 19.0325 6.55838 18.1143C5.52528 17.196 4.74162 16.0311 4.28052 14.7281"
                         stroke="#CD4275"
-                        stroke-width="1.81831"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
+                        strokeWidth="1.81831"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
                       />
                     </svg>
                   </button>
@@ -224,6 +225,8 @@ export default class Directory extends Component {
             <List agencies={this.state.agencies} />
           )}
         </div>
+
+        <AddCultureFooter />
         <style jsx>
           {`
             #filter {

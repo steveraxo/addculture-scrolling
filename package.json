@@ -26,6 +26,7 @@
     "react-player": "^2.7.0",
     "react-scroll-parallax": "^2.3.5",
     "react-slick": "^0.27.13",
+    "react-sticky-mouse-tooltip": "0.0.1",
     "rellax": "^1.12.1",
     "slick-carousel": "^1.8.1"
   },

@@ -107,7 +107,7 @@ export default class Directory extends Component {
     e.preventDefault();
 
     this.setState({
-      layout: <Grid agencies={this.props.agencies} />,
+      agencies: this.props.agencies,
     });
   }
 

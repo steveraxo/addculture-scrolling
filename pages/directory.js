@@ -215,7 +215,7 @@ export default class Directory extends Component {
           <div className="container">{this.state.filter}</div>
 
           <div className="container">
-            <button className="done">DONE</button>
+            <button className="done" onClick={this.filterActiveClass}>DONE</button>
           </div>
         </div>
 

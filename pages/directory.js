@@ -138,7 +138,7 @@ export default class Directory extends Component {
                   >
                     INDUSTRY{" "}
                     <span>
-                      <ChevronDown />
+                      <ChevronDown style={{ position: 'relative', top: '5px', left: '5px'}}/>
                     </span>
                   </p>
                   <p
@@ -148,7 +148,7 @@ export default class Directory extends Component {
                   >
                     AGENCY SIZE{" "}
                     <span>
-                      <ChevronDown />
+                      <ChevronDown style={{ position: 'relative', top: '5px', left: '5px'}}/>
                     </span>
                   </p>
                   <p
@@ -158,13 +158,14 @@ export default class Directory extends Component {
                   >
                     REGION{" "}
                     <span>
-                      <ChevronDown />
+                      <ChevronDown style={{ position: 'relative', top: '5px', left: '5px'}}/>
                     </span>
                   </p>
 
                   <button onClick={this.resetFilters} type="reset">
                     Clear All{" "}
                     <svg
+                    style={{ position: 'relative', top: '5px', left: '5px'}}
                       width="24"
                       height="24"
                       viewBox="0 0 24 24"

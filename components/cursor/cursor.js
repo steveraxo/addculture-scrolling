@@ -23,6 +23,8 @@ export default class cursor extends Component {
     const closeSubmit = [...document.querySelectorAll(".close__form")]  
     const chartController = [...document.querySelectorAll(".chart__controller__element")]  
     const joinNewsletter = [...document.querySelectorAll("#join__newsletter")]  
+    const directoryMenuBurger = [...document.querySelectorAll('.navbarMenuBurger')]
+    const directoryFilters = [...document.querySelectorAll('.filter')]
 
     
     
@@ -46,6 +48,8 @@ export default class cursor extends Component {
       .concat(socialMenuElements)
       .concat(RaxoEndShape)
       .concat(joinNewsletter)
+      .concat(directoryMenuBurger)
+      .concat(directoryFilters)
       
     allElements.forEach(function(element) {
       element.addEventListener("mouseenter", function() {

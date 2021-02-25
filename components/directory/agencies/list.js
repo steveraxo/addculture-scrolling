@@ -72,7 +72,7 @@ export default class List extends Component {
                   >
                     Visit website{" "}
                     <span>
-                      <WebsiteIcon />
+                      <WebsiteIcon style={{ position: 'relative', top: '5px', left: '5px'}} />
                     </span>
                   </a>
                 </div>

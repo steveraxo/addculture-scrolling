@@ -39,7 +39,7 @@ export default class Grid extends Component {
                 >
                   Visit website{" "}
                   <span>
-                    <WebsiteIcon />
+                    <WebsiteIcon style={{ position: 'relative', top: '5px', left: '5px'}} />
                   </span>
                 </a>
               </div>

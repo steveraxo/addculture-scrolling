@@ -25,6 +25,7 @@ export default class cursor extends Component {
     const joinNewsletter = [...document.querySelectorAll("#join__newsletter")]  
     const directoryMenuBurger = [...document.querySelectorAll('.navbarMenuBurger')]
     const directoryFilters = [...document.querySelectorAll('.filter')]
+    const directoryFilterTerms = [...document.querySelectorAll('.filter-term')]
 
     
     
@@ -50,6 +51,7 @@ export default class cursor extends Component {
       .concat(joinNewsletter)
       .concat(directoryMenuBurger)
       .concat(directoryFilters)
+      .concat(directoryFilterTerms)
       
     allElements.forEach(function(element) {
       element.addEventListener("mouseenter", function() {

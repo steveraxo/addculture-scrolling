@@ -625,3 +625,8 @@ html {
 .d-none {
   display: none !important;
 }
+
+.active-filter {
+  color: #cd4275!important;
+  border: 1px solid #cd4275!important;
+}

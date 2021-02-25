@@ -10,7 +10,15 @@ export default class Regions extends Component {
     };
 
     this.filterAgencies = this.filterAgencies.bind(this);
+    this.activeClassFilter = this.activeClassFilter.bind(this);
   }
+
+  activeClassFilter(e) {
+    const filter = e.target;
+    filter.classList.toggle('active-filter');
+    console.log(filter)
+  }
+
   filterRegions() {
     const regions = this.props.regions;
     const parents = [];
@@ -31,7 +39,7 @@ export default class Regions extends Component {
 
   filterAgencies(e) {
     const term = e.target.getAttribute("id");
-
+    this.activeClassFilter(e);
     axios
       .get(
         `https://addculture.raxo.dev/wp-json/wp/v2/agencies_post?regions=${term}`
@@ -97,7 +105,7 @@ export default class Regions extends Component {
                       onClick={this.filterAgencies}
                       key={child.id}
                       id={child.id}
-                      className="child"
+                      className="filter-term child"
                     >
                       {child.name} <span>({child.count})</span>
                     </p>

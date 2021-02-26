@@ -105,7 +105,11 @@ export default class Directory extends Component {
 
   resetFilters(e) {
     e.preventDefault();
-
+    document.querySelectorAll('.check').forEach((item) => {
+      if(item.classList.contains('active-filter')) {
+        item.classList.remove('active-filter');
+      }
+    })
     this.setState({
       agencies: this.props.agencies,
     });

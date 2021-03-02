@@ -29,6 +29,7 @@ export default class Directory extends Component {
           industries={this.props.industries}
         />
       ),
+      filterState: "industries",
     };
 
     this.removeActiveClass = this.removeActiveClass.bind(this);
@@ -82,30 +83,15 @@ export default class Directory extends Component {
     const click = e.target.getAttribute("id");
     if (click === industry) {
       this.setState({
-        filter: (
-          <Industries
-            parentCallback={this.callbackFunction}
-            industries={this.props.industries}
-          />
-        ),
+        filterState: "industries",
       });
     } else if (click === agency) {
       this.setState({
-        filter: (
-          <Size
-            parentCallback={this.callbackFunction}
-            agencySize={this.props.size}
-          />
-        ),
+        filterState: "size",
       });
     } else if (click === region) {
       this.setState({
-        filter: (
-          <Regions
-            parentCallback={this.callbackFunction}
-            regions={this.props.regions}
-          />
-        ),
+        filterState: "regions",
       });
     }
   }
@@ -164,7 +150,7 @@ export default class Directory extends Component {
                         <path
                           d="M6 9L12 15L18 9"
                           stroke="black"
-                          stroke-width="2"
+                          strokeWidth="2"
                         />
                       </svg>
                     </span>
@@ -191,7 +177,7 @@ export default class Directory extends Component {
                         <path
                           d="M6 9L12 15L18 9"
                           stroke="black"
-                          stroke-width="2"
+                          strokeWidth="2"
                         />
                       </svg>
                     </span>
@@ -218,7 +204,7 @@ export default class Directory extends Component {
                         <path
                           d="M6 9L12 15L18 9"
                           stroke="black"
-                          stroke-width="2"
+                          strokeWidth="2"
                         />
                       </svg>
                     </span>
@@ -274,7 +260,26 @@ export default class Directory extends Component {
           </div>
         </div>
         <div id="filter-terms">
-          <div className="container">{this.state.filter}</div>
+          <div className="container">
+            {this.state.filterState === "industries" ? (
+              <Industries
+                parentCallback={this.callbackFunction}
+                industries={this.props.industries}
+              />
+            ) : this.state.filterState === "size" ? (
+              <Size
+                parentCallback={this.callbackFunction}
+                agencySize={this.props.size}
+              />
+            ) : this.state.filterState === "regions" ? (
+              <Regions
+                parentCallback={this.callbackFunction}
+                regions={this.props.regions}
+              />
+            ) : (
+              ""
+            )}
+          </div>
 
           <div className="container">
             <button className="done" onClick={this.filterActiveClass}>

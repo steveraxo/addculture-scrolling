@@ -33,10 +33,17 @@ export default class Directory extends Component {
 
     this.removeActiveClass = this.removeActiveClass.bind(this);
     this.filterActiveClass = this.filterActiveClass.bind(this);
+    this.selectorActiveClass = this.selectorActiveClass.bind(this);
     this.resetFilters = this.resetFilters.bind(this);
   }
 
+  selectorActiveClass(e) {
+    const selector = e.target;
+    selector.classList.toggle("selected");
+  }
+
   filterActiveClass(e) {
+    this.selectorActiveClass(e);
     const filter = document.getElementById("filter-terms");
     filter.classList.toggle("filter-active");
     this.filterModifier(e);
@@ -105,11 +112,11 @@ export default class Directory extends Component {
 
   resetFilters(e) {
     e.preventDefault();
-    document.querySelectorAll('.check').forEach((item) => {
-      if(item.classList.contains('active-filter')) {
-        item.classList.remove('active-filter');
+    document.querySelectorAll(".check").forEach((item) => {
+      if (item.classList.contains("active-filter")) {
+        item.classList.remove("active-filter");
       }
-    })
+    });
     this.setState({
       agencies: this.props.agencies,
     });
@@ -142,7 +149,24 @@ export default class Directory extends Component {
                   >
                     INDUSTRY{" "}
                     <span>
-                      <ChevronDown style={{ position: 'relative', top: '5px', left: '5px'}}/>
+                      <svg
+                        style={{
+                          position: "relative",
+                          top: "5px",
+                          left: "5px",
+                        }}
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M6 9L12 15L18 9"
+                          stroke="black"
+                          stroke-width="2"
+                        />
+                      </svg>
                     </span>
                   </p>
                   <p
@@ -152,7 +176,24 @@ export default class Directory extends Component {
                   >
                     AGENCY SIZE{" "}
                     <span>
-                      <ChevronDown style={{ position: 'relative', top: '5px', left: '5px'}}/>
+                      <svg
+                        style={{
+                          position: "relative",
+                          top: "5px",
+                          left: "5px",
+                        }}
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M6 9L12 15L18 9"
+                          stroke="black"
+                          stroke-width="2"
+                        />
+                      </svg>
                     </span>
                   </p>
                   <p
@@ -162,14 +203,31 @@ export default class Directory extends Component {
                   >
                     REGION{" "}
                     <span>
-                      <ChevronDown style={{ position: 'relative', top: '5px', left: '5px'}}/>
+                      <svg
+                        style={{
+                          position: "relative",
+                          top: "5px",
+                          left: "5px",
+                        }}
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M6 9L12 15L18 9"
+                          stroke="black"
+                          stroke-width="2"
+                        />
+                      </svg>
                     </span>
                   </p>
 
                   <button onClick={this.resetFilters} type="reset">
                     Clear All{" "}
                     <svg
-                    style={{ position: 'relative', top: '5px', left: '5px'}}
+                      style={{ position: "relative", top: "5px", left: "5px" }}
                       width="24"
                       height="24"
                       viewBox="0 0 24 24"
@@ -219,7 +277,9 @@ export default class Directory extends Component {
           <div className="container">{this.state.filter}</div>
 
           <div className="container">
-            <button className="done" onClick={this.filterActiveClass}>DONE</button>
+            <button className="done" onClick={this.filterActiveClass}>
+              DONE
+            </button>
           </div>
         </div>
 
@@ -269,6 +329,19 @@ export default class Directory extends Component {
               font-family: "ITC Avant Garde Pro Md";
               margin: 0 15px;
               color: #222220;
+            }
+
+            #filter .filter-container .filter-options-container #filters p svg {
+              transition: all 0.6s cubic-bezier(0.85, 0, 0.15, 1);
+            }
+
+            #filter
+              .filter-container
+              .filter-options-container
+              #filters
+              p.selected
+              svg {
+              transform: rotate(180deg);
             }
 
             #filter

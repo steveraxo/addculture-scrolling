@@ -1,6 +1,7 @@
 import Head from "next/head";
 import Cursor from "../components/cursor/cursor";
 import "../styles/globals.css";
+import "../styles/directory.css";
 import Router from "next/router";
 import * as gtag from "../lib/gtag";
 

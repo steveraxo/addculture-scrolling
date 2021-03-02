@@ -1,0 +1,357 @@
+/* globals */
+
+.collapse-active {
+  display: flex !important;
+  max-height: 100% !important;
+}
+
+.grid-selector svg path {
+  stroke: black !important;
+}
+
+.layout__active svg path {
+  stroke: #cd4275 !important;
+}
+
+.filter-active {
+  display: flex !important;
+}
+
+.category {
+  position: absolute;
+  width: 400px;
+  height: 400px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.6s cubic-bezier(0.83, 0, 0.17, 1);
+}
+
+.categoryName {
+  pointer-events: none;
+  font-family: "ITC Avant Garde Pro Md", sans-serif;
+}
+
+.categoryNumber {
+  pointer-events: none;
+  font-family: "HelveticaNeue", sans-serif;
+}
+.category.show {
+  opacity: 1;
+}
+
+.minorityImg {
+  background: url("../public/images/directory/minority.jpg");
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+.whyImg {
+  background: url("../public/images/directory/why.jpg");
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+.storiesImg {
+  background: url("../public/images/directory/stories.jpg");
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+.representationImg {
+  background: url("../public/images/directory/representation.jpg");
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+.d-none {
+  display: none !important;
+}
+
+.active-filter {
+  color: #cd4275 !important;
+  border: 1px solid #cd4275 !important;
+}
+
+/* pagination */
+
+.pagination {
+  display: flex;
+  justify-content: flex-end;
+  flex-direction: row;
+  list-style: none;
+  outline: none;
+  font-family: "HelveticaNeue", sans-serif;
+  margin-top: 5%;
+  width: 100%;
+}
+.pagination > .active > a {
+  color: #222220;
+  opacity: 1;
+}
+.pagination > li > a {
+  padding: 10px;
+  opacity: 0.6;
+  outline: none;
+
+  cursor: pointer;
+}
+.pagination > .active > a,
+.pagination > .active > span,
+.pagination > .active > a:hover,
+.pagination > .active > span:hover,
+.pagination > .active > a:focus,
+.pagination > .active > span:focus {
+  outline: none;
+}
+
+/* cards */
+.agency-card {
+  flex: 0 0 20em;
+  border: 1px solid #222220;
+  padding: 1%;
+  margin: 20px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.agency-card .agency-image {
+  max-width: 280px;
+  position: relative;
+  width: 100vw;
+}
+
+.agency-card .agency-region {
+  color: #222220;
+  opacity: 0.7;
+  font-weight: bold;
+}
+
+.agency-card .agency-card-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.agency-card .agency-card-body .agency-description {
+  font-family: "Helvetica Neue", sans-serif;
+  font-size: 16px;
+  line-height: 19.09px;
+  font-weight: 400;
+  font-style: normal;
+  color: #222220;
+  opacity: 0.8;
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.agency-card .agency-info {
+  margin-top: auto;
+  align-self: flex-start;
+  width: 100%;
+}
+
+.agency-card .agency-info p {
+  font-family: "HelveticaNeue", sans-serif;
+  font-weight: bold;
+  color: #222220;
+  font-style: normal;
+  font-size: 16px;
+  line-height: 22px;
+  opacity: 0.8;
+}
+
+.agency-card .agency-info p > span {
+  font-weight: 400;
+  margin-left: 15%;
+}
+
+.agency-card .agency-info .agency-link {
+  text-transform: uppercase;
+  color: #cd4275;
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+/* list */
+
+.agency-list {
+  display: flex;
+  flex-wrap: nowrap;
+  width: 100%;
+  height: 12vh;
+  margin: 2.5% auto;
+  border: 1px solid #222220;
+}
+.agency-list-head img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+.agency-list-body {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 30px;
+  padding-right: 30px;
+  width: 100%;
+}
+.agency-list-body .agency-list-name {
+  font-family: "HelveticaNeue";
+  font-weight: 700;
+  color: #222220;
+  font-size: 28px;
+  line-height: 25px;
+}
+.agency-list-body .agency-list-location {
+  font-weight: bold;
+  color: #222220;
+  opacity: 0.7;
+}
+
+.collapse {
+  display: none;
+  border-bottom: 1px solid #000;
+  border-left: 1px solid #000;
+  border-right: 1px solid #000;
+  padding: 18px;
+  margin-top: -2.5%;
+  overflow: hidden;
+  max-height: 0;
+  transition: max-height 0.2s ease-out;
+}
+
+.collapse .left {
+  max-width: 235px;
+  width: 100%;
+  text-align: right;
+}
+
+.collapse .agency-list-details {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 0 30px;
+  width: 70%;
+}
+
+.collapse .agency-list-details .agency-list-description {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.collapse .agency-list-details .clients-industry {
+  padding-top: 3%;
+}
+.collapse .agency-list-details .clients-industry p {
+  font-weight: 700;
+  color: #222220;
+  opacity: 0.7;
+  line-height: 10px;
+  font-family: "HelveticaNeue", sans-serif;
+}
+
+.collapse .agency-list-details .clients-industry p > span {
+  font-weight: 400;
+  margin-left: 5%;
+}
+
+.collapse .agency-list-details .agency-list-link {
+  margin-top: auto;
+  text-transform: uppercase;
+  text-decoration: underline;
+  font-weight: bold;
+  color: #cd4275;
+}
+
+@media (max-width: 4000px) {
+  .agencies-container {
+    max-width: 2800px;
+  }
+  .agency-card {
+    flex: 0 0 28em;
+  }
+
+  .agency-card .agency-image {
+    max-width: 450px;
+  }
+
+  .agency-list {
+    height: 5vh;
+  }
+}
+
+@media (max-width: 3000px) {
+  .agencies-container {
+    max-width: 2500px;
+  }
+  .agency-card {
+    flex: 0 0 15em;
+  }
+  .agency-list {
+    height: 8vh;
+  }
+}
+
+@media (max-width: 2000px) {
+  .agencies-container {
+    max-width: 1800px;
+  }
+  .agency-card {
+    width: 315px;
+  }
+  .agency-card .agency-image {
+    max-width: 280px;
+  }
+
+  .agency-list {
+    height: 10vh;
+  }
+}
+
+@media (max-width: 1700px) {
+  .agencies-container {
+    max-width: 1500px;
+  }
+
+  .agency-card {
+    width: 250px;
+  }
+  .agency-card .agency-image {
+    max-width: 230px;
+  }
+
+  .agency-list {
+    height: 12vh;
+  }
+}
+@media (max-width: 1400px) {
+  .agencies-container {
+    max-width: 1400px;
+  }
+  .agency-card {
+    width: 150px;
+  }
+  .agency-card .agency-image {
+    max-width: 220px;
+  }
+}
+
+@media (max-width: 1300px) {
+  .agencies-container {
+    max-width: 1300px;
+  }
+
+  .agency-card {
+    width: 100px;
+  }
+}

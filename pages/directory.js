@@ -140,6 +140,7 @@ export default class Directory extends Component {
     this.setState({
       agencies: this.props.agencies,
     });
+    this.formatData();
   }
 
   // layout active class behavior

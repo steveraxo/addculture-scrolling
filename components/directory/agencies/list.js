@@ -4,17 +4,6 @@ import ReactPaginate from "react-paginate";
 export default class List extends Component {
   constructor(props) {
     super(props);
-    this.toggleCollapse = this.toggleCollapse.bind(this);
-  }
-
-  toggleCollapse(e) {
-    const toggler = document.querySelectorAll(".collapse-open");
-    const collapse = document.querySelectorAll(".collapse");
-    collapse.forEach((item) => {
-      if (item.getAttribute("id") === e.target.getAttribute("data-toggler")) {
-        item.classList.toggle("collapse-active");
-      }
-    });
   }
   render() {
     return (

@@ -43,6 +43,8 @@ export default class Directory extends Component {
     this.filterActiveClass = this.filterActiveClass.bind(this);
     this.selectorActiveClass = this.selectorActiveClass.bind(this);
     this.resetFilters = this.resetFilters.bind(this);
+
+    this.toggleCollapse = this.toggleCollapse.bind(this);
   }
 
   clickCount() {
@@ -289,6 +291,17 @@ export default class Directory extends Component {
       }
     );
   };
+
+  // list toggle collapse
+  toggleCollapse(e) {
+    const toggler = document.querySelectorAll(".collapse-open");
+    const collapse = document.querySelectorAll(".collapse");
+    collapse.forEach((item) => {
+      if (item.getAttribute("id") === e.target.getAttribute("data-toggler")) {
+        item.classList.toggle("collapse-active");
+      }
+    });
+  }
 
   callbackFunction = (childData) => {
     this.setState({ agencies: childData }, () => {

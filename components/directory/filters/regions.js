@@ -16,6 +16,9 @@ export default class Regions extends Component {
   activeClassFilter(e) {
     const filter = e.target;
     filter.classList.toggle("active-filter");
+    if (!filter.classList.contains("active-filter")) {
+      this.sendData(this.props.agencies);
+    }
     filter.children[1].classList.toggle("d-none");
   }
 

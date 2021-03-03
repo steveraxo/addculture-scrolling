@@ -13,9 +13,11 @@ import Industries from "../components/directory/filters/industries";
 import Size from "../components/directory/filters/size";
 import Regions from "../components/directory/filters/regions";
 
-import ChevronDown from "../public/images/directory/chevron-down.svg";
 import GridSelector from "../public/images/directory/grid-selector.svg";
 import ListSelector from "../public/images/directory/list-selector.svg";
+import WebsiteIcon from "../public/images/directory/website-icon.svg";
+import Plus from "../public/images/directory/plus.svg";
+import Separator from "../public/images/directory/separator.svg";
 
 export default class Directory extends Component {
   constructor(props) {
@@ -30,6 +32,11 @@ export default class Directory extends Component {
         />
       ),
       filterState: "industries",
+      filterDiv: "active",
+      clickCount: 1,
+      offset: 0,
+      perPage: 8,
+      currentPage: 0,
     };
 
     this.removeActiveClass = this.removeActiveClass.bind(this);
@@ -38,42 +45,67 @@ export default class Directory extends Component {
     this.resetFilters = this.resetFilters.bind(this);
   }
 
-  selectorActiveClass(e) {
-    const selector = e.target;
-    selector.classList.toggle("selected");
+  clickCount() {
+    this.setState({
+      clickCount: this.state.clickCount + 1,
+    });
+
+    if (this.state.clickCount === 2) {
+      this.setState({
+        clickCount: 1,
+      });
+    }
   }
 
+  // chevrons behavior
+  selectorActiveClass(e) {
+    const selector = e.target;
+    const selectors = document.querySelectorAll(".filter");
+    selectors.forEach((item) => {
+      if (item.classList.contains("selected")) {
+        item.classList.remove("selected");
+      }
+    });
+    selector.classList.add("selected");
+  }
+
+  // removeFilterActiveClass(e) {
+  //   const selector = e.target.textContent;
+  //   console.log(selector);
+  //   const selectors = document.querySelectorAll(".filter");
+  //   const filter = document.getElementById("filter-terms");
+  //   // // remove active class
+  //   // if (filter.classList.contains("filter-active")) {
+  //   //   selectors.forEach((item) => {
+  //   //     if (this.state.clickCount === 1) {
+  //   //       filter.classList.add("filter-active");
+  //   //     } else {
+  //   //       filter.classList.remove("filter-active");
+  //   //     }
+  //   //   });
+  //   // }
+  // }
+
+  // filter container behavior
   filterActiveClass(e) {
+    this.clickCount();
     this.selectorActiveClass(e);
     const filter = document.getElementById("filter-terms");
-    filter.classList.toggle("filter-active");
+    const selectors = document.querySelectorAll(".filter");
+    const term = e.target.textContent;
+
+    selectors.forEach((item) => {
+      if (!filter.classList.contains("filter-active")) {
+        filter.classList.add("filter-active");
+      } else {
+        filter.classList.remove("filter-active");
+      }
+    });
+
     this.filterModifier(e);
   }
 
-  removeActiveClass(e) {
-    let link = document.querySelector(".layout__active");
-    if (link) {
-      link.classList.remove("layout__active");
-      e.target.classList.add("layout__active");
-      this.layoutModifier();
-    } else {
-      return;
-    }
-  }
-
-  layoutModifier() {
-    let link = document.querySelectorAll(".grid-selector");
-    if (link[0].classList.contains("layout__active")) {
-      this.setState({
-        layoutState: "grid",
-      });
-    } else {
-      this.setState({
-        layoutState: "list",
-      });
-    }
-  }
-
+  // filter type behavior
   filterModifier(e) {
     const industry = document
       .getElementById("industry-filter")
@@ -108,11 +140,166 @@ export default class Directory extends Component {
     });
   }
 
+  // layout active class behavior
+  removeActiveClass(e) {
+    let link = document.querySelector(".layout__active");
+    if (link) {
+      link.classList.remove("layout__active");
+      e.target.classList.add("layout__active");
+      this.layoutModifier();
+    } else {
+      return;
+    }
+  }
+
+  // layout behavior
+  layoutModifier() {
+    let link = document.querySelectorAll(".grid-selector");
+    if (link[0].classList.contains("layout__active")) {
+      this.setState({
+        layoutState: "grid",
+      });
+    } else {
+      this.setState({
+        layoutState: "list",
+      });
+    }
+  }
+
+  // pagination
+  formatData() {
+    const data = this.state.agencies;
+    const slice = data.slice(
+      this.state.offset,
+      this.state.offset + this.state.perPage
+    );
+
+    const agencyCard = slice.map((agency, key) => (
+      <div key={key} className="agency-card">
+        <div className="agency-card-head">
+          <img
+            className="agency-image"
+            src={agency.acf.agency_image.url}
+            alt={agency.acf.agency_name}
+          />
+          <h2 className="agency-name">{agency.acf.agency_name}</h2>
+          <p className="agency-region avant">
+            {agency.regions[0].name}, {agency.regions[1].name}
+          </p>
+        </div>
+        <div className="agency-card-body">
+          <p className="agency-description">{agency.acf.agency_description}</p>
+        </div>
+
+        <div className="agency-info">
+          <p>
+            Clients <span>{agency.acf.clients}</span>
+          </p>
+          <p>
+            Industry <span>{agency.industries[0].name}</span>
+          </p>
+          <a className=" agency-link avant" href={agency.acf.agency_website}>
+            Visit website{" "}
+            <span>
+              <WebsiteIcon
+                style={{ position: "relative", top: "5px", left: "5px" }}
+              />
+            </span>
+          </a>
+        </div>
+      </div>
+    ));
+
+    const agencyList = slice.map((agency, key) => (
+      <React.Fragment key={key}>
+        <div className="agency-list">
+          <div className="agency-list-head">
+            <img
+              src={agency.acf.agency_image.url}
+              alt={agency.acf.agency_name}
+            />
+          </div>
+          <div className="agency-list-body">
+            <div className="agency-list-title-location">
+              <h1 className="agency-name">{agency.acf.agency_name}</h1>
+              <p className="agency-list-location avant">
+                {agency.regions[0].name}, {agency.regions[1].name}
+              </p>
+            </div>
+            <div
+              className="collapse-open"
+              data-toggler={`collapse-${key}`}
+              onClick={this.toggleCollapse}
+            >
+              <Plus style={{ pointerEvents: "none" }} />
+            </div>
+          </div>
+        </div>
+        <div className="collapse" id={`collapse-${key}`}>
+          <div className="left">
+            <Separator />
+          </div>
+          <div className="agency-list-details">
+            <p className="agency-list-description">
+              {agency.acf.agency_description}
+            </p>
+            <div className="clients-industry">
+              <p>
+                Clients <span>{agency.acf.clients}</span>
+              </p>
+              <p>
+                Industry <span>{agency.industries[0].name}</span>
+              </p>
+            </div>
+
+            <a
+              className="agency-list-link avant"
+              href={agency.acf.agency_website}
+            >
+              Visit website{" "}
+              <span>
+                <WebsiteIcon
+                  style={{ position: "relative", top: "5px", left: "5px" }}
+                />
+              </span>
+            </a>
+          </div>
+        </div>
+      </React.Fragment>
+    ));
+
+    this.setState({
+      pageCount: Math.ceil(data.length / this.state.perPage),
+      agencyCard,
+      agencyList,
+    });
+  }
+
+  handlePageClick = (e) => {
+    const selectedPage = e.selected;
+    const offset = selectedPage * this.state.perPage;
+
+    this.setState(
+      {
+        currentPage: selectedPage,
+        offset: offset,
+      },
+      () => {
+        this.formatData();
+      }
+    );
+  };
+
   callbackFunction = (childData) => {
     this.setState({ agencies: childData }, () => {
       console.log(this.state.agencies);
     });
+    this.formatData();
   };
+
+  componentDidMount() {
+    this.formatData();
+  }
 
   render() {
     return (
@@ -265,16 +452,19 @@ export default class Directory extends Component {
               <Industries
                 parentCallback={this.callbackFunction}
                 industries={this.props.industries}
+                agencies={this.props.agencies}
               />
             ) : this.state.filterState === "size" ? (
               <Size
                 parentCallback={this.callbackFunction}
                 agencySize={this.props.size}
+                agencies={this.props.agencies}
               />
             ) : this.state.filterState === "regions" ? (
               <Regions
                 parentCallback={this.callbackFunction}
                 regions={this.props.regions}
+                agencies={this.props.agencies}
               />
             ) : (
               ""
@@ -290,9 +480,17 @@ export default class Directory extends Component {
 
         <div id="agencies">
           {this.state.layoutState === "grid" ? (
-            <Grid agencies={this.state.agencies} />
+            <Grid
+              pageCount={this.state.pageCount}
+              agency={this.state.agencyCard}
+              handlePageClick={this.handlePageClick}
+            />
           ) : (
-            <List agencies={this.state.agencies} />
+            <List
+              pageCount={this.state.pageCount}
+              agency={this.state.agencyList}
+              handlePageClick={this.handlePageClick}
+            />
           )}
         </div>
 

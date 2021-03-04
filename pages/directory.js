@@ -56,47 +56,46 @@ export default class Directory extends Component {
   selectorActiveClass(e) {
     const selector = e.target;
     const selectors = document.querySelectorAll(".filter");
+
+    // remove classes
     selectors.forEach((item) => {
       if (item.classList.contains("selected")) {
         item.classList.remove("selected");
+        item.classList.remove("remove");
+      }
+
+      // remove classes if same item clicked
+      if (selector.classList.contains("selected")) {
+        console.log("yes");
+        selector.classList.remove("selected");
+        selector.classList.remove("remove");
       }
     });
-    selector.classList.add("selected");
-  }
 
-  // removeFilterActiveClass(e) {
-  // }
+    // add classes
+    selector.classList.add("selected");
+    selector.classList.add("remove");
+  }
 
   // filter container behavior
   filterActiveClass(e) {
     this.clickCount();
-    this.setState(
-      {
-        clicked: e.target.getAttribute("id"),
-      },
-      () => {
-        console.log(this.state.previousClicked);
-      }
-    );
+    this.setState({
+      clicked: e.target.getAttribute("id"),
+    });
 
     this.selectorActiveClass(e);
     const filters = document.querySelectorAll(".term-container");
     const selectors = document.querySelectorAll(".filter");
-    this.setState(
-      (prevState) => ({
-        previousClicked: prevState.clicked,
-      }),
-      () => {
-        console.log(this.state.previousClicked);
-      }
-    );
+    this.setState((prevState) => ({
+      previousClicked: prevState.clicked,
+    }));
     // remove active class previously
     filters.forEach((filter) => {
       if (!filter.classList.contains("d-none")) {
         filter.classList.add("d-none");
       }
     });
-    this.set;
     //add active class to new menu
 
     if (e.target.getAttribute("id") === selectors[0].getAttribute("id")) {
@@ -115,7 +114,6 @@ export default class Directory extends Component {
       this.state.previousClicked === e.target.getAttribute("id") &&
       this.state.clickCount === 1
     ) {
-      console.log("yes");
       filters.forEach((filter) => {
         filter.classList.add("d-none");
       });

@@ -28,6 +28,16 @@ export default class Search extends Component {
         .catch((err) => {
           console.log(err);
         });
+    } else {
+      axios
+        .get(`https://addculture.raxo.dev/wp-json/wp/v2/agencies_post`)
+        .then(({ data }) => {
+          console.log({ data });
+          this.sendData(data);
+        })
+        .catch((err) => {
+          console.log(err);
+        });
     }
   }
 

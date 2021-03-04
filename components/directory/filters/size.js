@@ -15,18 +15,30 @@ export default class Size extends Component {
   }
 
   filterAgencies(e) {
+    const filter = e.target;
     const term = e.target.getAttribute("id");
     this.activeClassFilter(e);
-    axios
-      .get(
-        `https://addculture.raxo.dev/wp-json/wp/v2/agencies_post?agency_size=${term}`
-      )
-      .then(({ data }) => {
-        this.sendData(data);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
+    if (filter.classList.contains("active-filter")) {
+      axios
+        .get(
+          `https://addculture.raxo.dev/wp-json/wp/v2/agencies_post?agency_size=${term}`
+        )
+        .then(({ data }) => {
+          this.sendData(data);
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+    } else {
+      axios
+        .get(`https://addculture.raxo.dev/wp-json/wp/v2/agencies_post`)
+        .then(({ data }) => {
+          this.sendData(data);
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+    }
   }
 
   sendData = (props) => {

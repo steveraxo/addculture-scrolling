@@ -108,6 +108,62 @@
   outline: none;
 }
 
+/* filters */
+
+#industries-terms {
+  position: absolute;
+  width: 100%;
+  z-index: 10;
+  background-color: #f4f4f4;
+  padding: 30px 25px;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+#size-terms {
+  position: absolute;
+  width: 100%;
+  z-index: 10;
+  background-color: #f4f4f4;
+  padding: 30px 25px;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+#regions-terms {
+  position: absolute;
+  width: 100%;
+  z-index: 10;
+  background-color: #f4f4f4;
+  padding: 30px 25px;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+#industries-terms .done {
+  padding: 15px 80px;
+  background: #cd4275;
+  border: none;
+  outline: none;
+  color: white;
+}
+
+#size-terms .done {
+  padding: 15px 80px;
+  background: #cd4275;
+  border: none;
+  outline: none;
+  color: white;
+}
+
+#regions-terms .done {
+  padding: 15px 80px;
+  background: #cd4275;
+  border: none;
+  outline: none;
+  color: white;
+}
+
 /* cards */
 .agency-card {
   flex: 0 0 20em;

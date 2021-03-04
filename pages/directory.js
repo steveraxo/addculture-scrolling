@@ -25,25 +25,18 @@ export default class Directory extends Component {
     this.state = {
       agencies: this.props.agencies,
       layoutState: "grid",
-      filter: (
-        <Industries
-          parentCallback={this.callbackFunction}
-          industries={this.props.industries}
-        />
-      ),
-      filterState: "industries",
-      filterDiv: "active",
-      clickCount: 1,
+      clickCount: 0,
       offset: 0,
       perPage: 8,
       currentPage: 0,
+      previousClicked: "",
+      clicked: "",
     };
 
     this.removeActiveClass = this.removeActiveClass.bind(this);
     this.filterActiveClass = this.filterActiveClass.bind(this);
     this.selectorActiveClass = this.selectorActiveClass.bind(this);
     this.resetFilters = this.resetFilters.bind(this);
-
     this.toggleCollapse = this.toggleCollapse.bind(this);
   }
 
@@ -72,60 +65,59 @@ export default class Directory extends Component {
   }
 
   // removeFilterActiveClass(e) {
-  //   const selector = e.target.textContent;
-  //   console.log(selector);
-  //   const selectors = document.querySelectorAll(".filter");
-  //   const filter = document.getElementById("filter-terms");
-  //   // // remove active class
-  //   // if (filter.classList.contains("filter-active")) {
-  //   //   selectors.forEach((item) => {
-  //   //     if (this.state.clickCount === 1) {
-  //   //       filter.classList.add("filter-active");
-  //   //     } else {
-  //   //       filter.classList.remove("filter-active");
-  //   //     }
-  //   //   });
-  //   // }
   // }
 
   // filter container behavior
   filterActiveClass(e) {
     this.clickCount();
-    this.selectorActiveClass(e);
-    const filter = document.getElementById("filter-terms");
-    const selectors = document.querySelectorAll(".filter");
-    const term = e.target.textContent;
+    this.setState(
+      {
+        clicked: e.target.getAttribute("id"),
+      },
+      () => {
+        console.log(this.state.previousClicked);
+      }
+    );
 
-    selectors.forEach((item) => {
-      if (!filter.classList.contains("filter-active")) {
-        filter.classList.add("filter-active");
-      } else {
-        filter.classList.remove("filter-active");
+    this.selectorActiveClass(e);
+    const filters = document.querySelectorAll(".term-container");
+    const selectors = document.querySelectorAll(".filter");
+    this.setState(
+      (prevState) => ({
+        previousClicked: prevState.clicked,
+      }),
+      () => {
+        console.log(this.state.previousClicked);
+      }
+    );
+    // remove active class previously
+    filters.forEach((filter) => {
+      if (!filter.classList.contains("d-none")) {
+        filter.classList.add("d-none");
       }
     });
+    this.set;
+    //add active class to new menu
 
-    this.filterModifier(e);
-  }
+    if (e.target.getAttribute("id") === selectors[0].getAttribute("id")) {
+      filters[0].classList.toggle("d-none");
+    } else if (
+      e.target.getAttribute("id") === selectors[1].getAttribute("id")
+    ) {
+      filters[1].classList.toggle("d-none");
+    } else if (
+      e.target.getAttribute("id") === selectors[2].getAttribute("id")
+    ) {
+      filters[2].classList.toggle("d-none");
+    }
 
-  // filter type behavior
-  filterModifier(e) {
-    const industry = document
-      .getElementById("industry-filter")
-      .getAttribute("id");
-    const region = document.getElementById("region-filter").getAttribute("id");
-    const agency = document.getElementById("agency-filter").getAttribute("id");
-    const click = e.target.getAttribute("id");
-    if (click === industry) {
-      this.setState({
-        filterState: "industries",
-      });
-    } else if (click === agency) {
-      this.setState({
-        filterState: "size",
-      });
-    } else if (click === region) {
-      this.setState({
-        filterState: "regions",
+    if (
+      this.state.previousClicked === e.target.getAttribute("id") &&
+      this.state.clickCount === 1
+    ) {
+      console.log("yes");
+      filters.forEach((filter) => {
+        filter.classList.add("d-none");
       });
     }
   }
@@ -196,9 +188,6 @@ export default class Directory extends Component {
 
         <div className="agency-info">
           <p>
-            Clients <span>{agency.acf.clients}</span>
-          </p>
-          <p>
             Industry <span>{agency.industries[0].name}</span>
           </p>
           <a className=" agency-link avant" href={agency.acf.agency_website}>
@@ -247,9 +236,6 @@ export default class Directory extends Component {
               {agency.acf.agency_description}
             </p>
             <div className="clients-industry">
-              <p>
-                Clients <span>{agency.acf.clients}</span>
-              </p>
               <p>
                 Industry <span>{agency.industries[0].name}</span>
               </p>
@@ -460,31 +446,46 @@ export default class Directory extends Component {
             </div>
           </div>
         </div>
-        <div id="filter-terms">
+
+        <div id="industries-terms" className="term-container d-none">
           <div className="container">
-            {this.state.filterState === "industries" ? (
-              <Industries
-                parentCallback={this.callbackFunction}
-                industries={this.props.industries}
-                agencies={this.props.agencies}
-              />
-            ) : this.state.filterState === "size" ? (
-              <Size
-                parentCallback={this.callbackFunction}
-                agencySize={this.props.size}
-                agencies={this.props.agencies}
-              />
-            ) : this.state.filterState === "regions" ? (
-              <Regions
-                parentCallback={this.callbackFunction}
-                regions={this.props.regions}
-                agencies={this.props.agencies}
-              />
-            ) : (
-              ""
-            )}
+            <Industries
+              parentCallback={this.callbackFunction}
+              industries={this.props.industries}
+              agencies={this.props.agencies}
+            />
           </div>
 
+          <div className="container">
+            <button className="done" onClick={this.filterActiveClass}>
+              DONE
+            </button>
+          </div>
+        </div>
+
+        <div id="size-terms" className="term-container d-none">
+          <div className="container">
+            <Size
+              parentCallback={this.callbackFunction}
+              agencySize={this.props.size}
+              agencies={this.props.agencies}
+            />
+          </div>
+          <div className="container">
+            <button className="done" onClick={this.filterActiveClass}>
+              DONE
+            </button>
+          </div>
+        </div>
+
+        <div id="regions-terms" className="term-container d-none">
+          <div className="container">
+            <Regions
+              parentCallback={this.callbackFunction}
+              regions={this.props.regions}
+              agencies={this.props.agencies}
+            />
+          </div>
           <div className="container">
             <button className="done" onClick={this.filterActiveClass}>
               DONE
@@ -581,25 +582,6 @@ export default class Directory extends Component {
             }
             #filter .filter-container .layout-selector-container div {
               margin-right: 5%;
-            }
-
-            #filter-terms {
-              position: absolute;
-              width: 100%;
-              z-index: 10;
-              background-color: #f4f4f4;
-              padding: 30px 25px;
-              display: none;
-              flex-direction: column;
-              justify-content: space-between;
-            }
-
-            #filter-terms .done {
-              padding: 15px 80px;
-              background: #cd4275;
-              border: none;
-              outline: none;
-              color: white;
             }
           `}
         </style>

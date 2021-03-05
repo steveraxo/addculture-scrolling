@@ -246,8 +246,13 @@
   margin: 2.5% auto;
   border: 1px solid #222220;
 }
+
+.agency-list-head {
+  width: 250px;
+}
+
 .agency-list-head img {
-  object-fit: cover;
+  object-fit: contain;
   width: 100%;
   height: 100%;
 }

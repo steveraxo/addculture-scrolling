@@ -5,12 +5,42 @@ export default class Regions extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      regions: this.props.regions,
       parents: [],
       children: [],
+      alpha: [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F",
+        "G",
+        "H",
+        "I",
+        "J",
+        "K",
+        "L",
+        "M",
+        "N",
+        "O",
+        "P",
+        "Q",
+        "R",
+        "S",
+        "T",
+        "U",
+        "V",
+        "W",
+        "X",
+        "Y",
+        "Z",
+      ],
     };
 
     this.filterAgencies = this.filterAgencies.bind(this);
     this.activeClassFilter = this.activeClassFilter.bind(this);
+    this.alphaFilter = this.alphaFilter.bind(this);
   }
 
   activeClassFilter(e) {
@@ -20,10 +50,9 @@ export default class Regions extends Component {
   }
 
   filterRegions() {
-    const regions = this.props.regions;
+    const regions = this.state.regions;
     const parents = [];
     const children = [];
-
     regions.forEach((region) => {
       if (region.parent === 0) {
         parents.push(region);
@@ -34,6 +63,35 @@ export default class Regions extends Component {
     this.setState({
       parents,
       children,
+    });
+  }
+
+  alphaFilter(e) {
+    const letters = document.querySelectorAll("#alphabet p");
+    const regions = this.props.regions;
+
+    const term = e.target;
+    let filtered = [];
+    console.log(regions);
+    letters.forEach((letter) => {
+      if (letter.getAttribute("id") === term.getAttribute("id")) {
+        letter.classList.toggle("letter-active");
+      }
+
+      if (letter.classList.contains("letter-active")) {
+        regions.forEach((region) => {
+          console.log(region);
+        });
+        // this.setState({ regions: filtered });
+        // this.filterRegions();
+        // console.log(this.state.children);
+      } else {
+        this.setState({
+          regions: this.props.regions,
+        });
+
+        this.filterRegions();
+      }
     });
   }
 
@@ -77,32 +135,11 @@ export default class Regions extends Component {
       <>
         <h3 className="regions-terms">Filter by Region</h3>
         <div id="alphabet">
-          <p>A</p>
-          <p>B</p>
-          <p>C</p>
-          <p>D</p>
-          <p>E</p>
-          <p>F</p>
-          <p>G</p>
-          <p>H</p>
-          <p>I</p>
-          <p>J</p>
-          <p>K</p>
-          <p>L</p>
-          <p>M</p>
-          <p>N</p>
-          <p>O</p>
-          <p>P</p>
-          <p>Q</p>
-          <p>R</p>
-          <p>S</p>
-          <p>T</p>
-          <p>U</p>
-          <p>V</p>
-          <p>W</p>
-          <p>X</p>
-          <p>Y</p>
-          <p>Z</p>
+          {this.state.alpha.map((letter, key) => (
+            <p id={`letter-${key}`} onClick={this.alphaFilter} key={key}>
+              {letter}
+            </p>
+          ))}
         </div>
         <div className="regions-wrapper">
           {parents.map((parent) => (
@@ -112,7 +149,7 @@ export default class Regions extends Component {
               </h4>
               <div className="children">
                 {children.map((child) =>
-                  child.parent === parent.id ? (
+                  child.parent === parent.id && child.count !== 0 ? (
                     <p
                       onClick={this.filterAgencies}
                       key={child.id}

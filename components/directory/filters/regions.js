@@ -6,6 +6,7 @@ export default class Regions extends Component {
     super(props);
     this.state = {
       regions: this.props.regions,
+      empty: false,
       parents: [],
       children: [],
       alpha: [
@@ -87,11 +88,12 @@ export default class Regions extends Component {
           }
         });
       } else {
-        this.setState({
-          regions: this.props.regions,
-        });
-        // filter regions again
-        this.filterRegions();
+        this.setState({ empty: true });
+        setTimeout(() => {
+          this.setState({
+            empty: false,
+          });
+        }, 5000);
       }
     });
   }
@@ -143,53 +145,57 @@ export default class Regions extends Component {
           ))}
         </div>
         <div className="regions-wrapper">
-          {parents.map((parent) => (
-            <div className="region-container">
-              <h4 key={parent.id} id={parent.slug} className="parent">
-                {parent.name}
-              </h4>
-              <div className="children">
-                {children.map((child) =>
-                  child.parent === parent.id && child.count !== 0 ? (
-                    <p
-                      onClick={this.filterAgencies}
-                      key={child.id}
-                      id={child.id}
-                      className="filter-term child"
-                    >
-                      {child.name}{" "}
-                      <span style={{ pointerEvents: "none" }}>
-                        ({child.count})
-                      </span>
-                      <svg
-                        className="check d-none"
-                        style={{
-                          position: "relative",
-                          top: "5px",
-                          left: "5px",
-                        }}
-                        width="20"
-                        height="17"
-                        viewBox="0 0 24 25"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
+          {this.state.empty === true ? (
+            <h3 className="text-center">We couldn't find any results</h3>
+          ) : (
+            parents.map((parent) => (
+              <div className="region-container">
+                <h4 key={parent.id} id={parent.slug} className="parent">
+                  {parent.name}
+                </h4>
+                <div className="children">
+                  {children.map((child) =>
+                    child.parent === parent.id && child.count !== 0 ? (
+                      <p
+                        onClick={this.filterAgencies}
+                        key={child.id}
+                        id={child.id}
+                        className="filter-term child"
                       >
-                        <path
-                          d="M20 6.5L9 17.5L4 12.5"
-                          stroke="#CD4275"
-                          strokeWidth="2"
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                        />
-                      </svg>
-                    </p>
-                  ) : (
-                    ""
-                  )
-                )}
+                        {child.name}{" "}
+                        <span style={{ pointerEvents: "none" }}>
+                          ({child.count})
+                        </span>
+                        <svg
+                          className="check d-none"
+                          style={{
+                            position: "relative",
+                            top: "5px",
+                            left: "5px",
+                          }}
+                          width="20"
+                          height="17"
+                          viewBox="0 0 24 25"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M20 6.5L9 17.5L4 12.5"
+                            stroke="#CD4275"
+                            strokeWidth="2"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                          />
+                        </svg>
+                      </p>
+                    ) : (
+                      ""
+                    )
+                  )}
+                </div>
               </div>
-            </div>
-          ))}
+            ))
+          )}
         </div>
         <style jsx>{`
           .regions-wrapper {

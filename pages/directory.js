@@ -122,9 +122,10 @@ export default class Directory extends Component {
 
   resetFilters(e) {
     e.preventDefault();
-    document.querySelectorAll(".check").forEach((item) => {
+    document.querySelectorAll(".filter-term").forEach((item) => {
       if (item.classList.contains("active-filter")) {
         item.classList.remove("active-filter");
+        item.children[1].classList.add("d-none");
       }
     });
     this.setState({
@@ -395,7 +396,7 @@ export default class Directory extends Component {
                     </span>
                   </p>
 
-                  <button onClick={this.resetFilters} type="reset">
+                  <button onClick={this.resetFilters} type="reset" id="reset">
                     Clear All{" "}
                     <svg
                       style={{ position: "relative", top: "5px", left: "5px" }}

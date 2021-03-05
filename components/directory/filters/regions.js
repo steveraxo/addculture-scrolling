@@ -69,27 +69,28 @@ export default class Regions extends Component {
   alphaFilter(e) {
     const letters = document.querySelectorAll("#alphabet p");
     const regions = this.props.regions;
-
     const term = e.target;
     let filtered = [];
-    console.log(regions);
+
+    // toggle active class for letter
     letters.forEach((letter) => {
       if (letter.getAttribute("id") === term.getAttribute("id")) {
         letter.classList.toggle("letter-active");
       }
-
+      // filter based on clicked letter
       if (letter.classList.contains("letter-active")) {
         regions.forEach((region) => {
-          console.log(region);
+          if (region.parent === 0 && region.name[0] === term.textContent) {
+            this.setState({ regions: filtered });
+            // filter regions again
+            this.filterRegions();
+          }
         });
-        // this.setState({ regions: filtered });
-        // this.filterRegions();
-        // console.log(this.state.children);
       } else {
         this.setState({
           regions: this.props.regions,
         });
-
+        // filter regions again
         this.filterRegions();
       }
     });

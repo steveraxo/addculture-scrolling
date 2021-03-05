@@ -12,6 +12,21 @@ export default class Size extends Component {
     const filter = e.target;
     filter.classList.toggle("active-filter");
     filter.children[1].classList.toggle("d-none");
+    if (filter.textContent.length > 15) {
+      filter.style.width = "155px";
+    } else if (filter.textContent.length > 13) {
+      filter.style.width = "145px";
+    } else if (filter.textContent.length > 11) {
+      filter.style.width = "135px";
+    } else if (filter.textContent.length > 10) {
+      filter.style.width = "125px";
+    } else {
+      filter.style.width = "110px";
+    }
+
+    if (filter.children[1].classList.contains("d-none")) {
+      filter.style.width = "initial";
+    }
   }
 
   filterAgencies(e) {
@@ -63,8 +78,8 @@ export default class Size extends Component {
               <svg
                 className="check d-none"
                 style={{ position: "relative", top: "5px", left: "5px" }}
-                width="20"
-                height="17"
+                width="24"
+                height="24"
                 viewBox="0 0 24 25"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"

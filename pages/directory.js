@@ -5,6 +5,8 @@ import DirectoryLayout from "../components/directory/layout";
 import Hero from "../components/directory/hero";
 import AddCultureFooter from "../components/directory/footer";
 
+import Loading from "../components/directory/loader";
+
 import Grid from "../components/directory/agencies/grid";
 import List from "../components/directory/agencies/list";
 
@@ -31,6 +33,7 @@ export default class Directory extends Component {
       currentPage: 0,
       previousClicked: "",
       clicked: "",
+      loading: false,
     };
 
     this.removeActiveClass = this.removeActiveClass.bind(this);
@@ -66,7 +69,6 @@ export default class Directory extends Component {
 
       // remove classes if same item clicked
       if (selector.classList.contains("selected")) {
-        console.log("yes");
         selector.classList.remove("selected");
         selector.classList.remove("remove");
       }
@@ -290,10 +292,11 @@ export default class Directory extends Component {
   }
 
   callbackFunction = (childData) => {
-    this.setState({ agencies: childData }, () => {
-      console.log(this.state.agencies);
-    });
+    this.setState({ agencies: childData, loading: true });
     this.formatData();
+    setTimeout(() => {
+      this.setState({ loading: false });
+    }, 3000);
   };
 
   componentDidMount() {
@@ -452,6 +455,7 @@ export default class Directory extends Component {
               parentCallback={this.callbackFunction}
               industries={this.props.industries}
               agencies={this.props.agencies}
+              loading={this.state.loading}
             />
           </div>
 
@@ -468,6 +472,7 @@ export default class Directory extends Component {
               parentCallback={this.callbackFunction}
               agencySize={this.props.size}
               agencies={this.props.agencies}
+              loading={this.state.loading}
             />
           </div>
           <div className="container">
@@ -483,6 +488,7 @@ export default class Directory extends Component {
               parentCallback={this.callbackFunction}
               regions={this.props.regions}
               agencies={this.props.agencies}
+              loading={this.state.loading}
             />
           </div>
           <div className="container">
@@ -493,18 +499,22 @@ export default class Directory extends Component {
         </div>
 
         <div id="agencies">
-          {this.state.layoutState === "grid" ? (
-            <Grid
-              pageCount={this.state.pageCount}
-              agency={this.state.agencyCard}
-              handlePageClick={this.handlePageClick}
-            />
+          {this.state.loading === false ? (
+            this.state.layoutState === "grid" ? (
+              <Grid
+                pageCount={this.state.pageCount}
+                agency={this.state.agencyCard}
+                handlePageClick={this.handlePageClick}
+              />
+            ) : (
+              <List
+                pageCount={this.state.pageCount}
+                agency={this.state.agencyList}
+                handlePageClick={this.handlePageClick}
+              />
+            )
           ) : (
-            <List
-              pageCount={this.state.pageCount}
-              agency={this.state.agencyList}
-              handlePageClick={this.handlePageClick}
-            />
+            <Loading />
           )}
         </div>
 

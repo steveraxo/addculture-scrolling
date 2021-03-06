@@ -12,22 +12,8 @@ export default class Industries extends Component {
     const filter = e.target;
     filter.classList.toggle("active-filter");
     filter.children[1].classList.toggle("d-none");
-
-    if (filter.textContent.length > 15) {
-      filter.style.width = "155px";
-    } else if (filter.textContent.length > 13) {
-      filter.style.width = "145px";
-    } else if (filter.textContent.length > 11) {
-      filter.style.width = "135px";
-    } else if (filter.textContent.length > 10) {
-      filter.style.width = "125px";
-    } else {
-      filter.style.width = "110px";
-    }
-
-    if (filter.children[1].classList.contains("d-none")) {
-      filter.style.width = "initial";
-    }
+    const newWidth = filter.offsetWidth + 20 + "px";
+    filter.style.width = newWidth;
   }
 
   filterAgencies(e) {
@@ -77,7 +63,7 @@ export default class Industries extends Component {
               {industry.name}{" "}
               <span style={{ pointerEvents: "none" }}>({industry.count})</span>
               <svg
-                style={{ position: "relative", top: "5px", left: "5px" }}
+                style={{ position: "absolute" }}
                 className="check d-none"
                 width="24"
                 height="24"

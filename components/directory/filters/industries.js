@@ -4,11 +4,16 @@ import axios from "axios";
 export default class Industries extends Component {
   constructor(props) {
     super(props);
+    this.state = {
+      loading: this.props.loading,
+    };
     this.filterAgencies = this.filterAgencies.bind(this);
     this.activeClassFilter = this.activeClassFilter.bind(this);
   }
 
   activeClassFilter(e) {
+    this.setState({ loading: true });
+    this.sendData(this.state.loading);
     const filter = e.target;
     filter.classList.toggle("active-filter");
     filter.children[1].classList.toggle("d-none");
@@ -39,6 +44,7 @@ export default class Industries extends Component {
       axios
         .get(`https://addculture.raxo.dev/wp-json/wp/v2/agencies_post`)
         .then(({ data }) => {
+          this.setState({ loading: true });
           this.sendData(data);
         })
         .catch((err) => {

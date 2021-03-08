@@ -293,9 +293,16 @@ export default class Directory extends Component {
   }
 
   callbackFunction = (childData) => {
-    this.setState({ agencies: childData, loading: true });
+    console.log(childData);
+    this.setState({ loading: childData });
+    // update agencies
+    this.setState({ agencies: childData });
     this.formatData();
-    this.setState({ loading: false });
+    setTimeout(() => {
+      this.setState({
+        loading: false,
+      });
+    }, 1500);
   };
 
   componentDidMount() {

@@ -70,7 +70,11 @@ export default class Industries extends Component {
                   ({industry.count})
                 </span>
                 <svg
-                  style={{ position: "absolute", outline: "none" }}
+                  style={{
+                    position: "absolute",
+                    outline: "none",
+                    pointerEvents: "none",
+                  }}
                   className="check d-none"
                   width="24"
                   height="24"

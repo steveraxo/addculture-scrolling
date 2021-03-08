@@ -181,6 +181,7 @@ export default class Regions extends Component {
                           style={{
                             position: "absolute",
                             outline: "none",
+                            pointerEvents: "none",
                           }}
                           width="24"
                           height="24"

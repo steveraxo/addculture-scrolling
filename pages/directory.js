@@ -128,6 +128,7 @@ export default class Directory extends Component {
       if (item.classList.contains("active-filter")) {
         item.classList.remove("active-filter");
         item.children[1].classList.add("d-none");
+        item.style.width = "initial";
       }
     });
     this.setState({
@@ -294,9 +295,7 @@ export default class Directory extends Component {
   callbackFunction = (childData) => {
     this.setState({ agencies: childData, loading: true });
     this.formatData();
-    setTimeout(() => {
-      this.setState({ loading: false });
-    }, 3000);
+    this.setState({ loading: false });
   };
 
   componentDidMount() {

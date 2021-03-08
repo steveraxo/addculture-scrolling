@@ -180,6 +180,7 @@ export default class Regions extends Component {
                           className="check d-none"
                           style={{
                             position: "absolute",
+                            outline: "none",
                           }}
                           width="24"
                           height="24"

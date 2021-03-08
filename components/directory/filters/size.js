@@ -68,7 +68,7 @@ export default class Size extends Component {
               <span style={{ pointerEvents: "none" }}>({item.count})</span>
               <svg
                 className="check d-none"
-                style={{ position: "absolute" }}
+                style={{ position: "absolute", outline: "none" }}
                 width="24"
                 height="24"
                 viewBox="0 0 24 25"

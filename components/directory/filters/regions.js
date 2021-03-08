@@ -45,6 +45,8 @@ export default class Regions extends Component {
   }
 
   activeClassFilter(e) {
+    const loading = true;
+    this.sendLoading(loading);
     const filter = e.target;
     filter.classList.toggle("active-filter");
     filter.children[1].classList.toggle("d-none");
@@ -137,6 +139,10 @@ export default class Regions extends Component {
 
   sendData = (props) => {
     this.props.parentCallback(props);
+  };
+
+  sendLoading = (props) => {
+    this.props.loadingCallback(props);
   };
 
   componentDidMount() {

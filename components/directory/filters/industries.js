@@ -4,16 +4,13 @@ import axios from "axios";
 export default class Industries extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-      loading: this.props.loading,
-    };
     this.filterAgencies = this.filterAgencies.bind(this);
     this.activeClassFilter = this.activeClassFilter.bind(this);
   }
 
   activeClassFilter(e) {
-    this.setState({ loading: true });
-    this.sendData(this.state.loading);
+    const loading = true;
+    this.sendLoading(loading);
     const filter = e.target;
     filter.classList.toggle("active-filter");
     filter.children[1].classList.toggle("d-none");
@@ -55,6 +52,10 @@ export default class Industries extends Component {
 
   sendData = (props) => {
     this.props.parentCallback(props);
+  };
+
+  sendLoading = (props) => {
+    this.props.loadingCallback(props);
   };
 
   render() {

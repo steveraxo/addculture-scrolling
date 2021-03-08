@@ -292,9 +292,12 @@ export default class Directory extends Component {
     });
   }
 
+  loadingFunction = (loadingData) => {
+    this.setState({ loading: loadingData });
+  };
+
   callbackFunction = (childData) => {
-    console.log(childData);
-    this.setState({ loading: childData });
+    this.loadingFunction();
     // update agencies
     this.setState({ agencies: childData });
     this.formatData();
@@ -458,6 +461,7 @@ export default class Directory extends Component {
         <div id="industries-terms" className="term-container d-none">
           <div className="container">
             <Industries
+              loadingCallback={this.loadingFunction}
               parentCallback={this.callbackFunction}
               industries={this.props.industries}
               agencies={this.props.agencies}
@@ -475,6 +479,7 @@ export default class Directory extends Component {
         <div id="size-terms" className="term-container d-none">
           <div className="container">
             <Size
+              loadingCallback={this.loadingFunction}
               parentCallback={this.callbackFunction}
               agencySize={this.props.size}
               agencies={this.props.agencies}
@@ -491,6 +496,7 @@ export default class Directory extends Component {
         <div id="regions-terms" className="term-container d-none">
           <div className="container">
             <Regions
+              loadingCallback={this.loadingFunction}
               parentCallback={this.callbackFunction}
               regions={this.props.regions}
               agencies={this.props.agencies}

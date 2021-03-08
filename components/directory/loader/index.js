@@ -12,12 +12,12 @@ export default function Loading() {
     },
   };
   return (
-    <div style={{ margin: "0 auto", padding: "20px" }}>
+    <div style={{ margin: "15em auto" }}>
       <Lottie
         style={{ pointerEvents: "none" }}
         options={defaultOptions}
-        height={200}
-        width={200}
+        height={100}
+        width={100}
       />
     </div>
   );

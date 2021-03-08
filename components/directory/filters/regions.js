@@ -104,8 +104,6 @@ export default class Regions extends Component {
         } else {
           this.setState({ empty: true });
         }
-
-        // filter regions again
       }
     });
   }

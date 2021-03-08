@@ -178,8 +178,6 @@
 
 .agency-card .agency-image {
   object-fit: contain;
-  max-height: 100px;
-  height: 100%;
   max-width: 280px;
   position: relative;
   width: 100vw;

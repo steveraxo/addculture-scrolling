@@ -95,16 +95,17 @@ export default class Regions extends Component {
                 filtered.push(child);
               }
             });
-
-            this.setState({ regions: filtered, empty: false }, () =>
-              console.log(this.state.empty)
-            );
-            // filter regions again
-            this.filterRegions();
-          } else {
-            this.setState({ empty: true });
           }
         });
+
+        if (filtered.length !== 0) {
+          this.setState({ regions: filtered, empty: false });
+          this.filterRegions();
+        } else {
+          this.setState({ empty: true });
+        }
+
+        // filter regions again
       }
     });
   }
@@ -224,7 +225,12 @@ export default class Regions extends Component {
             opacity: 0.7;
             margin-right: 20px;
             color: #222220;
+            user-select: none;
             font-family: "HelveticaNeue", sans-serif;
+          }
+
+          #alphabet p.letter-active {
+            color: #cd4275;
           }
           .regions-wrapper p {
             margin-right: 10px;

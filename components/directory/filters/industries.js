@@ -57,34 +57,40 @@ export default class Industries extends Component {
       <>
         <h3 className="industry-terms">Filter by Industry</h3>
         <div className="industries-wrapper">
-          {industries.map((industry, key) => (
-            <p
-              onClick={this.filterAgencies}
-              key={key}
-              id={industry.id}
-              className="filter-term industry"
-            >
-              {industry.name}{" "}
-              <span style={{ pointerEvents: "none" }}>({industry.count})</span>
-              <svg
-                style={{ position: "absolute" }}
-                className="check d-none"
-                width="24"
-                height="24"
-                viewBox="0 0 24 25"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
+          {industries.map((industry, key) =>
+            industry.count !== 0 ? (
+              <p
+                onClick={this.filterAgencies}
+                key={key}
+                id={industry.id}
+                className="filter-term industry"
               >
-                <path
-                  d="M20 6.5L9 17.5L4 12.5"
-                  stroke="#CD4275"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-              </svg>
-            </p>
-          ))}
+                {industry.name}{" "}
+                <span style={{ pointerEvents: "none" }}>
+                  ({industry.count})
+                </span>
+                <svg
+                  style={{ position: "absolute" }}
+                  className="check d-none"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 25"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M20 6.5L9 17.5L4 12.5"
+                    stroke="#CD4275"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
+                </svg>
+              </p>
+            ) : (
+              ""
+            )
+          )}
         </div>
         <style jsx>{`
           .industries-wrapper {

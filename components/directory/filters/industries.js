@@ -14,6 +14,10 @@ export default class Industries extends Component {
     filter.children[1].classList.toggle("d-none");
     const newWidth = filter.offsetWidth + 20 + "px";
     filter.style.width = newWidth;
+
+    if (filter.children[1].classList.contains("d-none")) {
+      filter.style.width = "initial";
+    }
   }
 
   filterAgencies(e) {

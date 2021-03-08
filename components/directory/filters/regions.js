@@ -86,20 +86,25 @@ export default class Regions extends Component {
       }
       // filter based on clicked letter
       if (letter.classList.contains("letter-active")) {
-        regions.forEach((region) => {
+        regions.forEach((region, i, regions) => {
           if (region.parent === 0 && region.name[0] === term.textContent) {
-            this.setState({ regions: filtered });
+            filtered = [];
+            filtered.push(region);
+            regions.forEach((child) => {
+              if (child.parent === region.id) {
+                filtered.push(child);
+              }
+            });
+
+            this.setState({ regions: filtered, empty: false }, () =>
+              console.log(this.state.empty)
+            );
             // filter regions again
             this.filterRegions();
+          } else {
+            this.setState({ empty: true });
           }
         });
-      } else {
-        this.setState({ empty: true });
-        setTimeout(() => {
-          this.setState({
-            empty: false,
-          });
-        }, 5000);
       }
     });
   }

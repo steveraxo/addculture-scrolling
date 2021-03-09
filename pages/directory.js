@@ -172,83 +172,41 @@ export default class Directory extends Component {
       this.state.offset,
       this.state.offset + this.state.perPage
     );
+    let agencyCard = "";
+    let agencyList = "";
 
-    const agencyCard = slice.map((agency, key) => (
-      <div key={key} className="agency-card">
-        <div className="agency-card-head">
-          <img
-            className="agency-image"
-            src={agency.acf.agency_image.url}
-            alt={agency.acf.agency_name}
-          />
-          <h2 className="agency-name">{agency.acf.agency_name}</h2>
-          <p className="agency-region avant">
-            {agency.regions[0].name}, {agency.regions[1].name}
-          </p>
-        </div>
-        <div className="agency-card-body">
-          <p className="agency-description">{agency.acf.agency_description}</p>
-        </div>
-
-        <div className="agency-info">
-          <p>
-            Industry <span>{agency.industries[0].name}</span>
-          </p>
-          <a className=" agency-link avant" href={agency.acf.agency_website}>
-            Visit website{" "}
-            <span>
-              <WebsiteIcon
-                style={{ position: "relative", top: "5px", left: "5px" }}
-              />
-            </span>
-          </a>
-        </div>
-      </div>
-    ));
-
-    const agencyList = slice.map((agency, key) => (
-      <React.Fragment key={key}>
-        <div className="agency-list">
-          <div className="agency-list-head">
+    if (data.length === 0) {
+      agencyCard = (
+        <h1 className="text-center">We couldn't find any results</h1>
+      );
+      agencyList = (
+        <h1 className="text-center">We couldn't find any results</h1>
+      );
+    } else {
+      agencyCard = slice.map((agency, key) => (
+        <div key={key} className="agency-card">
+          <div className="agency-card-head">
             <img
+              className="agency-image"
               src={agency.acf.agency_image.url}
               alt={agency.acf.agency_name}
             />
+            <h2 className="agency-name">{agency.acf.agency_name}</h2>
+            <p className="agency-region avant">
+              {agency.regions[0].name}, {agency.regions[1].name}
+            </p>
           </div>
-          <div className="agency-list-body">
-            <div className="agency-list-title-location">
-              <h1 className="agency-name">{agency.acf.agency_name}</h1>
-              <p className="agency-list-location avant">
-                {agency.regions[0].name}, {agency.regions[1].name}
-              </p>
-            </div>
-            <div
-              className="collapse-open"
-              data-toggler={`collapse-${key}`}
-              onClick={this.toggleCollapse}
-            >
-              <Plus style={{ pointerEvents: "none" }} />
-            </div>
-          </div>
-        </div>
-        <div className="collapse" id={`collapse-${key}`}>
-          <div className="left">
-            <Separator />
-          </div>
-          <div className="agency-list-details">
-            <p className="agency-list-description">
+          <div className="agency-card-body">
+            <p className="agency-description">
               {agency.acf.agency_description}
             </p>
-            <div className="clients-industry">
-              <p>
-                Industry <span>{agency.industries[0].name}</span>
-              </p>
-            </div>
+          </div>
 
-            <a
-              className="agency-list-link avant"
-              href={agency.acf.agency_website}
-            >
+          <div className="agency-info">
+            <p>
+              Industry <span>{agency.industries[0].name}</span>
+            </p>
+            <a className=" agency-link avant" href={agency.acf.agency_website}>
               Visit website{" "}
               <span>
                 <WebsiteIcon
@@ -258,8 +216,63 @@ export default class Directory extends Component {
             </a>
           </div>
         </div>
-      </React.Fragment>
-    ));
+      ));
+
+      agencyList = slice.map((agency, key) => (
+        <React.Fragment key={key}>
+          <div className="agency-list">
+            <div className="agency-list-head">
+              <img
+                src={agency.acf.agency_image.url}
+                alt={agency.acf.agency_name}
+              />
+            </div>
+            <div className="agency-list-body">
+              <div className="agency-list-title-location">
+                <h1 className="agency-name">{agency.acf.agency_name}</h1>
+                <p className="agency-list-location avant">
+                  {agency.regions[0].name}, {agency.regions[1].name}
+                </p>
+              </div>
+              <div
+                className="collapse-open"
+                data-toggler={`collapse-${key}`}
+                onClick={this.toggleCollapse}
+              >
+                <Plus style={{ pointerEvents: "none" }} />
+              </div>
+            </div>
+          </div>
+          <div className="collapse" id={`collapse-${key}`}>
+            <div className="left">
+              <Separator />
+            </div>
+            <div className="agency-list-details">
+              <p className="agency-list-description">
+                {agency.acf.agency_description}
+              </p>
+              <div className="clients-industry">
+                <p>
+                  Industry <span>{agency.industries[0].name}</span>
+                </p>
+              </div>
+
+              <a
+                className="agency-list-link avant"
+                href={agency.acf.agency_website}
+              >
+                Visit website{" "}
+                <span>
+                  <WebsiteIcon
+                    style={{ position: "relative", top: "5px", left: "5px" }}
+                  />
+                </span>
+              </a>
+            </div>
+          </div>
+        </React.Fragment>
+      ));
+    }
 
     this.setState({
       pageCount: Math.ceil(data.length / this.state.perPage),

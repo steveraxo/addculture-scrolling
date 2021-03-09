@@ -412,6 +412,12 @@
 }
 
 @media (max-width: 2560px) {
+  .agency-list-title-location .agency-name {
+    font-size: 22px;
+  }
+  .agency-list-title-location .agency-list-location {
+    font-size: 14px;
+  }
 }
 
 @media (max-width: 2000px) {
@@ -524,6 +530,10 @@
 
   .agency-card .agency-region {
     font-size: 12px;
+  }
+
+  .agency-list-title-location .agency-name {
+    font-size: 18px;
   }
 }
 

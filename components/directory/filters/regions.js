@@ -124,6 +124,7 @@ export default class Regions extends Component {
 
     // toggle active class for letter
     letters.forEach((letter) => {
+      letter.classList.remove("letter-active");
       if (letter.getAttribute("id") === term.getAttribute("id")) {
         letter.classList.toggle("letter-active");
       }

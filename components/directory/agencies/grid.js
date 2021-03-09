@@ -5,7 +5,7 @@ export default class Grid extends Component {
   render() {
     return (
       <>
-        <div className="container agencies-container">
+        <div className="agencies-container">
           {this.props.agency}
           <ReactPaginate
             previousLabel={""}
@@ -27,7 +27,7 @@ export default class Grid extends Component {
             flex-wrap: wrap;
             justify-content: center;
             margin: 5% auto;
-            padding: 0 5% !important;
+            padding: 0 4% !important;
           }
         `}</style>
       </>

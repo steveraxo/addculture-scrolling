@@ -194,12 +194,14 @@ export default class Directory extends Component {
               src={agency.acf.agency_image.url}
               alt={agency.acf.agency_name}
             />
-            <h2 className="agency-name">{agency.acf.agency_name}</h2>
-            <p className="agency-region avant">
-              {agency.regions[0].name}, {agency.regions[1].name}
-            </p>
           </div>
           <div className="agency-card-body">
+            <div className="name-region">
+              <h2 className="agency-name">{agency.acf.agency_name}</h2>
+              <p className="agency-region avant">
+                {agency.regions[0].name}, {agency.regions[1].name}
+              </p>
+            </div>
             <p className="agency-description">
               {agency.acf.agency_description}
             </p>
@@ -339,7 +341,7 @@ export default class Directory extends Component {
         <Hero />
 
         <div id="filter">
-          <div className="filter-container container">
+          <div className="filter-container">
             <div className="filter-options">
               <div className="filter-options-container avant">
                 <Search parentCallback={this.callbackFunction} />
@@ -563,6 +565,8 @@ export default class Directory extends Component {
               flex-wrap: nowrap;
               justify-content: flex-start;
               width: 100%;
+              padding-left: 10%;
+              padding-right: 10%;
             }
             #filter .filter-container .filter-options {
               width: 100%;
@@ -621,6 +625,67 @@ export default class Directory extends Component {
             }
             #filter .filter-container .layout-selector-container div {
               margin-right: 5%;
+            }
+
+            @media (max-width: 4000px) {
+              #filter .filter-container {
+                padding: 0 28%;
+              }
+            }
+
+            @media (max-width: 3000px) {
+              #filter .filter-container {
+                padding: 0 25%;
+              }
+            }
+
+            @media (max-width: 2600px) {
+              #filter .filter-container {
+                padding: 0 20%;
+              }
+            }
+
+            @media (max-width: 2000px) {
+              #filter .filter-container {
+                padding: 0 16.5%;
+              }
+            }
+
+            @media (max-width: 1700px) {
+              #filter .filter-container {
+                padding: 0 13%;
+              }
+
+              #filter .filter-container .layout-selector-container {
+                width: 10%;
+              }
+
+              .search.active-search {
+                width: 80%;
+              }
+            }
+
+            @media (max-width: 1500px) {
+              #filter .filter-container {
+                padding: 0 13.5%;
+              }
+            }
+
+            @media (max-width: 1400px) {
+              #filter .filter-container {
+                padding: 0 15%;
+              }
+
+              #filter .filter-container .filter-options-container #filters p {
+                margin: 0 10px;
+                font-size: 14px;
+              }
+            }
+
+            @media (max-width: 1300px) {
+              #filter .filter-container {
+                padding: 0 13.5%;
+              }
             }
           `}
         </style>

@@ -249,9 +249,6 @@ export default class Directory extends Component {
             </div>
           </div>
           <div className="collapse" id={`collapse-${key}`}>
-            <div className="left">
-              <Separator />
-            </div>
             <div className="agency-list-details">
               <p className="agency-list-description">
                 {agency.acf.agency_description}
@@ -479,7 +476,7 @@ export default class Directory extends Component {
         </div>
 
         <div id="industries-terms" className="term-container d-none">
-          <div className="container">
+          <div className="filters-container">
             <Industries
               loadingCallback={this.loadingFunction}
               parentCallback={this.callbackFunction}
@@ -487,9 +484,7 @@ export default class Directory extends Component {
               agencies={this.props.agencies}
               loading={this.state.loading}
             />
-          </div>
 
-          <div className="container">
             <button className="done" onClick={this.filterActiveClass}>
               DONE
             </button>
@@ -497,7 +492,7 @@ export default class Directory extends Component {
         </div>
 
         <div id="size-terms" className="term-container d-none">
-          <div className="container">
+          <div className="filters-container">
             <Size
               loadingCallback={this.loadingFunction}
               parentCallback={this.callbackFunction}
@@ -505,8 +500,6 @@ export default class Directory extends Component {
               agencies={this.props.agencies}
               loading={this.state.loading}
             />
-          </div>
-          <div className="container">
             <button className="done" onClick={this.filterActiveClass}>
               DONE
             </button>
@@ -514,7 +507,7 @@ export default class Directory extends Component {
         </div>
 
         <div id="regions-terms" className="term-container d-none">
-          <div className="container">
+          <div className="filters-container">
             <Regions
               loadingCallback={this.loadingFunction}
               parentCallback={this.callbackFunction}
@@ -522,8 +515,7 @@ export default class Directory extends Component {
               agencies={this.props.agencies}
               loading={this.state.loading}
             />
-          </div>
-          <div className="container">
+
             <button className="done" onClick={this.filterActiveClass}>
               DONE
             </button>

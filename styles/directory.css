@@ -110,6 +110,10 @@
 
 /* filters */
 
+.filters-container {
+  margin: auto;
+}
+
 #industries-terms {
   position: absolute;
   width: 100%;
@@ -141,6 +145,7 @@
 }
 
 #industries-terms .done {
+  margin-top: 40px;
   padding: 15px 80px;
   background: #cd4275;
   border: none;
@@ -149,6 +154,7 @@
 }
 
 #size-terms .done {
+  margin-top: 40px;
   padding: 15px 80px;
   background: #cd4275;
   border: none;
@@ -157,6 +163,7 @@
 }
 
 #regions-terms .done {
+  margin-top: 40px;
   padding: 15px 80px;
   background: #cd4275;
   border: none;
@@ -292,17 +299,16 @@
   border-bottom: 1px solid #000;
   border-left: 1px solid #000;
   border-right: 1px solid #000;
-  padding: 18px;
+  padding: 35px 18px;
   margin-top: -2.5%;
   overflow: hidden;
   max-height: 0;
   transition: max-height 0.2s ease-out;
 }
 
-.collapse .left {
-  max-width: 235px;
-  width: 100%;
-  text-align: right;
+.collapse::before {
+  content: "";
+  width: 200px;
 }
 
 .collapse .agency-list-details {
@@ -311,6 +317,14 @@
   justify-content: space-between;
   padding: 0 30px;
   width: 70%;
+  position: relative;
+}
+
+.collapse .agency-list-details::before {
+  content: url("../public/images/directory/separator.svg");
+  position: absolute;
+  left: 0;
+  top: -10px;
 }
 
 .collapse .agency-list-details .agency-list-description {
@@ -344,6 +358,9 @@
 }
 
 @media (max-width: 4000px) {
+  .filters-container {
+    max-width: 1750px;
+  }
   .agencies-container {
     max-width: 2500px;
   }
@@ -368,6 +385,9 @@
 }
 
 @media (max-width: 3000px) {
+  .filters-container {
+    max-width: 1500px;
+  }
   .agencies-container {
     max-width: 2000px;
   }
@@ -395,6 +415,9 @@
 }
 
 @media (max-width: 2000px) {
+  .filters-container {
+    max-width: 1350px;
+  }
   .agencies-container {
     max-width: 1800px;
   }
@@ -419,6 +442,9 @@
 }
 
 @media (max-width: 1700px) {
+  .filters-container {
+    max-width: 1200px;
+  }
   .agencies-container {
     max-width: 1500px;
   }
@@ -446,6 +472,9 @@
   }
 }
 @media (max-width: 1500px) {
+  .filters-container {
+    max-width: 1050px;
+  }
   .agencies-container {
     max-width: 1200px;
   }
@@ -469,6 +498,9 @@
 }
 
 @media (max-width: 1400px) {
+  .filters-container {
+    max-width: 950px;
+  }
   .agencies-container {
     max-width: 1100px;
   }
@@ -496,6 +528,9 @@
 }
 
 @media (max-width: 1300px) {
+  .filters-container {
+    max-width: 930px;
+  }
   .agencies-container {
     max-width: 1100px;
   }

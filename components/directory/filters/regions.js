@@ -39,6 +39,7 @@ export default class Regions extends Component {
       ],
       termId: "",
       prevId: "",
+      clickCount: 0,
     };
 
     this.filterAgencies = this.filterAgencies.bind(this);
@@ -46,7 +47,20 @@ export default class Regions extends Component {
     this.alphaFilter = this.alphaFilter.bind(this);
   }
 
+  clickCount() {
+    this.setState({
+      clickCount: this.state.clickCount + 1,
+    });
+
+    if (this.state.clickCount === 2) {
+      this.setState({
+        clickCount: 1,
+      });
+    }
+  }
+
   activeClassFilter(e) {
+    this.clickCount();
     const filter = e.target;
     const filters = document.querySelectorAll(".child");
     const loading = true;
@@ -75,7 +89,10 @@ export default class Regions extends Component {
       prevId: prevState.termId,
     }));
 
-    if (filter.getAttribute("id") === this.state.prevId) {
+    if (
+      filter.getAttribute("id") === this.state.prevId &&
+      this.state.clickCount === 1
+    ) {
       filter.classList.remove("active-filter");
       filter.children[1].classList.add("d-none");
       filter.style.width = "initial";

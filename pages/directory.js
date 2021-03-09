@@ -76,7 +76,10 @@ export default class Directory extends Component {
       previousMenu: prevState.menu,
     }));
 
-    if (selector.getAttribute("id") === this.state.previousMenu) {
+    if (
+      selector.getAttribute("id") === this.state.previousMenu &&
+      this.state.clickCount === 1
+    ) {
       selector.classList.remove("selected");
     }
   }

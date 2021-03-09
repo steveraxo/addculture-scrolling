@@ -308,7 +308,7 @@
 
 .collapse::before {
   content: "";
-  width: 200px;
+  width: 180px;
 }
 
 .collapse .agency-list-details {

@@ -34,6 +34,8 @@ export default class Directory extends Component {
       previousClicked: "",
       clicked: "",
       loading: false,
+      menu: "",
+      previousMenu: "",
     };
 
     this.removeActiveClass = this.removeActiveClass.bind(this);
@@ -60,23 +62,23 @@ export default class Directory extends Component {
     const selector = e.target;
     const selectors = document.querySelectorAll(".filter");
 
-    // remove classes
-    selectors.forEach((item) => {
-      if (item.classList.contains("selected")) {
-        item.classList.remove("selected");
-        item.classList.remove("remove");
-      }
-
-      // remove classes if same item clicked
-      if (selector.classList.contains("selected")) {
-        selector.classList.remove("selected");
-        selector.classList.remove("remove");
-      }
+    this.setState({
+      menu: selector.getAttribute("id"),
     });
 
-    // add classes
+    selectors.forEach((item) => {
+      item.classList.remove("selected");
+    });
+
     selector.classList.add("selected");
-    selector.classList.add("remove");
+
+    this.setState((prevState) => ({
+      previousMenu: prevState.menu,
+    }));
+
+    if (selector.getAttribute("id") === this.state.previousMenu) {
+      selector.classList.remove("selected");
+    }
   }
 
   // filter container behavior

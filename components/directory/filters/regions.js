@@ -37,6 +37,8 @@ export default class Regions extends Component {
         "Y",
         "Z",
       ],
+      termId: "",
+      prevId: "",
     };
 
     this.filterAgencies = this.filterAgencies.bind(this);
@@ -45,15 +47,37 @@ export default class Regions extends Component {
   }
 
   activeClassFilter(e) {
-    const loading = true;
-    this.sendLoading(loading);
     const filter = e.target;
-    filter.classList.toggle("active-filter");
-    filter.children[1].classList.toggle("d-none");
+    const filters = document.querySelectorAll(".child");
+    const loading = true;
+    //send loading state to parent
+    this.sendLoading(loading);
+
+    // get term ids
+    this.setState({
+      termId: filter.getAttribute("id"),
+    });
+
+    // check for active class and remove (if found)
+    filters.forEach((item) => {
+      item.classList.remove("active-filter");
+      item.children[1].classList.add("d-none");
+      item.style.width = "initial";
+    });
+
+    // set icon to active
+    filter.classList.add("active-filter");
+    filter.children[1].classList.remove("d-none");
     const newWidth = filter.offsetWidth + 20 + "px";
     filter.style.width = newWidth;
 
-    if (filter.children[1].classList.contains("d-none")) {
+    this.setState((prevState) => ({
+      prevId: prevState.termId,
+    }));
+
+    if (filter.getAttribute("id") === this.state.prevId) {
+      filter.classList.remove("active-filter");
+      filter.children[1].classList.add("d-none");
       filter.style.width = "initial";
     }
   }

@@ -288,6 +288,7 @@
 
 .collapse {
   display: none;
+  width: 100%;
   border-bottom: 1px solid #000;
   border-left: 1px solid #000;
   border-right: 1px solid #000;
@@ -346,6 +347,9 @@
   .agencies-container {
     max-width: 2500px;
   }
+  .agencies-list {
+    max-width: 2050px;
+  }
   .agency-card {
     width: 400px;
   }
@@ -366,6 +370,10 @@
 @media (max-width: 3000px) {
   .agencies-container {
     max-width: 2000px;
+  }
+
+  .agencies-list {
+    max-width: 1720px;
   }
   .agency-card {
     width: 350px;
@@ -390,6 +398,9 @@
   .agencies-container {
     max-width: 1800px;
   }
+  .agencies-list {
+    max-width: 1420px;
+  }
   .agency-card {
     width: 300px;
   }
@@ -410,6 +421,9 @@
 @media (max-width: 1700px) {
   .agencies-container {
     max-width: 1500px;
+  }
+  .agencies-list {
+    max-width: 1300px;
   }
 
   .agency-card {
@@ -435,6 +449,9 @@
   .agencies-container {
     max-width: 1200px;
   }
+  .agencies-list {
+    max-width: 1170px;
+  }
   .agency-card {
     width: 230px;
   }
@@ -454,6 +471,9 @@
 @media (max-width: 1400px) {
   .agencies-container {
     max-width: 1100px;
+  }
+  .agencies-list {
+    max-width: 1070px;
   }
   .agency-card {
     width: 200px;
@@ -479,7 +499,9 @@
   .agencies-container {
     max-width: 1100px;
   }
-
+  .agencies-list {
+    max-width: 1020px;
+  }
   .agency-card {
     width: 200px;
   }

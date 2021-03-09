@@ -8,7 +8,7 @@ export default class List extends Component {
   render() {
     return (
       <>
-        <div className="agencies-list container">
+        <div className="agencies-list">
           {this.props.agency}
           <ReactPaginate
             previousLabel={""}
@@ -24,6 +24,15 @@ export default class List extends Component {
             activeClassName={"active"}
           />
         </div>
+        <style jsx>{`
+          .agencies-list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin: 0 auto;
+            padding: 0 4% !important;
+          }
+        `}</style>
       </>
     );
   }

@@ -679,6 +679,78 @@ export default class Directory extends Component {
                 padding: 0 13.5%;
               }
             }
+
+            @media (max-width: 1024px) {
+              #filter .filter-container {
+                padding: 0 9%;
+              }
+            }
+
+            @media (max-width: 600px) {
+              #filter {
+                padding: 5% 0;
+              }
+              #filter .filter-container {
+                flex-direction: column;
+              }
+
+              #filter .filter-container .filter-options-container {
+                flex-direction: column;
+              }
+
+              #filter .filter-container .filter-options-container #filters p {
+                font-size: 12px;
+              }
+
+              #filter .filter-container .layout-selector-container {
+                width: 100%;
+                margin: 5% auto;
+                justify-content: space-around;
+              }
+
+              #filter .filter-container .layout-selector-container div {
+                margin-right: initial;
+              }
+            }
+
+            @media (max-width: 480px) {
+              #filter .filter-container .filter-options-container #filters p {
+                font-size: 9px;
+              }
+
+              #filter
+                .filter-container
+                .filter-options-container
+                #filters
+                p
+                svg {
+                width: 16px;
+                height: 16px;
+              }
+
+              #filter
+                .filter-container
+                .filter-options-container
+                #filters
+                button {
+                font-size: 9px;
+              }
+              #filter
+                .filter-container
+                .filter-options-container
+                #filters
+                button
+                svg {
+                width: 16px;
+                height: 16px;
+              }
+            }
+
+            @media (max-width: 400px) {
+              #filter .filter-container .filter-options-container #filters {
+                flex-direction: column;
+              }
+            }
           `}
         </style>
       </DirectoryLayout>

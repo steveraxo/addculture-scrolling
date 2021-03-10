@@ -9,10 +9,18 @@ export default class Search extends Component {
     this.searchResults = this.searchResults.bind(this);
   }
   showInput() {
+    const filters = document.getElementById("filters");
     const showDiv = document.querySelector(".search");
     const showInput = document.querySelector(".searchInput");
     showDiv.classList.toggle("active-search");
     showInput.classList.toggle("active-search");
+    if (showDiv.classList.contains("active-search")) {
+      filters.classList.add("d-none");
+    } else {
+      setTimeout(() => {
+        filters.classList.remove("d-none");
+      }, 500);
+    }
   }
   searchResults(e) {
     const term = e.target.value;
@@ -116,6 +124,18 @@ export default class Search extends Component {
           .searchInput.active-search {
             background: #f4f4f4;
             width: 100% !important;
+          }
+
+          @media (max-width: 600px) {
+            svg.search-icon {
+              display: none;
+            }
+            .search {
+              width: 100%;
+            }
+            .search .searchInput {
+              width: 100%;
+            }
           }
         `}</style>
       </>

@@ -160,6 +160,18 @@ export default class Size extends Component {
           .industries-wrapper p > span {
             opacity: 0.5;
           }
+          @media (max-width: 1024px) {
+            .industries-wrapper p {
+              font-size: 14px;
+            }
+          }
+
+          @media (max-width: 800px) {
+            .industries-wrapper .children {
+              display: flex;
+              flex-direction: column;
+            }
+          }
         `}</style>
       </>
     );

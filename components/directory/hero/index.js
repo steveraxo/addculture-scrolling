@@ -45,6 +45,24 @@ export default function Hero() {
           top: -5vh;
           right: 0;
         }
+
+        @media (max-width: 800px) {
+          .heroContainer .drawed-line {
+            display: none;
+          }
+        }
+
+        @media (max-width: 600px) {
+          .heroContainer {
+            margin: 10% auto;
+          }
+        }
+
+        @media (max-width: 480px) {
+          .heroContainer {
+            margin: 20% auto;
+          }
+        }
       `}</style>
     </>
   );

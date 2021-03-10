@@ -304,6 +304,23 @@ export default class Regions extends Component {
           .regions-wrapper .region-container .children p {
             margin-top: 0;
           }
+
+          @media (max-width: 1024px) {
+            .regions-wrapper p {
+              font-size: 14px;
+            }
+          }
+
+          @media (max-width: 800px) {
+            #alphabet p {
+              margin-right: 12px;
+            }
+
+            .regions-wrapper .children {
+              display: flex;
+              flex-direction: column;
+            }
+          }
         `}</style>
       </>
     );

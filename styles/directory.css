@@ -567,3 +567,117 @@
     font-size: 12px;
   }
 }
+
+@media (max-width: 1024px) {
+  .filters-container {
+    max-width: 820px;
+  }
+  .agencies-container {
+    max-width: 970px;
+  }
+  .agencies-list {
+    max-width: 920px;
+  }
+  .agency-card {
+    width: 250px;
+  }
+  .agency-list {
+    height: 8vh;
+  }
+  .agency-card .agency-image {
+    max-width: 180px;
+  }
+
+  .agency-card .agency-info p {
+    font-size: 12px;
+    line-height: 15px;
+  }
+
+  .agency-card .agency-info p > span {
+    margin-left: 10%;
+  }
+
+  .agency-card .agency-info .agency-link {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 800px) {
+  .filters-container {
+    max-width: 620px;
+  }
+  .agencies-container {
+    max-width: 750px;
+  }
+  .agencies-list {
+    max-width: 700px;
+  }
+  .agency-card {
+    width: 290px;
+    padding: 3%;
+  }
+
+  /* delete when finished */
+  .agency-list {
+    height: 8vh;
+  }
+  .agency-card .agency-image {
+    max-width: 180px;
+  }
+
+  .agency-card .agency-info p {
+    font-size: 12px;
+    line-height: 15px;
+  }
+
+  .agency-card .agency-info p > span {
+    margin-left: 10%;
+  }
+
+  .agency-card .agency-info .agency-link {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 600px) {
+  .filters-container {
+    max-width: 620px;
+  }
+  .agencies-container {
+    max-width: 600px;
+  }
+  .agencies-list {
+    max-width: 700px;
+  }
+  .agency-card {
+    width: 250px;
+    padding: 3%;
+  }
+  .agency-list {
+    height: 12vh;
+  }
+  .agency-card .agency-image {
+    max-width: 170px;
+  }
+
+  .agency-card .agency-info p {
+    font-size: 12px;
+    line-height: 15px;
+  }
+
+  .agency-card .agency-info p > span {
+    margin-left: 10%;
+  }
+
+  .agency-card .agency-info .agency-link {
+    font-size: 12px;
+  }
+
+  .agency-list-title-location .agency-name {
+    font-size: 14px;
+  }
+
+  .agency-list-title-location .agency-list-location {
+    font-size: 12px;
+  }
+}

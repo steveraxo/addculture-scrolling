@@ -62,6 +62,14 @@ export default function Hero() {
           .heroContainer {
             margin: 20% auto;
           }
+
+          .directory-hero p {
+            font-size: 12px;
+          }
+          .directory-hero h1 {
+            font-size: 30px;
+            line-height: 30px;
+          }
         }
       `}</style>
     </>

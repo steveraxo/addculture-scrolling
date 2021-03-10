@@ -688,6 +688,9 @@
 }
 
 @media (max-width: 480px) {
+  .agencies-container {
+    padding: 0 !important;
+  }
   .collapse .agency-list-details {
     width: initial;
     padding: 10px;
@@ -696,6 +699,10 @@
   .collapse .agency-list-details::before,
   .collapse::before {
     display: none;
+  }
+
+  .agency-card {
+    width: 470px;
   }
 
   .agency-list-body {
@@ -716,6 +723,10 @@
 }
 
 @media (max-width: 380px) {
+  .agency-card {
+    width: 370px;
+    padding: 3%;
+  }
   .agency-list {
     height: 8vh;
   }

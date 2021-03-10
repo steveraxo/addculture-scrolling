@@ -46,6 +46,26 @@ export default function Hero() {
           right: 0;
         }
 
+        @media (max-width: 4000px) {
+          .heroContainer {
+            max-width: 2900px;
+          }
+        }
+
+        @media (max-width: 3000px) {
+          .heroContainer {
+            max-width: 2400px;
+          }
+        }
+
+        @media (max-width: 1700px) {
+          .heroContainer {
+            max-width: initial;
+            margin: auto;
+            padding: 0 5% !important;
+          }
+        }
+
         @media (max-width: 800px) {
           .heroContainer .drawed-line {
             display: none;
@@ -61,6 +81,11 @@ export default function Hero() {
         @media (max-width: 480px) {
           .heroContainer {
             margin: 20% auto;
+            padding: 0 !important;
+          }
+          .directory-hero {
+            margin: 20% 5%;
+            margin-bottom: 0;
           }
 
           .directory-hero p {
@@ -69,6 +94,17 @@ export default function Hero() {
           .directory-hero h1 {
             font-size: 30px;
             line-height: 30px;
+          }
+        }
+
+        @media (max-width: 400px) {
+          .heroContainer {
+            padding: 0 !important;
+          }
+
+          .directory-hero {
+            margin: 20% 5%;
+            margin-bottom: 0;
           }
         }
       `}</style>

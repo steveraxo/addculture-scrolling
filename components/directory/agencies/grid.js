@@ -27,7 +27,7 @@ export default class Grid extends Component {
             flex-wrap: wrap;
             justify-content: center;
             margin: 5% auto;
-            padding: 0 4% !important;
+            padding: 0 4%;
           }
         `}</style>
       </>

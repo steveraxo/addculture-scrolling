@@ -335,6 +335,36 @@ export default class Navbar extends Component {
             font-style: normal;
           }
 
+          @media (max-width: 4000px) {
+            .navContent {
+              max-width: 1800px;
+            }
+          }
+
+          @media (max-width: 3000px) {
+            .navContent {
+              max-width: 1530px;
+            }
+          }
+
+          @media (max-width: 2000px) {
+            .navContent {
+              max-width: 1360px;
+            }
+          }
+
+          @media (max-width: 2000px) {
+            .navContent {
+              max-width: initial;
+            }
+          }
+
+          @media (max-width: 1700px) {
+            .navbarMenuBurger {
+              width: 13%;
+            }
+          }
+
           @media (max-width: 1366px) {
             .navbarMenuBurger {
               width: 2%;
@@ -348,8 +378,10 @@ export default class Navbar extends Component {
           }
 
           @media (max-width: 768px) {
-            .navbarMenuBurger {
+             {
+              /* .navbarMenuBurger {
               order: 2;
+            } */
             }
             .brand__logo {
               width: initial;
@@ -416,9 +448,6 @@ export default class Navbar extends Component {
           }
 
           @media (max-width: 768px) {
-            .navbarMenuBurger {
-              order: 2;
-            }
             .brand__logo {
               width: initial;
             }
@@ -440,11 +469,17 @@ export default class Navbar extends Component {
 
           @media (max-width: 480px) {
             .navbar {
-              padding: 30px;
+              padding: 30px 0;
             }
-            /* .brand__logo {
-    width: 73%;
-  } */
+            .navbarMenuBurger {
+              width: 55%;
+            }
+            .navContent {
+              padding: 0 5px;
+            }
+            .brand__logo {
+              width: 30%;
+            }
             .explore {
               display: none;
             }

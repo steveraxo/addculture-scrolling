@@ -705,7 +705,7 @@ export default class Directory extends Component {
               #filter .filter-container .layout-selector-container {
                 width: 100%;
                 margin: 5% auto;
-                justify-content: space-around;
+                justify-content: space-evenly;
               }
 
               #filter .filter-container .layout-selector-container div {
@@ -714,6 +714,13 @@ export default class Directory extends Component {
             }
 
             @media (max-width: 480px) {
+              #filter .filter-container {
+                padding: 0 2%;
+              }
+
+              #filter .filter-container .filter-options-container #filters {
+                justify-content: center;
+              }
               #filter .filter-container .filter-options-container #filters p {
                 font-size: 9px;
               }
@@ -747,8 +754,45 @@ export default class Directory extends Component {
             }
 
             @media (max-width: 400px) {
+              #filter .filter-container {
+                padding: 0 3%;
+              }
               #filter .filter-container .filter-options-container #filters {
                 flex-direction: column;
+                align-items: flex-start;
+              }
+
+              #filter .filter-container .filter-options-container #filters p {
+                font-size: 15px;
+                margin-bottom: 5px;
+              }
+
+              #filter
+                .filter-container
+                .filter-options-container
+                #filters
+                p
+                svg {
+                width: 22px;
+                height: 22px;
+              }
+
+              #filter
+                .filter-container
+                .filter-options-container
+                #filters
+                button {
+                font-size: 15px;
+                margin-left: 2px;
+              }
+              #filter
+                .filter-container
+                .filter-options-container
+                #filters
+                button
+                svg {
+                width: 18px;
+                height: 18px;
               }
             }
           `}

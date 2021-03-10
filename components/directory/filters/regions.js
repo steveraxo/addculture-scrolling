@@ -333,9 +333,18 @@ export default class Regions extends Component {
           }
 
           @media (max-width: 480px) {
+            #alphabet {
+              white-space: nowrap;
+              overflow-x: auto;
+              -webkit-overflow-scrolling: touch;
+              -ms-overflow-style: -ms-autohiding-scrollbar;
+            }
+            #alphabet::-webkit-scrollbar {
+              display: none;
+            }
             #alphabet p {
-              margin-right: 3px;
-              font-size: 9px;
+              margin-right: 10px;
+              font-size: 14px;
             }
 
             .regions-wrapper p {

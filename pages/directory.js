@@ -128,6 +128,9 @@ export default class Directory extends Component {
   }
 
   resetFilters(e) {
+    this.setState({
+      loading: true,
+    });
     e.preventDefault();
     document.querySelectorAll(".filter-term").forEach((item) => {
       if (item.classList.contains("active-filter")) {
@@ -136,10 +139,20 @@ export default class Directory extends Component {
         item.style.width = "initial";
       }
     });
-    this.setState({
-      agencies: this.props.agencies,
-    });
-    this.formatData();
+    this.setState(
+      {
+        agencies: this.props.agencies,
+      },
+      () => {
+        console.log(this.state.agencies);
+        this.formatData();
+        setTimeout(() => {
+          this.setState({
+            loading: false,
+          });
+        }, 1000);
+      }
+    );
   }
 
   // layout active class behavior
@@ -355,6 +368,7 @@ export default class Directory extends Component {
                           position: "relative",
                           top: "5px",
                           left: "5px",
+                          zIndex: "10",
                         }}
                         width="24"
                         height="24"
@@ -382,6 +396,7 @@ export default class Directory extends Component {
                           position: "relative",
                           top: "5px",
                           left: "5px",
+                          zIndex: "10",
                         }}
                         width="24"
                         height="24"
@@ -407,6 +422,7 @@ export default class Directory extends Component {
                       <svg
                         style={{
                           position: "relative",
+                          zIndex: "10",
                           top: "5px",
                           left: "5px",
                         }}
@@ -584,6 +600,15 @@ export default class Directory extends Component {
               color: #222220;
             }
 
+            #filter
+              .filter-container
+              .filter-options-container
+              #filters
+              p
+              > span {
+              pointer-events: none;
+            }
+
             #filter .filter-container .filter-options-container #filters p svg {
               transition: all 0.6s cubic-bezier(0.85, 0, 0.15, 1);
             }
@@ -608,6 +633,15 @@ export default class Directory extends Component {
               font-family: "ITC Avant Garde Pro Md";
               font-weight: bold;
               color: #cd4275;
+            }
+
+            #filter
+              .filter-container
+              .filter-options-container
+              #filters
+              button
+              svg {
+              pointer-events: none;
             }
             #filter .filter-container .layout-selector-container {
               width: 20%;

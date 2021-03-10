@@ -680,4 +680,102 @@
   .agency-list-title-location .agency-list-location {
     font-size: 12px;
   }
+
+  .collapse-open svg {
+    width: 15px;
+    height: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .collapse .agency-list-details {
+    width: initial;
+    padding: 10px;
+  }
+
+  .collapse .agency-list-details::before,
+  .collapse::before {
+    display: none;
+  }
+
+  .agency-list-body {
+    padding: 0 15px;
+  }
+
+  .agency-list-title-location .agency-name {
+    font-size: 12px;
+  }
+
+  .agency-list-title-location .agency-list-location {
+    font-size: 10px;
+  }
+
+  .collapse .agency-list-details .agency-list-link {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 380px) {
+  .agency-list {
+    height: 8vh;
+  }
+
+  .agency-list-title-location .agency-name {
+    font-size: 10px;
+  }
+
+  .agency-list-title-location .agency-list-location {
+    font-size: 8px;
+  }
+
+  .collapse .agency-list-details {
+    width: initial;
+    padding: 10px;
+  }
+
+  .collapse .agency-list-details::before,
+  .collapse::before {
+    display: none;
+  }
+
+  .collapse .agency-list-details .agency-list-description {
+    font-size: 12px;
+  }
+
+  .collapse .agency-list-details .clients-industry {
+    font-size: 12px;
+  }
+
+  .collapse .agency-list-details .agency-list-link {
+    font-size: 10px;
+  }
+
+  .collapse .agency-list-details .agency-list-link span > svg {
+    height: 14px;
+    top: 4px !important;
+  }
+}
+
+@media (max-width: 330px) {
+  .agency-list-title-location .agency-name {
+    font-size: 8px;
+  }
+
+  .agency-list-title-location .agency-list-location {
+    font-size: 7px;
+  }
+}
+
+@media (max-width: 300px) {
+  .agency-list {
+    height: 6vh;
+  }
+
+  .agency-list-title-location .agency-name {
+    font-size: 8px;
+  }
+
+  .agency-list-title-location .agency-list-location {
+    font-size: 5px;
+  }
 }

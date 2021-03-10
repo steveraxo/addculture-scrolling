@@ -172,6 +172,12 @@ export default class Size extends Component {
               flex-direction: column;
             }
           }
+
+          @media (max-width: 380px) {
+            .industries-wrapper p {
+              font-size: 10px;
+            }
+          }
         `}</style>
       </>
     );

@@ -198,7 +198,7 @@ export default class Regions extends Component {
         <div id="alphabet">
           {this.state.alpha.map((letter, key) => (
             <p id={`letter-${key}`} onClick={this.alphaFilter} key={key}>
-              {letter}
+              {letter}{" "}
             </p>
           ))}
         </div>
@@ -319,6 +319,17 @@ export default class Regions extends Component {
             .regions-wrapper .children {
               display: flex;
               flex-direction: column;
+            }
+          }
+
+          @media (max-width: 480px) {
+            #alphabet p {
+              margin-right: 3px;
+              font-size: 9px;
+            }
+
+            .regions-wrapper p {
+              font-size: 10px;
             }
           }
         `}</style>

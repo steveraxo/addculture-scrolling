@@ -149,6 +149,10 @@ export default class Directory extends Component {
         item.style.width = "initial";
       }
     });
+
+    document.querySelectorAll("#alphabet p").forEach((letter) => {
+      letter.classList.remove("letter-active");
+    });
     this.setState(
       {
         agencies: this.props.agencies,

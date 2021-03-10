@@ -131,7 +131,7 @@ export default class Regions extends Component {
       // filter based on clicked letter
       if (letter.classList.contains("letter-active")) {
         regions.forEach((region, i, regions) => {
-          if (region.parent === 0 && region.name[0] === term.textContent) {
+          if (region.parent === 0 && region.name[0] === term.textContent[0]) {
             filtered = [];
             filtered.push(region);
             regions.forEach((child) => {
@@ -141,6 +141,8 @@ export default class Regions extends Component {
             });
           }
         });
+
+        console.log(filtered);
 
         if (filtered.length !== 0) {
           this.setState({ regions: filtered, empty: false });

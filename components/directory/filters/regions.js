@@ -116,6 +116,13 @@ export default class Regions extends Component {
     });
   }
 
+  resetListener() {
+    const reset = document.getElementById("reset");
+    reset.addEventListener("click", () => {
+      this.setState({ empty: false });
+    });
+  }
+
   alphaFilter(e) {
     const letters = document.querySelectorAll("#alphabet p");
     const regions = this.props.regions;
@@ -142,11 +149,10 @@ export default class Regions extends Component {
           }
         });
 
-        console.log(filtered);
-
         if (filtered.length !== 0) {
-          this.setState({ regions: filtered, empty: false });
-          this.filterRegions();
+          this.setState({ regions: filtered, empty: false }, () => {
+            this.filterRegions();
+          });
         } else {
           this.setState({ empty: true });
         }
@@ -191,6 +197,7 @@ export default class Regions extends Component {
 
   componentDidMount() {
     this.filterRegions();
+    this.resetListener();
   }
   render() {
     const { parents, children } = this.state;

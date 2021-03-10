@@ -156,9 +156,9 @@ export default class Directory extends Component {
     this.setState(
       {
         agencies: this.props.agencies,
+        regions: this.props.regions,
       },
       () => {
-        console.log(this.state.agencies);
         this.formatData();
         setTimeout(() => {
           this.setState({

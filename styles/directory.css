@@ -209,6 +209,14 @@
   justify-content: space-between;
 }
 
+.agency-card .agency-card-body span {
+  font-weight: bold;
+  font-family: "ITC Avant Garde Pro Md", sans-serif;
+  text-transform: uppercase;
+  font-size: 12px;
+  color: #cd4275;
+}
+
 .agency-card .agency-card-body .agency-description {
   font-family: "Helvetica Neue", sans-serif;
   font-size: 16px;

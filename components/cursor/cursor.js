@@ -35,6 +35,7 @@ export default class cursor extends Component {
     const directoryFilterTerms = [...document.querySelectorAll(".filter-term")];
     const directoryAlphabet = [...document.querySelectorAll("#alphabet p")];
     const resetAll = [...document.querySelectorAll("#reset")];
+    const collapse = [...document.querySelectorAll(".agency-list")];
 
     const allElements = aLinks
       .concat(buttons)
@@ -60,7 +61,8 @@ export default class cursor extends Component {
       .concat(directoryFilters)
       .concat(directoryFilterTerms)
       .concat(directoryAlphabet)
-      .concat(resetAll);
+      .concat(resetAll)
+      .concat(collapse);
 
     allElements.forEach(function (element) {
       element.addEventListener("mouseenter", function () {

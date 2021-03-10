@@ -223,6 +223,10 @@
   overflow: hidden;
 }
 
+.agency-card .agency-card-body .agency-description.description-active {
+  display: initial;
+}
+
 .agency-card .agency-info {
   margin-top: auto;
   align-self: flex-start;

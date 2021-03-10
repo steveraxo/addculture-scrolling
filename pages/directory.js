@@ -43,6 +43,16 @@ export default class Directory extends Component {
     this.selectorActiveClass = this.selectorActiveClass.bind(this);
     this.resetFilters = this.resetFilters.bind(this);
     this.toggleCollapse = this.toggleCollapse.bind(this);
+    this.toggleText = this.toggleText.bind(this);
+  }
+
+  toggleText(e) {
+    const description = document.querySelectorAll(".agency-description");
+    description.forEach((text) => {
+      if (e.target.getAttribute("class") === text.getAttribute("id")) {
+        text.classList.toggle("description-active");
+      }
+    });
   }
 
   clickCount() {
@@ -215,16 +225,23 @@ export default class Directory extends Component {
                 {agency.regions[0].name}, {agency.regions[1].name}
               </p>
             </div>
-            <p className="agency-description">
+            <p className="agency-description" id={`description-${key}`}>
               {agency.acf.agency_description}
             </p>
+            <span className={`description-${key}`} onClick={this.toggleText}>
+              See More
+            </span>
           </div>
 
           <div className="agency-info">
             <p>
               Industry <span>{agency.industries[0].name}</span>
             </p>
-            <a className=" agency-link avant" href={agency.acf.agency_website}>
+            <a
+              className=" agency-link avant"
+              target="_blank"
+              href={agency.acf.agency_website}
+            >
               Visit website{" "}
               <span>
                 <WebsiteIcon
@@ -238,25 +255,25 @@ export default class Directory extends Component {
 
       agencyList = slice.map((agency, key) => (
         <React.Fragment key={key}>
-          <div className="agency-list">
-            <div className="agency-list-head">
+          <div
+            className="agency-list"
+            onClick={this.toggleCollapse}
+            data-toggler={`collapse-${key}`}
+          >
+            <div className="agency-list-head" style={{ pointerEvents: "none" }}>
               <img
                 src={agency.acf.agency_image.url}
                 alt={agency.acf.agency_name}
               />
             </div>
-            <div className="agency-list-body">
+            <div className="agency-list-body" style={{ pointerEvents: "none" }}>
               <div className="agency-list-title-location">
                 <h1 className="agency-name">{agency.acf.agency_name}</h1>
                 <p className="agency-list-location avant">
                   {agency.regions[0].name}, {agency.regions[1].name}
                 </p>
               </div>
-              <div
-                className="collapse-open"
-                data-toggler={`collapse-${key}`}
-                onClick={this.toggleCollapse}
-              >
+              <div className="collapse-open" style={{ pointerEvents: "none" }}>
                 <Plus style={{ pointerEvents: "none" }} />
               </div>
             </div>
@@ -275,6 +292,7 @@ export default class Directory extends Component {
               <a
                 className="agency-list-link avant"
                 href={agency.acf.agency_website}
+                target="_blank"
               >
                 Visit website{" "}
                 <span>

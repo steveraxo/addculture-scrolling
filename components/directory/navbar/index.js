@@ -279,6 +279,7 @@ export default class Navbar extends Component {
             margin-top: 15px;
           }
           .categoriesMenu {
+            top: 0;
             position: fixed;
             clip-path: circle(0% at 5% 8%);
             transition: all 0.5s ease-in-out;
@@ -378,11 +379,14 @@ export default class Navbar extends Component {
           }
 
           @media (max-width: 768px) {
-             {
-              /* .navbarMenuBurger {
-              order: 2;
-            } */
+            .navContent {
+              flex-direction: row-reverse;
             }
+            .menuBurger {
+              position: absolute;
+              right: 30px;
+            }
+
             .brand__logo {
               width: initial;
             }

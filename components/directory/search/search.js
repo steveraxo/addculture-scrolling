@@ -133,6 +133,7 @@ export default class Search extends Component {
             .search {
               width: 100%;
               height: 50px;
+              margin-bottom: 20px;
             }
             .search .searchInput {
               width: 100%;

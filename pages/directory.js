@@ -764,7 +764,23 @@ export default class Directory extends Component {
 
               #filter .filter-container .filter-options-container #filters p {
                 font-size: 15px;
-                margin-bottom: 5px;
+                margin-bottom: 10px;
+                margin-top: 10px;
+                width: 100%;
+                position: relative;
+              }
+
+              #filter
+                .filter-container
+                .filter-options-container
+                #filters
+                p
+                > span {
+                position: absolute;
+                top: -10px;
+                bottom: 0;
+                right: 25px;
+                margin: 0 auto;
               }
 
               #filter
@@ -784,6 +800,8 @@ export default class Directory extends Component {
                 button {
                 font-size: 15px;
                 margin-left: 2px;
+                margin-top: 15px;
+                margin-bottom: 10px;
               }
               #filter
                 .filter-container

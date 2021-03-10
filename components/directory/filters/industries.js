@@ -176,8 +176,9 @@ export default class Industries extends Component {
 
           @media (max-width: 800px) {
             .industries-wrapper .children {
+              flex-wrap: wrap;
               display: flex;
-              flex-direction: column;
+              flex-direction: unset;
             }
           }
 

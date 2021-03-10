@@ -317,8 +317,9 @@ export default class Regions extends Component {
             }
 
             .regions-wrapper .children {
+              flex-wrap: wrap;
               display: flex;
-              flex-direction: column;
+              flex-direction: unset;
             }
           }
 

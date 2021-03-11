@@ -650,7 +650,9 @@ export default class Directory extends Component {
               #filters
               button {
               border: none;
-              outline: none;
+              outline: none !important;
+              background-color: transparent;
+              padding: 0;
               text-transform: uppercase;
               font-family: "ITC Avant Garde Pro Md";
               font-weight: bold;
@@ -855,7 +857,7 @@ export default class Directory extends Component {
                 #filters
                 button {
                 font-size: 15px;
-                margin-left: 2px;
+                margin-left: 10px;
                 margin-top: 15px;
                 margin-bottom: 10px;
               }

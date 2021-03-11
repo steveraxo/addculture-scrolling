@@ -335,9 +335,10 @@ export default class Regions extends Component {
           @media (max-width: 480px) {
             #alphabet {
               white-space: nowrap;
-              overflow-x: auto;
+              overflow-x: unset;
               -webkit-overflow-scrolling: touch;
               -ms-overflow-style: -ms-autohiding-scrollbar;
+              flex-wrap: wrap;
             }
             #alphabet::-webkit-scrollbar {
               display: none;
@@ -348,7 +349,7 @@ export default class Regions extends Component {
             }
 
             .regions-wrapper p {
-              font-size: 10px;
+              font-size: 14px;
             }
           }
         `}</style>

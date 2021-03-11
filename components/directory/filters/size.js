@@ -174,9 +174,9 @@ export default class Size extends Component {
             }
           }
 
-          @media (max-width: 380px) {
+          @media (max-width: 480px) {
             .industries-wrapper p {
-              font-size: 10px;
+              font-size: 14px;
             }
           }
         `}</style>
